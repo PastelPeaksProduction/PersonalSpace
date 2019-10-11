@@ -8,6 +8,8 @@ public class ZoneScript : MonoBehaviour
     public bool playerInZone = false;
 
     private List<EnemyController> enemies = new List<EnemyController>();
+    private bool playerMoving;
+
 
     void Start()
     {
@@ -16,14 +18,17 @@ public class ZoneScript : MonoBehaviour
 
     void Update()
     {
-
-        if (playerInZone)
+        updatePlayerMove();
+        if (playerMoving)
         {
-            moveChildrenToPlayer();
-        }
-        else
-        {
-            moveChildrenToStart();
+            if (playerInZone)
+            {
+                moveChildrenToPlayer();
+            }
+            else
+            {
+                moveChildrenToStart();
+            }
         }
     }
 
@@ -64,5 +69,13 @@ public class ZoneScript : MonoBehaviour
         {
             enemy.moveBackToStart();
         }
+    }
+
+    /**
+     *  Helper function that updates the playerMoving boolean
+     **/
+    private void updatePlayerMove()
+    {
+        playerMoving = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().isMoving;
     }
 }

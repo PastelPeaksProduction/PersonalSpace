@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
     public bool canMove = false;
-    public static bool isMoving = false;
+    public bool isMoving = false;
 
     public float health = 100;
     public float neutralDamage = -0.01f;
@@ -28,7 +28,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         calculateMovement();
-        updateHealth();
+        if (isMoving)
+        {
+            updateHealth();
+        }
         checkExit();
     }
 
@@ -101,6 +104,10 @@ public class PlayerController : MonoBehaviour
     private void updateHealth()
     {
         health += threatLevel;
+        if(health >= 100)
+        {
+            health = 100;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

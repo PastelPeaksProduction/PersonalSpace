@@ -509,6 +509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneThreat: -0.1
+  playerInZone: 0
 --- !u!1 &582036719
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneThreat: 0.1
+  playerInZone: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,7 +815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5878192523449515, guid: e0f394dd3e79f1446bb512536a9c345f, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5878192523449515, guid: e0f394dd3e79f1446bb512536a9c345f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -888,7 +890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5878192523449515, guid: e0f394dd3e79f1446bb512536a9c345f, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5878192523449515, guid: e0f394dd3e79f1446bb512536a9c345f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1040,8 +1042,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4.5
   canMove: 1
+  isMoving: 0
   health: 100
-  neutralDamage: -0.01
+  neutralDamage: -0.025
 --- !u!54 &993318047
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1315,7 +1318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5878192523449515, guid: e0f394dd3e79f1446bb512536a9c345f, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5878192523449515, guid: e0f394dd3e79f1446bb512536a9c345f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1569,7 +1572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5878192523449515, guid: e0f394dd3e79f1446bb512536a9c345f, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5878192523449515, guid: e0f394dd3e79f1446bb512536a9c345f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
