@@ -110,11 +110,13 @@ public class PlayerController : MonoBehaviour
         if(other.tag == "DangerZone" || other.tag == "SafeZone")
         {
             threatLevel = other.GetComponent<ZoneScript>().zoneThreat;
+            other.GetComponent<ZoneScript>().playerInZone = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         threatLevel = neutralDamage;
+        other.GetComponent<ZoneScript>().playerInZone = false;
     }
 }
