@@ -43,7 +43,10 @@ public class ZoneScript : MonoBehaviour
             }
         }
     }
-    
+
+    /**
+     *  Helper function that moves all children to player
+     **/
     private void moveChildrenToPlayer()
     {
         foreach(EnemyController enemy in enemies)
@@ -52,6 +55,9 @@ public class ZoneScript : MonoBehaviour
         }
     }
 
+    /**
+     *  Helper function that moves all children to thier starting location
+     **/
     private void moveChildrenToStart()
     {
         foreach(EnemyController enemy in enemies)

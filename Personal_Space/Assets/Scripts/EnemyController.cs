@@ -26,11 +26,17 @@ public class EnemyController : MonoBehaviour
 
     //--------------------HELPER METHODS--------------------//
 
+    /**
+     *  Helper methods that moves the enemy to the player
+     **/
     public void moveTowardsPlayer()
     {
         transform.position = Vector3.MoveTowards(transform.position, playerPosition.position, followSpeed * Time.deltaTime);
     }
 
+    /**
+     *  Helper methods that moves the enemy to the thier starting location
+     **/
     public void moveBackToStart()
     {
         transform.position = Vector3.MoveTowards(transform.position, startingPosition, moveBackSpeed * Time.deltaTime);
