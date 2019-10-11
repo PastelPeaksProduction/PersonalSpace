@@ -9,22 +9,26 @@ public class PlayerController : MonoBehaviour
     public static bool isMoving = false;
 
     public float health = 100;
+    public float neutralDamage = -0.01f;
 
     private Rigidbody rigidBody;
     private Vector3 moveInput;
     private Vector3 moveVelocity;
     private Quaternion currentRotation;
+    private float threatLevel;
 
     
     void Start()
     {
         rigidBody = this.GetComponent<Rigidbody>();
+        threatLevel = neutralDamage;
     }
 
     
     void Update()
     {
         calculateMovement();
+        updateHealth();
         checkExit();
     }
 
@@ -89,5 +93,28 @@ public class PlayerController : MonoBehaviour
                 Application.Quit();
             #endif
         }
+    }
+
+    /**
+     *  Checks the players threat level and updates health
+     **/
+    private void updateHealth()
+    {
+        health += threatLevel;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        // Sets the threat to the level in that zone
+        if(other.tag == "DangerZone" || other.tag == "SafeZone")
+        {
+            threatLevel = other.GetComponent<ZoneScript>().zoneThreat;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        threatLevel = neutralDamage;
     }
 }
