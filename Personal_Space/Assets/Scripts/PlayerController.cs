@@ -90,4 +90,27 @@ public class PlayerController : MonoBehaviour
             #endif
         }
     }
+
+    /**
+     *  When main character hits sth, now is just collectibles.
+     *    
+     **/
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Collectible")
+        {
+            Debug.Log("Collection detected");
+
+            //other.gameObject.GetComponent<Light>().intensity = 0;
+            other.gameObject.SetActive(false);
+
+            // Using the manager API to pass in the item being collected
+            GameObject g = GameObject.Find("Main Camera");
+            CollectibleManager mng = g.GetComponent<CollectibleManager>();
+            mng.ItemCollected(other.name);
+            Debug.Log(other.name + " is collected.");
+
+        }
+    }
 }
