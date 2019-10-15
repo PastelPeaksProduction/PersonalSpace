@@ -119,10 +119,16 @@ public class PlayerController : MonoBehaviour
     {
 
         // Sets the threat to the level in that zone
-        if(other.tag == "DangerZone" || other.tag == "SafeZone")
+        if(other.CompareTag("DangerZone") || other.CompareTag("SafeZone"))
         {
             threatLevel = other.GetComponent<ZoneScript>().zoneThreat;
             other.GetComponent<ZoneScript>().playerInZone = true;
+        }
+        if(other.CompareTag("Collectible"))
+        {
+            other.gameObject.SetActive(false);
+            Debug.Log(other.name + " collected");
+            GameObject.Find("Main Camera").GetComponent<CollectibleManager>().ItemCollected(other.name);
         }
     }
 
