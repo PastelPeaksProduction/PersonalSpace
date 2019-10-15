@@ -57,7 +57,7 @@ public class CameraScript : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPositionTPP.transform.position, CameraSpeed * Time.deltaTime);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetPositionTPP.transform.rotation, RotationSpeed * Time.deltaTime);
-        if (Vector3.Distance(transform.position, targetPositionTPP.transform.position) < 0.001f)
+        if ((Player != null) && (Vector3.Distance(transform.position, targetPositionTPP.transform.position) < 0.001f))
         {      
             Player.GetComponent<PlayerController>().canMove = true;
         }

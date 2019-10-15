@@ -1,30 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
     public bool canMove = false;
-    public static bool isMoving = false;
+    public bool isMoving = false;
 
     public float health = 100;
+    public float neutralDamage = -0.01f;
 
     private Rigidbody rigidBody;
     private Vector3 moveInput;
     private Vector3 moveVelocity;
     private Quaternion currentRotation;
+    private float threatLevel;
 
     
     void Start()
     {
         rigidBody = this.GetComponent<Rigidbody>();
+        threatLevel = neutralDamage;
     }
 
     
     void Update()
     {
         calculateMovement();
+        if (isMoving)
+        {
+            updateHealth();
+        }
         checkExit();
     }
 
@@ -92,25 +100,35 @@ public class PlayerController : MonoBehaviour
     }
 
     /**
-     *  When main character hits sth, now is just collectibles.
-     *    
+     *  Checks the players threat level and updates health
      **/
+    private void updateHealth()
+    {
+        health += threatLevel;
+        if(health >= 100)
+        {
+            health = 100;
+        }
+        if(health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Collectible")
+
+        // Sets the threat to the level in that zone
+        if(other.tag == "DangerZone" || other.tag == "SafeZone")
         {
-            Debug.Log("Collection detected");
-
-            //other.gameObject.GetComponent<Light>().intensity = 0;
-            other.gameObject.SetActive(false);
-
-            // Using the manager API to pass in the item being collected
-            GameObject g = GameObject.Find("Main Camera");
-            CollectibleManager mng = g.GetComponent<CollectibleManager>();
-            mng.ItemCollected(other.name);
-            Debug.Log(other.name + " is collected.");
-
+            threatLevel = other.GetComponent<ZoneScript>().zoneThreat;
+            other.GetComponent<ZoneScript>().playerInZone = true;
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        threatLevel = neutralDamage;
+        other.GetComponent<ZoneScript>().playerInZone = false;
     }
 }
