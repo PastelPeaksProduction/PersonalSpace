@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7279398007663102549}
   - component: {fileID: 7975199960128797273}
   m_Layer: 0
-  m_Name: Door 1
+  m_Name: TwoDoorway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 07a4b2ecc993c144d9fdc5c100994191, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -176,6 +176,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall One (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7136742315766675622, guid: 25ab5a99ea7d0463899f196082515d26,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 07a4b2ecc993c144d9fdc5c100994191, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25ab5a99ea7d0463899f196082515d26, type: 3}
 --- !u!4 &5325990876425469279 stripped
@@ -266,6 +271,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall One (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7136742315766675622, guid: 25ab5a99ea7d0463899f196082515d26,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 07a4b2ecc993c144d9fdc5c100994191, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25ab5a99ea7d0463899f196082515d26, type: 3}
 --- !u!4 &7297456596924662319 stripped
