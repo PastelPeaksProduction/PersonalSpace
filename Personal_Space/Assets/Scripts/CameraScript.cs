@@ -33,7 +33,7 @@ public class CameraScript : MonoBehaviour
         }
         if (perspective)
         {
-            if (transform.localPosition == Vector3.zero)
+            if (transform.localPosition == targetPositionFPP.transform.localPosition)
             {
                 Debug.Log("zeroed");
                 FirstPersonPerspective();
