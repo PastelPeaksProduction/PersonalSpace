@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ public class CollectibleManager : MonoBehaviour
     // Initialize this when there's collectible in the scene
     private Text itemsToBeCollected;
 
+    private GameObject canvas;
     /* 
      * Items that can be collected. 
      * Initialize it when doing scene editing
@@ -16,31 +18,13 @@ public class CollectibleManager : MonoBehaviour
     public int numOfJackets;
 
     /* 
-     * Actual text to show the counts
-     * Initialize it when doing scene editing
-     */
-    private Text numOfBackPacksText;
-    private Text numOfJacketsText;
-
-    /* 
      * Get the necessary game objects
      * and initialize if set
      */
+    public Image backPack;
+    public Image jacket;
     void Start()
     {
-        // Repeat the if/else for more collectibles added in.
-        if (numOfBackPacks != 0)
-        {
-            GameObject obj = GameObject.Find("BackpackUIText");
-            numOfBackPacksText = obj.GetComponent<Text>();
-            numOfBackPacksText.text = "X " + numOfBackPacks.ToString();
-        }
-        if(numOfJackets != 0)
-        {
-            GameObject obj = GameObject.Find("JacketUIText");
-            numOfJacketsText = obj.GetComponent<Text>();
-            numOfJacketsText.text = "X " + numOfJackets.ToString();
-        }
     }
 
     // Update is called once per frame
@@ -55,29 +39,16 @@ public class CollectibleManager : MonoBehaviour
      */
     public void ItemCollected(string name)
     {
-        if (name.Contains("Backpack"))
+        if (name.IndexOf("Backpack", StringComparison.OrdinalIgnoreCase) >= 0)
         {
-            if(--numOfBackPacks != 0)
-            {
-                numOfBackPacksText.text = "X " + numOfBackPacks;
-            }
-            else
-            {
-                numOfBackPacksText.text = "✔";
-            } 
+            backPack.color = Color.gray;
         }
-        else if (name.Contains("Jacket"))
+        else if (name.IndexOf("Jacket", StringComparison.OrdinalIgnoreCase) >= 0)
         {
-            if (--numOfJackets != 0)
-            {
-                numOfJacketsText.text = "X " + numOfBackPacks;
-            }
-            else
-            {
-                numOfJacketsText.text = "✔";
-            }
+            jacket.color = Color.gray;
         }
     }
+
 
 
 

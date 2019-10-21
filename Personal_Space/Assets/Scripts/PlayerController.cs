@@ -109,10 +109,10 @@ public class PlayerController : MonoBehaviour
         {
             health = 100;
         }
-        if(health <= 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+        //if(health <= 0)
+        //{
+        //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //}
     }
 
     private void OnTriggerEnter(Collider other)
