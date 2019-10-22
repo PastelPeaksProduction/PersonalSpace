@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     public float followSpeed;
     public float moveBackSpeed;
+    public bool movingZone;
 
     private Vector3 startingPosition;
     private Transform playerPosition;
@@ -31,7 +32,14 @@ public class EnemyController : MonoBehaviour
      **/
     public void moveTowardsPlayer()
     {
-        transform.position = Vector3.MoveTowards(transform.position, playerPosition.position, followSpeed * Time.deltaTime);
+        if (movingZone)
+        {
+            transform.parent.position = Vector3.MoveTowards(transform.parent.position, playerPosition.position, followSpeed * Time.deltaTime);
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, playerPosition.position, followSpeed * Time.deltaTime);
+        }
     }
 
     /**
@@ -39,7 +47,10 @@ public class EnemyController : MonoBehaviour
      **/
     public void moveBackToStart()
     {
-        transform.position = Vector3.MoveTowards(transform.position, startingPosition, moveBackSpeed * Time.deltaTime);
+        if (!movingZone)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, startingPosition, moveBackSpeed * Time.deltaTime);
+        }
     }
     
 }
