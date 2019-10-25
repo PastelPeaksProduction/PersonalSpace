@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
     {
         if (health > 0)
         {
-            rigidBody.velocity = moveVelocity;
+            rigidBody.velocity = Vector3.ClampMagnitude(moveVelocity, moveSpeed);
         }
         else
         {
