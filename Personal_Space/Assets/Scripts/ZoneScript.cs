@@ -30,6 +30,13 @@ public class ZoneScript : MonoBehaviour
                 moveChildrenToStart();
             }
         }
+        else
+        {
+            if (playerInZone)
+            {
+                stopChildrenMovement();
+            }
+        }
     }
 
     //--------------------HELPER METHODS--------------------//
@@ -57,6 +64,14 @@ public class ZoneScript : MonoBehaviour
         foreach(EnemyController enemy in enemies)
         {
             enemy.moveTowardsPlayer();
+        }
+    }
+
+    private void stopChildrenMovement()
+    {
+        foreach (EnemyController enemy in enemies)
+        {
+            enemy.stopMovement();
         }
     }
 
