@@ -7,13 +7,13 @@ public class EnemyController : MonoBehaviour
     public float followSpeed;
     public float moveBackSpeed;
     public bool movingZone;
+    public float stoppingDistance = 10; 
 
     private Vector3 startingPosition;
     private Transform playerPosition;
 
     void Start()
     {
-
         // Initialize variables
         playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         startingPosition = transform.position;
@@ -32,13 +32,18 @@ public class EnemyController : MonoBehaviour
      **/
     public void moveTowardsPlayer()
     {
-        if (movingZone)
+        float distance = Mathf.Abs(Vector3.Distance(this.transform.position, playerPosition.position));
+        if (movingZone && distance > stoppingDistance)
         {
             transform.parent.position = Vector3.MoveTowards(transform.parent.position, playerPosition.position, followSpeed * Time.deltaTime);
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, playerPosition.position, followSpeed * Time.deltaTime);
+            if(distance > stoppingDistance)
+            {
+                Debug.Log(distance);
+                transform.position = Vector3.MoveTowards(transform.position, playerPosition.position, followSpeed * Time.deltaTime);
+            }
         }
     }
 
