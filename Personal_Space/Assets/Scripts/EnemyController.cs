@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour
     public float followSpeed;
     public float moveBackSpeed;
     public bool movingZone;
-    public float stoppingDistance = 10; 
+    public float stoppingDistance = 15; 
 
     private Vector3 startingPosition;
     private Transform playerPosition;
