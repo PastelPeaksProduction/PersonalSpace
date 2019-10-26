@@ -16,6 +16,8 @@ public class ZoneScript : MonoBehaviour
     private bool playerMoving;
 
     public float scale = 1;
+    private float dangerScale = 0.05f;
+    private float safeScale = 0.01f;
 
     void Start()
     {
@@ -123,11 +125,11 @@ public class ZoneScript : MonoBehaviour
         float enemyCount = enemies.Count;
         if(scale == 0)
         {
-            zoneThreat = zoneScaling * 0.1f;
+            zoneThreat = zoneScaling * safeScale;
         }
         else
         {
-            zoneThreat = -zoneScaling * .05f*enemyCount;
+            zoneThreat = -zoneScaling * dangerScale* enemyCount;
         }
     }
 }
