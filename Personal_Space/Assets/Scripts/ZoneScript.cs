@@ -8,12 +8,15 @@ public class ZoneScript : MonoBehaviour
     public bool playerInZone = false;
 
     private List<EnemyController> enemies = new List<EnemyController>();
+    private List<Transform> childrenTransofrm = new List<Transform>();
     private bool playerMoving;
 
+    public float scale = 1;
 
     void Start()
     {
         getEnemiesinZone();
+        resizeZone(scale);
     }
 
     void Update()
@@ -42,6 +45,18 @@ public class ZoneScript : MonoBehaviour
     //--------------------HELPER METHODS--------------------//
 
     /**
+     *  Helper function that resizes the zone
+     **/
+    private void resizeZone(float size)
+    {
+        foreach(Transform child in childrenTransofrm)
+        {
+            child.localScale = new Vector3(child.localScale.x / size, child.localScale.y / size, child.localScale.z / size);
+            child.localPosition = new Vector3(child.localPosition.x / size, child.localPosition.y / size, child.localPosition.z / size);
+        }
+        transform.localScale = new Vector3(size * transform.localScale.x, size * transform.localScale.y, size * transform.localScale.z);
+    }
+    /**
      *  Helper function to get the enmies that are children of the zone
      **/
     private void getEnemiesinZone()
@@ -52,6 +67,7 @@ public class ZoneScript : MonoBehaviour
             if(child.tag == "Enemy")
             {
                 enemies.Add(child.gameObject.GetComponent<EnemyController>());
+                childrenTransofrm.Add(child.gameObject.GetComponent<Transform>());
             }
         }
     }
