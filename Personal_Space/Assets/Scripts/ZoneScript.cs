@@ -123,7 +123,7 @@ public class ZoneScript : MonoBehaviour
     private void scaleZoneThreat()
     {
         float enemyCount = enemies.Count;
-        if(scale == 0)
+        if(enemyCount == 0)
         {
             zoneThreat = zoneScaling * safeScale;
         }
