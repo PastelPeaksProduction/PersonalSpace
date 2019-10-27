@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class ZoneScript : MonoBehaviour
 {
-    public float zoneThreat = 0;
+    [Range(1.0f, 10.0f)]
+    public float zoneScaling;
+
+    [HideInInspector]
+    public float zoneThreat;
     public bool playerInZone = false;
 
     private List<EnemyController> enemies = new List<EnemyController>();
@@ -12,11 +16,14 @@ public class ZoneScript : MonoBehaviour
     private bool playerMoving;
 
     public float scale = 1;
+    private float dangerScale = 0.05f;
+    private float safeScale = 0.01f;
 
     void Start()
     {
         getEnemiesinZone();
         resizeZone(scale);
+        scaleZoneThreat();
     }
 
     void Update()
@@ -108,5 +115,21 @@ public class ZoneScript : MonoBehaviour
     private void updatePlayerMove()
     {
         playerMoving = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().isMoving;
+    }
+
+    /**
+     *  Helper function that scales the threat based on number of enemies
+     **/
+    private void scaleZoneThreat()
+    {
+        float enemyCount = enemies.Count;
+        if(scale == 0)
+        {
+            zoneThreat = zoneScaling * safeScale;
+        }
+        else
+        {
+            zoneThreat = -zoneScaling * dangerScale* enemyCount;
+        }
     }
 }
