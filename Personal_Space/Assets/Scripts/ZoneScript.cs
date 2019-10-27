@@ -14,10 +14,11 @@ public class ZoneScript : MonoBehaviour
     private List<EnemyController> enemies = new List<EnemyController>();
     private List<Transform> childrenTransofrm = new List<Transform>();
     private bool playerMoving;
+    private bool playerBreathing;
 
     public float scale = 1;
     private float dangerScale = 0.05f;
-    private float safeScale = 0.01f;
+    private float safeScale = 0.05f;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class ZoneScript : MonoBehaviour
     void Update()
     {
         updatePlayerMove();
-        if (playerMoving)
+        if (playerMoving || playerBreathing)
         {
             if (playerInZone)
             {
@@ -115,6 +116,7 @@ public class ZoneScript : MonoBehaviour
     private void updatePlayerMove()
     {
         playerMoving = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().isMoving;
+        playerBreathing = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().isBreathing;
     }
 
     /**

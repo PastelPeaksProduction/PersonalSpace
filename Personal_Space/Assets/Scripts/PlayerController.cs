@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public bool canMove = false;
     public bool isMoving = false;
+    public bool isBreathing = false;
 
     public float health = 100;
     public float neutralDamage = -0.01f;
@@ -29,11 +30,13 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         calculateMovement();
-        if (isMoving)
+        checkBreath();
+        if (isMoving || isBreathing)
         {
             updateHealth();
         }
         checkExit();
+
     }
 
     void FixedUpdate()
@@ -96,6 +99,22 @@ public class PlayerController : MonoBehaviour
             #else
                 Application.Quit();
             #endif
+        }
+    }
+
+    /**
+     *  Checks to see if the player is breathing.
+     *      -------May replace later with menus-------
+     **/
+    private void checkBreath()
+    {
+        if (Input.GetKey(KeyCode.B))
+        {
+            isBreathing = true;
+        }
+        else if (!Input.GetKey(KeyCode.B))
+        {
+            isBreathing = false; 
         }
     }
 
