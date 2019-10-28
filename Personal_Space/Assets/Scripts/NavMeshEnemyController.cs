@@ -7,23 +7,38 @@ public class NavMeshEnemyController : MonoBehaviour
 {
     public float followSpeed;
     public float moveBackSpeed;
-
+    
+    private GameObject player;
+    private PlayerController playerController;
     private Vector3 startingPosition;
     private Transform playerPosition;
     private NavMeshAgent agent; 
+    private float agentSpeed;
 
     void Start()
     {
 
         // Initialize variables
-        playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
+        playerPosition = player.GetComponent<Transform>();
         startingPosition = transform.position;
         agent = GetComponent<NavMeshAgent>();
+        agentSpeed = agent.speed;
+        agent.autoBraking = false;
     }
 
     void Update()
     {
           agent.destination = playerPosition.position; 
+          if(playerController.isMoving)
+          {
+              agent.speed = agentSpeed;
+          }
+          else
+          {
+              agent.speed = 0f;
+          }
     }
 
 

@@ -156,4 +156,10 @@ public class PlayerController : MonoBehaviour
         threatLevel = neutralDamage;
         other.GetComponent<ZoneScript>().playerInZone = false;
     }
+
+    //--------------------PUBLIC METHODS--------------------//
+    public bool getIsMoving()
+    {
+        return isMoving;
+    }
 }
