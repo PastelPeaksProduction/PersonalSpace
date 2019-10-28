@@ -57,7 +57,7 @@ public class ObjectivesManager : MonoBehaviour
     {
         if (Objectives.ContainsKey(obj))
         {
-            
+            GetComponent<DialogManager>()
         }
     }
 
