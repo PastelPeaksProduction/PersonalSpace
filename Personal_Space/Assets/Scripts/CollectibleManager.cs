@@ -6,10 +6,6 @@ using UnityEngine.UI;
 
 public class CollectibleManager : MonoBehaviour
 {
-    // Initialize this when there's collectible in the scene
-    private Text itemsToBeCollected;
-
-    private GameObject canvas;
     /* 
      * Items that can be collected. 
      * Initialize it when doing scene editing

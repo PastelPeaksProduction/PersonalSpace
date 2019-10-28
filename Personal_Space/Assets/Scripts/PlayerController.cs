@@ -151,6 +151,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Objectives"))
+        {
+            Debug.Log(other.gameObject.name + " objective fired");
+            GameObject.Find("Main Camera").GetComponent<ObjectivesManager>().OnObjectiveTriggered(other.gameObject);
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         threatLevel = neutralDamage;
