@@ -31,7 +31,7 @@ public class NavMeshEnemyController : MonoBehaviour
     void Update()
     {
           agent.destination = playerPosition.position; 
-          if(playerController.isMoving)
+          if(playerController.isMoving || playerController.isBreathing)
           {
               agent.speed = agentSpeed;
           }

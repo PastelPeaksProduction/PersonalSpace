@@ -43,18 +43,18 @@ public class GameController : MonoBehaviour
             deadDialog.SetActive(true);
 
             //Q to Restart game
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.X) || Input.GetKey("joystick button 18"))
             {
                 deadDialog.SetActive(false);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
-        if (Input.GetKey(KeyCode.Tab))
+        if (Input.GetKey(KeyCode.Tab) || Input.GetKey("joystick button 17"))
         {
             PauseGame();
             pauseDialog.SetActive(true);
         }
-        if (Input.GetKeyUp(KeyCode.Tab))
+        if (Input.GetKeyUp(KeyCode.Tab) || Input.GetKeyUp("joystick button 17"))
         {
             ContinueGame();
             pauseDialog.SetActive(false);

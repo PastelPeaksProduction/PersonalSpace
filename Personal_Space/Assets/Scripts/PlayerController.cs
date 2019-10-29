@@ -108,11 +108,22 @@ public class PlayerController : MonoBehaviour
      **/
     private void checkBreath()
     {
-        if (Input.GetKey(KeyCode.B))
+        bool twoButton = false;
+        if (Input.GetKey("joystick button 14") && Input.GetKey("joystick button 13"))
+        {
+            twoButton = true; 
+        }
+        float left = Input.GetAxis("Breathe Left");
+        float right = Input.GetAxis("Breathe Right");
+        if(left >0 && right>0)
+        {
+            twoButton = true; 
+        }
+        if (Input.GetKey(KeyCode.B) || twoButton)
         {
             isBreathing = true;
         }
-        else if (!Input.GetKey(KeyCode.B))
+        else if (!Input.GetKey(KeyCode.B) || !twoButton)
         {
             isBreathing = false; 
         }
