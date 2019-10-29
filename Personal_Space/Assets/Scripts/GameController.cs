@@ -66,7 +66,7 @@ public class GameController : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Alpha2))
         {
-            SceneManager.LoadScene("School Dance");
+            SceneManager.LoadScene("SchoolDance");
 
         }
     }
