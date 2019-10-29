@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 2600146800666572998}
   - component: {fileID: 2600146800666572999}
   - component: {fileID: 5078414350070390807}
+  - component: {fileID: 95976839973116789}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -189,6 +190,19 @@ MonoBehaviour:
   fifthObject_5: {fileID: 0}
   fifthDescription: 
   pauseDialogText: {fileID: 0}
+--- !u!114 &95976839973116789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600146800666572996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d973329116b4e3a87448a231bf6239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartbeat: {fileID: 7327256571677092376}
 --- !u!1 &2600146800702947624
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +576,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b5a441593e3f8433a9f23050bbe29eb9, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
