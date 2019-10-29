@@ -296,16 +296,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: zoneScaling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: scale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8212001667555794831, guid: 078af56f7037cf64cb14224ac14359ef,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -345,6 +335,16 @@ PrefabInstance:
         type: 3}
       propertyPath: followSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: zoneScaling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: scale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 078af56f7037cf64cb14224ac14359ef, type: 3}
@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 54484526}
   m_Layer: 0
   m_Name: BackpackZone
-  m_TagString: Untagged
+  m_TagString: Objectives
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1061,6 +1061,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7692404362751846411, guid: c236ea01235b42544af1278bcd9bb680,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7692404364533700089, guid: c236ea01235b42544af1278bcd9bb680,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1174,6 +1179,16 @@ PrefabInstance:
     - target: {fileID: 7692404363438119968, guid: c236ea01235b42544af1278bcd9bb680,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471446417413998618, guid: c236ea01235b42544af1278bcd9bb680,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979406210694959199, guid: c236ea01235b42544af1278bcd9bb680,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2496,16 +2511,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 66.00003
       objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: zoneScaling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: scale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8212001667555794831, guid: 078af56f7037cf64cb14224ac14359ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2585,6 +2590,16 @@ PrefabInstance:
         type: 3}
       propertyPath: followSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: zoneScaling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: scale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 078af56f7037cf64cb14224ac14359ef, type: 3}
@@ -5168,12 +5183,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 468065324}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &469869791 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3315159196601842196, guid: 6ccdd07029cc92043a760fe4b9947a4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1720359872}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &469869792 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3315159196601842197, guid: 6ccdd07029cc92043a760fe4b9947a4d,
@@ -5266,6 +5275,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BackpackObjective
+      objectReference: {fileID: 0}
+    - target: {fileID: 3315159196601842196, guid: 6ccdd07029cc92043a760fe4b9947a4d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3315159196601842197, guid: 6ccdd07029cc92043a760fe4b9947a4d,
         type: 3}
@@ -5843,16 +5857,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: zoneScaling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: scale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8212001667555794831, guid: 078af56f7037cf64cb14224ac14359ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5912,6 +5916,16 @@ PrefabInstance:
         type: 3}
       propertyPath: followSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: zoneScaling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: scale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 078af56f7037cf64cb14224ac14359ef, type: 3}
@@ -6431,16 +6445,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: zoneScaling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: scale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8212001667555794831, guid: 078af56f7037cf64cb14224ac14359ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6500,6 +6504,16 @@ PrefabInstance:
         type: 3}
       propertyPath: followSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: zoneScaling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: scale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 078af56f7037cf64cb14224ac14359ef, type: 3}
@@ -6739,7 +6753,7 @@ GameObject:
   - component: {fileID: 766423579}
   m_Layer: 0
   m_Name: DancePartnerZone
-  m_TagString: Untagged
+  m_TagString: Objectives
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7026,16 +7040,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 66.000015
       objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: zoneScaling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: scale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8212001667555794831, guid: 078af56f7037cf64cb14224ac14359ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7115,6 +7119,16 @@ PrefabInstance:
         type: 3}
       propertyPath: followSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: zoneScaling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: scale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 078af56f7037cf64cb14224ac14359ef, type: 3}
@@ -7966,16 +7980,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: zoneScaling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: scale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8212001667555794831, guid: 078af56f7037cf64cb14224ac14359ef,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -8015,6 +8019,16 @@ PrefabInstance:
         type: 3}
       propertyPath: followSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: zoneScaling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: scale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 078af56f7037cf64cb14224ac14359ef, type: 3}
@@ -8922,16 +8936,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: zoneScaling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: scale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8212001667555794831, guid: 078af56f7037cf64cb14224ac14359ef,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -8971,6 +8975,16 @@ PrefabInstance:
         type: 3}
       propertyPath: followSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: zoneScaling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: scale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 078af56f7037cf64cb14224ac14359ef, type: 3}
@@ -11879,16 +11893,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: zoneScaling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: scale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8212001667555794831, guid: 078af56f7037cf64cb14224ac14359ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11948,6 +11952,16 @@ PrefabInstance:
         type: 3}
       propertyPath: followSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: zoneScaling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: scale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 078af56f7037cf64cb14224ac14359ef, type: 3}
@@ -13321,6 +13335,26 @@ PrefabInstance:
       propertyPath: isMoving
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2600146800344507217, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600146800344507217, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600146800702947628, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: numOfJackets
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600146800702947631, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: CameraSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 870527781874745186, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
       propertyPath: pauseDialog
@@ -13375,21 +13409,21 @@ PrefabInstance:
         type: 3}
       propertyPath: firstObject_1
       value: 
-      objectReference: {fileID: 469869791}
+      objectReference: {fileID: 766423577}
     - target: {fileID: 9215103705445834842, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
       propertyPath: firstDescription
-      value: I should go dance with someone
+      value: I should go grab my backpack from the classroom
       objectReference: {fileID: 0}
     - target: {fileID: 9215103705445834842, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
       propertyPath: secondObject_2
       value: 
-      objectReference: {fileID: 405309634}
+      objectReference: {fileID: 54484525}
     - target: {fileID: 9215103705445834842, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
       propertyPath: secondDescription
-      value: I should go grab my backpack from the classroom
+      value: Well done
       objectReference: {fileID: 0}
     - target: {fileID: 9215103705445834842, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
@@ -14431,16 +14465,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 66.00003
       objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: zoneScaling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: scale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8212001667555794831, guid: 078af56f7037cf64cb14224ac14359ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14500,6 +14524,16 @@ PrefabInstance:
         type: 3}
       propertyPath: followSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: zoneScaling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: scale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 078af56f7037cf64cb14224ac14359ef, type: 3}
@@ -14605,6 +14639,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DanceObjective
+      objectReference: {fileID: 0}
+    - target: {fileID: 3315159196601842196, guid: 6ccdd07029cc92043a760fe4b9947a4d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3315159196601842197, guid: 6ccdd07029cc92043a760fe4b9947a4d,
         type: 3}
@@ -14765,16 +14804,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: zoneScaling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: scale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8212001667555794831, guid: 078af56f7037cf64cb14224ac14359ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14834,6 +14863,16 @@ PrefabInstance:
         type: 3}
       propertyPath: followSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: zoneScaling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: scale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 078af56f7037cf64cb14224ac14359ef, type: 3}
@@ -17172,16 +17211,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 66.000015
       objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: zoneScaling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
-        type: 3}
-      propertyPath: scale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8212001667555794831, guid: 078af56f7037cf64cb14224ac14359ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17261,6 +17290,16 @@ PrefabInstance:
         type: 3}
       propertyPath: followSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: zoneScaling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014719767484028580, guid: 078af56f7037cf64cb14224ac14359ef,
+        type: 3}
+      propertyPath: scale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 078af56f7037cf64cb14224ac14359ef, type: 3}
