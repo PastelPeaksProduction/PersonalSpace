@@ -63,11 +63,6 @@ public class EnemyController : MonoBehaviour
             }
             else
             {
-                /*this.agent.ResetPath();
-                agent.isStopped = true;
-                Vector3 thisPos = this.transform.position;
-                this.transform.position = thisPos;
-                */
                 moveBackToStart();
             }
         }
@@ -84,7 +79,7 @@ public class EnemyController : MonoBehaviour
     }
 
     /**
-     *  Helper methods that moves the enemy to the thier starting location
+     *  Helper methods that moves the enemy to the their starting location
      **/
     public void moveBackToStart()
     {

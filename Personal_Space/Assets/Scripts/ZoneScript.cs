@@ -43,10 +43,9 @@ public class ZoneScript : MonoBehaviour
         }
         else
         {
-            if (playerInZone)
-            {
+            
                 stopChildrenMovement();
-            }
+            
         }
     }
 
