@@ -149,6 +149,11 @@ public class PlayerController : MonoBehaviour
             Debug.Log(other.name + " collected");
             GameObject.Find("Main Camera").GetComponent<CollectibleManager>().ItemCollected(other.name);
         }
+        if (other.gameObject.CompareTag("Objectives"))
+        {
+            Debug.Log(other.gameObject.name + " objective fired");
+            GameObject.Find("Main Camera").GetComponent<ObjectivesManager>().OnObjectiveTriggered(other.gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision other)
