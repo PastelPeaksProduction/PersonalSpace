@@ -9,6 +9,7 @@
         private int destPoint = 0;
         private NavMeshAgent agent;
         private float agentSpeed;
+        public float waitTime = 4f;
 
         private bool waiting = false;
 
@@ -17,6 +18,7 @@
             agent = GetComponent<NavMeshAgent>();
             agentSpeed = agent.speed;
             playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+
             // Disabling auto-braking allows for continuous movement
             // between points (ie, the agent doesn't slow down as it
             // approaches a destination point).
@@ -68,7 +70,7 @@
 
         private IEnumerator Loiter()
         {
-             yield return new WaitForSeconds(4f);
+             yield return new WaitForSeconds(waitTime);
              agent.speed = agentSpeed;
              GotoNextPoint();
              waiting = false;
