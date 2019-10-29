@@ -67,6 +67,7 @@ public class ObjectivesManager : MonoBehaviour
     // public function when player triggers objective tag
     public void OnObjectiveTriggered(GameObject obj)
     {
+        Debug.Log("Triggered");
         if (objectiveCount < Objectives.Count &&  Objectives[objectiveCount].Key == obj)
         {
             // Pass the corresponding description to dialogmng

@@ -59,5 +59,15 @@ public class GameController : MonoBehaviour
             ContinueGame();
             pauseDialog.SetActive(false);
         }
+        if (Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            SceneManager.LoadScene("House Party");
+
+        }
+        if (Input.GetKeyUp(KeyCode.Alpha2))
+        {
+            SceneManager.LoadScene("School Dance");
+
+        }
     }
 }
