@@ -18,7 +18,7 @@ public class ZoneScript : MonoBehaviour
 
     public float scale = 1;
     private float dangerScale = 0.05f;
-    private float safeScale = 0.05f;
+    private float safeScale = 0.5f;
 
     void Start()
     {
