@@ -1233,7 +1233,7 @@ PrefabInstance:
     - target: {fileID: 7692404364533700089, guid: c236ea01235b42544af1278bcd9bb680,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7692404364533700089, guid: c236ea01235b42544af1278bcd9bb680,
         type: 3}
@@ -1314,6 +1314,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7692404362751846410, guid: c236ea01235b42544af1278bcd9bb680,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -400
       objectReference: {fileID: 0}
     - target: {fileID: 5979406210694959199, guid: c236ea01235b42544af1278bcd9bb680,
         type: 3}
@@ -7151,6 +7156,89 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 637139684}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &638102980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 638102983}
+  - component: {fileID: 638102982}
+  - component: {fileID: 638102981}
+  m_Layer: 9
+  m_Name: Aerial Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!81 &638102981
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638102980}
+  m_Enabled: 0
+--- !u!20 &638102982
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638102980}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &638102983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638102980}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 180, y: 400, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &656713732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8145,7 +8233,7 @@ Transform:
   - {fileID: 933839295}
   - {fileID: 408565165}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &812693696 stripped
 GameObject:
@@ -14972,6 +15060,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5296566397839048204, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: aerialCamera
+      value: 
+      objectReference: {fileID: 638102980}
     - target: {fileID: 2600146800666572996, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
       propertyPath: m_Name
@@ -15015,7 +15108,7 @@ PrefabInstance:
     - target: {fileID: 2600146800666573050, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2600146800666573050, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
@@ -15082,66 +15175,6 @@ PrefabInstance:
       propertyPath: objectiveDialog
       value: 
       objectReference: {fileID: 1961822162}
-    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: gameStartObjectiveDescription
-      value: I left my backpack in the classroom
-      objectReference: {fileID: 0}
-    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: firstObject_1
-      value: 
-      objectReference: {fileID: 405309634}
-    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: firstDescription
-      value: I should go get my backpack from the classroom.
-      objectReference: {fileID: 0}
-    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: secondDescription
-      value: I want to ask someone to dance!
-      objectReference: {fileID: 0}
-    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: secondObject_2
-      value: 
-      objectReference: {fileID: 766423577}
-    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: pauseDialogText
-      value: 
-      objectReference: {fileID: 131252201}
-    - target: {fileID: 9215103705445834842, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: gameStartObjectiveDescription
-      value: I should go dance with someone
-      objectReference: {fileID: 0}
-    - target: {fileID: 9215103705445834842, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: firstObject_1
-      value: 
-      objectReference: {fileID: 766423577}
-    - target: {fileID: 9215103705445834842, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: firstDescription
-      value: I should go grab my backpack from the classroom
-      objectReference: {fileID: 0}
-    - target: {fileID: 9215103705445834842, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: secondObject_2
-      value: 
-      objectReference: {fileID: 54484525}
-    - target: {fileID: 9215103705445834842, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: secondDescription
-      value: Well done
-      objectReference: {fileID: 0}
-    - target: {fileID: 9215103705445834842, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: pauseDialogText
-      value: 
-      objectReference: {fileID: 131252201}
     - target: {fileID: 2090807824398782169, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
       propertyPath: backPack
@@ -15202,6 +15235,66 @@ PrefabInstance:
       propertyPath: deadDialog
       value: 
       objectReference: {fileID: 7612270}
+    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: gameStartObjectiveDescription
+      value: I left my backpack in the classroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: firstObject_1
+      value: 
+      objectReference: {fileID: 405309634}
+    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: firstDescription
+      value: I should go get my backpack from the classroom.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: secondDescription
+      value: I want to ask someone to dance!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: secondObject_2
+      value: 
+      objectReference: {fileID: 766423577}
+    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: pauseDialogText
+      value: 
+      objectReference: {fileID: 131252201}
+    - target: {fileID: 9215103705445834842, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: gameStartObjectiveDescription
+      value: I should go dance with someone
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215103705445834842, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: firstObject_1
+      value: 
+      objectReference: {fileID: 766423577}
+    - target: {fileID: 9215103705445834842, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: firstDescription
+      value: I should go grab my backpack from the classroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215103705445834842, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: secondObject_2
+      value: 
+      objectReference: {fileID: 54484525}
+    - target: {fileID: 9215103705445834842, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: secondDescription
+      value: Well done
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215103705445834842, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: pauseDialogText
+      value: 
+      objectReference: {fileID: 131252201}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8765068a21a01534cac645e384d74a48, type: 3}
 --- !u!1001 &1560012325
@@ -15327,7 +15420,7 @@ Transform:
   - {fileID: 42026737}
   - {fileID: 1794312837}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1565482224
 PrefabInstance:
@@ -15888,7 +15981,7 @@ Transform:
   - {fileID: 1372476247}
   - {fileID: 1154864991}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1652406847
 PrefabInstance:
@@ -18020,7 +18113,7 @@ Transform:
   - {fileID: 636432749}
   - {fileID: 1930515491}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1930515490
 PrefabInstance:
@@ -18318,7 +18411,7 @@ Transform:
   - {fileID: 54484529}
   - {fileID: 405309637}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1971717424
 PrefabInstance:
@@ -19501,7 +19594,7 @@ PrefabInstance:
     - target: {fileID: 3654413358718100774, guid: 9653fe79c3225bc4494cd7b1f21ccbd9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3654413358718100774, guid: 9653fe79c3225bc4494cd7b1f21ccbd9,
         type: 3}
@@ -20908,7 +21001,7 @@ PrefabInstance:
     - target: {fileID: 7696672476635640514, guid: 0d187c3324bbfbd419829228d161edd8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7696672476635640514, guid: 0d187c3324bbfbd419829228d161edd8,
         type: 3}
