@@ -158,12 +158,12 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             Debug.Log(other.name + " collected");
-            GameObject.Find("Main Camera").GetComponent<CollectibleManager>().ItemCollected(other.name);
+            GetComponent<CollectibleManager>().ItemCollected(other.name);
         }
         if (other.gameObject.CompareTag("Objectives"))
         {
             Debug.Log(other.gameObject.name + " objective fired");
-            GameObject.Find("Main Camera").GetComponent<ObjectivesManager>().OnObjectiveTriggered(other.gameObject);
+            GetComponent<ObjectivesManager>().OnObjectiveTriggered(other.gameObject);
         }
     }
 
@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Objectives"))
         {
             Debug.Log(other.gameObject.name + " objective fired");
-            GameObject.Find("Main Camera").GetComponent<ObjectivesManager>().OnObjectiveTriggered(other.gameObject);
+            GetComponent<ObjectivesManager>().OnObjectiveTriggered(other.gameObject);
         }
     }
 

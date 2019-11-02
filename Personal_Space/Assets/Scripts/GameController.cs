@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public GameObject pauseDialog;
     public GameObject deadDialog;
     private bool activeDialog = false;
+    public bool isPaused = false;
 
 
     // Start is called before the first frame update
@@ -53,11 +54,13 @@ public class GameController : MonoBehaviour
         {
             PauseGame();
             pauseDialog.SetActive(true);
+            isPaused = true;
         }
         if (Input.GetKeyUp(KeyCode.Tab) || Input.GetKeyUp("joystick button 17"))
         {
             ContinueGame();
             pauseDialog.SetActive(false);
+            isPaused = false;
         }
         if (Input.GetKeyUp(KeyCode.Alpha1))
         {
