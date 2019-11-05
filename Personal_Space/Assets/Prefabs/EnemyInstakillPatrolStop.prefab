@@ -105,8 +105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad175bd90c1f3e4b91930cde42cd290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoneScaling: 0
   zoneThreat: -100
   playerInZone: 0
+  scale: 1
 --- !u!1 &494091745304531974
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +126,7 @@ GameObject:
   - component: {fileID: 8676907308297932875}
   m_Layer: 0
   m_Name: EnemyInstakillPatrolStop
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -241,7 +243,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &8676907308297932875
 MonoBehaviour:
@@ -256,6 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: []
+  waitTime: 4
 --- !u!1 &494091745357337253
 GameObject:
   m_ObjectHideFlags: 0

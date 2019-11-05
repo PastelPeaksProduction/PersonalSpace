@@ -105,8 +105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad175bd90c1f3e4b91930cde42cd290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoneScaling: 0
   zoneThreat: -0.5
   playerInZone: 0
+  scale: 1
 --- !u!1 &7812288557198396395
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +218,7 @@ GameObject:
   - component: {fileID: 7812288557253224810}
   m_Layer: 0
   m_Name: EnemyShadowDontStop
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -333,7 +335,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &7812288557253224810
 MonoBehaviour:
