@@ -178,8 +178,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        threatLevel = neutralDamage;
-        other.GetComponent<ZoneScript>().playerInZone = false;
+        
+        if (!other.gameObject.CompareTag("Objectives"))
+        {
+            threatLevel = neutralDamage;
+            other.GetComponent<ZoneScript>().playerInZone = false;
+        }
+        
     }
 
     //--------------------PUBLIC METHODS--------------------//
