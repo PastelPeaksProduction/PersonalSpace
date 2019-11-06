@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1502699671626560859}
   - component: {fileID: 3676404019899461332}
   - component: {fileID: 665625767599498250}
+  - component: {fileID: 39934196447438408}
   m_Layer: 0
   m_Name: BasicEnemy (2)
   m_TagString: Enemy
@@ -106,10 +107,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc1aa76c4fd00849ae949ae7a09fc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followSpeed: 22
-  moveBackSpeed: 3
+  followSpeed: 10
+  moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+--- !u!195 &39934196447438408
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898517852515095373}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.9999999
+  m_BaseOffset: 0.99999994
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &3634804319750067552
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +181,7 @@ GameObject:
   - component: {fileID: 4752792744410930627}
   - component: {fileID: 1491801604568623570}
   - component: {fileID: 2327231470202808766}
+  - component: {fileID: 6717225097442685192}
   m_Layer: 0
   m_Name: BasicEnemy (1)
   m_TagString: Enemy
@@ -251,10 +275,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc1aa76c4fd00849ae949ae7a09fc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followSpeed: 22
-  moveBackSpeed: 3
+  followSpeed: 10
+  moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+--- !u!195 &6717225097442685192
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3760959366462122742}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.9999999
+  m_BaseOffset: 0.99999994
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &7271178812992461427
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad175bd90c1f3e4b91930cde42cd290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneScaling: 0
+  zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
   scale: 1
@@ -377,6 +423,7 @@ GameObject:
   - component: {fileID: 6415554044271166633}
   - component: {fileID: 6902376481609588464}
   - component: {fileID: 7552083551523675526}
+  - component: {fileID: 2338549215534712343}
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -470,10 +517,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc1aa76c4fd00849ae949ae7a09fc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followSpeed: 22
-  moveBackSpeed: 3
+  followSpeed: 10
+  moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+--- !u!195 &2338549215534712343
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928290752575383203}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.9999999
+  m_BaseOffset: 0.99999994
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &9019927159780207817
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,6 +556,7 @@ GameObject:
   - component: {fileID: 1302167034153333211}
   - component: {fileID: 3939094180596030112}
   - component: {fileID: 8682321989536226084}
+  - component: {fileID: 3963368502368592382}
   m_Layer: 0
   m_Name: BasicEnemy (3)
   m_TagString: Enemy
@@ -580,7 +650,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc1aa76c4fd00849ae949ae7a09fc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followSpeed: 22
-  moveBackSpeed: 3
+  followSpeed: 10
+  moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+--- !u!195 &3963368502368592382
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9019927159780207817}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.9999999
+  m_BaseOffset: 0.99999994
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

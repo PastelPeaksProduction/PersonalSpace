@@ -11,13 +11,13 @@ public class ZoneScript : MonoBehaviour
     public float zoneThreat;
     public bool playerInZone = false;
 
-    private List<EnemyController> enemies = new List<EnemyController>();
+    private List<GameObject> enemies = new List<GameObject>();
     private List<Transform> childrenTransofrm = new List<Transform>();
     private bool playerMoving;
     private bool playerBreathing;
 
     public float scale = 1;
-    private float dangerScale = 0.01f;
+    private float dangerScale = 0.05f;
     private float safeScale = 0.5f;
 
     void Start()
@@ -68,12 +68,15 @@ public class ZoneScript : MonoBehaviour
      **/
     private void getEnemiesinZone()
     {
-        var children = this.GetComponentsInChildren<Transform>();
+        var parent = this.transform.parent.gameObject;
+
+        var children = parent.GetComponentsInChildren<Transform>();
         foreach(var child in children)
         {
+            
             if(child.tag == "Enemy")
             {
-                enemies.Add(child.gameObject.GetComponent<EnemyController>());
+                enemies.Add(child.gameObject);
                 childrenTransofrm.Add(child.gameObject.GetComponent<Transform>());
             }
         }
@@ -84,17 +87,29 @@ public class ZoneScript : MonoBehaviour
      **/
     private void moveChildrenToPlayer()
     {
-        foreach(EnemyController enemy in enemies)
+        foreach(GameObject enemy in enemies)
         {
-            enemy.moveTowardsPlayer();
+            EnemyController controller = enemy.GetComponent<EnemyController>();
+            if (controller != null)
+            {
+                controller.moveTowardsPlayer();
+            }
+            
         }
     }
 
     private void stopChildrenMovement()
     {
-        foreach (EnemyController enemy in enemies)
+      
+
+        foreach (GameObject enemy in enemies)
         {
-            enemy.stopMovement();
+            EnemyController controller = enemy.GetComponent<EnemyController>();
+            if (controller != null)
+            {
+                controller.stopMovement();
+            }
+
         }
     }
 
@@ -103,9 +118,16 @@ public class ZoneScript : MonoBehaviour
      **/
     private void moveChildrenToStart()
     {
-        foreach(EnemyController enemy in enemies)
+        
+
+        foreach (GameObject enemy in enemies)
         {
-            enemy.moveBackToStart();
+            EnemyController controller = enemy.GetComponent<EnemyController>();
+            if (controller != null)
+            {
+                controller.moveBackToStart();
+            }
+
         }
     }
 
