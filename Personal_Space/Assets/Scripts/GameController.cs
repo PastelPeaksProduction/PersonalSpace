@@ -78,12 +78,12 @@ public class GameController : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "House Party")
         {
-            SceneManager.LoadScene("SchoolDance");
+            SceneManager.LoadScene("StartMenu");
         }
 
         if (SceneManager.GetActiveScene().name == "SchoolDance")
         {
-            SceneManager.LoadScene("StartMenu");
+            SceneManager.LoadScene("House Party");
         }
     }
 }
