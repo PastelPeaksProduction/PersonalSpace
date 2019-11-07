@@ -17,8 +17,9 @@ public class CameraScript : MonoBehaviour
     /* FPP fields */
     Vector2 mouseLook;
     Vector2 sommthV;
-    public float sensitivity = 3.0f;
-    public float smoothing = 2.0f;
+    public float sensitivityFirstPerson = 3.0f;
+    public float sensitivityThirdPerson = 0.15f;
+    public float smoothing = 1.0f;
 
     void Start()
     {
@@ -54,6 +55,13 @@ public class CameraScript : MonoBehaviour
 
     private void ThirdPersonPerspective()
     {
+        var md = new Vector2(Input.GetAxisRaw("Horizontal X"), 0);
+        md = Vector2.Scale(md, new Vector2(sensitivityThirdPerson * smoothing, sensitivityThirdPerson * smoothing));
+        sommthV.x = Mathf.Lerp(sommthV.x, md.x, 1f / smoothing);
+        mouseLook += sommthV;
+
+        Player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, Player.transform.up);
+
         transform.position = Vector3.MoveTowards(transform.position, targetPositionTPP.transform.position, CameraSpeed * Time.deltaTime);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetPositionTPP.transform.rotation, RotationSpeed * Time.deltaTime);
         if ((Player != null) && (Vector3.Distance(transform.position, targetPositionTPP.transform.position) < 0.001f))
@@ -65,7 +73,7 @@ public class CameraScript : MonoBehaviour
     private void FirstPersonPerspective()
     {
         var md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
-        md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
+        md = Vector2.Scale(md, new Vector2(sensitivityFirstPerson * smoothing, sensitivityFirstPerson * smoothing));
         sommthV.x = Mathf.Lerp(sommthV.x, md.x, 1f / smoothing);
         sommthV.y = Mathf.Lerp(sommthV.y, md.y, 1f / smoothing);
         mouseLook += sommthV;
