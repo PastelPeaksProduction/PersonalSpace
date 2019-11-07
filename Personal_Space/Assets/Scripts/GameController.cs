@@ -44,19 +44,19 @@ public class GameController : MonoBehaviour
             deadDialog.SetActive(true);
 
             //Q to Restart game
-            if (Input.GetKeyDown(KeyCode.X) || Input.GetKey("joystick button 18"))
+            if (Input.GetKeyDown(KeyCode.X) || Input.GetKey("joystick button 18") || Input.GetKey("joystick button 2"))
             {
                 deadDialog.SetActive(false);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
-        if (Input.GetKey(KeyCode.Tab) || Input.GetKey("joystick button 17"))
+        if (Input.GetKey(KeyCode.Tab) || Input.GetKey("joystick button 17") || Input.GetKey("joystick button 1"))
         {
             PauseGame();
             pauseDialog.SetActive(true);
             isPaused = true;
         }
-        if (Input.GetKeyUp(KeyCode.Tab) || Input.GetKeyUp("joystick button 17"))
+        if (Input.GetKeyUp(KeyCode.Tab) || Input.GetKeyUp("joystick button 17") || Input.GetKeyUp("joystick button 1"))
         {
             ContinueGame();
             pauseDialog.SetActive(false);

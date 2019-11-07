@@ -25,7 +25,7 @@ public class DialogManager : MonoBehaviour
 
     private void checkDialogStatus()
     {
-        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKey("joystick button 16"))
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKey("joystick button 16") || Input.GetKey("joystick button 0"))
         {
             objectiveDialog.SetActive(false);
             Time.timeScale = 1;

@@ -65,7 +65,6 @@ public class PlayerController : MonoBehaviour
             else
             {
                 moveInput = currentRotation * new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
-
             }
             moveVelocity = moveInput * moveSpeed;
             if (moveVelocity == Vector3.zero)
@@ -119,7 +118,7 @@ public class PlayerController : MonoBehaviour
     private void checkBreath()
     {
         bool twoButton = false;
-        if (Input.GetKey("joystick button 14") && Input.GetKey("joystick button 13"))
+        if ((Input.GetKey("joystick button 14") && Input.GetKey("joystick button 13")) || (Input.GetKey("joystick button 4") && Input.GetKey("joystick button 5")))
         {
             twoButton = true; 
         }
