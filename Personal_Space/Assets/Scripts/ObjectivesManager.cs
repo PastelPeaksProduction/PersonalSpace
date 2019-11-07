@@ -70,11 +70,29 @@ public class ObjectivesManager : MonoBehaviour
         Debug.Log("Triggered");
         if (objectiveCount < Objectives.Count &&  Objectives[objectiveCount].Key == obj)
         {
+            Debug.Log("OBJ NAME: " + obj.name);
             // Pass the corresponding description to dialogmng
             GetComponent<DialogManager>().showDialog(Objectives[objectiveCount].Value);
+            GameObject child = obj.gameObject.transform.GetChild(0).gameObject;
+            Debug.Log("CHILD NAME: " + child.name);
+            child.GetComponent<MeshRenderer>().enabled = false;
+            
             pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[objectiveCount].Value;
 
+
             objectiveCount++;
+            if(objectiveCount < Objectives.Count)
+            {
+                GameObject nextObjective = Objectives[objectiveCount].Key;
+                Debug.Log("Next NAME: " + nextObjective.name);
+                GameObject nextChild = nextObjective.transform.GetChild(0).gameObject;
+                nextChild.GetComponent<MeshRenderer>().enabled = true;
+            }
+            else
+            {
+                this.GetComponent<GameController>().AdvanceLevel();
+            }
+           
         }
         
     }

@@ -152,7 +152,6 @@ public class PlayerController : MonoBehaviour
         if(other.CompareTag("DangerZone") || other.CompareTag("SafeZone"))
         {
             threatLevel += other.GetComponent<ZoneScript>().zoneThreat;
-            Debug.Log(threatLevel);
             other.GetComponent<ZoneScript>().playerInZone = true;
         }
         if(other.CompareTag("Collectible"))
@@ -183,7 +182,6 @@ public class PlayerController : MonoBehaviour
         if (!other.gameObject.CompareTag("Objectives"))
         {
             threatLevel -= other.GetComponent<ZoneScript>().zoneThreat;
-            Debug.Log(threatLevel);
             other.GetComponent<ZoneScript>().playerInZone = false;
         }
         

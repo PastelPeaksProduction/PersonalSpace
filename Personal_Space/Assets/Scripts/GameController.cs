@@ -73,4 +73,17 @@ public class GameController : MonoBehaviour
 
         }
     }
+
+    public void AdvanceLevel()
+    {
+        if(SceneManager.GetActiveScene().name == "House Party")
+        {
+            SceneManager.LoadScene("SchoolDance");
+        }
+
+        if (SceneManager.GetActiveScene().name == "SchoolDance")
+        {
+            SceneManager.LoadScene("StartMenu");
+        }
+    }
 }
