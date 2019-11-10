@@ -60,7 +60,7 @@ public class CameraScript : MonoBehaviour
         sommthV.x = Mathf.Lerp(sommthV.x, md.x, 1f / smoothing);
         mouseLook += sommthV;
 
-        Player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, Player.transform.up);
+        // Player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, Player.transform.up);
 
         transform.position = Vector3.MoveTowards(transform.position, targetPositionTPP.transform.position, CameraSpeed * Time.deltaTime);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetPositionTPP.transform.rotation, RotationSpeed * Time.deltaTime);
