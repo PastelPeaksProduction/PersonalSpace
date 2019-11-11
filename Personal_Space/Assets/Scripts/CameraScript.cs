@@ -55,12 +55,20 @@ public class CameraScript : MonoBehaviour
 
     private void ThirdPersonPerspective()
     {
-        var md = new Vector2(Input.GetAxisRaw("Horizontal X"), 0);
+        var md = new Vector2(0, 0);
+        if(Input.GetAxisRaw("Horizontal X") > 0)
+        {
+            md = new Vector2(Input.GetAxisRaw("Horizontal X"), 0);
+        }
+        else
+        {
+            md = new Vector2(Input.GetAxisRaw("Horizontal X") + Input.GetAxisRaw("Mouse X"), 0);
+        }
         md = Vector2.Scale(md, new Vector2(sensitivityThirdPerson * smoothing, sensitivityThirdPerson * smoothing));
         sommthV.x = Mathf.Lerp(sommthV.x, md.x, 1f / smoothing);
         mouseLook += sommthV;
 
-        // Player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, Player.transform.up);
+        Player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, Player.transform.up);
 
         transform.position = Vector3.MoveTowards(transform.position, targetPositionTPP.transform.position, CameraSpeed * Time.deltaTime);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetPositionTPP.transform.rotation, RotationSpeed * Time.deltaTime);
