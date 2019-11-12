@@ -72,6 +72,16 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene("SchoolDance");
 
         }
+        if (Input.GetKeyUp(KeyCode.Alpha3))
+        {
+            SceneManager.LoadScene("WorkParty");
+
+        }
+        if (Input.GetKeyUp(KeyCode.Alpha4))
+        {
+            SceneManager.LoadScene("GroceryStore");
+
+        }
     }
 
     public void AdvanceLevel()
