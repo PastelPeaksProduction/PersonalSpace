@@ -21,6 +21,8 @@ public class Menu : MonoBehaviour
     private bool HideMainTrans = false;
     private bool ShowMainTrans;
 
+    private Vector3 prevPos;
+
     private void Start()
     {
 
@@ -43,6 +45,7 @@ public class Menu : MonoBehaviour
 
     public void ShowControls()
     {
+        prevPos = InstrucParent.transform.position;
         HideMainTrans = true;
         ControlTrans = true;
     }
@@ -57,12 +60,12 @@ public class Menu : MonoBehaviour
         if (ShowMainTrans)
         {
             HideMainTrans = false;
-
-            InstrucParent.transform.position = Vector3.MoveTowards(InstrucParent.transform.position, new Vector3(-122, 50, -251), 22 * Time.deltaTime);
+            MoveCam(OrigMainPos, ref ShowMainTrans);
+            InstrucParent.transform.position = Vector3.MoveTowards(InstrucParent.transform.position, prevPos, 30 * Time.deltaTime);
 
 
             MainMenuParent.GetComponent<RectTransform>().rotation = Quaternion.RotateTowards(MainMenuParent.GetComponent<RectTransform>().rotation, BackMainPos.GetComponent<RectTransform>().rotation, 13 * Time.deltaTime);
-            MoveCam(OrigMainPos, ref ShowMainTrans);
+            
         }
         if (ControlTrans)
         {
