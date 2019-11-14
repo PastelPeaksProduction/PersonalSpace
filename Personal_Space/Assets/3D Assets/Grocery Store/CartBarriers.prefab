@@ -487,6 +487,7 @@ GameObject:
   - component: {fileID: 4665234716170047308}
   - component: {fileID: 5237181765403303891}
   - component: {fileID: 6373108936432158974}
+  - component: {fileID: 210939190260306366}
   m_Layer: 0
   m_Name: CartBarriers
   m_TagString: Untagged
@@ -543,6 +544,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.043385636, y: 0.08162041, z: 0.20919229}
   m_Center: {x: -0.00017260484, y: 0.04020552, z: 0.0010296345}
+--- !u!208 &210939190260306366
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8567367773719903583}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.0225, y: 0.0185, z: 0.105}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.018, z: 0.001}
+  m_TimeToStationary: 0.5
 --- !u!1 &8797621085833689899
 GameObject:
   m_ObjectHideFlags: 0

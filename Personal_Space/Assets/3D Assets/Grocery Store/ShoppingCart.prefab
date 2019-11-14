@@ -2449,6 +2449,7 @@ GameObject:
   - component: {fileID: 6274995844089343816}
   - component: {fileID: 8154716705564515279}
   - component: {fileID: 7103337418395657268}
+  - component: {fileID: 5124729947973988074}
   m_Layer: 0
   m_Name: ShoppingCart
   m_TagString: Untagged
@@ -2507,6 +2508,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!208 &5124729947973988074
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7011570951379328347}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.0125, y: 0.0185, z: 0.0195}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.018, z: -0.0015}
+  m_TimeToStationary: 0.5
 --- !u!1 &7241853909636212874
 GameObject:
   m_ObjectHideFlags: 0
