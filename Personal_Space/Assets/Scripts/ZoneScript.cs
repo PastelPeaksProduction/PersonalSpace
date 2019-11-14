@@ -155,4 +155,9 @@ public class ZoneScript : MonoBehaviour
             zoneThreat = -zoneScaling * dangerScale* enemyCount;
         }
     }
+
+    public bool getPlayerInZone()
+    {
+        return playerInZone;
+    }
 }

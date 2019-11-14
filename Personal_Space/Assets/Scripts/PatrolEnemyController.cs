@@ -10,6 +10,8 @@
         private NavMeshAgent agent;
         private float agentSpeed;
 
+        public float waitTime;
+
         private bool waiting = false;
         void Start () {
             agent = GetComponent<NavMeshAgent>();
@@ -53,7 +55,7 @@
 
         private IEnumerator Loiter()
         {
-             yield return new WaitForSeconds(4f);
+             yield return new WaitForSeconds(waitTime);
              agent.speed = agentSpeed;
              GotoNextPoint();
              waiting = false;
