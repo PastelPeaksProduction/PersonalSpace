@@ -7,19 +7,32 @@ public class BackgroundSoundController : MonoBehaviour
     public AudioSource backgroundSound;
     public AudioSource stressSound;
     public AudioSource calmSound;
+    public AudioSource collectableSound;
 
-
+    [Range(0.0f,1.0f)]
     public float backgroundNormal;
+    [Range(0.0f,1.0f)]
     public float backgroundStop;
+    [Range(0.0f,1.0f)]
     public float backgroundZone;
 
+    [Range(0.0f,1.0f)]
     public float calmVolume;
+    [Range(0.0f,1.0f)]
     public float calmStop;
+    [Range(-3.0f, 3.0f)]
+    public float calmPitch;
 
+    [Range(0.0f,1.0f)]
     public float stressVolume;
+    [Range(0.0f,1.0f)]
     public float stressStop;
+    [Range(-3.0f, 3.0f)]
+    public float stressPitch;
 
+    [Range(0.0f,1.0f)]
     public float lowPassStop;
+    [Range(0.0f,1.0f)]
     public float lowPassMoving;
 
     private bool isMoving;
@@ -29,6 +42,8 @@ public class BackgroundSoundController : MonoBehaviour
     void Start()
     {
         backgroundVolume = backgroundNormal;
+        calmSound.pitch = calmPitch;
+        stressSound.pitch = stressPitch;
     }
 
     void Update()
@@ -59,6 +74,11 @@ public class BackgroundSoundController : MonoBehaviour
                 stressSound.Play();
                 stressSound.volume = stressVolume;
             }
+        }
+
+        if (other.gameObject.CompareTag("Collectible"))
+        {
+            collectableSound.Play();
         }
     }
 
