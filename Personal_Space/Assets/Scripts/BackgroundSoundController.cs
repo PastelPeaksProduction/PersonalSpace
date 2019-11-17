@@ -14,26 +14,44 @@ public class BackgroundSoundController : MonoBehaviour
     [Range(0.0f,1.0f)]
     public float backgroundStop;
     [Range(0.0f,1.0f)]
-    public float backgroundZone;
+    public float backgroundZoneMoving;
+    [Range(0.0f,1.0f)]
+    public float backgroundZoneStop;
+
+    [Range(-3.0f, 3.0f)]
+    public float backgroundPitchStop;
+    [Range(-3.0f, 3.0f)]
+    public float backgroundPitchMoving;
+
+
 
     [Range(0.0f,1.0f)]
     public float calmVolume;
     [Range(0.0f,1.0f)]
     public float calmStop;
     [Range(-3.0f, 3.0f)]
-    public float calmPitch;
+    public float calmPitchStop;
+    [Range(-3.0f, 3.0f)]
+    public float calmPitchMoving;
+
 
     [Range(0.0f,1.0f)]
     public float stressVolume;
     [Range(0.0f,1.0f)]
     public float stressStop;
     [Range(-3.0f, 3.0f)]
-    public float stressPitch;
+    public float stressPitchStop;
+    [Range(-3.0f, 3.0f)]
+    public float stressPitchMoving;
 
-    [Range(0.0f,1.0f)]
+
+    [Range(10.0f,22000.0f)]
     public float lowPassStop;
-    [Range(0.0f,1.0f)]
+    [Range(10.0f,22000.0f)]
     public float lowPassMoving;
+
+    [Range(0.0f, 1.0f)]
+    public float collectibleVolume;
 
     private bool isMoving;
     private bool inSafe = false;
@@ -42,8 +60,7 @@ public class BackgroundSoundController : MonoBehaviour
     void Start()
     {
         backgroundVolume = backgroundNormal;
-        calmSound.pitch = calmPitch;
-        stressSound.pitch = stressPitch;
+        collectableSound.volume = collectibleVolume;
     }
 
     void Update()
@@ -56,7 +73,7 @@ public class BackgroundSoundController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("SafeZone"))
         {
-            backgroundVolume = backgroundZone;
+            backgroundVolume = backgroundZoneMoving;
             inSafe = true;
             calmSound.Play();
             calmSound.volume = calmVolume;
@@ -67,7 +84,7 @@ public class BackgroundSoundController : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("DangerZone"))
         {
-            backgroundVolume = backgroundZone;
+            backgroundVolume = backgroundZoneMoving;
             inDanger = true;
             if (!inSafe)
             {
@@ -115,20 +132,38 @@ public class BackgroundSoundController : MonoBehaviour
         {
             backgroundSound.volume = backgroundVolume;
             backgroundSound.GetComponent<AudioLowPassFilter>().cutoffFrequency = lowPassMoving;
+            backgroundSound.pitch = backgroundPitchMoving;
+
             stressSound.volume = stressVolume;
             stressSound.GetComponent<AudioLowPassFilter>().cutoffFrequency = lowPassMoving;
+            stressSound.pitch = stressPitchMoving;
+
             calmSound.volume = calmVolume;
             calmSound.GetComponent<AudioLowPassFilter>().cutoffFrequency = lowPassMoving;
+            calmSound.pitch = calmPitchMoving;
 
         }
         else
         {
-            backgroundSound.volume = backgroundStop;
+            if (inDanger || inSafe)
+            {
+                backgroundSound.volume = backgroundZoneStop;
+            }
+            else
+            {
+                backgroundSound.volume = backgroundStop;
+            }
             backgroundSound.GetComponent<AudioLowPassFilter>().cutoffFrequency = lowPassStop;
+            backgroundSound.pitch = backgroundPitchStop;
+
             stressSound.volume = stressStop;
             stressSound.GetComponent<AudioLowPassFilter>().cutoffFrequency = lowPassStop;
+            stressSound.pitch = stressPitchStop;
+
             calmSound.volume = calmStop;
             calmSound.GetComponent<AudioLowPassFilter>().cutoffFrequency = lowPassStop;
+            calmSound.pitch = calmPitchStop;
+
         }
 
     }
