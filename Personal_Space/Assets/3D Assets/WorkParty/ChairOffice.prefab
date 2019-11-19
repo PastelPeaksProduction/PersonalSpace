@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &2439004685299863448
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7386259140300980812}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.91073, y: 1.502573, z: 0.950049}
-  m_Center: {x: -0.034354, y: 0.7602545, z: -0.3108305}
 --- !u!54 &7171020767810507270
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29,6 +16,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &2439004685299863448
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386259140300980812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.4643803, y: 9.015438, z: 5.700294}
+  m_Center: {x: -0.20612395, y: 4.5615273, z: -1.8649828}
 --- !u!1001 &2809844968379039730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40,6 +40,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ChairOffice
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647662663180615102, guid: 361bee2e272cbf34e930c02a4bb2767c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 361bee2e272cbf34e930c02a4bb2767c,
         type: 3}
@@ -96,11 +101,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4647662663180615102, guid: 361bee2e272cbf34e930c02a4bb2767c,
+    - target: {fileID: -2589396447218874659, guid: 361bee2e272cbf34e930c02a4bb2767c,
         type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 58c84cb7139f884498d11deb2baf64ad, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 361bee2e272cbf34e930c02a4bb2767c, type: 3}
 --- !u!1 &7386259140300980812 stripped
