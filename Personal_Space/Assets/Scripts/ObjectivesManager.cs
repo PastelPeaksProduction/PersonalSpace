@@ -4,97 +4,136 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectivesManager : MonoBehaviour
 {
 
     /* Object to trigger Objective */
     public string gameStartObjectiveDescription;
+    public Sprite gameStartEmoji;
+
     public GameObject firstObject_1;
     public string firstDescription;
+    public Sprite firstEmoji;
+
     public GameObject secondObject_2;
     public string secondDescription;
+    public Sprite secondEmoji;
+
     public GameObject thirdObject_3;
     public string thirdDescription;
+    public Sprite thirdEmoji;
+
     public GameObject fourthObject_4;
     public string fourthDescription;
+    public Sprite fourthEmoji;
+
     public GameObject fifthObject_5;
     public string fifthDescription;
+    public Sprite fifthEmoji;
 
     public GameObject pauseDialogText;
+    public float reminderTime;
 
 
-    private List<KeyValuePair<GameObject, string>> Objectives;
+    private List<Objective> Objectives;
     private int objectiveCount = 0;
+    private float _reminderTime;
 
     // Start is called before the first frame update
     void Start()
     {
-        Objectives = new List<KeyValuePair<GameObject, string>>();
+        _reminderTime = reminderTime;
+
+        Objectives = new List<Objective>();
+
         if (firstObject_1 != null)
         {
-            Objectives.Add(new KeyValuePair<GameObject, string>(firstObject_1, firstDescription));
+            Objectives.Add(new Objective(firstObject_1, firstDescription,firstEmoji));
+
         }
         if (secondObject_2 != null)
         {
-            Objectives.Add(new KeyValuePair<GameObject, string>(secondObject_2, secondDescription));
+            Objectives.Add(new Objective(secondObject_2, secondDescription, secondEmoji));
         }
         if (thirdObject_3 != null)
         {
-            Objectives.Add(new KeyValuePair<GameObject, string>(thirdObject_3, thirdDescription));
+            Objectives.Add(new Objective(thirdObject_3, thirdDescription, thirdEmoji));
         }
         if (fourthObject_4 != null)
         {
-            Objectives.Add(new KeyValuePair<GameObject, string>(fourthObject_4, fourthDescription));
+            Objectives.Add(new Objective(fourthObject_4, fourthDescription, fourthEmoji));
         }
         if (fifthObject_5 != null)
         {
-            Objectives.Add(new KeyValuePair<GameObject, string>(fifthObject_5, fifthDescription));
+            Objectives.Add(new Objective(fifthObject_5, fifthDescription, fifthEmoji));
         }
-
-        GetComponent<DialogManager>().showDialog(gameStartObjectiveDescription);
-        pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        StartCoroutine(GameStartDelay(3));
+        
 
     }
-
-
-    // public function when player triggers objective tag
-    public void OnObjectiveTriggered(GameObject obj)
+    IEnumerator GameStartDelay(int sec)
     {
-        Debug.Log("Triggered");
-        if (objectiveCount < Objectives.Count &&  Objectives[objectiveCount].Key == obj)
+        yield return new WaitForSeconds(sec);
+        GetComponent<TextBubble>().SpawnBubble(gameStartEmoji);
+    }
+
+    private void Update()
+    {
+        Reminder();
+    }
+    private void Reminder()
+    {
+        _reminderTime -= Time.deltaTime;
+        if(_reminderTime < 0)
         {
-            Debug.Log("OBJ NAME: " + obj.name);
-            // Pass the corresponding description to dialogmng
-            GetComponent<DialogManager>().showDialog(Objectives[objectiveCount].Value);
-            GameObject child = obj.gameObject.transform.GetChild(0).gameObject;
-            Debug.Log("CHILD NAME: " + child.name);
-            child.GetComponent<MeshRenderer>().enabled = false;
-            
-            pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[objectiveCount].Value;
-
-
-            objectiveCount++;
-            if(objectiveCount < Objectives.Count)
+            _reminderTime = reminderTime;
+            if(objectiveCount == 0)
             {
-                GameObject nextObjective = Objectives[objectiveCount].Key;
-                Debug.Log("Next NAME: " + nextObjective.name);
-                GameObject nextChild = nextObjective.transform.GetChild(0).gameObject;
-                nextChild.GetComponent<MeshRenderer>().enabled = true;
+                GetComponent<TextBubble>().SpawnBubble(gameStartEmoji);
             }
             else
             {
-                this.GetComponent<GameController>().AdvanceLevel();
+                GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount - 1].ObjectiveEmoji);
+            }
+        }
+    }
+    // public function when player triggers objective tag
+    public void OnObjectiveTriggered(GameObject obj)
+    {
+        if (objectiveCount < Objectives.Count &&  Objectives[objectiveCount].ObjectiveObj == obj)
+        {
+            _reminderTime = reminderTime;
+            // Pass the corresponding description to dialogmng
+            GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount].ObjectiveEmoji);
+            
+            pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[objectiveCount].ObjectiveDes;
+
+            if(++objectiveCount < Objectives.Count)
+            {
+                GameObject nextObjective = Objectives[objectiveCount].ObjectiveObj;
+            }
+            else
+            {
+                GetComponent<GameController>().AdvanceLevel();
             }
            
         }
         
+    }
+
+    private class Objective
+    {
+        public GameObject ObjectiveObj { get; set; }
+        public string ObjectiveDes { get; set; }
+        public Sprite ObjectiveEmoji { get; set; }
+        public Objective(GameObject objectiveObj, string objectiveDes, Sprite objectiveEmoji)
+        {
+            ObjectiveObj = objectiveObj;
+            ObjectiveDes = objectiveDes;
+            ObjectiveEmoji = objectiveEmoji;
+        }
     }
 
 }

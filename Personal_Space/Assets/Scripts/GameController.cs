@@ -86,14 +86,14 @@ public class GameController : MonoBehaviour
 
     public void AdvanceLevel()
     {
-        if(SceneManager.GetActiveScene().name == "House Party")
+        if(SceneManager.GetActiveScene().name == "03House Party")
         {
-            SceneManager.LoadScene("StartMenu");
+            SceneManager.LoadScene("00StartMenu");
         }
 
-        if (SceneManager.GetActiveScene().name == "SchoolDance")
+        if (SceneManager.GetActiveScene().name == "02SchoolDance" || SceneManager.GetActiveScene().name == "SchoolDanceUI")
         {
-            SceneManager.LoadScene("House Party");
+            SceneManager.LoadScene("03HouseParty");
         }
     }
 }
