@@ -121,6 +121,7 @@ public class BackgroundSoundController : MonoBehaviour
             backgroundVolume = backgroundNormal;
         }
     }
+    
 
     /// <summary>
     /// helper function that sets volume based on movement
