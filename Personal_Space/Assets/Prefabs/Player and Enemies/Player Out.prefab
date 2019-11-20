@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 211878629865310591}
   - component: {fileID: 8721579726589613207}
   - component: {fileID: 5296566397839048204}
+  - component: {fileID: -7364934840280512622}
   m_Layer: 0
   m_Name: Player Out
   m_TagString: Player
@@ -265,6 +266,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 2600146800702947624}
   aerialCamera: {fileID: 0}
+--- !u!114 &-7364934840280512622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600146800666572996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d05958af40c4fbe4bab3cd757b6f3de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundSound: {fileID: 0}
+  stressSound: {fileID: 0}
+  calmSound: {fileID: 0}
+  collectableSound: {fileID: 0}
+  backgroundNormal: 0.65
+  backgroundStop: 0.1
+  backgroundZoneMoving: 0.05
+  backgroundZoneStop: 0.025
+  backgroundPitchStop: 0.65
+  backgroundPitchMoving: 1
+  calmVolume: 1
+  calmStop: 0.75
+  calmPitchStop: 0.5
+  calmPitchMoving: 1.25
+  stressVolume: 1
+  stressStop: 0.75
+  stressPitchStop: 0.5
+  stressPitchMoving: 1.25
+  lowPassStop: 2500
+  lowPassMoving: 5000
+  collectibleVolume: 0.5
 --- !u!1 &2600146800702947624
 GameObject:
   m_ObjectHideFlags: 0
