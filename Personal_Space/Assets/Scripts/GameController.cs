@@ -11,6 +11,8 @@ public class GameController : MonoBehaviour
     public GameObject deadDialog;
     public GameObject Stressbar;
     public GameObject PlayerAngle;
+    public GameObject FOV;
+    public GameObject TextBubbleCanvas;
     private bool activeDialog = false;
     public bool isPaused = false;
 
@@ -58,6 +60,9 @@ public class GameController : MonoBehaviour
             pauseDialog.SetActive(true);
             Stressbar.SetActive(true);
             PlayerAngle.SetActive(true);
+            FOV.SetActive(true);
+            TextBubbleCanvas.SetActive(false);
+
             isPaused = true;
         }
         if (Input.GetKeyUp(KeyCode.Tab) || Input.GetKeyUp("joystick button 17") || Input.GetKeyUp("joystick button 1"))
@@ -66,6 +71,8 @@ public class GameController : MonoBehaviour
             pauseDialog.SetActive(false);
             Stressbar.SetActive(false);
             PlayerAngle.SetActive(false);
+            FOV.SetActive(false);
+            TextBubbleCanvas.SetActive(true);
 
             isPaused = false;
         }

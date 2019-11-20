@@ -23,6 +23,6 @@ public class PlayerAngle : MonoBehaviour
         var playerRo = Player.transform.eulerAngles;
 
         AnglePos.eulerAngles = new Vector3(0, 0, -playerRo.y);
-        AnglePos.anchoredPosition = uti.GetWorldPos(CanvasPos, Player) + offset;
+        AnglePos.anchoredPosition = uti.GetWorldPos(CanvasPos, Player,false) + offset;
     }
 }

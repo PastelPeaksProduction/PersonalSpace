@@ -21,7 +21,7 @@ public class TextBubble : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Canvas = GameObject.Find("Canvas");
+        Canvas = GameObject.Find("OverLayFOVCanvas");
         CanvasTrans = Canvas.GetComponent<RectTransform>();
     }
 
@@ -52,7 +52,7 @@ public class TextBubble : MonoBehaviour
 
     private void UpdatePos()
     {
-        TextBubbleTrans.anchoredPosition = CanvasUtil.GetWorldPos(CanvasTrans, gameObject) + offset;
+        TextBubbleTrans.anchoredPosition = CanvasUtil.GetWorldPos(CanvasTrans, gameObject,true) + offset;
     }
 
 
