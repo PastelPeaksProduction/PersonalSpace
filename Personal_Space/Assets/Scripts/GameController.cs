@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
 
     public GameObject pauseDialog;
     public GameObject deadDialog;
+    public GameObject Stressbar;
+    public GameObject PlayerAngle;
     private bool activeDialog = false;
     public bool isPaused = false;
 
@@ -54,12 +56,17 @@ public class GameController : MonoBehaviour
         {
             PauseGame();
             pauseDialog.SetActive(true);
+            Stressbar.SetActive(true);
+            PlayerAngle.SetActive(true);
             isPaused = true;
         }
         if (Input.GetKeyUp(KeyCode.Tab) || Input.GetKeyUp("joystick button 17") || Input.GetKeyUp("joystick button 1"))
         {
             ContinueGame();
             pauseDialog.SetActive(false);
+            Stressbar.SetActive(false);
+            PlayerAngle.SetActive(false);
+
             isPaused = false;
         }
         if (Input.GetKeyUp(KeyCode.Alpha1))

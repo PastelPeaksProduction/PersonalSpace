@@ -12,14 +12,14 @@ public class AerialSwitchScript : MonoBehaviour
 
     private bool isPaused;
     private bool pauseUpdated = false;
-    private bool playUpdated = true; 
-    
+    private bool playUpdated = true;
+
     // Start is called before the first frame update
     void Start()
     {
         aerialListener = aerialCamera.GetComponent<AudioListener>();
         mainListener = mainCamera.GetComponent<AudioListener>();
-        isPaused = GetComponent<GameController>().isPaused; 
+        isPaused = GetComponent<GameController>().isPaused;
     }
 
     // Update is called once per frame
@@ -29,29 +29,26 @@ public class AerialSwitchScript : MonoBehaviour
         isPaused = GetComponent<GameController>().isPaused;
         if (isPaused)
         {
-            if(!pauseUpdated)
-            {
-                mainCamera.SetActive(false);
-                mainListener.enabled = false;
-                aerialCamera.SetActive(true);
-                aerialListener.enabled = true;
-                pauseUpdated = true;
-                playUpdated = false; 
-            }
-            
+
+            mainCamera.SetActive(false);
+            mainListener.enabled = false;
+            aerialCamera.SetActive(true);
+            aerialListener.enabled = true;
+            pauseUpdated = true;
+            playUpdated = false;
+
+
         }
         else
         {
-           if (!playUpdated)
-            {
-                mainCamera.SetActive(true);
-                mainListener.enabled = true;
-                aerialCamera.SetActive(false);
-                aerialListener.enabled = false;
-                playUpdated = true;
-                pauseUpdated = false;
-            }
-            
+
+            mainCamera.SetActive(true);
+            mainListener.enabled = true;
+            aerialCamera.SetActive(false);
+            aerialListener.enabled = false;
+            playUpdated = true;
+
+
         }
     }
 }
