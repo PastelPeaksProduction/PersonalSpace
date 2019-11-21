@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,12 +13,15 @@ public class PlayerController : MonoBehaviour
 
     public float health = 100;
     public float neutralDamage = -0.01f;
+    public float regenCooldown = 10.0f;
 
     private Rigidbody rigidBody;
     private Vector3 moveInput;
     private Vector3 moveVelocity;
     private Quaternion currentRotation;
     private float threatLevel;
+    private bool canRegen = false;
+    private float nextRegenTime = 0;
 
     
     void Start()
@@ -34,6 +38,14 @@ public class PlayerController : MonoBehaviour
         if (isMoving || isBreathing)
         {
             updateHealth();
+        }
+        if (isMoving)
+        {
+            nextRegenTime -= Time.deltaTime;
+        }
+        if (!canRegen && nextRegenTime <= 0)
+        {
+            canRegen = true;
         }
         checkExit();
 
@@ -147,6 +159,13 @@ public class PlayerController : MonoBehaviour
         if(health >= 100)
         {
             health = 100;
+        }
+        if (canRegen && isBreathing)
+        {
+            double healthInterval = Math.Truncate(health / 20);
+            health = (float)((healthInterval + 1) * 20) + 5;
+            nextRegenTime = regenCooldown;
+            canRegen = false;
         }
         //if(health <= 0)
         //{
