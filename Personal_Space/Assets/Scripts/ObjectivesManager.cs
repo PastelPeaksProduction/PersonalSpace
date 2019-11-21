@@ -35,8 +35,9 @@ public class ObjectivesManager : MonoBehaviour
 
     public GameObject pauseDialogText;
     public float reminderTime;
+    public GameObject ObjMarker;
 
-
+    private ObjectiveMarker ObjMarkerSingle;
     private List<Objective> Objectives;
     private int objectiveCount = 0;
     private float _reminderTime;
@@ -44,6 +45,7 @@ public class ObjectivesManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ObjMarkerSingle = ObjMarker.GetComponent<ObjectiveMarker>();
         _reminderTime = reminderTime;
 
         Objectives = new List<Objective>();
@@ -71,6 +73,7 @@ public class ObjectivesManager : MonoBehaviour
         }
         StartCoroutine(GameStartDelay(3));
         pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
+        ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);
 
 
     }
@@ -96,8 +99,9 @@ public class ObjectivesManager : MonoBehaviour
             }
             else
             {
-                GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount - 1].ObjectiveEmoji);
+                GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount - 1].ObjectiveEmoji);               
             }
+
         }
     }
     // public function when player triggers objective tag
@@ -112,16 +116,13 @@ public class ObjectivesManager : MonoBehaviour
             GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount].ObjectiveEmoji);
 
             pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[objectiveCount].ObjectiveDes;
-            Debug.Log("count: " + objectiveCount + "/" + Objectives.Count);
 
             if (++objectiveCount < Objectives.Count)
             {
-                GameObject nextObjective = Objectives[objectiveCount].ObjectiveObj;
+                ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);       
             }
             else
             {
-                Debug.Log("count: " + objectiveCount + "/" + Objectives.Count);
-
                 GetComponent<GameController>().AdvanceLevel();
             }
            

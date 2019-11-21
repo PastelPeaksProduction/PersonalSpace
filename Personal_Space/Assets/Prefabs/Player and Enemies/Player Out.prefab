@@ -214,25 +214,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12ebf9d6b7361a345a3f53778ba178c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStartObjectiveDescription: 
-  gameStartEmoji: {fileID: 0}
+  gameStartObjectiveDescription: '[Max''s Party... God, I need to grab a DRINK....]'
+  gameStartEmoji: {fileID: 21300000, guid: 04f848685f19431488920c40bfb1ba09, type: 3}
   firstObject_1: {fileID: 0}
-  firstDescription: 
-  firstEmoji: {fileID: 0}
+  firstDescription: '[Better. Now where the hell is GLENN?]'
+  firstEmoji: {fileID: 21300000, guid: c7cdaff62e67de54485e1cbbc76e4ea1, type: 3}
   secondObject_2: {fileID: 0}
-  secondDescription: 
-  secondEmoji: {fileID: 0}
+  secondDescription: '[Am I drinking this too quick? Where''s the BATHROOM?]'
+  secondEmoji: {fileID: 21300000, guid: 1abd113efd0fb9440900a585166b159f, type: 3}
   thirdObject_3: {fileID: 0}
-  thirdDescription: 
-  thirdEmoji: {fileID: 0}
+  thirdDescription: 'Drunk Kid: I don''t- I don''t feel so good. Where did DOM go?
+    Dooooooom.'
+  thirdEmoji: {fileID: 21300000, guid: ac27288ff40a5c644a14dd823a759227, type: 3}
   fourthObject_4: {fileID: 0}
-  fourthDescription: 
-  fourthEmoji: {fileID: 0}
+  fourthDescription: Go check on your friend. I'm leaving.
+  fourthEmoji: {fileID: 21300000, guid: 69f762d366113384fac43f9b54979264, type: 3}
   fifthObject_5: {fileID: 0}
-  fifthDescription: 
+  fifthDescription: Well done
   fifthEmoji: {fileID: 0}
   pauseDialogText: {fileID: 0}
-  reminderTime: 0
+  reminderTime: 8
+  ObjMarker: {fileID: 0}
 --- !u!114 &211878629865310591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed56437eb39667043927910375491594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
+  mainCamera: {fileID: 2600146800702947624}
   aerialCamera: {fileID: 0}
   pauseDialog: {fileID: 0}
   deadDialog: {fileID: 0}
@@ -266,6 +268,7 @@ MonoBehaviour:
   PlayerAngle: {fileID: 0}
   FOV: {fileID: 0}
   TextBubbleCanvas: {fileID: 0}
+  ObjMarker: {fileID: 0}
 --- !u!114 &5296566397839048204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,6 +497,7 @@ MonoBehaviour:
   PlayerAngle: {fileID: 0}
   FOV: {fileID: 0}
   TextBubbleCanvas: {fileID: 0}
+  ObjMarker: {fileID: 0}
 --- !u!114 &2600146800702947630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,6 +616,7 @@ MonoBehaviour:
   fifthEmoji: {fileID: 0}
   pauseDialogText: {fileID: 0}
   reminderTime: 0
+  ObjMarker: {fileID: 0}
 --- !u!1 &2600146800842270592
 GameObject:
   m_ObjectHideFlags: 0
