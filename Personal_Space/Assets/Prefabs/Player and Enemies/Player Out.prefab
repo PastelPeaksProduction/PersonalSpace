@@ -51,6 +51,8 @@ GameObject:
   - component: {fileID: 8721579726589613207}
   - component: {fileID: 5296566397839048204}
   - component: {fileID: -7364934840280512622}
+  - component: {fileID: 8323184913114051894}
+  - component: {fileID: 1481121174640912783}
   m_Layer: 0
   m_Name: Player Out
   m_TagString: Player
@@ -165,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c07e3a645c44a2bb2076dbe9b4662e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4.5
+  moveSpeed: 20
   canMove: 1
   isMoving: 0
   isBreathing: 0
@@ -196,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e596fb55944f9834696dd62d2660fb40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numOfBackPacks: 0
+  numOfBackPacks: 1
   numOfJackets: 0
   backPack: {fileID: 0}
   jacket: {fileID: 0}
@@ -213,17 +215,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStartObjectiveDescription: 
+  gameStartEmoji: {fileID: 0}
   firstObject_1: {fileID: 0}
   firstDescription: 
+  firstEmoji: {fileID: 0}
   secondObject_2: {fileID: 0}
   secondDescription: 
+  secondEmoji: {fileID: 0}
   thirdObject_3: {fileID: 0}
   thirdDescription: 
+  thirdEmoji: {fileID: 0}
   fourthObject_4: {fileID: 0}
   fourthDescription: 
+  fourthEmoji: {fileID: 0}
   fifthObject_5: {fileID: 0}
   fifthDescription: 
+  fifthEmoji: {fileID: 0}
   pauseDialogText: {fileID: 0}
+  reminderTime: 0
 --- !u!114 &211878629865310591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,9 +258,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed56437eb39667043927910375491594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  aerialCamera: {fileID: 0}
   pauseDialog: {fileID: 0}
   deadDialog: {fileID: 0}
-  isPaused: 0
+  Stressbar: {fileID: 0}
+  PlayerAngle: {fileID: 0}
+  FOV: {fileID: 0}
+  TextBubbleCanvas: {fileID: 0}
 --- !u!114 &5296566397839048204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +313,41 @@ MonoBehaviour:
   lowPassStop: 2500
   lowPassMoving: 5000
   collectibleVolume: 0.5
+--- !u!114 &8323184913114051894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600146800666572996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1921368b69e5e449925d6b68faa83d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextBubblePrefab: {fileID: 2230101442294207946, guid: 64736a05c4facdf4da1e8ca3183d9cd4,
+    type: 3}
+  offset: {x: 80, y: 100}
+  ExistingTime: 3
+--- !u!95 &1481121174640912783
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600146800666572996}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 306d79ae6ec4b9340b0ffd2005ee7b66, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2600146800702947624
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,9 +486,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed56437eb39667043927910375491594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  aerialCamera: {fileID: 0}
   pauseDialog: {fileID: 0}
   deadDialog: {fileID: 0}
-  isPaused: 0
+  Stressbar: {fileID: 0}
+  PlayerAngle: {fileID: 0}
+  FOV: {fileID: 0}
+  TextBubbleCanvas: {fileID: 0}
 --- !u!114 &2600146800702947630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,17 +594,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStartObjectiveDescription: 
+  gameStartEmoji: {fileID: 0}
   firstObject_1: {fileID: 0}
   firstDescription: 
+  firstEmoji: {fileID: 0}
   secondObject_2: {fileID: 0}
   secondDescription: 
+  secondEmoji: {fileID: 0}
   thirdObject_3: {fileID: 0}
   thirdDescription: 
+  thirdEmoji: {fileID: 0}
   fourthObject_4: {fileID: 0}
   fourthDescription: 
+  fourthEmoji: {fileID: 0}
   fifthObject_5: {fileID: 0}
   fifthDescription: 
+  fifthEmoji: {fileID: 0}
   pauseDialogText: {fileID: 0}
+  reminderTime: 0
 --- !u!1 &2600146800842270592
 GameObject:
   m_ObjectHideFlags: 0

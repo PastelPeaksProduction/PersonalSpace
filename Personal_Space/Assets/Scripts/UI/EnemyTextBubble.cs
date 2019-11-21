@@ -8,7 +8,7 @@ public class EnemyTextBubble : MonoBehaviour
 {
 
     public GameObject TextBubblePrefab;
-    
+
     public Sprite Emoji;
     public Vector3 offset;
     public int ExistTime;
@@ -21,14 +21,17 @@ public class EnemyTextBubble : MonoBehaviour
     private GameObject TextBubbleObj;
     private RectTransform TextBubbleTrans;
     private RectTransform CanvasTrans;
+    private GameController Game;
     private float _reminderTime;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         _reminderTime = ReminderTime;
         Canvas = GameObject.Find("Canvas2");
         Player = GameObject.Find("Player");
+        Game = Player.GetComponent<GameController>();
         CanvasTrans = Canvas.GetComponent<RectTransform>();
         SpawnBubble();
     }
@@ -36,10 +39,13 @@ public class EnemyTextBubble : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Reminder();
-        if (TextBubbleObj != null)
+        if (!Game.isGamePaused())
         {
-            UpdatePos();
+            Reminder();
+            if (TextBubbleObj != null && !Game.isGamePaused())
+            {
+                UpdatePos();
+            }
         }
     }
 

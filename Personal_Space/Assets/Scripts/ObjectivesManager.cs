@@ -70,7 +70,8 @@ public class ObjectivesManager : MonoBehaviour
             Objectives.Add(new Objective(fifthObject_5, fifthDescription, fifthEmoji));
         }
         StartCoroutine(GameStartDelay(3));
-        
+        pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
+
 
     }
     IEnumerator GameStartDelay(int sec)
@@ -102,20 +103,25 @@ public class ObjectivesManager : MonoBehaviour
     // public function when player triggers objective tag
     public void OnObjectiveTriggered(GameObject obj)
     {
+
         if (objectiveCount < Objectives.Count &&  Objectives[objectiveCount].ObjectiveObj == obj)
         {
+
             _reminderTime = reminderTime;
             // Pass the corresponding description to dialogmng
             GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount].ObjectiveEmoji);
-            
-            pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[objectiveCount].ObjectiveDes;
 
-            if(++objectiveCount < Objectives.Count)
+            pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[objectiveCount].ObjectiveDes;
+            Debug.Log("count: " + objectiveCount + "/" + Objectives.Count);
+
+            if (++objectiveCount < Objectives.Count)
             {
                 GameObject nextObjective = Objectives[objectiveCount].ObjectiveObj;
             }
             else
             {
+                Debug.Log("count: " + objectiveCount + "/" + Objectives.Count);
+
                 GetComponent<GameController>().AdvanceLevel();
             }
            
