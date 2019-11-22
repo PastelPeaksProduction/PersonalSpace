@@ -10,15 +10,21 @@ namespace UIUtil
         {
             //then you calculate the position of the UI element
             //0,0 for the canvas is at the center of the screen, whereas WorldToViewPortPoint treats the lower left corner as 0,0. Because of this, you need to subtract the height / width of the canvas * 0.5f to get the correct position.
-            Vector2 ViewportPosition = new Vector2();
+            Vector2 ViewportPosition = new Vector2(-200,-200);
+
             if (main)
             {
-                ViewportPosition = Camera.main.WorldToViewportPoint(WorldObject.transform.position);
-
+                if (Camera.main != null)
+                {
+                    ViewportPosition = Camera.main.WorldToViewportPoint(WorldObject.transform.position);
+                }
             }
             else
             {
-                ViewportPosition = Camera.current.WorldToViewportPoint(WorldObject.transform.position);
+                if (Camera.current != null)
+                {
+                    ViewportPosition = Camera.current.WorldToViewportPoint(WorldObject.transform.position);
+                }
             }
             Vector2 WorldObject_ScreenPosition = new Vector2(
                 ((ViewportPosition.x * CanvasRect.sizeDelta.x) - (CanvasRect.sizeDelta.x * 0.5f)),

@@ -7,39 +7,101 @@ public class GameController : MonoBehaviour
 {
     private PlayerController player;
 
+    public GameObject mainCamera;
+    public GameObject aerialCamera;
+    private AudioListener aerialListener;
+    private AudioListener mainListener;
+
     public GameObject pauseDialog;
     public GameObject deadDialog;
     public GameObject Stressbar;
     public GameObject PlayerAngle;
     public GameObject FOV;
     public GameObject TextBubbleCanvas;
-    private bool activeDialog = false;
-    public bool isPaused = false;
+    public GameObject ObjMarker;
+
+    private bool isPaused;
 
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
-
+        aerialListener = aerialCamera.GetComponent<AudioListener>();
+        mainListener = mainCamera.GetComponent<AudioListener>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckGameStatus();
+
+        CheckPause();
+
+         CheckGameStatus();
     }
 
     private void PauseGame()
     {
         Time.timeScale = 0;
+        player.canMove = false;
     }
 
     private void ContinueGame()
     {
         Time.timeScale = 1;
+        player.canMove = true;
+    }
+    private void CheckPause()
+    {
+        if (!isPaused)
+        {
+            if ((Input.GetKeyDown(KeyCode.Tab) || Input.GetKey("joystick button 17") || Input.GetKey("joystick button 1")))
+            {
+                Debug.Log("switch" + isPaused);
+                isPaused = true;
+                PauseGame();
+
+
+                pauseDialog.SetActive(true);
+                Stressbar.SetActive(true);
+                PlayerAngle.SetActive(true);
+                FOV.SetActive(true);
+                TextBubbleCanvas.SetActive(false);
+                mainCamera.SetActive(false);
+                mainListener.enabled = false;
+                aerialCamera.SetActive(true);
+                aerialListener.enabled = true;
+                ObjMarker.SetActive(true);
+            }
+        }
+        else
+        {
+            if ((Input.GetKeyUp(KeyCode.Tab) || Input.GetKey("joystick button 17") || Input.GetKey("joystick button 1")))
+            {
+                Debug.Log("switch2" + isPaused);
+
+                pauseDialog.SetActive(false);
+                Stressbar.SetActive(false);
+                PlayerAngle.SetActive(false);
+                FOV.SetActive(false);
+                TextBubbleCanvas.SetActive(true);
+                mainCamera.SetActive(true);
+                mainListener.enabled = true;
+                aerialCamera.SetActive(false);
+                aerialListener.enabled = false;
+                ObjMarker.SetActive(false);
+                ContinueGame();
+
+                isPaused = false;
+            }
+        }
     }
 
+    private void CheckContinue()
+    {
+
+
+    }
     private void CheckGameStatus()
     {
         if (player.health <= 0)
@@ -54,36 +116,14 @@ public class GameController : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
-        if (Input.GetKey(KeyCode.Tab) || Input.GetKey("joystick button 17") || Input.GetKey("joystick button 1"))
-        {
-            PauseGame();
-            pauseDialog.SetActive(true);
-            Stressbar.SetActive(true);
-            PlayerAngle.SetActive(true);
-            FOV.SetActive(true);
-            TextBubbleCanvas.SetActive(false);
-
-            isPaused = true;
-        }
-        if (Input.GetKeyUp(KeyCode.Tab) || Input.GetKeyUp("joystick button 17") || Input.GetKeyUp("joystick button 1"))
-        {
-            ContinueGame();
-            pauseDialog.SetActive(false);
-            Stressbar.SetActive(false);
-            PlayerAngle.SetActive(false);
-            FOV.SetActive(false);
-            TextBubbleCanvas.SetActive(true);
-
-            isPaused = false;
-        }
         if (Input.GetKeyUp(KeyCode.Alpha1))
         {
-            SceneManager.LoadScene("House Party");
+            SceneManager.LoadScene("03House Party");
 
         }
         if (Input.GetKeyUp(KeyCode.Alpha2))
         {
-            SceneManager.LoadScene("SchoolDance");
+            SceneManager.LoadScene("02SchoolDance");
 
         }
         if (Input.GetKeyUp(KeyCode.Alpha3))
@@ -100,14 +140,32 @@ public class GameController : MonoBehaviour
 
     public void AdvanceLevel()
     {
-        if(SceneManager.GetActiveScene().name == "03House Party")
+        if (SceneManager.GetActiveScene().name == "03HouseParty")
         {
-            SceneManager.LoadScene("00StartMenu");
+            SceneManager.LoadScene("SchoolDanceUI");
         }
 
         if (SceneManager.GetActiveScene().name == "02SchoolDance" || SceneManager.GetActiveScene().name == "SchoolDanceUI")
         {
             SceneManager.LoadScene("03HouseParty");
         }
+    }
+
+    private void CameraSwitch(bool tab)
+    {
+        if (tab && !mainCamera.activeSelf)
+        {
+
+        }
+        else if (tab && mainCamera.activeSelf)
+        {
+
+        }
+
+    }
+
+    public bool isGamePaused()
+    {
+        return isPaused;
     }
 }

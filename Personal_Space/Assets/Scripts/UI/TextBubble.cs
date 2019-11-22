@@ -17,10 +17,14 @@ public class TextBubble : MonoBehaviour
     private GameObject TextBubbleObj;
     private RectTransform TextBubbleTrans;
     private RectTransform CanvasTrans;
+    private GameController Game;
+
+    private bool isPaused;
 
     // Start is called before the first frame update
     void Start()
     {
+        Game = GetComponent<GameController>();
         Canvas = GameObject.Find("OverLayFOVCanvas");
         CanvasTrans = Canvas.GetComponent<RectTransform>();
     }
@@ -28,7 +32,7 @@ public class TextBubble : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TextBubbleObj != null)
+        if (TextBubbleObj != null && !Game.isGamePaused() && CanvasTrans != null)
         {
             UpdatePos();
         }
