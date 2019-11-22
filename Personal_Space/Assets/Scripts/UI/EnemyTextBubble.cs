@@ -27,7 +27,7 @@ public class EnemyTextBubble : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        offset = new Vector3(-2, 3);
         _reminderTime = ReminderTime;
         Canvas = GameObject.Find("EnemyBubbleCanvas");
         Player = GameObject.Find("Player");

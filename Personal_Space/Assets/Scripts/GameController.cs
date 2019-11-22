@@ -114,6 +114,7 @@ public class GameController : MonoBehaviour
             {
                 deadDialog.SetActive(false);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                ContinueGame();
             }
         }
         if (Input.GetKeyUp(KeyCode.Alpha1))
