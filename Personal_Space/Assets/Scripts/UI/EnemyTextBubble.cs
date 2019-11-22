@@ -29,7 +29,7 @@ public class EnemyTextBubble : MonoBehaviour
     {
         
         _reminderTime = ReminderTime;
-        Canvas = GameObject.Find("Canvas2");
+        Canvas = GameObject.Find("EnemyBubbleCanvas");
         Player = GameObject.Find("Player");
         Game = Player.GetComponent<GameController>();
         CanvasTrans = Canvas.GetComponent<RectTransform>();
