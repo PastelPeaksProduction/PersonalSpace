@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float health = 100;
     public float neutralDamage = -0.01f;
     public float regenCooldown = 10.0f;
+    public float restorePercentage = 10.0f;
 
     private Rigidbody rigidBody;
     private Vector3 moveInput;
@@ -22,12 +23,15 @@ public class PlayerController : MonoBehaviour
     private float threatLevel;
     private bool canRegen = false;
     private float nextRegenTime = 0;
+    private float previousHealth;
 
     
     void Start()
     {
         rigidBody = this.GetComponent<Rigidbody>();
         threatLevel = neutralDamage;
+        previousHealth = health;
+        restorePercentage = restorePercentage / 100f;
     }
 
     
@@ -39,14 +43,25 @@ public class PlayerController : MonoBehaviour
         {
             updateHealth();
         }
-        if (isMoving)
+        if (isBreathing && canRegen)
         {
-            nextRegenTime -= Time.deltaTime;
+            restoreHealth(previousHealth);
         }
-        if (!canRegen && nextRegenTime <= 0)
+        if (isMoving)
         {
             canRegen = true;
         }
+
+        // Code for old health regen method
+        //if (isMoving)
+        //{
+        //    nextRegenTime -= Time.deltaTime;
+        //}
+        //if (!canRegen && nextRegenTime <= 0)
+        //{
+        //    canRegen = true;
+        //}
+
         checkExit();
 
     }
@@ -90,6 +105,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Helper functions that restors percentage of previous health
+    /// </summary>
+    /// <param name="previousHealth"></param>
+    private void restoreHealth(float previousHealth)
+    {
+        canRegen = false;
+        float difference = previousHealth - health;
+        health += difference * restorePercentage;
+        previousHealth = health;
+    }
 
     /**
      *  Sets the player velocity according to what was set in last update call
@@ -148,6 +174,10 @@ public class PlayerController : MonoBehaviour
         {
             isBreathing = false; 
         }
+        if (isMoving)
+        {
+            isBreathing = false;
+        }
     }
 
     /**
@@ -160,13 +190,14 @@ public class PlayerController : MonoBehaviour
         {
             health = 100;
         }
-        if (canRegen && isBreathing)
-        {
-            double healthInterval = Math.Truncate(health / 20);
-            health = (float)((healthInterval + 1) * 20) + 5;
-            nextRegenTime = regenCooldown;
-            canRegen = false;
-        }
+        // Code for old health regen method
+        //if (canRegen && isBreathing)
+        //{
+        //    double healthInterval = Math.Truncate(health / 20);
+        //    health = (float)((healthInterval + 1) * 20) + 5;
+        //    nextRegenTime = regenCooldown;
+        //    canRegen = false;
+        //}
         //if(health <= 0)
         //{
         //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
