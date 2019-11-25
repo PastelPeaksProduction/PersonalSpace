@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         }
         if (isBreathing && canRegen)
         {
-            restoreHealth(previousHealth);
+            restoreHealth();
         }
         if (isMoving)
         {
@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
     /// Helper functions that restors percentage of previous health
     /// </summary>
     /// <param name="previousHealth"></param>
-    private void restoreHealth(float previousHealth)
+    private void restoreHealth()
     {
         canRegen = false;
         float difference = previousHealth - health;
