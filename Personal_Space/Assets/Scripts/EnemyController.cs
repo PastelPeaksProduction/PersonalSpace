@@ -83,8 +83,10 @@ public class EnemyController : MonoBehaviour
      **/
     public void moveBackToStart()
     {
+
         if (!movingZone)
         {
+            
             //transform.position = Vector3.MoveTowards(transform.position, startingPosition, moveBackSpeed * Time.deltaTime);
             agent.isStopped = false; 
             agent.destination = startingPosition;

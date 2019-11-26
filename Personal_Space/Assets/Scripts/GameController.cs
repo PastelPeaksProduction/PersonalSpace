@@ -109,7 +109,7 @@ public class GameController : MonoBehaviour
             PauseGame();
             deadDialog.SetActive(true);
 
-            //Q to Restart game
+            //X to Restart game
             if (Input.GetKeyDown(KeyCode.X) || Input.GetKey("joystick button 18") || Input.GetKey("joystick button 2"))
             {
                 deadDialog.SetActive(false);
@@ -117,7 +117,7 @@ public class GameController : MonoBehaviour
                 ContinueGame();
             }
         }
-        if (Input.GetKeyUp(KeyCode.Alpha1))
+        if (Input.GetKeyUp(KeyCode.Alpha3))
         {
             SceneManager.LoadScene("03House Party");
 
@@ -127,12 +127,12 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene("02SchoolDance");
 
         }
-        if (Input.GetKeyUp(KeyCode.Alpha3))
+        if (Input.GetKeyUp(KeyCode.Alpha4))
         {
             SceneManager.LoadScene("WorkParty");
 
         }
-        if (Input.GetKeyUp(KeyCode.Alpha4))
+        if (Input.GetKeyUp(KeyCode.Alpha1))
         {
             SceneManager.LoadScene("GroceryStore");
 
@@ -141,14 +141,24 @@ public class GameController : MonoBehaviour
 
     public void AdvanceLevel()
     {
-        if (SceneManager.GetActiveScene().name == "03HouseParty")
+        if (SceneManager.GetActiveScene().name == "01GroceryStore")
         {
-            SceneManager.LoadScene("SchoolDanceUI");
+            SceneManager.LoadScene("02SchoolDance");
         }
 
-        if (SceneManager.GetActiveScene().name == "02SchoolDance" || SceneManager.GetActiveScene().name == "SchoolDanceUI")
+        if (SceneManager.GetActiveScene().name == "02SchoolDance")
         {
             SceneManager.LoadScene("03HouseParty");
+        }
+
+        if (SceneManager.GetActiveScene().name == "03HouseParty")
+        {
+            SceneManager.LoadScene("04WorkParty");
+        }
+
+        if (SceneManager.GetActiveScene().name == "04WorkParty")
+        {
+            SceneManager.LoadScene("00StartMenu");
         }
     }
 
