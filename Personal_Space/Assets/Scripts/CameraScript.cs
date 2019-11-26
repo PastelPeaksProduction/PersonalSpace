@@ -59,10 +59,22 @@ public class CameraScript : MonoBehaviour
         if(Input.GetAxisRaw("Horizontal X") > 0)
         {
             md = new Vector2(Input.GetAxisRaw("Horizontal X"), 0);
+            md *= 10;
+            Debug.Log("Controller Input :" + md);
         }
         else
         {
-            md = new Vector2(Input.GetAxisRaw("Horizontal X") + Input.GetAxisRaw("Mouse X"), 0);
+            if(!Input.GetAxisRaw("Mouse X").Equals(0))
+            {
+                md = new Vector2(Input.GetAxisRaw("Horizontal X") + Input.GetAxisRaw("Mouse X"), 0);
+            }
+            else
+            {
+                md = new Vector2(Input.GetAxisRaw("Horizontal X"), 0);
+                md *= 10;
+            }
+            
+            Debug.Log("Mouse Input :" + md);
         }
         md = Vector2.Scale(md, new Vector2(sensitivityThirdPerson * smoothing, sensitivityThirdPerson * smoothing));
         sommthV.x = Mathf.Lerp(sommthV.x, md.x, 1f / smoothing);
@@ -71,7 +83,9 @@ public class CameraScript : MonoBehaviour
         Player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, Player.transform.up);
 
         transform.position = Vector3.MoveTowards(transform.position, targetPositionTPP.transform.position, CameraSpeed * Time.deltaTime);
+
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetPositionTPP.transform.rotation, RotationSpeed * Time.deltaTime);
+        
         if ((Player != null) && (Vector3.Distance(transform.position, targetPositionTPP.transform.position) < 0.001f))
         {      
             Player.GetComponent<PlayerController>().canMove = true;
