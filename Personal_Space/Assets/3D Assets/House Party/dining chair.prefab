@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 1569669807265429465}
   - component: {fileID: 7292968057306186621}
   - component: {fileID: 2587782002046257391}
+  - component: {fileID: 8679080050359144053}
   m_Layer: 0
   m_Name: pCube1
   m_TagString: Untagged
@@ -140,3 +141,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.0000005, y: 11.04652, z: 6.121676}
   m_Center: {x: 0, y: 5.52326, z: -0.31083754}
+--- !u!208 &8679080050359144053
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145046754904470565}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.5, y: 5.5230002, z: 3.061}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 5.5230002, z: -0.31100002}
+  m_TimeToStationary: 0.5
