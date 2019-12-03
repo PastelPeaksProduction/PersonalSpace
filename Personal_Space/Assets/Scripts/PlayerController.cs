@@ -38,19 +38,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         calculateMovement();
-        checkBreath();
-        if (isMoving || isBreathing)
-        {
-            updateHealth();
-        }
-        if (isBreathing && canRegen)
-        {
-            restoreHealth();
-        }
-        if (isMoving)
-        {
-            canRegen = true;
-        }
+        
 
         // Code for old health regen method
         //if (isMoving)
@@ -69,6 +57,19 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         updateMovement();
+        checkBreath();
+        if (isMoving || isBreathing)
+        {
+            updateHealth();
+        }
+        if (isBreathing && canRegen)
+        {
+            restoreHealth();
+        }
+        if (isMoving)
+        {
+            canRegen = true;
+        }
     }
 
     //--------------------HELPER METHODS--------------------//
