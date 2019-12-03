@@ -22,10 +22,11 @@ public class Menu : MonoBehaviour
     private bool ShowMainTrans;
 
     private Vector3 prevPos;
+    private CameraAnimation cam;
 
-    private void Start()
+    void Awake()
     {
-
+        cam = Camera.GetComponent<CameraAnimation>();
     }
     public void StartGame()
     {
@@ -48,6 +49,17 @@ public class Menu : MonoBehaviour
         prevPos = InstrucParent.transform.position;
         HideMainTrans = true;
         ControlTrans = true;
+    }
+
+    public void ControlsClicked()
+    {
+        HideMainTrans = true;
+        cam.GOTOCredits();
+    }
+    public void LevelsClicked()
+    {
+        HideMainTrans = true;
+        cam.GOTOLevels();
     }
 
 
