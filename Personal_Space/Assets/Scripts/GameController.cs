@@ -40,13 +40,13 @@ public class GameController : MonoBehaviour
          CheckGameStatus();
     }
 
-    private void PauseGame()
+    public void PauseGame()
     {
         Time.timeScale = 0;
         player.canMove = false;
     }
 
-    private void ContinueGame()
+    public void ContinueGame()
     {
         Time.timeScale = 1;
         player.canMove = true;

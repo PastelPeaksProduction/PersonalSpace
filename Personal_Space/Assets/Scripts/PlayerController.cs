@@ -222,7 +222,14 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Objectives"))
         {
             Debug.Log(other.gameObject.name + " objective fired");
-            GetComponent<ObjectivesManager>().OnObjectiveTriggered(other.gameObject);
+            if(SceneManager.GetActiveScene().name == "01GroceryStore")
+            {
+                GameObject.Find("OneTimeDialogController").GetComponent<OneTimeDialogController>().OnObjectiveTriggered(other.gameObject);
+            }
+            else
+            {
+                GetComponent<ObjectivesManager>().OnObjectiveTriggered(other.gameObject);
+            }
         }
     }
 
