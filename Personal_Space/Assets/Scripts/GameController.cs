@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
     public GameObject FOV;
     public GameObject TextBubbleCanvas;
     public GameObject ObjMarker;
-
+    public GameObject BottomHealthBar;
     private bool isPaused;
 
 
@@ -72,6 +72,7 @@ public class GameController : MonoBehaviour
                 aerialCamera.SetActive(true);
                 aerialListener.enabled = true;
                 ObjMarker.SetActive(true);
+                BottomHealthBar.SetActive(false);
             }
         }
         else
@@ -90,6 +91,8 @@ public class GameController : MonoBehaviour
                 aerialCamera.SetActive(false);
                 aerialListener.enabled = false;
                 ObjMarker.SetActive(false);
+                BottomHealthBar.SetActive(true);
+
                 ContinueGame();
 
                 isPaused = false;
