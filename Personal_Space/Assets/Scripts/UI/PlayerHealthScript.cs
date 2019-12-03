@@ -22,15 +22,22 @@ public class PlayerHealthScript : MonoBehaviour
     public Sprite hundredSingle;
 
     private GameController controller;
+    private TextBubble bubble;
+    private float _reminderTime;
+    private float reminderTime = 6;
 
     void Start()
     {
+        _reminderTime = reminderTime;
         player = GameObject.FindGameObjectWithTag ( "Player" ).GetComponent<PlayerController>();
         controller = GameObject.FindGameObjectWithTag("Player").GetComponent<GameController>();
+        bubble = GameObject.FindGameObjectWithTag("Player").GetComponent<TextBubble>();
     }
 
     void Update()
-    {          
+    {
+        Reminder();
+
         if (isBottom )
         {
             BottomHealth();
@@ -38,6 +45,19 @@ public class PlayerHealthScript : MonoBehaviour
         else
         {
             MenuHealth();
+        }
+    }
+
+    private void Reminder()
+    {
+        _reminderTime -= Time.deltaTime;
+        if (_reminderTime < 0)
+        {
+            _reminderTime = reminderTime;
+            if (player.health <= 40 && player.health > 20)
+            {
+                bubble.SpawnFlipBubble(fourtySingle);
+            }
         }
     }
 
