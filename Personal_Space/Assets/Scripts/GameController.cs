@@ -20,6 +20,8 @@ public class GameController : MonoBehaviour
     public GameObject TextBubbleCanvas;
     public GameObject ObjMarker;
     public GameObject BottomHealthBar;
+    public GameObject Enemies;
+
     private bool isPaused;
 
 
@@ -61,7 +63,6 @@ public class GameController : MonoBehaviour
                 isPaused = true;
                 PauseGame();
 
-
                 pauseDialog.SetActive(true);
                 Stressbar.SetActive(true);
                 PlayerAngle.SetActive(true);
@@ -73,6 +74,7 @@ public class GameController : MonoBehaviour
                 aerialListener.enabled = true;
                 ObjMarker.SetActive(true);
                 BottomHealthBar.SetActive(false);
+                Enemies.SetActive(false);
             }
         }
         else
@@ -92,6 +94,7 @@ public class GameController : MonoBehaviour
                 aerialListener.enabled = false;
                 ObjMarker.SetActive(false);
                 BottomHealthBar.SetActive(true);
+                Enemies.SetActive(true);
 
                 ContinueGame();
 
