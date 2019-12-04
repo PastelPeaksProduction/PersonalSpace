@@ -21,10 +21,13 @@ public class PlayerHealthScript : MonoBehaviour
     public Sprite eightySingle;
     public Sprite hundredSingle;
 
+    public Sprite BreathReminder1;
+    public Sprite BreathReminder2;
+
     private GameController controller;
     private TextBubble bubble;
     private float _reminderTime;
-    private float reminderTime = 6;
+    private float reminderTime = 10;
 
     void Start()
     {
@@ -56,7 +59,7 @@ public class PlayerHealthScript : MonoBehaviour
             _reminderTime = reminderTime;
             if (player.health <= 40 && player.health > 20)
             {
-                bubble.SpawnFlipBubble(fourtySingle);
+                bubble.SpawnFlipBubble(BreathReminder1, BreathReminder2);
             }
         }
     }

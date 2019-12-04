@@ -257,6 +257,10 @@ MonoBehaviour:
   FOV: {fileID: 0}
   TextBubbleCanvas: {fileID: 0}
   ObjMarker: {fileID: 0}
+  BottomHealthBar: {fileID: 0}
+  Enemies: {fileID: 0}
+  RestartBtn: {fileID: 0}
+  MenuBtn: {fileID: 0}
 --- !u!114 &-7364934840280512622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,7 +308,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextBubblePrefab: {fileID: 2230101442294207946, guid: 64736a05c4facdf4da1e8ca3183d9cd4,
     type: 3}
+  TextBubbleFlipPrefab: {fileID: 2579266032456448682, guid: 6950aa7f66af3c547aa7ed085edfda61,
+    type: 3}
   offset: {x: 80, y: 100}
+  flipoffset: {x: 85, y: 200}
   ExistingTime: 3
 --- !u!95 &1481121174640912783
 Animator:

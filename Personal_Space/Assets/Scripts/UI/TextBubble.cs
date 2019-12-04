@@ -43,7 +43,7 @@ public class TextBubble : MonoBehaviour
         Ani.Play("ThoughtBubbleSpawn");
     }
 
-    public void SpawnFlipBubble(Sprite objectiveEmoji)
+    public void SpawnFlipBubble(Sprite objectiveEmoji, Sprite objectiveEmoji2)
     {
         // Initialize bubble
         TextBubbleObj = Instantiate(TextBubbleFlipPrefab);
@@ -52,7 +52,8 @@ public class TextBubble : MonoBehaviour
         TextBubbleObj.transform.GetChild(0).GetComponent<Image>().sprite = objectiveEmoji;
         TextBubbleObj.GetComponent<TextBubbleSingle>().aliveTime = ExistingTime;
         TextBubbleObj.GetComponent<TextBubbleSingle>().isFlip = true;
-
+        TextBubbleObj.GetComponent<TextBubbleSingle>().breath1 = objectiveEmoji;
+        TextBubbleObj.GetComponent<TextBubbleSingle>().breath2 = objectiveEmoji2;
         Ani = TextBubbleObj.GetComponent<Animation>();
         
         Ani.Play("ThoughtBubbleSpawn");
