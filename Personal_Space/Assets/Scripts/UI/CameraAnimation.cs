@@ -26,4 +26,14 @@ public class CameraAnimation : MonoBehaviour
     {
         ani.Play("Menu_MoveToSky");
     }
+
+    public void LevelsBackMain()
+    {
+        ani.Play("Menu_SkyBackToMain");
+    }
+
+    public void ControlsBackMain()
+    {
+        ani.Play("Menu_WallBackToMain");
+    }
 }

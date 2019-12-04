@@ -21,6 +21,9 @@ public class GameController : MonoBehaviour
     public GameObject ObjMarker;
     public GameObject BottomHealthBar;
     public GameObject Enemies;
+    public GameObject RestartBtn;
+    public GameObject MenuBtn;
+
 
     private bool isPaused;
 
@@ -75,6 +78,9 @@ public class GameController : MonoBehaviour
                 ObjMarker.SetActive(true);
                 BottomHealthBar.SetActive(false);
                 Enemies.SetActive(false);
+                RestartBtn.SetActive(true);
+                MenuBtn.SetActive(true);
+
             }
         }
         else
@@ -95,7 +101,8 @@ public class GameController : MonoBehaviour
                 ObjMarker.SetActive(false);
                 BottomHealthBar.SetActive(true);
                 Enemies.SetActive(true);
-
+                RestartBtn.SetActive(false);
+                MenuBtn.SetActive(false);
                 ContinueGame();
 
                 isPaused = false;
@@ -135,12 +142,12 @@ public class GameController : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Alpha4))
         {
-            SceneManager.LoadScene("WorkParty");
+            SceneManager.LoadScene("04WorkParty");
 
         }
         if (Input.GetKeyUp(KeyCode.Alpha1))
         {
-            SceneManager.LoadScene("GroceryStore");
+            SceneManager.LoadScene("01GroceryStore");
 
         }
     }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &910687099679318361
+--- !u!1 &6872326613952448435
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1894989549288180796}
-  - component: {fileID: 3175574308201983095}
-  - component: {fileID: 7454492102900882070}
+  - component: {fileID: 7567227682577954208}
+  - component: {fileID: 1619023189300805608}
+  - component: {fileID: 4993195009939276561}
+  - component: {fileID: 3206146986484309693}
+  - component: {fileID: 8324199250807305380}
   m_Layer: 0
-  m_Name: pSphere1
+  m_Name: Basketball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1894989549288180796
+--- !u!4 &7567227682577954208
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910687099679318361}
+  m_GameObject: {fileID: 6872326613952448435}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 36.59, y: 2.45, z: -200.11}
+  m_LocalScale: {x: 158.625, y: 158.625, z: 158.625}
   m_Children: []
-  m_Father: {fileID: 7567227682577954208}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3175574308201983095
+--- !u!33 &1619023189300805608
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910687099679318361}
-  m_Mesh: {fileID: 2540817853737639666, guid: 320ce8b583d74ff4f9a64d88a7e5a5bb, type: 3}
---- !u!23 &7454492102900882070
+  m_GameObject: {fileID: 6872326613952448435}
+  m_Mesh: {fileID: -4394689448725341078, guid: de3851135aa8eac4bb65999f9b2e0516, type: 3}
+--- !u!23 &4993195009939276561
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910687099679318361}
+  m_GameObject: {fileID: 6872326613952448435}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -57,7 +59,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 9004095928488345746, guid: 320ce8b583d74ff4f9a64d88a7e5a5bb, type: 3}
+  - {fileID: 2100000, guid: 25ab69cbd9a53d34aa8c17b876b51868, type: 2}
+  - {fileID: 2100000, guid: f65132e73f21583449478d46f558b3ba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,39 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &6872326613952448435
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7567227682577954208}
-  - component: {fileID: 3206146986484309693}
-  - component: {fileID: 2746953262046687043}
-  m_Layer: 0
-  m_Name: Basketball
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7567227682577954208
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6872326613952448435}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -61.9, y: -27.2511, z: -8.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1894989549288180796}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &3206146986484309693
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,8 +97,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &2746953262046687043
-SphereCollider:
+--- !u!65 &8324199250807305380
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -138,5 +108,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.4854536
-  m_Center: {x: 0, y: 1.4897356, z: 0}
+  m_Size: {x: 0.01947096, y: 0.01965092, z: 0.01947096}
+  m_Center: {x: 0, y: 0, z: 0}

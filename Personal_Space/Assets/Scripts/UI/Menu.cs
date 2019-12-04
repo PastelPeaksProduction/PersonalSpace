@@ -20,6 +20,7 @@ public class Menu : MonoBehaviour
     private bool BackTrans = false;
     private bool HideMainTrans = false;
     private bool ShowMainTrans;
+    private bool credittrans = false;
 
     private Vector3 prevPos;
     private CameraAnimation cam;
@@ -41,6 +42,8 @@ public class Menu : MonoBehaviour
     public void BackToMain()
     {
         ShowMainTrans = true;
+        HideMainTrans = false;
+        credittrans = true;
         // BackTrans = true;
     }
 
@@ -54,6 +57,7 @@ public class Menu : MonoBehaviour
     public void ControlsClicked()
     {
         HideMainTrans = true;
+        credittrans = true;
         cam.GOTOCredits();
     }
     public void LevelsClicked()
@@ -62,6 +66,23 @@ public class Menu : MonoBehaviour
         cam.GOTOLevels();
     }
 
+    public void LevelsBack()
+    {
+        HideMainTrans = false;
+        ShowMainTrans = true;
+        credittrans = false;
+        cam.LevelsBackMain();
+    }
+
+    public void ControlBack()
+    {
+        HideMainTrans = false;
+        ShowMainTrans = true;
+        credittrans = false;
+        cam.ControlsBackMain();
+    }
+
+
 
     private void FixedUpdate()
     {
@@ -69,7 +90,7 @@ public class Menu : MonoBehaviour
         {
             MainMenuParent.GetComponent<RectTransform>().rotation = Quaternion.RotateTowards(MainMenuParent.GetComponent<RectTransform>().rotation, AwayMenuPos.GetComponent<RectTransform>().rotation, 20 * Time.deltaTime);
         }
-        if (ShowMainTrans)
+        if (ShowMainTrans && credittrans)
         {
             HideMainTrans = false;
             MoveCam(OrigMainPos, ref ShowMainTrans);
@@ -77,8 +98,13 @@ public class Menu : MonoBehaviour
 
 
             MainMenuParent.GetComponent<RectTransform>().rotation = Quaternion.RotateTowards(MainMenuParent.GetComponent<RectTransform>().rotation, BackMainPos.GetComponent<RectTransform>().rotation, 13 * Time.deltaTime);
-            
+
         }
+        else if (ShowMainTrans)
+        {
+            MainMenuParent.GetComponent<RectTransform>().rotation = Quaternion.RotateTowards(MainMenuParent.GetComponent<RectTransform>().rotation, BackMainPos.GetComponent<RectTransform>().rotation, 13 * Time.deltaTime);
+        }
+
         if (ControlTrans)
         {
             MoveCam(ControlPos, ref ControlTrans);
