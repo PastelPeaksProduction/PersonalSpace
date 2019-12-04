@@ -6,6 +6,7 @@ using UIUtil;
 public class TextBubbleSingle : MonoBehaviour
 {
     private UIWorldSpaceUti CanvasUtil = new UIWorldSpaceUti();
+    public bool isEnemyBubble;
     public bool isFlip;
     public float aliveTime;
     private GameObject Canvas;
@@ -33,7 +34,7 @@ public class TextBubbleSingle : MonoBehaviour
             aliveTime = 3;
         }
 
-        if (!Game.isGamePaused() && CanvasTrans != null)
+        if (!Game.isGamePaused() && CanvasTrans != null && !isEnemyBubble)
         {
             if (isFlip)
             {

@@ -74,7 +74,7 @@ public class CameraScript : MonoBehaviour
                 md *= 10;
             }
             
-            Debug.Log("Mouse Input :" + md);
+           // Debug.Log("Mouse Input :" + md);
         }
         md = Vector2.Scale(md, new Vector2(sensitivityThirdPerson * smoothing, sensitivityThirdPerson * smoothing));
         sommthV.x = Mathf.Lerp(sommthV.x, md.x, 1f / smoothing);

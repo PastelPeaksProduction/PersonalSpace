@@ -27,6 +27,7 @@ public class EnemyTextBubble : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         offset = new Vector3(-2, 3);
         _reminderTime = ReminderTime;
         Canvas = GameObject.Find("EnemyBubbleCanvas");
@@ -62,13 +63,14 @@ public class EnemyTextBubble : MonoBehaviour
     public void SpawnBubble()
     {
         // Initialize bubble
+        Debug.Log("spwan enemy");
         TextBubbleObj = Instantiate(TextBubblePrefab);
         TextBubbleObj.transform.SetParent(Canvas.transform);
         TextBubbleTrans = TextBubbleObj.GetComponent<RectTransform>();
         TextBubbleObj.transform.GetChild(0).GetComponent<Image>().sprite = Emoji;
         TextBubbleObj.GetComponent<TextBubbleSingle>().aliveTime = ExistTime;
-
-        Ani = TextBubbleObj.GetComponent<Animation>();
+        TextBubbleObj.GetComponent<TextBubbleSingle>().isEnemyBubble = true;
+       Ani = TextBubbleObj.GetComponent<Animation>();
 
         Ani.Play("ThoughtBubbleSpawn");
     }
