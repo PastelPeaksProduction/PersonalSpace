@@ -226,6 +226,8 @@ public class PlayerController : MonoBehaviour
             if(SceneManager.GetActiveScene().name == "01GroceryStore")
             {
                 GameObject.Find("OneTimeDialogController").GetComponent<OneTimeDialogController>().OnObjectiveTriggered(other.gameObject);
+                GetComponent<ObjectivesManager>().OnObjectiveTriggered(other.gameObject);
+
             }
             else
             {
