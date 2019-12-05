@@ -13,6 +13,7 @@ public class CameraScript : MonoBehaviour
     private GameObject Player;
     private Vector3 rot = new Vector3(0, 0, 0);
     private bool perspective;
+    private string horizontalController;
 
     /* FPP fields */
     Vector2 mouseLook;
@@ -25,6 +26,14 @@ public class CameraScript : MonoBehaviour
     {
         Player = GameObject.Find("Player");
         perspective = false; // False is TPP, True is FPP
+        if(Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
+        {
+            horizontalController = "Horizontal X Windows";
+        }
+        else if(Application.platform == RuntimePlatform.OSXEditor || Application.platform == RuntimePlatform.OSXPlayer)
+        {
+            horizontalController = "Horizontal X Mac";
+        }
     }
     private void Update()
     {
@@ -56,9 +65,9 @@ public class CameraScript : MonoBehaviour
     private void ThirdPersonPerspective()
     {
         var md = new Vector2(0, 0);
-        if(Input.GetAxisRaw("Horizontal X") > 0)
+        if(Input.GetAxisRaw(horizontalController) > 0)
         {
-            md = new Vector2(Input.GetAxisRaw("Horizontal X"), 0);
+            md = new Vector2(Input.GetAxisRaw(horizontalController), 0);
             md *= 10;
             Debug.Log("Controller Input :" + md);
         }
@@ -66,11 +75,11 @@ public class CameraScript : MonoBehaviour
         {
             if(!Input.GetAxisRaw("Mouse X").Equals(0))
             {
-                md = new Vector2(Input.GetAxisRaw("Horizontal X") + Input.GetAxisRaw("Mouse X"), 0);
+                md = new Vector2(Input.GetAxisRaw(horizontalController) + Input.GetAxisRaw("Mouse X"), 0);
             }
             else
             {
-                md = new Vector2(Input.GetAxisRaw("Horizontal X"), 0);
+                md = new Vector2(Input.GetAxisRaw(horizontalController), 0);
                 md *= 10;
             }
             
