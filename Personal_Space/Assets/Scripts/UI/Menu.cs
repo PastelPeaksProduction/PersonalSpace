@@ -57,7 +57,7 @@ public class Menu : MonoBehaviour
     public void ControlsClicked()
     {
         HideMainTrans = true;
-        credittrans = true;
+        credittrans = false;
         cam.GOTOCredits();
     }
     public void LevelsClicked()
