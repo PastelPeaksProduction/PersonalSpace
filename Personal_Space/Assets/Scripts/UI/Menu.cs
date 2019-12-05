@@ -88,7 +88,7 @@ public class Menu : MonoBehaviour
     {
         if (HideMainTrans)
         {
-            MainMenuParent.GetComponent<RectTransform>().rotation = Quaternion.RotateTowards(MainMenuParent.GetComponent<RectTransform>().rotation, AwayMenuPos.GetComponent<RectTransform>().rotation, 20 * Time.deltaTime);
+            MainMenuParent.GetComponent<RectTransform>().rotation = Quaternion.RotateTowards(MainMenuParent.GetComponent<RectTransform>().rotation, AwayMenuPos.GetComponent<RectTransform>().rotation, 50 * Time.deltaTime);
         }
         if (ShowMainTrans && credittrans)
         {
@@ -97,12 +97,12 @@ public class Menu : MonoBehaviour
             InstrucParent.transform.position = Vector3.MoveTowards(InstrucParent.transform.position, prevPos, 30 * Time.deltaTime);
 
 
-            MainMenuParent.GetComponent<RectTransform>().rotation = Quaternion.RotateTowards(MainMenuParent.GetComponent<RectTransform>().rotation, BackMainPos.GetComponent<RectTransform>().rotation, 13 * Time.deltaTime);
+            MainMenuParent.GetComponent<RectTransform>().rotation = Quaternion.RotateTowards(MainMenuParent.GetComponent<RectTransform>().rotation, BackMainPos.GetComponent<RectTransform>().rotation, 30 * Time.deltaTime);
 
         }
         else if (ShowMainTrans)
         {
-            MainMenuParent.GetComponent<RectTransform>().rotation = Quaternion.RotateTowards(MainMenuParent.GetComponent<RectTransform>().rotation, BackMainPos.GetComponent<RectTransform>().rotation, 13 * Time.deltaTime);
+            MainMenuParent.GetComponent<RectTransform>().rotation = Quaternion.RotateTowards(MainMenuParent.GetComponent<RectTransform>().rotation, BackMainPos.GetComponent<RectTransform>().rotation, 30 * Time.deltaTime);
         }
 
         if (ControlTrans)
@@ -123,8 +123,8 @@ public class Menu : MonoBehaviour
         if (Camera.transform.position == moveTo.transform.position && Camera.transform.rotation == moveTo.transform.rotation)
             transBool = false;
 
-        Camera.transform.position = Vector3.MoveTowards(Camera.transform.position, moveTo.transform.position, 20 * Time.deltaTime);
-        Camera.transform.rotation = Quaternion.RotateTowards(Camera.transform.rotation, moveTo.transform.rotation, 20 * Time.deltaTime);
+        Camera.transform.position = Vector3.MoveTowards(Camera.transform.position, moveTo.transform.position, 50 * Time.deltaTime);
+        Camera.transform.rotation = Quaternion.RotateTowards(Camera.transform.rotation, moveTo.transform.rotation, 90 * Time.deltaTime);
     }
 
     private void EnsureInstr()
