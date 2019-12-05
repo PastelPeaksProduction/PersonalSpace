@@ -21,7 +21,7 @@
         {
             agent = GetComponent<NavMeshAgent>();
             agentSpeed = agent.speed;
-            agent.autoBraking = false;
+            //agent.autoBraking = false;
             zoneControl = zone.GetComponent<ZoneScript>();
             playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
             GotoNextPoint();

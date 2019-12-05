@@ -107,6 +107,7 @@ public class ObjectivesManager : MonoBehaviour
     // public function when player triggers objective tag
     public void OnObjectiveTriggered(GameObject obj)
     {
+        Debug.Log("TRIGGERED");
 
         if (objectiveCount < Objectives.Count &&  Objectives[objectiveCount].ObjectiveObj == obj)
         {
