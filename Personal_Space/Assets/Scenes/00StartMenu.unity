@@ -162,11 +162,11 @@ TextMesh:
   m_GameObject: {fileID: 36798359}
   m_Text: 'Tristan Bowler (Lead)
 
-    Ken Wang
-
     Sri Radhakrishnan
 
-    Alex Wittmann'
+    Alex Wittmann
+
+    Ken Wang'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -1502,14 +1502,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380891438}
-  m_LocalRotation: {x: -0.007526012, y: 0.9297366, z: 0.00342617, w: -0.36813238}
-  m_LocalPosition: {x: -23.08, y: -3.62, z: -16.86}
+  m_LocalRotation: {x: 0, y: 0.9297669, z: -0, w: -0.36814877}
+  m_LocalPosition: {x: -13.4, y: 2.42, z: -25.95}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 58749763}
   m_Father: {fileID: 2034848888}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -0.048, y: 223.20299, z: -0.94600004}
+  m_LocalEulerAnglesHint: {x: 0, y: 223.20299, z: 0}
 --- !u!102 &380891440
 TextMesh:
   serializedVersion: 3
@@ -2806,14 +2806,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746405187}
-  m_LocalRotation: {x: -0.0047247754, y: 0.92885184, z: 0.0021351893, w: -0.37041533}
-  m_LocalPosition: {x: -10.98, y: -4.51, z: -28.59}
+  m_LocalRotation: {x: 0, y: 0.9288646, z: -0, w: -0.37041932}
+  m_LocalPosition: {x: -21.05, y: 2.43, z: -19.02}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 1993159345}
   m_Father: {fileID: 2034848888}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -0.027, y: 223.48299, z: -0.59400004}
+  m_LocalEulerAnglesHint: {x: 0, y: 223.48299, z: 0}
 --- !u!102 &746405189
 TextMesh:
   serializedVersion: 3
@@ -3737,7 +3737,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964152029}
   m_LocalRotation: {x: 0.0077597415, y: -0.9241007, z: 0.0060100034, w: 0.38202304}
-  m_LocalPosition: {x: -1.56, y: 1.54, z: 8.57}
+  m_LocalPosition: {x: -1.286, y: 1.484, z: 8.079}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2600146801070962485}
@@ -4781,11 +4781,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aef3ee96ff3547c42b95c48584b0cc49, type: 2}
-    - target: {fileID: 6652788796430722917, guid: 2ba022414531c954ebbd7e3ca7dfc89e,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7fa5f638c7ebb264fbf031f71c5d90d4, type: 2}
     - target: {fileID: 5368253558803277700, guid: 2ba022414531c954ebbd7e3ca7dfc89e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4796,16 +4791,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc7d6062311c5c6479d9c74779a7904f, type: 2}
-    - target: {fileID: 7919934602512319391, guid: 2ba022414531c954ebbd7e3ca7dfc89e,
+    - target: {fileID: 6652788796430722917, guid: 2ba022414531c954ebbd7e3ca7dfc89e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 34b5a0ec64300fe4ca897a51ceb1f44b, type: 2}
+      objectReference: {fileID: 2100000, guid: 7fa5f638c7ebb264fbf031f71c5d90d4, type: 2}
     - target: {fileID: 7298187583601011822, guid: 2ba022414531c954ebbd7e3ca7dfc89e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 750066e9609886240ae1557bc9f87ac0, type: 2}
+    - target: {fileID: 7919934602512319391, guid: 2ba022414531c954ebbd7e3ca7dfc89e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 34b5a0ec64300fe4ca897a51ceb1f44b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ba022414531c954ebbd7e3ca7dfc89e, type: 3}
 --- !u!4 &1177945425 stripped
@@ -4996,21 +4996,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6268111946110181592, guid: af394a425376591479c2d2b220fe6ffb,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2c0b9f1d801dbeb4392d60e23c845289, type: 2}
-    - target: {fileID: 5557625310417868672, guid: af394a425376591479c2d2b220fe6ffb,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8757650011663918554, guid: af394a425376591479c2d2b220fe6ffb,
         type: 3}
       propertyPath: m_LocalScale.x
       value: 3.147
       objectReference: {fileID: 0}
+    - target: {fileID: 5557625310417868672, guid: af394a425376591479c2d2b220fe6ffb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268111946110181592, guid: af394a425376591479c2d2b220fe6ffb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c0b9f1d801dbeb4392d60e23c845289, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af394a425376591479c2d2b220fe6ffb, type: 3}
 --- !u!4 &1235293446 stripped
@@ -5124,7 +5124,7 @@ GameObject:
   - component: {fileID: 1255927189}
   - component: {fileID: 1255927188}
   m_Layer: 0
-  m_Name: LevelDisgner
+  m_Name: Designers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5138,12 +5138,12 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255927187}
-  m_Text: '- Level Designers -'
+  m_Text: '- Designers -'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 0
-  m_Alignment: 0
+  m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 50
   m_FontStyle: 0
@@ -5197,14 +5197,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255927187}
-  m_LocalRotation: {x: -0, y: 0.9300779, z: -0, w: -0.36736238}
-  m_LocalPosition: {x: -10.96, y: 2.94, z: -28.55}
+  m_LocalRotation: {x: -0.001285785, y: 0.9298904, z: 0.00084385544, w: -0.36783373}
+  m_LocalPosition: {x: -14.45, y: -4.24, z: -25.03}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 1329432681}
   m_Father: {fileID: 2034848888}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 223.10599, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.036000002, y: 223.16399, z: -0.17300001}
 --- !u!1 &1275620203
 GameObject:
   m_ObjectHideFlags: 0
@@ -5632,7 +5632,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329432680}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.6, y: -7, z: -1}
+  m_LocalPosition: {x: 1.51, y: -7, z: -1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1255927190}
@@ -5646,7 +5646,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329432680}
-  m_Text: 'Chris Payne
+  m_Text: 'Chris Payne (Lead)
 
     McKenna Caldwell'
   m_OffsetZ: 0
@@ -8958,9 +8958,11 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993159344}
-  m_Text: 'Morgan Cox
+  m_Text: 'Ryan Cornellier
 
-    Ryan Cornellier'
+    Morgan Cox
+
+'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -9634,7 +9636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072964728}
   m_LocalRotation: {x: -0, y: 0.9300779, z: -0, w: -0.36736238}
-  m_LocalPosition: {x: -23.14, y: 4.68, z: -16.88}
+  m_LocalPosition: {x: -21.450003, y: -2.29, z: -18.770002}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 36798360}
@@ -10208,7 +10210,7 @@ MonoBehaviour:
   backgroundStop: 0.4
   backgroundZoneMoving: 0.2
   backgroundZoneStop: 0.1
-  backgroundPitchStop: 0.65
+  backgroundPitchStop: 0.9
   backgroundPitchMoving: 1
   calmVolume: 1
   calmStop: 0.75
