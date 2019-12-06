@@ -95,7 +95,13 @@ public class BackgroundSoundController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Collectible") || other.gameObject.CompareTag("Objectives"))
         {
-            collectableSound.Play();
+            bool triggered = other.gameObject.GetComponent<SoundTrigger>().collected;
+            if (!triggered)
+            {
+                collectableSound.Play();
+                other.gameObject.GetComponent<SoundTrigger>().collected = true;
+            }
+            
         }
     }
 
