@@ -93,7 +93,7 @@ public class BackgroundSoundController : MonoBehaviour
             }
         }
 
-        if (other.gameObject.CompareTag("Collectible"))
+        if (other.gameObject.CompareTag("Collectible") || other.gameObject.CompareTag("Objectives"))
         {
             collectableSound.Play();
         }
