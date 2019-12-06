@@ -93,8 +93,9 @@ public class OneTimeDialogController : MonoBehaviour
 
     private void CheckContinue()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown("joystick button 1")))
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown("joystick button 0")))
         {
+            Debug.Log("Continue!");
             controller.ContinueGame();
             OnetimeDialog.SetActive(false);
         }
