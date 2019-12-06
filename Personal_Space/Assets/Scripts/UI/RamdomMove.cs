@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class RamdomMove : MonoBehaviour
 {
-
+    private bool collision = false;
     public bool waiting = false;
     Vector3 randomPosition;
     float moveDelay = 1;
+    private Vector3 startPos;
 
+    private void Start()
+    {
+        startPos = this.transform.position;
+    }
     private void FixedUpdate()
     {
 
@@ -18,8 +23,8 @@ public class RamdomMove : MonoBehaviour
         }
         else
         {
-           
-            transform.position = Vector3.Lerp(transform.position, randomPosition, Random.Range(1,5) * Time.deltaTime);
+            if(!collision && Vector3.Distance(startPos, randomPosition) < 10)
+                transform.position = Vector3.Lerp(transform.position, randomPosition, Random.Range(1,5) * Time.deltaTime);
         }
     }
 
@@ -32,5 +37,23 @@ public class RamdomMove : MonoBehaviour
         yield return new WaitForSeconds(moveDelay);
         waiting = false;
         //Debug.Log ("waited");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Collision detected! "+other.name);
+        collision = true;
+        float force = 50;
+        Vector3 direction = transform.position - other.transform.position;
+        direction.Normalize();
+        this.GetComponent<Rigidbody>().AddForce(direction * force);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        collision = false;
+        Rigidbody rb = this.GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 }
