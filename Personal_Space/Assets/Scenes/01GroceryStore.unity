@@ -141,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 7696672476635640514, guid: 0d187c3324bbfbd419829228d161edd8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.1
+      value: -19.7
       objectReference: {fileID: 0}
     - target: {fileID: 7696672476635640514, guid: 0d187c3324bbfbd419829228d161edd8,
         type: 3}
@@ -445,7 +445,7 @@ PrefabInstance:
     - target: {fileID: 7696672476635640514, guid: 0d187c3324bbfbd419829228d161edd8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.1
+      value: -23.757
       objectReference: {fileID: 0}
     - target: {fileID: 7696672476635640514, guid: 0d187c3324bbfbd419829228d161edd8,
         type: 3}
@@ -1003,8 +1003,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'Press Tab to '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2026,8 +2024,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Press A to continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2610,8 +2606,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Current Objective
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4349,6 +4343,11 @@ PrefabInstance:
       propertyPath: breathSound
       value: 
       objectReference: {fileID: 669053396}
+    - target: {fileID: 2600146800666572999, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2090807824398782169, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
       propertyPath: jacket
@@ -4363,6 +4362,22 @@ PrefabInstance:
         type: 3}
       propertyPath: numOfJackets
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8323184913114051894, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: TextBubbleFlipPrefab
+      value: 
+      objectReference: {fileID: 2579266032456448682, guid: 6950aa7f66af3c547aa7ed085edfda61,
+        type: 3}
+    - target: {fileID: 8323184913114051894, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: flipoffset.x
+      value: -80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8323184913114051894, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: flipoffset.y
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7327256571677092376, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
@@ -4428,27 +4443,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2600146800666572999, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8323184913114051894, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: TextBubbleFlipPrefab
-      value: 
-      objectReference: {fileID: 2579266032456448682, guid: 6950aa7f66af3c547aa7ed085edfda61,
-        type: 3}
-    - target: {fileID: 8323184913114051894, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: flipoffset.x
-      value: -80
-      objectReference: {fileID: 0}
-    - target: {fileID: 8323184913114051894, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: flipoffset.y
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48, type: 3}
@@ -5677,8 +5671,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 3111173d630474846abcd21f4365b1b5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5884,15 +5876,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 380476104786696057, guid: 3e9644ab2ef534746bc63920f1ff7044,
+    - target: {fileID: 380476103917312756, guid: 3e9644ab2ef534746bc63920f1ff7044,
         type: 3}
-      propertyPath: m_LocalPosition.z
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8694531680754822915, guid: 3e9644ab2ef534746bc63920f1ff7044,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 380476104786696057, guid: 3e9644ab2ef534746bc63920f1ff7044,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8036480034223201989, guid: 3e9644ab2ef534746bc63920f1ff7044,
         type: 3}
@@ -6004,22 +6001,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3551066995757216882, guid: 3e9644ab2ef534746bc63920f1ff7044,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 380476103885253259, guid: 3e9644ab2ef534746bc63920f1ff7044,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6900436216679563252, guid: 3e9644ab2ef534746bc63920f1ff7044,
+    - target: {fileID: 3551066995757216882, guid: 3e9644ab2ef534746bc63920f1ff7044,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 380476103917312756, guid: 3e9644ab2ef534746bc63920f1ff7044,
+    - target: {fileID: 6900436216679563252, guid: 3e9644ab2ef534746bc63920f1ff7044,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6133,8 +6125,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "Stress bar \nAnxiety level"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 158018314d96c4641876d9ff3296a829, type: 2}
@@ -6291,8 +6281,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "TOP view of \nthe map\n\nthe exclamation mark indicates the objective\n\nthe
     angle indicates your location and direction\n\n"
   m_isRightToLeft: 0
@@ -6993,6 +6981,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Extents.z
       value: 0.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754224288118501303, guid: f564e0173faf8974fb516644def0a42e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f564e0173faf8974fb516644def0a42e, type: 3}
