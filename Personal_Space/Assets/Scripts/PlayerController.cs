@@ -186,7 +186,15 @@ public class PlayerController : MonoBehaviour
      **/
     private void updateHealth()
     {
-        health += threatLevel;
+        if (isBreathing)
+        {
+            health += (threatLevel - neutralDamage);
+        }
+        else
+        {
+            health += threatLevel;
+        }
+        
         if(health >= 100)
         {
             health = 100;
