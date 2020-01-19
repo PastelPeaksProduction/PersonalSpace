@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2200974615974778846}
   - component: {fileID: 613920508059909019}
   - component: {fileID: 4434887584020423644}
+  - component: {fileID: 6655301981672466345}
   m_Layer: 0
   m_Name: polySurface3
   m_TagString: Untagged
@@ -78,6 +79,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &6655301981672466345
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381979081164548357}
+  m_Material: {fileID: 13400000, guid: d8d534fc29e974c4ea147c61934d400a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.91622, y: 9.811729, z: 10.28409}
+  m_Center: {x: 0, y: 4.9058647, z: 0.00045490265}
 --- !u!1 &8056123664603320857
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +101,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6455417565171310602}
-  - component: {fileID: 2084309954390641428}
   - component: {fileID: 2084309954390641427}
   m_Layer: 0
   m_Name: StudentDesk1
@@ -112,19 +125,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2084309954390641428
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8056123664603320857}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.9968132, y: 1.9872248, z: 2.0639064}
-  m_Center: {x: -0.31629655, y: 0.9824349, z: -0.0047923983}
 --- !u!54 &2084309954390641427
 Rigidbody:
   m_ObjectHideFlags: 0

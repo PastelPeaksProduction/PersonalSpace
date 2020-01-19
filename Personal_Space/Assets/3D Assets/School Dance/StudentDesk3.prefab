@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2514999389119857418}
   - component: {fileID: 3812694201627881295}
   - component: {fileID: 137252709569378056}
+  - component: {fileID: 3042042679444769242}
   m_Layer: 0
   m_Name: polySurface3
   m_TagString: Untagged
@@ -78,6 +79,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3042042679444769242
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3405208371707592145}
+  m_Material: {fileID: 13400000, guid: d8d534fc29e974c4ea147c61934d400a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.91622, y: 9.811729, z: 10.28409}
+  m_Center: {x: 0, y: 4.9058647, z: 0.00045490265}
 --- !u!1 &6026209463286417101
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +102,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7348252042594235614}
   - component: {fileID: 2342021899489877960}
-  - component: {fileID: 2342021899489877959}
   m_Layer: 0
   m_Name: StudentDesk3
   m_TagString: Untagged
@@ -128,19 +141,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &2342021899489877959
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6026209463286417101}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.4589648, y: 1.9726437, z: 2.0364232}
-  m_Center: {x: -0.54611564, y: 0.98061526, z: -0.0000000676816}
 --- !u!1001 &2342021898471840108
 PrefabInstance:
   m_ObjectHideFlags: 0

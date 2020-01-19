@@ -1,21 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!208 &4885403181647315801
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7161816959720222421}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 5.78, y: 5.6600003, z: 2.033}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0.36800003, y: 5.6200004, z: -0.013}
-  m_TimeToStationary: 0.5
 --- !u!1001 &7960016307956834259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83,6 +67,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7336099506434487491, guid: 13ed9dd27a3724d48aedbc9746539932,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: d8d534fc29e974c4ea147c61934d400a,
+        type: 2}
     - target: {fileID: 7336099506434487488, guid: 13ed9dd27a3724d48aedbc9746539932,
         type: 3}
       propertyPath: m_UseGravity
@@ -110,9 +100,3 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 34e75071bd7a78c4d927dc2971e56ac8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13ed9dd27a3724d48aedbc9746539932, type: 3}
---- !u!1 &7161816959720222421 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 942459843793957126, guid: 13ed9dd27a3724d48aedbc9746539932,
-    type: 3}
-  m_PrefabInstance: {fileID: 7960016307956834259}
-  m_PrefabAsset: {fileID: 0}
