@@ -61,6 +61,7 @@ public class BackgroundSoundController : MonoBehaviour
     {
         backgroundVolume = backgroundNormal;
         collectableSound.volume = collectibleVolume;
+        AkSoundEngine.PostEvent("loop_main_110_bpm_v01", gameObject);
     }
 
     void Update()

@@ -53,6 +53,9 @@ GameObject:
   - component: {fileID: 1481121174640912783}
   - component: {fileID: 4591626498226796202}
   - component: {fileID: 2753372279629230412}
+  - component: {fileID: 2880881511751448783}
+  - component: {fileID: -5226444014306607292}
+  - component: {fileID: -3304125260985934759}
   m_Layer: 0
   m_Name: Player Out
   m_TagString: Player
@@ -174,7 +177,7 @@ MonoBehaviour:
   health: 100
   neutralDamage: -0.01
   regenCooldown: 10
-  restorePercentage: 10
+  healthPackAmount: 10
 --- !u!114 &95976839973116789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,6 +363,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breathSound: {fileID: 0}
   BreathVolume: 0.25
+--- !u!114 &2880881511751448783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600146800666572996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9972c54898b89744fa1169181de21bc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!114 &-5226444014306607292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600146800666572996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81fbd54077423a944a5bd5cc7bf15f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  listenerId: 0
+--- !u!114 &-3304125260985934759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600146800666572996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ac84b202e00bb48bd0a7cd9846d918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3ec015f7aba3aea42ba34768ba36e23f,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1 &2600146800702947624
 GameObject:
   m_ObjectHideFlags: 0
