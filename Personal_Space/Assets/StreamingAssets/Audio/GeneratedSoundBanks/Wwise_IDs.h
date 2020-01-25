@@ -14,7 +14,9 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID CALMSOUNDTEST = 3696055885U;
+        static const AkUniqueID LOOP_CALM_110_BPM_V01 = 1781729216U;
         static const AkUniqueID LOOP_MAIN_110_BPM_V01 = 1968296794U;
+        static const AkUniqueID LOOP_STRESS_110_BPM_V01 = 3004525693U;
     } // namespace EVENTS
 
     namespace BANKS

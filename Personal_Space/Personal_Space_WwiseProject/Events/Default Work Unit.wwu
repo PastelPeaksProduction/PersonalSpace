@@ -16,7 +16,58 @@
 				</Event>
 				<Event Name="loop_main_110_bpm_v01" ID="{B5E441EA-36CB-473E-8A49-8B3E66302942}">
 					<ChildrenList>
+						<Action Name="" ID="{53C53A6B-9C71-4CC4-8372-1D40060E123C}" ShortID="171800747">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
 						<Action Name="" ID="{AE1A38D2-4CDD-452A-8D6B-908E35271F0A}" ShortID="194969595">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_MX_loop_main_110_bpm_v01" ID="{AC48AFE5-AB56-47A5-A76A-DCA466B4AA16}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="loop_calm_110_bpm_v01" ID="{894827FD-EFF3-46C7-84BC-9CE6CF23A87D}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="1"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{24AE3385-B627-4FAF-AB29-495C6AF203F3}" ShortID="1061743844">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_MX_loop_calm_110_bpm_v01" ID="{E83F0E69-18FE-455B-ACB6-6FA83A4C137E}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A389CE60-F55B-4592-888B-5B10E1A6ADFA}" ShortID="235770398">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="7"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_MX_loop_main_110_bpm_v01" ID="{AC48AFE5-AB56-47A5-A76A-DCA466B4AA16}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="loop_stress_110_bpm_v01" ID="{8F7C58DB-B5C9-46B9-8327-4C322471DB23}">
+					<ChildrenList>
+						<Action Name="" ID="{35E1F66E-9CFC-4032-8A3D-48680A376576}" ShortID="878764313">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_MX_loop_stress_layer_110_bpm_v01" ID="{42A75937-1FEB-4B55-9BAC-20FAECF7AB89}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8DB970A2-2982-42E2-AB41-A31C4E84059F}" ShortID="635388607">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="7"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="PS_MX_loop_main_110_bpm_v01" ID="{AC48AFE5-AB56-47A5-A76A-DCA466B4AA16}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>

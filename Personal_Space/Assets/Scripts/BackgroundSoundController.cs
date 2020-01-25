@@ -74,10 +74,11 @@ public class BackgroundSoundController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("SafeZone"))
         {
+            AkSoundEngine.PostEvent("loop_calm_110_bpm_v01", gameObject);
             backgroundVolume = backgroundZoneMoving;
             inSafe = true;
-            calmSound.Play();
-            calmSound.volume = calmVolume;
+            //calmSound.Play();
+            //calmSound.volume = calmVolume;
             if (inDanger)
             {
                 stressSound.Stop();
@@ -85,12 +86,13 @@ public class BackgroundSoundController : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("DangerZone"))
         {
+            AkSoundEngine.PostEvent("loop_stress_110_bpm_v01", gameObject);
             backgroundVolume = backgroundZoneMoving;
             inDanger = true;
             if (!inSafe)
             {
-                stressSound.Play();
-                stressSound.volume = stressVolume;
+                //stressSound.Play();
+                //stressSound.volume = stressVolume;
             }
         }
 
@@ -110,17 +112,20 @@ public class BackgroundSoundController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("SafeZone"))
         {
-            calmSound.Stop();
+
+            AkSoundEngine.PostEvent("loop_main_110_bpm_v01", gameObject);
+            //calmSound.Stop();
             inSafe = false;
             if (inDanger)
             {
-                stressSound.Play();
-                stressSound.volume = stressVolume;
+                //stressSound.Play();
+                //stressSound.volume = stressVolume;
             }
         }
         else if (other.gameObject.CompareTag("DangerZone"))
         {
-            stressSound.Stop();
+            AkSoundEngine.PostEvent("loop_main_110_bpm_v01", gameObject);
+            //stressSound.Stop();
             inDanger = false;
         }
         if(!inDanger && !inSafe)
