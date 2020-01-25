@@ -126,12 +126,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5239397413063388259}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &80762355 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5239397413125241232, guid: 0c1cae0c732b104419c07ab73aea5911,
-    type: 3}
-  m_PrefabInstance: {fileID: 5239397413063388259}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &88003029
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,12 +222,6 @@ Transform:
 --- !u!4 &221340643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5823197690357731858, guid: c3d9dbf52cc3dee4eb63d3322806d1a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 5823197690172060145}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &221340644 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5823197690357731861, guid: c3d9dbf52cc3dee4eb63d3322806d1a0,
     type: 3}
   m_PrefabInstance: {fileID: 5823197690172060145}
   m_PrefabAsset: {fileID: 0}
@@ -601,12 +589,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8551868963575232567}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &498872578 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8551868963215821109, guid: b5ce1d9b676607943832163c04a28afc,
-    type: 3}
-  m_PrefabInstance: {fileID: 8551868963575232567}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &514760547 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2980320563697451550, guid: fc1f23a9a95ff9743bce1d4e37d37ecf,
@@ -783,6 +765,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2449964149385693460, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: data.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 499ac938b6bd11f468ef9e63cae99b60,
+        type: 2}
+    - target: {fileID: 5828242009277311410, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: data.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 56c28194344b2274d96c7bcaa5819fcf,
+        type: 2}
+    - target: {fileID: 629070937878475018, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: data.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 80fdeea61112b25498fc724453345fef,
+        type: 2}
     - target: {fileID: 2600146800666572996, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
       propertyPath: m_Name
@@ -1387,12 +1387,6 @@ CanvasRenderer:
 --- !u!4 &825602518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6976763133321618901, guid: c10a329b7e3d8364390bebf06ddcc6cf,
-    type: 3}
-  m_PrefabInstance: {fileID: 6976763132498187267}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &825602519 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6976763133321618900, guid: c10a329b7e3d8364390bebf06ddcc6cf,
     type: 3}
   m_PrefabInstance: {fileID: 6976763132498187267}
   m_PrefabAsset: {fileID: 0}
@@ -2010,31 +2004,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breathSound: {fileID: 699772753}
   BreathVolume: 1
---- !u!114 &1377483082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1377483079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ac84b202e00bb48bd0a7cd9846d918, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 499ac938b6bd11f468ef9e63cae99b60,
-      type: 2}
-  decodeBank: 0
-  loadAsynchronous: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 
-  bankNameInternal: 
-  valueGuidInternal: 
 --- !u!114 &1377483093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2047,52 +2016,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d05958af40c4fbe4bab3cd757b6f3de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundSound: {fileID: 221340644}
-  stressSound: {fileID: 80762355}
-  calmSound: {fileID: 825602519}
-  collectableSound: {fileID: 498872578}
-  backgroundNormal: 0.65
-  backgroundStop: 0.1
-  backgroundZoneMoving: 0.05
-  backgroundZoneStop: 0.025
-  backgroundPitchStop: 0.65
-  backgroundPitchMoving: 1
-  calmVolume: 1
-  calmStop: 0.75
-  calmPitchStop: 0.5
-  calmPitchMoving: 1.25
-  stressVolume: 1
-  stressStop: 0.75
-  stressPitchStop: 0.5
-  stressPitchMoving: 1.25
-  lowPassStop: 2500
-  lowPassMoving: 5000
-  collectibleVolume: 0.5
---- !u!114 &1377483101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1377483079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ac84b202e00bb48bd0a7cd9846d918, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 80fdeea61112b25498fc724453345fef,
-      type: 2}
-  decodeBank: 0
-  loadAsynchronous: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 
-  bankNameInternal: 
-  valueGuidInternal: 
 --- !u!114 &1377483102
 MonoBehaviour:
   m_ObjectHideFlags: 0

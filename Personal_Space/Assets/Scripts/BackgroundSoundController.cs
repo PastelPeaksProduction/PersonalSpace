@@ -4,95 +4,36 @@ using UnityEngine;
 
 public class BackgroundSoundController : MonoBehaviour
 {
-    public AudioSource backgroundSound;
-    public AudioSource stressSound;
-    public AudioSource calmSound;
-    public AudioSource collectableSound;
-
-    [Range(0.0f,1.0f)]
-    public float backgroundNormal;
-    [Range(0.0f,1.0f)]
-    public float backgroundStop;
-    [Range(0.0f,1.0f)]
-    public float backgroundZoneMoving;
-    [Range(0.0f,1.0f)]
-    public float backgroundZoneStop;
-
-    [Range(-3.0f, 3.0f)]
-    public float backgroundPitchStop;
-    [Range(-3.0f, 3.0f)]
-    public float backgroundPitchMoving;
-
-
-
-    [Range(0.0f,1.0f)]
-    public float calmVolume;
-    [Range(0.0f,1.0f)]
-    public float calmStop;
-    [Range(-3.0f, 3.0f)]
-    public float calmPitchStop;
-    [Range(-3.0f, 3.0f)]
-    public float calmPitchMoving;
-
-
-    [Range(0.0f,1.0f)]
-    public float stressVolume;
-    [Range(0.0f,1.0f)]
-    public float stressStop;
-    [Range(-3.0f, 3.0f)]
-    public float stressPitchStop;
-    [Range(-3.0f, 3.0f)]
-    public float stressPitchMoving;
-
-
-    [Range(10.0f,22000.0f)]
-    public float lowPassStop;
-    [Range(10.0f,22000.0f)]
-    public float lowPassMoving;
-
-    [Range(0.0f, 1.0f)]
-    public float collectibleVolume;
-
     private bool isMoving;
     private bool inSafe = false;
     private bool inDanger = false;
     private float backgroundVolume;
     void Start()
     {
-        backgroundVolume = backgroundNormal;
-        collectableSound.volume = collectibleVolume;
-        AkSoundEngine.PostEvent("loop_main_110_bpm_v01", gameObject);
+        AkSoundEngine.PostEvent("main_loop", gameObject);
     }
 
     void Update()
     {
         isMoving = GetComponentInParent<PlayerController>().isMoving;
-        setVolume(isMoving);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("SafeZone"))
         {
-            AkSoundEngine.PostEvent("loop_calm_110_bpm_v01", gameObject);
-            backgroundVolume = backgroundZoneMoving;
+            AkSoundEngine.PostEvent("fade_to_calm", gameObject);
             inSafe = true;
-            //calmSound.Play();
-            //calmSound.volume = calmVolume;
             if (inDanger)
             {
-                stressSound.Stop();
             }
         }
         else if(other.gameObject.CompareTag("DangerZone"))
         {
-            AkSoundEngine.PostEvent("loop_stress_110_bpm_v01", gameObject);
-            backgroundVolume = backgroundZoneMoving;
+            AkSoundEngine.PostEvent("fade_to_stress", gameObject);
             inDanger = true;
             if (!inSafe)
             {
-                //stressSound.Play();
-                //stressSound.volume = stressVolume;
             }
         }
 
@@ -101,7 +42,6 @@ public class BackgroundSoundController : MonoBehaviour
             bool triggered = other.gameObject.GetComponent<SoundTrigger>().collected;
             if (!triggered)
             {
-                collectableSound.Play();
                 other.gameObject.GetComponent<SoundTrigger>().collected = true;
             }
             
@@ -113,71 +53,20 @@ public class BackgroundSoundController : MonoBehaviour
         if (other.gameObject.CompareTag("SafeZone"))
         {
 
-            AkSoundEngine.PostEvent("loop_main_110_bpm_v01", gameObject);
-            //calmSound.Stop();
+            AkSoundEngine.PostEvent("fade_to_main", gameObject);
             inSafe = false;
             if (inDanger)
             {
-                //stressSound.Play();
-                //stressSound.volume = stressVolume;
             }
         }
         else if (other.gameObject.CompareTag("DangerZone"))
         {
-            AkSoundEngine.PostEvent("loop_main_110_bpm_v01", gameObject);
-            //stressSound.Stop();
+            AkSoundEngine.PostEvent("fade_to_main", gameObject);
             inDanger = false;
         }
         if(!inDanger && !inSafe)
         {
-            backgroundVolume = backgroundNormal;
         }
     }
-    
 
-    /// <summary>
-    /// helper function that sets volume based on movement
-    /// </summary>
-    /// <param name="isMoving"></param>
-    private void setVolume(bool isMoving)
-    {
-        if (isMoving)
-        {
-            backgroundSound.volume = backgroundVolume;
-            backgroundSound.GetComponent<AudioLowPassFilter>().cutoffFrequency = lowPassMoving;
-            backgroundSound.pitch = backgroundPitchMoving;
-
-            stressSound.volume = stressVolume;
-            stressSound.GetComponent<AudioLowPassFilter>().cutoffFrequency = lowPassMoving;
-            stressSound.pitch = stressPitchMoving;
-
-            calmSound.volume = calmVolume;
-            calmSound.GetComponent<AudioLowPassFilter>().cutoffFrequency = lowPassMoving;
-            calmSound.pitch = calmPitchMoving;
-
-        }
-        else
-        {
-            if (inDanger || inSafe)
-            {
-                backgroundSound.volume = backgroundZoneStop;
-            }
-            else
-            {
-                backgroundSound.volume = backgroundStop;
-            }
-            backgroundSound.GetComponent<AudioLowPassFilter>().cutoffFrequency = lowPassStop;
-            backgroundSound.pitch = backgroundPitchStop;
-
-            stressSound.volume = stressStop;
-            stressSound.GetComponent<AudioLowPassFilter>().cutoffFrequency = lowPassStop;
-            stressSound.pitch = stressPitchStop;
-
-            calmSound.volume = calmStop;
-            calmSound.GetComponent<AudioLowPassFilter>().cutoffFrequency = lowPassStop;
-            calmSound.pitch = calmPitchStop;
-
-        }
-
-    }
 }

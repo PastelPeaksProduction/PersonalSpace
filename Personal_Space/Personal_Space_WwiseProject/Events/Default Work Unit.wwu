@@ -3,18 +3,7 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{2B1F50E0-3D53-48DC-88DE-1D4D0CE19C45}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="CalmSoundTest" ID="{15A81033-16CE-45EA-9ECE-8F564C339C6A}">
-					<ChildrenList>
-						<Action Name="" ID="{11DF2A5B-EC62-4829-AB52-020044456AA2}" ShortID="545196588">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Calm_Water" ID="{3450B731-CCA3-4669-ACDA-E30299F06DB3}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="loop_main_110_bpm_v01" ID="{B5E441EA-36CB-473E-8A49-8B3E66302942}">
+				<Event Name="main_loop" ID="{B5E441EA-36CB-473E-8A49-8B3E66302942}">
 					<ChildrenList>
 						<Action Name="" ID="{53C53A6B-9C71-4CC4-8372-1D40060E123C}" ShortID="171800747">
 							<PropertyList>
@@ -31,7 +20,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="loop_calm_110_bpm_v01" ID="{894827FD-EFF3-46C7-84BC-9CE6CF23A87D}">
+				<Event Name="fade_to_calm" ID="{894827FD-EFF3-46C7-84BC-9CE6CF23A87D}">
 					<PropertyList>
 						<Property Name="Color" Type="int16" Value="1"/>
 					</PropertyList>
@@ -45,17 +34,19 @@
 						</Action>
 						<Action Name="" ID="{A389CE60-F55B-4592-888B-5B10E1A6ADFA}" ShortID="235770398">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="7"/>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="FadeInCurve" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64" Value="-100"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="PS_MX_loop_main_110_bpm_v01" ID="{AC48AFE5-AB56-47A5-A76A-DCA466B4AA16}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="loop_stress_110_bpm_v01" ID="{8F7C58DB-B5C9-46B9-8327-4C322471DB23}">
+				<Event Name="fade_to_stress" ID="{8F7C58DB-B5C9-46B9-8327-4C322471DB23}">
 					<ChildrenList>
 						<Action Name="" ID="{35E1F66E-9CFC-4032-8A3D-48680A376576}" ShortID="878764313">
 							<ReferenceList>
@@ -66,11 +57,47 @@
 						</Action>
 						<Action Name="" ID="{8DB970A2-2982-42E2-AB41-A31C4E84059F}" ShortID="635388607">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="7"/>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="FadeInCurve" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64" Value="-100"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="PS_MX_loop_main_110_bpm_v01" ID="{AC48AFE5-AB56-47A5-A76A-DCA466B4AA16}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="fade_to_main" ID="{AA04F4D7-3902-40FF-9FC0-694EB91E1D05}">
+					<ChildrenList>
+						<Action Name="" ID="{9E119995-0931-488C-9004-C76EF4D8CD95}" ShortID="829977721">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_MX_loop_calm_110_bpm_v01" ID="{E83F0E69-18FE-455B-ACB6-6FA83A4C137E}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6F974EBE-03E9-41B6-A76E-110390997932}" ShortID="91440127">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_MX_loop_stress_layer_110_bpm_v01" ID="{42A75937-1FEB-4B55-9BAC-20FAECF7AB89}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{749670E8-2EA6-4D75-9A21-69239BE1075C}" ShortID="99974587">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

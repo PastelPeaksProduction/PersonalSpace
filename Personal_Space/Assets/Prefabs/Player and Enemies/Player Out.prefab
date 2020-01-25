@@ -56,6 +56,9 @@ GameObject:
   - component: {fileID: 2880881511751448783}
   - component: {fileID: -5226444014306607292}
   - component: {fileID: -3304125260985934759}
+  - component: {fileID: 629070937878475018}
+  - component: {fileID: 5828242009277311410}
+  - component: {fileID: -2449964149385693460}
   m_Layer: 0
   m_Name: Player Out
   m_TagString: Player
@@ -277,27 +280,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d05958af40c4fbe4bab3cd757b6f3de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundSound: {fileID: 0}
-  stressSound: {fileID: 0}
-  calmSound: {fileID: 0}
-  collectableSound: {fileID: 0}
-  backgroundNormal: 0.65
-  backgroundStop: 0.4
-  backgroundZoneMoving: 0.2
-  backgroundZoneStop: 0.1
-  backgroundPitchStop: 0.65
-  backgroundPitchMoving: 1
-  calmVolume: 1
-  calmStop: 0.75
-  calmPitchStop: 0.5
-  calmPitchMoving: 1.25
-  stressVolume: 1
-  stressStop: 0.75
-  stressPitchStop: 0.5
-  stressPitchMoving: 1.25
-  lowPassStop: 2500
-  lowPassMoving: 5000
-  collectibleVolume: 0.5
 --- !u!114 &8323184913114051894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +399,81 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 3ec015f7aba3aea42ba34768ba36e23f,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
+--- !u!114 &629070937878475018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600146800666572996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ac84b202e00bb48bd0a7cd9846d918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 80fdeea61112b25498fc724453345fef,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
+--- !u!114 &5828242009277311410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600146800666572996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ac84b202e00bb48bd0a7cd9846d918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 499ac938b6bd11f468ef9e63cae99b60,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
+--- !u!114 &-2449964149385693460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600146800666572996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ac84b202e00bb48bd0a7cd9846d918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 56c28194344b2274d96c7bcaa5819fcf,
       type: 2}
   decodeBank: 0
   loadAsynchronous: 0
