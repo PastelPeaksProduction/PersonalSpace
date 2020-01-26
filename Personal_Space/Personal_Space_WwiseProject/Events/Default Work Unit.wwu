@@ -36,7 +36,8 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="FadeInCurve" Type="int16" Value="0"/>
-								<Property Name="Volume" Type="Real64" Value="-100"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-10"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -59,7 +60,8 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="FadeInCurve" Type="int16" Value="0"/>
-								<Property Name="Volume" Type="Real64" Value="-100"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-10"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -71,7 +73,22 @@
 				</Event>
 				<Event Name="fade_to_main" ID="{AA04F4D7-3902-40FF-9FC0-694EB91E1D05}">
 					<ChildrenList>
-						<Action Name="" ID="{9E119995-0931-488C-9004-C76EF4D8CD95}" ShortID="829977721">
+						<Action Name="" ID="{749670E8-2EA6-4D75-9A21-69239BE1075C}" ShortID="99974587">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="fade_out_calm" ID="{4F62085B-A5EF-463F-91A9-096268D74538}">
+					<ChildrenList>
+						<Action Name="" ID="{FE5825C5-35E5-4118-8F11-17B11B43761A}" ShortID="262256276">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
 							</PropertyList>
@@ -81,23 +98,17 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{6F974EBE-03E9-41B6-A76E-110390997932}" ShortID="91440127">
+					</ChildrenList>
+				</Event>
+				<Event Name="fade_out_stress" ID="{6C9A3FCF-0641-4236-9BD8-5D0D6F358B05}">
+					<ChildrenList>
+						<Action Name="" ID="{DA367FED-5E4B-4C14-B4F1-A76996089213}" ShortID="411842585">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="PS_MX_loop_stress_layer_110_bpm_v01" ID="{42A75937-1FEB-4B55-9BAC-20FAECF7AB89}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{749670E8-2EA6-4D75-9A21-69239BE1075C}" ShortID="99974587">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="11"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

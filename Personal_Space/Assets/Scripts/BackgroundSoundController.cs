@@ -5,9 +5,8 @@ using UnityEngine;
 public class BackgroundSoundController : MonoBehaviour
 {
     private bool isMoving;
-    private bool inSafe = false;
-    private bool inDanger = false;
-    private float backgroundVolume;
+    private int inSafe = 0;
+    private int inDanger = 0;
     void Start()
     {
         AkSoundEngine.PostEvent("main_loop", gameObject);
@@ -22,19 +21,19 @@ public class BackgroundSoundController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("SafeZone"))
         {
-            AkSoundEngine.PostEvent("fade_to_calm", gameObject);
-            inSafe = true;
-            if (inDanger)
+            if (inSafe <= 0)
             {
+                AkSoundEngine.PostEvent("fade_to_calm", gameObject);
             }
+            inSafe += 1;
         }
         else if(other.gameObject.CompareTag("DangerZone"))
         {
-            AkSoundEngine.PostEvent("fade_to_stress", gameObject);
-            inDanger = true;
-            if (!inSafe)
+            if (inDanger <= 0)
             {
+                AkSoundEngine.PostEvent("fade_to_stress", gameObject);
             }
+            inDanger += 1;
         }
 
         if (other.gameObject.CompareTag("Collectible") || other.gameObject.CompareTag("Objectives"))
@@ -52,20 +51,25 @@ public class BackgroundSoundController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("SafeZone"))
         {
+            inSafe -= 1;
 
-            AkSoundEngine.PostEvent("fade_to_main", gameObject);
-            inSafe = false;
-            if (inDanger)
+            if (inSafe <= 0)
             {
+                AkSoundEngine.PostEvent("fade_out_calm", gameObject);
             }
         }
         else if (other.gameObject.CompareTag("DangerZone"))
         {
-            AkSoundEngine.PostEvent("fade_to_main", gameObject);
-            inDanger = false;
+            inDanger -= 1;
+            if (inDanger <= 0)
+            {
+                AkSoundEngine.PostEvent("fade_out_stress", gameObject);
+            }
         }
-        if(!inDanger && !inSafe)
+        if(inDanger <= 0 && inSafe <= 0)
         {
+            Debug.Log("Here");
+            AkSoundEngine.PostEvent("fade_to_main", gameObject);
         }
     }
 

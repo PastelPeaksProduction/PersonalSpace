@@ -13,6 +13,8 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID FADE_OUT_CALM = 640433408U;
+        static const AkUniqueID FADE_OUT_STRESS = 459790121U;
         static const AkUniqueID FADE_TO_CALM = 3251299009U;
         static const AkUniqueID FADE_TO_MAIN = 84592575U;
         static const AkUniqueID FADE_TO_STRESS = 2453086244U;
@@ -22,6 +24,8 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
+        static const AkUniqueID FADE_OUT_CALM = 640433408U;
+        static const AkUniqueID FADE_OUT_STRESS = 459790121U;
         static const AkUniqueID FADE_TO_CALM = 3251299009U;
         static const AkUniqueID FADE_TO_MAIN = 84592575U;
         static const AkUniqueID FADE_TO_STRESS = 2453086244U;
