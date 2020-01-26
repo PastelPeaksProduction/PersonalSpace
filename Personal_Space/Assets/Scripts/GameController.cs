@@ -152,7 +152,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void AdvanceLevel()
+    public void AdvanceLevel(object in_cookie, AkCallbackType in_type, object in_info)
     {
         if (SceneManager.GetActiveScene().name == "01GroceryStore")
         {

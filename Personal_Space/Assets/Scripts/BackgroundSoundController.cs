@@ -15,6 +15,14 @@ public class BackgroundSoundController : MonoBehaviour
     void Update()
     {
         isMoving = GetComponentInParent<PlayerController>().isMoving;
+        if (isMoving)
+        {
+            AkSoundEngine.PostEvent("is_moving",gameObject);
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("not_moving", gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,12 +46,7 @@ public class BackgroundSoundController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Collectible") || other.gameObject.CompareTag("Objectives"))
         {
-            bool triggered = other.gameObject.GetComponent<SoundTrigger>().collected;
-            if (!triggered)
-            {
-                other.gameObject.GetComponent<SoundTrigger>().collected = true;
-            }
-            
+            AkSoundEngine.PostEvent("objective_event", gameObject);
         }
     }
 
@@ -68,7 +71,6 @@ public class BackgroundSoundController : MonoBehaviour
         }
         if(inDanger <= 0 && inSafe <= 0)
         {
-            Debug.Log("Here");
             AkSoundEngine.PostEvent("fade_to_main", gameObject);
         }
     }

@@ -114,6 +114,103 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="is_moving" ID="{C5341374-5D16-42DF-9527-178FE47A27D9}">
+					<ChildrenList>
+						<Action Name="" ID="{434AFB57-686D-42BE-94B3-AF898EDA2B4C}" ShortID="166725929">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="15"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+						<Action Name="" ID="{74C8C735-A41D-4EBB-ADC8-2E5FD1BEA170}" ShortID="416617524">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="28"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="not_moving" ID="{1D3E6BAB-8EBA-4C3A-BB74-BE3DE90B58C6}">
+					<ChildrenList>
+						<Action Name="" ID="{65B1B5FB-ACE7-477E-9182-4FCD768ECBCB}" ShortID="657603871">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-10"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8035513F-AED9-4177-919C-EA98BF60B65B}" ShortID="231806220">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-10"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{2C19A556-9432-4E58-90A5-12941DF8C677}" ShortID="854881089">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{BFFD77C4-7D58-4D58-B994-401283CF66F7}" ShortID="731130306">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="objective_event" ID="{27E8AC54-E298-405D-9773-DFC0B71BEA2B}">
+					<ChildrenList>
+						<Action Name="" ID="{0F5C37CC-DC76-4513-A8C6-8F763BB9E30C}" ShortID="526178669">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_MX_stinger_objective_110_bpm_v01" ID="{F780E6A0-7319-4EB0-9CC8-274E758AE532}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="end_of_level" ID="{CB80D835-EB83-4BEE-87A0-899BCD3761D7}">
+					<ChildrenList>
+						<Action Name="" ID="{E43C95C8-C3E5-41A9-823B-FB8A029A418E}" ShortID="95785263">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+						<Action Name="" ID="{C5990ED7-8D36-4145-A678-524FBB2B6B1A}" ShortID="295796627">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_MX_stinger_finish_110_bpm_v01" ID="{88D47792-027F-42BE-AE18-3418546F93E1}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
