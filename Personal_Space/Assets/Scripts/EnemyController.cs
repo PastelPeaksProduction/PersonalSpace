@@ -63,7 +63,10 @@ public class EnemyController : MonoBehaviour
             }
             else
             {
-                moveBackToStart();
+                //moveBackToStart();
+                agent.isStopped = true;
+                agent.velocity = Vector3.zero;
+                transform.position = this.transform.position;
             }
         }
     }

@@ -121,7 +121,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2898517852515095373}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.75
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -566,7 +566,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3760959366462122742}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.75
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -685,7 +685,7 @@ GameObject:
   - component: {fileID: 306809477473530750}
   - component: {fileID: 8275443389663361932}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: DangerZone
   m_TagString: DangerZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -779,6 +779,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!1 &8928290752575383203
 GameObject:
@@ -901,7 +902,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8928290752575383203}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.75
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -1049,7 +1050,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 9019927159780207817}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.75
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50

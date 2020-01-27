@@ -184,11 +184,18 @@ public class PlayerController : MonoBehaviour
     {
 
         // Sets the threat to the level in that zone
-        if(other.CompareTag("DangerZone") || other.CompareTag("SafeZone"))
+        if(other.CompareTag("DangerZone") || other.CompareTag("SafeZone") )
         {
             threatLevel += other.GetComponent<ZoneScript>().zoneThreat;
             other.GetComponent<ZoneScript>().playerInZone = true;
         }
+
+        if (other.CompareTag("SightZone"))
+        {
+            threatLevel += other.GetComponent<ZoneScript>().zoneThreat;
+            Debug.Log("Enter Sight Cone");
+        }
+
         if(other.CompareTag("Collectible"))
         {
             other.gameObject.SetActive(false);
@@ -227,6 +234,10 @@ public class PlayerController : MonoBehaviour
         {
             threatLevel -= other.GetComponent<ZoneScript>().zoneThreat;
             other.GetComponent<ZoneScript>().playerInZone = false;
+            if (other.CompareTag("SightZone"))
+            {
+                Debug.Log("Exit Sight Cone");
+            }
         }
         
     }

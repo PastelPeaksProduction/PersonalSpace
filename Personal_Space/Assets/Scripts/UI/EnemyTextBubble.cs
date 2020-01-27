@@ -63,7 +63,7 @@ public class EnemyTextBubble : MonoBehaviour
     public void SpawnBubble()
     {
         // Initialize bubble
-        Debug.Log("spwan enemy");
+        //Debug.Log("spwan enemy");
         TextBubbleObj = Instantiate(TextBubblePrefab);
         TextBubbleObj.transform.SetParent(Canvas.transform);
         TextBubbleTrans = TextBubbleObj.GetComponent<RectTransform>();
