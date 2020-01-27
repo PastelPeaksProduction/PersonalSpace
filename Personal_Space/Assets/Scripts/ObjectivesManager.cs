@@ -43,9 +43,11 @@ public class ObjectivesManager : MonoBehaviour
     private float _reminderTime;
 
     public AK.Wwise.Event end_of_level_event;
+    public bool endLevel = false;
     // Start is called before the first frame update
     void Start()
     {
+        endLevel = false;
         ObjMarkerSingle = ObjMarker.GetComponent<ObjectiveMarker>();
         _reminderTime = reminderTime;
 
@@ -125,7 +127,7 @@ public class ObjectivesManager : MonoBehaviour
             }
             else
             {
-                GetComponent<PlayerController>().canMove = false;
+                endLevel = true;
                 end_of_level_event.Post(gameObject,(uint)AkCallbackType.AK_EndOfEvent,GetComponent<GameController>().AdvanceLevel);
                 //GetComponent<GameController>().AdvanceLevel();
             }

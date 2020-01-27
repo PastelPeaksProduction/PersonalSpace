@@ -154,6 +154,7 @@ public class GameController : MonoBehaviour
 
     public void AdvanceLevel(object in_cookie, AkCallbackType in_type, object in_info)
     {
+        // GetComponent<ObjectivesManager>().endLevel = false;
         if (SceneManager.GetActiveScene().name == "01GroceryStore")
         {
             SceneManager.LoadScene("02SchoolDance");

@@ -7,6 +7,8 @@ public class BackgroundSoundController : MonoBehaviour
     private bool isMoving;
     private int inSafe = 0;
     private int inDanger = 0;
+    private bool endLevel;
+    public bool isMenu = false;
     void Start()
     {
         AkSoundEngine.PostEvent("main_loop", gameObject);
@@ -14,14 +16,18 @@ public class BackgroundSoundController : MonoBehaviour
 
     void Update()
     {
+        endLevel = GetComponent<ObjectivesManager>().endLevel;
         isMoving = GetComponentInParent<PlayerController>().isMoving;
-        if (isMoving)
+        if (!isMenu)
         {
-            AkSoundEngine.PostEvent("is_moving",gameObject);
-        }
-        else
-        {
-            AkSoundEngine.PostEvent("not_moving", gameObject);
+            if (isMoving || endLevel)
+            {
+                AkSoundEngine.PostEvent("is_moving", gameObject);
+            }
+            else
+            {
+                AkSoundEngine.PostEvent("not_moving", gameObject);
+            }
         }
     }
 
@@ -44,7 +50,7 @@ public class BackgroundSoundController : MonoBehaviour
             inDanger += 1;
         }
 
-        if (other.gameObject.CompareTag("Collectible") || other.gameObject.CompareTag("Objectives"))
+        if ((other.gameObject.CompareTag("Collectible") || other.gameObject.CompareTag("Objectives")) && !endLevel)
         {
             AkSoundEngine.PostEvent("objective_event", gameObject);
         }
