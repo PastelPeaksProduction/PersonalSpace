@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class ZoneScript : MonoBehaviour
 {
-    [Range(1.0f, 30.0f)]
+    [Range(0f, 30.0f)]
     public float zoneScaling;
 
     [HideInInspector]
     public float zoneThreat;
     public bool playerInZone = false;
+
+    public bool basicEnemyType = false;
 
     private List<GameObject> enemies = new List<GameObject>();
     private List<Transform> childrenTransofrm = new List<Transform>();
@@ -56,11 +58,12 @@ public class ZoneScript : MonoBehaviour
      **/
     private void resizeZone(float size)
     {
-        foreach(Transform child in childrenTransofrm)
-        {
-            child.localScale = new Vector3(child.localScale.x / size, child.localScale.y / size, child.localScale.z / size);
-            child.localPosition = new Vector3(child.localPosition.x / size, child.localPosition.y / size, child.localPosition.z / size);
-        }
+         foreach (Transform child in childrenTransofrm)
+            {
+                child.localScale = new Vector3(child.localScale.x / size, child.localScale.y / size, child.localScale.z / size);
+                child.localPosition = new Vector3(child.localPosition.x / size, child.localPosition.y / size, child.localPosition.z / size);
+            }
+        
         transform.localScale = new Vector3(size * transform.localScale.x, size * transform.localScale.y, size * transform.localScale.z);
     }
     /**
@@ -68,16 +71,25 @@ public class ZoneScript : MonoBehaviour
      **/
     private void getEnemiesinZone()
     {
-        var parent = this.transform.parent.gameObject;
-
-        var children = parent.GetComponentsInChildren<Transform>();
-        foreach(var child in children)
+        if (basicEnemyType)
         {
-            
-            if(child.tag == "Enemy")
+            enemies.Add(this.transform.parent.gameObject);
+            childrenTransofrm.Add(this.transform.parent.transform);
+        }
+        else
+        {
+
+            var parent = this.transform.parent.gameObject;
+
+            var children = parent.GetComponentsInChildren<Transform>();
+            foreach (var child in children)
             {
-                enemies.Add(child.gameObject);
-                childrenTransofrm.Add(child.gameObject.GetComponent<Transform>());
+
+                if (child.tag == "Enemy")
+                {
+                    enemies.Add(child.gameObject);
+                    childrenTransofrm.Add(child.gameObject.GetComponent<Transform>());
+                }
             }
         }
     }
