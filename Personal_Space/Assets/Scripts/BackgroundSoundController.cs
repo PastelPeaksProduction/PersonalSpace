@@ -16,7 +16,7 @@ public class BackgroundSoundController : MonoBehaviour
 
     void Update()
     {
-        endLevel = GetComponent<ObjectivesManager>().endLevel;
+        endLevel = GetComponentInParent<ObjectivesManager>().endLevel;
         isMoving = GetComponentInParent<PlayerController>().isMoving;
         if (!isMenu)
         {

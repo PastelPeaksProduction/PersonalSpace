@@ -5,6 +5,8 @@
 //
 //////////////////////////////////////////////////////////////////////
 
+using UnityEngine;
+
 [UnityEngine.AddComponentMenu("Wwise/AkGameObj")]
 [UnityEngine.DisallowMultipleComponent]
 [UnityEngine.ExecuteInEditMode] //ExecuteInEditMode necessary to maintain proper state of isStaticObject.
@@ -100,7 +102,7 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 
 				m_envData.UpdateAuxSend(gameObject, transform.position);
 			}
-
+            
 			m_listeners.Init(this);
 		}
 	}

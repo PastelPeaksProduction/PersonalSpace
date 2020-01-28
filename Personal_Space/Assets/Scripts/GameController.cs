@@ -132,22 +132,34 @@ public class GameController : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Alpha3))
         {
-            SceneManager.LoadScene("03House Party");
+            SceneManager.LoadScene("03SchoolDance");
 
         }
         if (Input.GetKeyUp(KeyCode.Alpha2))
         {
-            SceneManager.LoadScene("02SchoolDance");
+            SceneManager.LoadScene("02Playground");
 
         }
         if (Input.GetKeyUp(KeyCode.Alpha4))
         {
-            SceneManager.LoadScene("04WorkParty");
+            SceneManager.LoadScene("04HouseParty");
 
         }
         if (Input.GetKeyUp(KeyCode.Alpha1))
         {
+            
             SceneManager.LoadScene("01GroceryStore");
+
+        }
+        if (Input.GetKeyUp(KeyCode.Alpha5))
+        {
+            SceneManager.LoadScene("05WorkParty");
+
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha6))
+        {
+            SceneManager.LoadScene("06Convention");
 
         }
     }
@@ -157,20 +169,30 @@ public class GameController : MonoBehaviour
         // GetComponent<ObjectivesManager>().endLevel = false;
         if (SceneManager.GetActiveScene().name == "01GroceryStore")
         {
-            SceneManager.LoadScene("02SchoolDance");
+            SceneManager.LoadScene("02Playground");
         }
 
-        if (SceneManager.GetActiveScene().name == "02SchoolDance")
+        if (SceneManager.GetActiveScene().name == "02Playground")
         {
-            SceneManager.LoadScene("03HouseParty");
+            SceneManager.LoadScene("03SchoolDance");
         }
 
-        if (SceneManager.GetActiveScene().name == "03HouseParty")
+        if (SceneManager.GetActiveScene().name == "03SchoolDance")
         {
-            SceneManager.LoadScene("04WorkParty");
+            SceneManager.LoadScene("04HouseParty");
         }
 
-        if (SceneManager.GetActiveScene().name == "04WorkParty")
+        if (SceneManager.GetActiveScene().name == "04HouseParty")
+        {
+            SceneManager.LoadScene("05WorkParty");
+        }
+
+        if (SceneManager.GetActiveScene().name == "05WorkParty")
+        {
+            SceneManager.LoadScene("06Convention");
+        }
+
+        if (SceneManager.GetActiveScene().name == "06Convention")
         {
             SceneManager.LoadScene("00StartMenu");
         }
