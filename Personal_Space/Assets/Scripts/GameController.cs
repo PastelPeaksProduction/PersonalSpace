@@ -143,34 +143,34 @@ public class GameController : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Alpha3))
         {
-            SceneManager.LoadScene("03SchoolDance");
+            SceneManager.LoadScene("3.0SchoolDance");
 
         }
         if (Input.GetKeyUp(KeyCode.Alpha2))
         {
-            SceneManager.LoadScene("02Playground");
+            SceneManager.LoadScene("2.0Playground");
 
         }
         if (Input.GetKeyUp(KeyCode.Alpha4))
         {
-            SceneManager.LoadScene("04HouseParty");
+            SceneManager.LoadScene("4.0HouseParty");
 
         }
         if (Input.GetKeyUp(KeyCode.Alpha1))
         {
             
-            SceneManager.LoadScene("01GroceryStore");
+            SceneManager.LoadScene("1.0GroceryStore");
 
         }
         if (Input.GetKeyUp(KeyCode.Alpha5))
         {
-            SceneManager.LoadScene("05WorkParty");
+            SceneManager.LoadScene("5.0WorkParty");
 
         }
 
         if (Input.GetKeyUp(KeyCode.Alpha6))
         {
-            SceneManager.LoadScene("06Convention");
+            SceneManager.LoadScene("6.0Convention");
 
         }
 
