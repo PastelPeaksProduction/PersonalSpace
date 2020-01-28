@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 2600146800666573049}
   - component: {fileID: 2600146800666572998}
   - component: {fileID: 2600146800666572999}
+  - component: {fileID: 1734070810938802108}
   - component: {fileID: 95976839973116789}
   - component: {fileID: 2090807824398782169}
   - component: {fileID: 8233919427834800953}
@@ -176,6 +177,24 @@ MonoBehaviour:
   neutralDamage: -0.01
   regenCooldown: 10
   healthPackAmount: 10
+--- !u!114 &1734070810938802108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600146800666572996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3dea1766a28499c9a212391896846e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprintTime: 3
+  sprintSpeed: 40
+  cooldownTime: 5
+  shoutForce: 10
+  shoutRadius: 40
+  shoutUpwardsForce: 10
 --- !u!114 &95976839973116789
 MonoBehaviour:
   m_ObjectHideFlags: 0
