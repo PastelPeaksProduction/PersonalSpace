@@ -79,7 +79,6 @@ public class GameController : MonoBehaviour
                     FOV.SetActive(true);
                     TextBubbleCanvas.SetActive(false);
                     mainCamera.SetActive(false);
-                    mainListener.enabled = false;
                     aerialCamera.SetActive(true);
                     aerialListener.enabled = true;
                     ObjMarker.SetActive(true);
@@ -102,7 +101,6 @@ public class GameController : MonoBehaviour
                     FOV.SetActive(false);
                     TextBubbleCanvas.SetActive(true);
                     mainCamera.SetActive(true);
-                    mainListener.enabled = true;
                     aerialCamera.SetActive(false);
                     aerialListener.enabled = false;
                     ObjMarker.SetActive(false);
