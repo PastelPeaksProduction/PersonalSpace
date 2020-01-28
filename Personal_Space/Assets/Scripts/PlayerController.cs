@@ -215,6 +215,9 @@ public class PlayerController : MonoBehaviour
             {
                 GetComponent<ObjectivesManager>().OnObjectiveTriggered(other.gameObject);
             }
+            // CHRIS CODE
+            // Turn off the objective after the player hits it
+            other.gameObject.SetActive(false);
         }
     }
 
@@ -237,9 +240,12 @@ public class PlayerController : MonoBehaviour
             if (other.CompareTag("SightZone"))
             {
                 Debug.Log("Exit Sight Cone");
+
             }
         }
-        
+
+
+
     }
 
     //--------------------PUBLIC METHODS--------------------//

@@ -52,28 +52,36 @@ public class ObjectivesManager : MonoBehaviour
         _reminderTime = reminderTime;
 
         Objectives = new List<Objective>();
-
+        //  CHRIS CODE
+        //  Set each objective as false when game initializes, and set each active as the previous one is triggered
+        //  Added to intantiating of each objective as well as one line down in TRIGGERED
         if (firstObject_1 != null)
         {
             Objectives.Add(new Objective(firstObject_1, firstDescription,firstEmoji));
+            firstObject_1.SetActive(true); //
 
         }
         if (secondObject_2 != null)
         {
             Objectives.Add(new Objective(secondObject_2, secondDescription, secondEmoji));
+            secondObject_2.SetActive(false);    //
         }
         if (thirdObject_3 != null)
         {
             Objectives.Add(new Objective(thirdObject_3, thirdDescription, thirdEmoji));
+            thirdObject_3.SetActive(false); //
         }
         if (fourthObject_4 != null)
         {
             Objectives.Add(new Objective(fourthObject_4, fourthDescription, fourthEmoji));
+            fourthObject_4.SetActive(false);    //
         }
         if (fifthObject_5 != null)
         {
             Objectives.Add(new Objective(fifthObject_5, fifthDescription, fifthEmoji));
+            fifthObject_5.SetActive(false); //
         }
+
         StartCoroutine(GameStartDelay(3));
         pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
         ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);
@@ -122,7 +130,8 @@ public class ObjectivesManager : MonoBehaviour
 
             if (++objectiveCount < Objectives.Count)
             {
-                ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);       
+                ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);
+                Objectives[objectiveCount].ObjectiveObj.SetActive(true);    //
             }
             else
             {
