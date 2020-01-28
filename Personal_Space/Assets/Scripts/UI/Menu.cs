@@ -31,7 +31,7 @@ public class Menu : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene("01GroceryStore");
+        SceneManager.LoadScene("0.5Cutscene");
     }
 
     public void QuitGame()

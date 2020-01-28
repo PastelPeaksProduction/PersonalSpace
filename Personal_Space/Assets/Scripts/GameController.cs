@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
 {
     private PlayerController player;
 
+    public bool nullValues = false;
     public GameObject mainCamera;
     public GameObject aerialCamera;
     private AudioListener aerialListener;
@@ -31,18 +32,22 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<PlayerController>();
-        aerialListener = aerialCamera.GetComponent<AudioListener>();
-        mainListener = mainCamera.GetComponent<AudioListener>();
+        if (!nullValues)
+        {
+            player = GameObject.Find("Player").GetComponent<PlayerController>();
+            aerialListener = aerialCamera.GetComponent<AudioListener>();
+            mainListener = mainCamera.GetComponent<AudioListener>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+            CheckPause();
 
-        CheckPause();
-
-         CheckGameStatus();
+            CheckGameStatus();
+        
     }
 
     public void PauseGame()
@@ -58,54 +63,57 @@ public class GameController : MonoBehaviour
     }
     private void CheckPause()
     {
-        if (!isPaused)
+        if (!nullValues)
         {
-            if ((Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown("joystick button 1")))
+            if (!isPaused)
             {
-                Debug.Log("switch" + isPaused);
-                isPaused = true;
-                PauseGame();
+                if ((Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown("joystick button 1")))
+                {
+                    Debug.Log("switch" + isPaused);
+                    isPaused = true;
+                    PauseGame();
 
-                pauseDialog.SetActive(true);
-                Stressbar.SetActive(true);
-                PlayerAngle.SetActive(true);
-                FOV.SetActive(true);
-                TextBubbleCanvas.SetActive(false);
-                mainCamera.SetActive(false);
-                mainListener.enabled = false;
-                aerialCamera.SetActive(true);
-                aerialListener.enabled = true;
-                ObjMarker.SetActive(true);
-                BottomHealthBar.SetActive(false);
-                Enemies.SetActive(false);
-                RestartBtn.SetActive(true);
-                MenuBtn.SetActive(true);
+                    pauseDialog.SetActive(true);
+                    Stressbar.SetActive(true);
+                    PlayerAngle.SetActive(true);
+                    FOV.SetActive(true);
+                    TextBubbleCanvas.SetActive(false);
+                    mainCamera.SetActive(false);
+                    mainListener.enabled = false;
+                    aerialCamera.SetActive(true);
+                    aerialListener.enabled = true;
+                    ObjMarker.SetActive(true);
+                    BottomHealthBar.SetActive(false);
+                    Enemies.SetActive(false);
+                    RestartBtn.SetActive(true);
+                    MenuBtn.SetActive(true);
 
+                }
             }
-        }
-        else
-        {
-            if ((Input.GetKeyUp(KeyCode.Tab) || Input.GetKeyUp("joystick button 17") || Input.GetKeyUp("joystick button 1")))
+            else
             {
-                Debug.Log("switch2" + isPaused);
+                if ((Input.GetKeyUp(KeyCode.Tab) || Input.GetKeyUp("joystick button 17") || Input.GetKeyUp("joystick button 1")))
+                {
+                    Debug.Log("switch2" + isPaused);
 
-                pauseDialog.SetActive(false);
-                Stressbar.SetActive(false);
-                PlayerAngle.SetActive(false);
-                FOV.SetActive(false);
-                TextBubbleCanvas.SetActive(true);
-                mainCamera.SetActive(true);
-                mainListener.enabled = true;
-                aerialCamera.SetActive(false);
-                aerialListener.enabled = false;
-                ObjMarker.SetActive(false);
-                BottomHealthBar.SetActive(true);
-                Enemies.SetActive(true);
-                RestartBtn.SetActive(false);
-                MenuBtn.SetActive(false);
-                ContinueGame();
+                    pauseDialog.SetActive(false);
+                    Stressbar.SetActive(false);
+                    PlayerAngle.SetActive(false);
+                    FOV.SetActive(false);
+                    TextBubbleCanvas.SetActive(true);
+                    mainCamera.SetActive(true);
+                    mainListener.enabled = true;
+                    aerialCamera.SetActive(false);
+                    aerialListener.enabled = false;
+                    ObjMarker.SetActive(false);
+                    BottomHealthBar.SetActive(true);
+                    Enemies.SetActive(true);
+                    RestartBtn.SetActive(false);
+                    MenuBtn.SetActive(false);
+                    ContinueGame();
 
-                isPaused = false;
+                    isPaused = false;
+                }
             }
         }
     }
@@ -117,17 +125,20 @@ public class GameController : MonoBehaviour
     }
     private void CheckGameStatus()
     {
-        if (player.health <= 0)
+        if (!nullValues)
         {
-            PauseGame();
-            deadDialog.SetActive(true);
-
-            //X to Restart game
-            if (Input.GetKeyDown(KeyCode.X) || Input.GetKey("joystick button 18") || Input.GetKey("joystick button 2"))
+            if (player.health <= 0)
             {
-                deadDialog.SetActive(false);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                ContinueGame();
+                PauseGame();
+                deadDialog.SetActive(true);
+
+                //X to Restart game
+                if (Input.GetKeyDown(KeyCode.X) || Input.GetKey("joystick button 18") || Input.GetKey("joystick button 2"))
+                {
+                    deadDialog.SetActive(false);
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    ContinueGame();
+                }
             }
         }
         if (Input.GetKeyUp(KeyCode.Alpha3))
@@ -162,39 +173,77 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene("06Convention");
 
         }
+
+        if (Input.GetKeyUp(KeyCode.Space) && nullValues)
+        {
+            if (SceneManager.GetActiveScene().name == "0.5Cutscene")
+            {
+                SceneManager.LoadScene("1.0GroceryStore");
+            }
+
+            if (SceneManager.GetActiveScene().name == "1.5Cutscene")
+            {
+                SceneManager.LoadScene("2.0Playground");
+            }
+
+            if (SceneManager.GetActiveScene().name == "2.5Cutscene")
+            {
+                SceneManager.LoadScene("3.0SchoolDance");
+            }
+
+            if (SceneManager.GetActiveScene().name == "3.5Cutscene")
+            {
+                SceneManager.LoadScene("4.0HouseParty");
+            }
+
+            if (SceneManager.GetActiveScene().name == "4.5Cutscene")
+            {
+                SceneManager.LoadScene("5.0WorkParty");
+            }
+
+            if (SceneManager.GetActiveScene().name == "5.5Cutscene")
+            {
+                SceneManager.LoadScene("6.0Convention");
+            }
+
+            if (SceneManager.GetActiveScene().name == "6.5Cutscene")
+            {
+                SceneManager.LoadScene("0.0StartMenu");
+            }
+        }
     }
 
     public void AdvanceLevel(object in_cookie, AkCallbackType in_type, object in_info)
     {
         // GetComponent<ObjectivesManager>().endLevel = false;
-        if (SceneManager.GetActiveScene().name == "01GroceryStore")
+        if (SceneManager.GetActiveScene().name == "1.0GroceryStore")
         {
-            SceneManager.LoadScene("02Playground");
+            SceneManager.LoadScene("1.5Cutscene");
         }
 
-        if (SceneManager.GetActiveScene().name == "02Playground")
+        if (SceneManager.GetActiveScene().name == "2.0Playground")
         {
-            SceneManager.LoadScene("03SchoolDance");
+            SceneManager.LoadScene("2.5Cutscene");
         }
 
-        if (SceneManager.GetActiveScene().name == "03SchoolDance")
+        if (SceneManager.GetActiveScene().name == "3.0SchoolDance")
         {
-            SceneManager.LoadScene("04HouseParty");
+            SceneManager.LoadScene("3.5Cutscene");
         }
 
-        if (SceneManager.GetActiveScene().name == "04HouseParty")
+        if (SceneManager.GetActiveScene().name == "4.0HouseParty")
         {
-            SceneManager.LoadScene("05WorkParty");
+            SceneManager.LoadScene("4.5Cutscene");
         }
 
-        if (SceneManager.GetActiveScene().name == "05WorkParty")
+        if (SceneManager.GetActiveScene().name == "5.0WorkParty")
         {
-            SceneManager.LoadScene("06Convention");
+            SceneManager.LoadScene("5.5Cutscene");
         }
 
-        if (SceneManager.GetActiveScene().name == "06Convention")
+        if (SceneManager.GetActiveScene().name == "6.0Convention")
         {
-            SceneManager.LoadScene("00StartMenu");
+            SceneManager.LoadScene("6.5Cutscene");
         }
     }
 
