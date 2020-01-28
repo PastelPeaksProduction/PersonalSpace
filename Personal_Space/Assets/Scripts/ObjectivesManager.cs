@@ -78,7 +78,6 @@ public class ObjectivesManager : MonoBehaviour
         pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
         ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);
 
-
     }
     IEnumerator GameStartDelay(int sec)
     {
@@ -147,6 +146,13 @@ public class ObjectivesManager : MonoBehaviour
             ObjectiveDes = objectiveDes;
             ObjectiveEmoji = objectiveEmoji;
         }
+    }
+
+    public GameObject GetCurrentObjective()
+    {
+        if (objectiveCount >= Objectives.Count)
+            return null;
+        return Objectives[objectiveCount].ObjectiveObj;
     }
 
 }

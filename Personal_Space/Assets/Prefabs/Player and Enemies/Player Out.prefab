@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed56437eb39667043927910375491594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nullValues: 0
   mainCamera: {fileID: 2600146800702947624}
   aerialCamera: {fileID: 0}
   pauseDialog: {fileID: 0}
@@ -361,6 +362,7 @@ GameObject:
   - component: {fileID: 2600146800702947631}
   - component: {fileID: 2600146800702947630}
   - component: {fileID: 2600146800702947617}
+  - component: {fileID: 8363627138843210479}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -527,6 +529,21 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &8363627138843210479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600146800702947624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d930aa71d36e94a9eec9c6e56f82ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicator: {fileID: 0}
+  target: {fileID: 0}
+  obj_man: {fileID: 0}
 --- !u!1 &2600146800842270592
 GameObject:
   m_ObjectHideFlags: 0
