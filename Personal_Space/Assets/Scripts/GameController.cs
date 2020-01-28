@@ -95,7 +95,7 @@ public class GameController : MonoBehaviour
                 {
                     Debug.Log("switch2" + isPaused);
 
-                    pauseDialog.SetActive(false);
+                    //pauseDialog.SetActive(false);
                     Stressbar.SetActive(false);
                     PlayerAngle.SetActive(false);
                     FOV.SetActive(false);
