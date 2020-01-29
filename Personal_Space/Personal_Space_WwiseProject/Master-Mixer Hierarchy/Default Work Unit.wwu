@@ -17,6 +17,13 @@
 						</Reference>
 					</ReferenceList>
 				</Bus>
+				<Bus Name="Heartbeat" ID="{1F337A54-4045-4E23-813E-45D0313870C9}">
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="System" ID="{E38B0199-414D-49DB-AD85-AA642D7B10B3}" WorkUnitID="{9DFA956D-248C-41D9-AB34-6E900ACFE86C}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
 			</ChildrenList>
 		</WorkUnit>
 	</Busses>

@@ -260,12 +260,15 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="PS_SFX_Hbeat_03_F" ID="{8CCCBC52-FF8B-4483-9636-9393F98EC207}" ShortID="439242486">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{45FBE8E9-83E4-4A1B-8F1C-A2394DDEB6C5}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+							<ObjectRef Name="Heartbeat" ID="{1F337A54-4045-4E23-813E-45D0313870C9}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -279,12 +282,15 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="PS_SFX_Hbeat_03_S" ID="{06AEF25D-B937-482D-98C9-0606495224D2}" ShortID="537033183">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{45FBE8E9-83E4-4A1B-8F1C-A2394DDEB6C5}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+							<ObjectRef Name="Heartbeat" ID="{1F337A54-4045-4E23-813E-45D0313870C9}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>

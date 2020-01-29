@@ -12,6 +12,30 @@
 							</PropertyList>
 							<ReferenceList/>
 						</Action>
+						<Action Name="" ID="{1D6A3226-C7EA-417A-8536-F6E1909D0EB8}" ShortID="894493848">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{9739A2CF-03C4-4E80-AA3C-5EFAAD06D035}" ShortID="1005871690">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{AE1A38D2-4CDD-452A-8D6B-908E35271F0A}" ShortID="194969595">
 							<ReferenceList>
 								<Reference Name="Target">
@@ -38,7 +62,7 @@
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="FadeInCurve" Type="int16" Value="0"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-10"/>
+								<Property Name="Volume" Type="Real64" Value="-12"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -62,7 +86,7 @@
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="FadeInCurve" Type="int16" Value="0"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-10"/>
+								<Property Name="Volume" Type="Real64" Value="-12"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -78,6 +102,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-5"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -119,10 +144,62 @@
 					<ChildrenList>
 						<Action Name="" ID="{434AFB57-686D-42BE-94B3-AF898EDA2B4C}" ShortID="166725929">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="15"/>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8EE2D1CA-9C02-4DC8-A70E-791E59790ED8}" ShortID="457663150">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Volume" Type="Real64" Value="-5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{1AD1096A-8D6D-4272-8F9A-9BA41624765A}" ShortID="396944905">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="FadeTime" Type="Real64" Value="10"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
-							<ReferenceList/>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_MX_loop_main_110_bpm_v01" ID="{AC48AFE5-AB56-47A5-A76A-DCA466B4AA16}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{578080D3-D6F7-4E9F-B40F-FC8FBF1FE488}" ShortID="501296182">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="FadeTime" Type="Real64" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_MX_loop_calm_110_bpm_v01" ID="{E83F0E69-18FE-455B-ACB6-6FA83A4C137E}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{2E15866E-A42B-432B-A050-BA103383C14F}" ShortID="655752170">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="FadeTime" Type="Real64" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_MX_loop_stress_layer_110_bpm_v01" ID="{42A75937-1FEB-4B55-9BAC-20FAECF7AB89}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{74C8C735-A41D-4EBB-ADC8-2E5FD1BEA170}" ShortID="416617524">
 							<PropertyList>
@@ -135,33 +212,46 @@
 				</Event>
 				<Event Name="not_moving" ID="{1D3E6BAB-8EBA-4C3A-BB74-BE3DE90B58C6}">
 					<ChildrenList>
-						<Action Name="" ID="{65B1B5FB-ACE7-477E-9182-4FCD768ECBCB}" ShortID="657603871">
+						<Action Name="" ID="{F196EA02-F74D-4DF5-A566-5D6FD0F36E56}" ShortID="878724954">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Pitch" Type="int32" Value="-85"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-10"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+									<ObjectRef Name="PS_MX_loop_main_110_bpm_v01" ID="{AC48AFE5-AB56-47A5-A76A-DCA466B4AA16}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{8035513F-AED9-4177-919C-EA98BF60B65B}" ShortID="231806220">
+						<Action Name="" ID="{0F0F287E-2621-42D1-BB4F-CFED13B8C518}" ShortID="464541482">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Pitch" Type="int32" Value="-85"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-10"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+									<ObjectRef Name="PS_MX_loop_stress_layer_110_bpm_v01" ID="{42A75937-1FEB-4B55-9BAC-20FAECF7AB89}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{DBC70A25-6848-4BF0-8816-0C84F8592E4D}" ShortID="621856586">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Pitch" Type="int32" Value="-85"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_MX_loop_calm_110_bpm_v01" ID="{E83F0E69-18FE-455B-ACB6-6FA83A4C137E}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{2C19A556-9432-4E58-90A5-12941DF8C677}" ShortID="854881089">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="60"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
@@ -173,6 +263,7 @@
 						<Action Name="" ID="{BFFD77C4-7D58-4D58-B994-401283CF66F7}" ShortID="731130306">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="60"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
@@ -207,6 +298,75 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="PS_MX_stinger_finish_110_bpm_v01" ID="{88D47792-027F-42BE-AE18-3418546F93E1}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Heartbeat_S" ID="{2C229BE2-8F6A-41F8-8F89-E0C6B9D458BA}">
+					<ChildrenList>
+						<Action Name="" ID="{BBB05F1E-5DC4-4BD2-8C4A-1AA01D2AEE33}" ShortID="1029689713">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_SFX_Hbeat_03_S" ID="{06AEF25D-B937-482D-98C9-0606495224D2}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Heartbeat_F" ID="{A7306C2F-55A2-4DBF-A8A1-A2558A56F4AF}">
+					<ChildrenList>
+						<Action Name="" ID="{7A856143-B518-4027-9264-1ADAB6EDFC9B}" ShortID="1042059970">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_SFX_Hbeat_03_F" ID="{8CCCBC52-FF8B-4483-9636-9393F98EC207}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="heartbeat_speed_slow" ID="{E69F6951-16A7-4505-B9CA-7E228A06BD4E}">
+					<ChildrenList>
+						<Action Name="" ID="{D463EFA6-6EDB-4F3B-B4A0-1FB09B485208}" ShortID="588678536">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Heartbeat" ID="{1F337A54-4045-4E23-813E-45D0313870C9}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="heartbeat_speed_fast" ID="{9C85161E-93DD-47D2-BAF6-4A7AA245E2F7}">
+					<ChildrenList>
+						<Action Name="" ID="{A01A8A07-16CF-4669-A93E-5BF5DE2A60CA}" ShortID="618107909">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Pitch" Type="int32" Value="30"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Heartbeat" ID="{1F337A54-4045-4E23-813E-45D0313870C9}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="heartbeat_speed_medium" ID="{3588330C-98AD-476F-88C4-48582A887E6E}">
+					<ChildrenList>
+						<Action Name="" ID="{E9EBA75B-7D70-4C9F-BE74-740103B39176}" ShortID="956708747">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Pitch" Type="int32" Value="15"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Heartbeat" ID="{1F337A54-4045-4E23-813E-45D0313870C9}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

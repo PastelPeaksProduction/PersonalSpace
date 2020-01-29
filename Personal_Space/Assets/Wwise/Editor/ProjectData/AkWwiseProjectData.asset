@@ -24,14 +24,14 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 0a2656453d4e84419027d0b7035907fc
     GuidInternal: 
-    m_lastTime: -8586216123510459116
+    m_lastTime: -8586213434911214327
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 74407dd5568cb749a7815cf164f44d03
     GuidInternal: 
-    m_lastTime: -8586215386293763747
+    m_lastTime: -8586213435377779945
     List:
     - name: end_of_level
       guid: f65f672dd45cf04398696bfc6c9f458d
@@ -87,6 +87,24 @@ MonoBehaviour:
       - ElementName: fade_to_stress
         ObjectType: 7
       Path: Default Work Unit\fade_to_stress
+    - name: Heartbeat_F
+      guid: 93bb1b262b1d0e40a0ce173eddf65eb1
+      id: 1158766008
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Heartbeat_F
+        ObjectType: 7
+      Path: Default Work Unit\Heartbeat_F
+    - name: Hearthbeat_S
+      guid: e5e6145e75b1764d90ee3532504d8750
+      id: 3832398287
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Hearthbeat_S
+        ObjectType: 7
+      Path: Default Work Unit\Hearthbeat_S
     - name: is_moving
       guid: 449863291c25ca4f829f6710bf3fe2cd
       id: 2695808710
@@ -128,7 +146,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: e0501f2b533ddc4888de1d4d0ce19c45
     GuidInternal: 
-    m_lastTime: -8586215115734445974
+    m_lastTime: -8586213433778958583
     List:
     - name: end_of_level
       guid: 35d880cb83ebee4b87a0899bcd3761d7
@@ -140,8 +158,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\end_of_level
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 7.636375
+      minDuration: 7.636375
     - name: fade_out_calm
       guid: 5b08624fefa53f4691a9096268d74538
       id: 640433408
@@ -152,8 +170,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\fade_out_calm
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: fade_out_stress
       guid: cf3f9a6c410636429bd85d0d6f358b05
       id: 459790121
@@ -164,8 +182,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\fade_out_stress
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: fade_to_calm
       guid: fd274889f3efc74684bc9ce6cf23a87d
       id: 3251299009
@@ -188,8 +206,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\fade_to_main
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: fade_to_stress
       guid: db587c8fc9b5b94683274c322471db23
       id: 2453086244
@@ -199,6 +217,66 @@ MonoBehaviour:
       - ElementName: fade_to_stress
         ObjectType: 3
       Path: Default Work Unit\fade_to_stress
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Heartbeat_F
+      guid: 2f6c30a7a255bf4da8a1a2558a56f4af
+      id: 1158766008
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Heartbeat_F
+        ObjectType: 3
+      Path: Default Work Unit\Heartbeat_F
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Heartbeat_S
+      guid: e29b222c6a8ff8418f89e0c6b9d458ba
+      id: 1158765997
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Heartbeat_S
+        ObjectType: 3
+      Path: Default Work Unit\Heartbeat_S
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: heartbeat_speed_fast
+      guid: 1e16859cdd93d247baf64a7aa245e2f7
+      id: 2740367136
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: heartbeat_speed_fast
+        ObjectType: 3
+      Path: Default Work Unit\heartbeat_speed_fast
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: heartbeat_speed_medium
+      guid: 0c338835ad986f4788c448582a887e6e
+      id: 1307689315
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: heartbeat_speed_medium
+        ObjectType: 3
+      Path: Default Work Unit\heartbeat_speed_medium
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: heartbeat_speed_slow
+      guid: 51699fe6a7160545b9ca7e228a06bd4e
+      id: 1904996713
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: heartbeat_speed_slow
+        ObjectType: 3
+      Path: Default Work Unit\heartbeat_speed_slow
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -212,8 +290,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\is_moving
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: main_loop
       guid: ea41e4b5cb363e478a498b3e66302942
       id: 3813340491
@@ -236,8 +314,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\not_moving
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: objective_event
       guid: 54ace82798e25d409773dfc0b71bea2b
       id: 2252392879
@@ -248,8 +326,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\objective_event
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 5.454563
+      minDuration: 5.454563
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -280,6 +358,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Personal_Space_WwiseProject
+  - /Personal_Space_WwiseProject/Events
+  - /Personal_Space_WwiseProject/Events/Default Work Unit
   - /Personal_Space_WwiseProject/SoundBanks
   - /Personal_Space_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1

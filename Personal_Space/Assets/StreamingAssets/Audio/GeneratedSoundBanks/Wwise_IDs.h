@@ -34,6 +34,8 @@ namespace AK
         static const AkUniqueID FADE_TO_CALM = 3251299009U;
         static const AkUniqueID FADE_TO_MAIN = 84592575U;
         static const AkUniqueID FADE_TO_STRESS = 2453086244U;
+        static const AkUniqueID HEARTBEAT_F = 1158766008U;
+        static const AkUniqueID HEARTHBEAT_S = 3832398287U;
         static const AkUniqueID IS_MOVING = 2695808710U;
         static const AkUniqueID MAIN_LOOP = 3813340491U;
         static const AkUniqueID NOT_MOVING = 3053284133U;
@@ -42,6 +44,7 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID HEARTBEAT = 2179486487U;
         static const AkUniqueID MAIN_LOOP = 3813340491U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
     } // namespace BUSSES
