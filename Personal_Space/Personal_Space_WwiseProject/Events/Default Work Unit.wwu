@@ -157,6 +157,7 @@
 						<Action Name="" ID="{8EE2D1CA-9C02-4DC8-A70E-791E59790ED8}" ShortID="457663150">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
 								<Property Name="Volume" Type="Real64" Value="-5"/>
 							</PropertyList>
 							<ReferenceList>
@@ -168,7 +169,7 @@
 						<Action Name="" ID="{1AD1096A-8D6D-4272-8F9A-9BA41624765A}" ShortID="396944905">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="13"/>
-								<Property Name="FadeTime" Type="Real64" Value="10"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
@@ -180,7 +181,7 @@
 						<Action Name="" ID="{578080D3-D6F7-4E9F-B40F-FC8FBF1FE488}" ShortID="501296182">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="13"/>
-								<Property Name="FadeTime" Type="Real64" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
@@ -192,7 +193,7 @@
 						<Action Name="" ID="{2E15866E-A42B-432B-A050-BA103383C14F}" ShortID="655752170">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="13"/>
-								<Property Name="FadeTime" Type="Real64" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
@@ -204,6 +205,11 @@
 						<Action Name="" ID="{74C8C735-A41D-4EBB-ADC8-2E5FD1BEA170}" ShortID="416617524">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="28"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList/>
@@ -251,6 +257,11 @@
 						<Action Name="" ID="{2C19A556-9432-4E58-90A5-12941DF8C677}" ShortID="854881089">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Lowpass" Type="int16" Value="60"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
@@ -263,8 +274,37 @@
 						<Action Name="" ID="{BFFD77C4-7D58-4D58-B994-401283CF66F7}" ShortID="731130306">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Lowpass" Type="int16" Value="60"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8EFAA4EE-C3DD-4566-AC3D-2A3D91506795}" ShortID="527450022">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-12"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{0F87A151-EA72-4012-A1BD-73258F99CCB1}" ShortID="234001830">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-12"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -312,6 +352,17 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{79984E5D-BC54-4FC7-A8C2-E1DAD81E1D71}" ShortID="995130842">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_SFX_Hbeat_03_F" ID="{8CCCBC52-FF8B-4483-9636-9393F98EC207}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Heartbeat_F" ID="{A7306C2F-55A2-4DBF-A8A1-A2558A56F4AF}">
@@ -323,14 +374,50 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{06F63F03-8EA0-4817-B7B3-C0AB2FA65026}" ShortID="494149497">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_SFX_Hbeat_03_S" ID="{06AEF25D-B937-482D-98C9-0606495224D2}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="heartbeat_speed_slow" ID="{E69F6951-16A7-4505-B9CA-7E228A06BD4E}">
+				<Event Name="health_2" ID="{44D1AEAF-8903-4086-A590-81C746E036CB}">
 					<ChildrenList>
-						<Action Name="" ID="{D463EFA6-6EDB-4F3B-B4A0-1FB09B485208}" ShortID="588678536">
+						<Action Name="" ID="{DDBAF4D0-0151-4A47-B6E9-8682B7C4C01B}" ShortID="437122920">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="50"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{EF7DDAA7-10B7-449B-9796-16843F3C0F43}" ShortID="67065671">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="50"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{55A29591-887F-4183-B790-C45495DC6C26}" ShortID="189259955">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="5"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -338,13 +425,14 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="heartbeat_speed_fast" ID="{9C85161E-93DD-47D2-BAF6-4A7AA245E2F7}">
-					<ChildrenList>
-						<Action Name="" ID="{A01A8A07-16CF-4669-A93E-5BF5DE2A60CA}" ShortID="618107909">
+						<Action Name="" ID="{3C81FACE-655C-4C10-AFAC-87EE7C2DAB72}" ShortID="312523430">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32" Value="30"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
@@ -354,19 +442,360 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{45DBE15A-C5E0-4CD8-9743-61F7570F28ED}" ShortID="856050712">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Breathing" ID="{DCFCB619-3F02-42CC-8C60-2AC5A6A836C0}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{2368C7C5-ED29-408C-B246-0EFACC913A20}" ShortID="75567139">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_DIA_Breath_M_Stress_02" ID="{44FA1DD5-FC90-4904-88AF-8986582D9705}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{4319D830-EBC6-4630-9DD5-0CD3868C61B7}" ShortID="516753475">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="7"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Breathing" ID="{DCFCB619-3F02-42CC-8C60-2AC5A6A836C0}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="heartbeat_speed_medium" ID="{3588330C-98AD-476F-88C4-48582A887E6E}">
+				<Event Name="health_1" ID="{C92570ED-9227-4BEA-BBEB-7AD93189C501}">
 					<ChildrenList>
-						<Action Name="" ID="{E9EBA75B-7D70-4C9F-BE74-740103B39176}" ShortID="956708747">
+						<Action Name="" ID="{1C717DE7-AC3B-4814-8A6D-507CF2E7CFFA}" ShortID="193499549">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="70"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{AD9A7174-E1A4-4B42-892E-65FADADD6976}" ShortID="452339319">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="70"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F3AAA014-7BD9-4F6D-B041-6ED9F6C36B6A}" ShortID="62825890">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32" Value="30"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Heartbeat" ID="{1F337A54-4045-4E23-813E-45D0313870C9}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{06C0724B-EF0E-4536-8B98-D177BEE2D0B1}" ShortID="635204306">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="10"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Heartbeat" ID="{1F337A54-4045-4E23-813E-45D0313870C9}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{ADB42A64-34B8-40AD-A3B8-3AC63D09A42E}" ShortID="306750393">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Breathing" ID="{DCFCB619-3F02-42CC-8C60-2AC5A6A836C0}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{E6C22B61-E333-41B6-8CF1-25190CFCC1C2}" ShortID="791138452">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_DIA_Breath_M_Stress_03" ID="{63AC6275-9B0F-4BC7-ABA4-92B6CC8CE4D1}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{76707FE2-DC51-4C5B-B78A-BF91CC14EC4B}" ShortID="85195920">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="10"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Breathing" ID="{DCFCB619-3F02-42CC-8C60-2AC5A6A836C0}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="health_5" ID="{CC2566CC-805C-4814-B629-421EF0AF8731}">
+					<ChildrenList>
+						<Action Name="" ID="{2FED90B5-5670-48A8-BD65-9A6366CD7AAC}" ShortID="983758416">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="28"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+						<Action Name="" ID="{9D92C0A2-351B-4EDE-A691-39A0CF8AD7FF}" ShortID="765600827">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Heartbeat" ID="{1F337A54-4045-4E23-813E-45D0313870C9}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{03F24D8C-AC5B-4941-A99B-77436B59C266}" ShortID="169801168">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-100"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Heartbeat" ID="{1F337A54-4045-4E23-813E-45D0313870C9}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8E1E5D60-3B82-45BE-BCDD-F34CE47D8FB2}" ShortID="446430747">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Breathing" ID="{DCFCB619-3F02-42CC-8C60-2AC5A6A836C0}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{1C59FD27-8448-469C-A331-EE1793D3D633}" ShortID="904393953">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_DIA_Breath_M_Calm_01" ID="{87739316-540C-4EAC-9EA3-766E90ED8B5F}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{78EB2D3E-CA5C-4D1E-9666-F06DEAB5856E}" ShortID="947909481">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Breathing" ID="{DCFCB619-3F02-42CC-8C60-2AC5A6A836C0}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="health_3" ID="{E54B7834-6113-43FB-8C83-1FB8F4CF948D}">
+					<ChildrenList>
+						<Action Name="" ID="{9079CF63-37D1-4775-9DAA-ED88430D154D}" ShortID="651968205">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="37"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8D105DBD-2E2B-42F3-8366-D0DB0EE3FDA4}" ShortID="940206214">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="35"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{0980416B-3DE2-40CE-8724-92DE7549055A}" ShortID="515222933">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32" Value="15"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Heartbeat" ID="{1F337A54-4045-4E23-813E-45D0313870C9}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{9B26BE7F-0896-4F65-A92B-4952F2AAE925}" ShortID="483464767">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Heartbeat" ID="{1F337A54-4045-4E23-813E-45D0313870C9}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6674C133-C596-4DC8-B4A3-65ED1C04D1A8}" ShortID="79366840">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Breathing" ID="{DCFCB619-3F02-42CC-8C60-2AC5A6A836C0}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{BF17C744-E84E-4B94-929F-7B37FC9BCC6E}" ShortID="778473267">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_DIA_Breath_M_Stress_01" ID="{D9CA302E-B49B-41FF-BA0B-4398CE35356E}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C4AD1C12-1C6E-43A5-A139-A65ABE93D8CD}" ShortID="29551327">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="4"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Breathing" ID="{DCFCB619-3F02-42CC-8C60-2AC5A6A836C0}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="health_4" ID="{BFDC44DC-E14E-4239-9286-059475D14CC0}">
+					<ChildrenList>
+						<Action Name="" ID="{3E4CADCA-7DC4-4C8E-AC7F-D25D7FEDB7EC}" ShortID="920837153">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="20"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{27EF6739-CA3A-4D7A-8EF5-F8F3DB43AEB6}" ShortID="124081611">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="20"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F9A338A2-ACE4-48F7-99F8-E8C360CC211B}" ShortID="10159260">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32" Value="15"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Heartbeat" ID="{1F337A54-4045-4E23-813E-45D0313870C9}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{88C72264-F4D9-4E11-9D8D-0E187E99842B}" ShortID="781088804">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Heartbeat" ID="{1F337A54-4045-4E23-813E-45D0313870C9}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{82E597F2-89E6-4C88-A18B-71C4B1BB4D5D}" ShortID="820587147">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Breathing" ID="{DCFCB619-3F02-42CC-8C60-2AC5A6A836C0}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{4BD02526-DFBC-4736-B1E6-CE584A710650}" ShortID="37194470">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_DIA_Breath_M_Calm_02" ID="{D9894967-1A47-49D9-9076-088659B6C3AF}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A7B2131B-8AAE-496A-AE49-F6A6226127FE}" ShortID="952199385">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Breathing" ID="{DCFCB619-3F02-42CC-8C60-2AC5A6A836C0}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
