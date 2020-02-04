@@ -12,6 +12,7 @@ public class ArrowIndicator : MonoBehaviour
     private GameObject Canvas;
     private GameObject Player;
     public GameObject Objective;
+    public ObjectivesManager obj_man;
 
 
     // Start is called before the first frame update
@@ -22,13 +23,15 @@ public class ArrowIndicator : MonoBehaviour
         ArrowObj = Instantiate(ArrowPrefab);
         ArrowObj.transform.SetParent(Canvas.transform);
         ArrowTrans = ArrowObj.GetComponent<RectTransform>();
+        obj_man = gameObject.transform.GetComponentInParent<ObjectivesManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ArrowTrans.position = gameObject.transform.position + new Vector3(5,-4.5f);
+        Objective = obj_man.GetCurrentObjective();
+        ArrowTrans.position = gameObject.transform.position + new Vector3(0,-4.5f);
         ArrowTrans.LookAt(Objective.transform);
-        ArrowTrans.Rotate(new Vector3(90, -90, 0));
+        ArrowTrans.Rotate(new Vector3(90, 0, 0));
     }
 }

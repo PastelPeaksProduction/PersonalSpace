@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 2753372279629230412}
   - component: {fileID: 1700120043}
   - component: {fileID: 1700120059}
+  - component: {fileID: 6519597736140742968}
   m_Layer: 0
   m_Name: Player Out
   m_TagString: Player
@@ -405,6 +406,22 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &6519597736140742968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600146800666572996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c653e29d093ebd44dab5d243e5a45689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ArrowPrefab: {fileID: 7394406848224439333, guid: 7b0e5dfc44b7f3e4a8e9c7acf5be90f5,
+    type: 3}
+  Objective: {fileID: 0}
+  obj_man: {fileID: 0}
 --- !u!1 &2600146800702947624
 GameObject:
   m_ObjectHideFlags: 0
