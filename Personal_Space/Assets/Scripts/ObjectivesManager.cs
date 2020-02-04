@@ -41,6 +41,7 @@ public class ObjectivesManager : MonoBehaviour
     private List<Objective> Objectives;
     private int objectiveCount = 0;
     private float _reminderTime;
+    private float _sinceLastObj = 0;
 
     public AK.Wwise.Event end_of_level_event;
     public bool endLevel = false;
@@ -95,6 +96,7 @@ public class ObjectivesManager : MonoBehaviour
 
     private void Update()
     {
+        _sinceLastObj += Time.deltaTime;
         Reminder();
     }
     private void Reminder()
@@ -117,11 +119,11 @@ public class ObjectivesManager : MonoBehaviour
     // public function when player triggers objective tag
     public void OnObjectiveTriggered(GameObject obj)
     {
-        Debug.Log("TRIGGERED");
+        Debug.Log("OBJ TRIGGERED");
 
         if (objectiveCount < Objectives.Count &&  Objectives[objectiveCount].ObjectiveObj == obj)
         {
-
+            _sinceLastObj = 0;
             _reminderTime = reminderTime;
             // Pass the corresponding description to dialogmng
             GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount].ObjectiveEmoji);
@@ -162,6 +164,11 @@ public class ObjectivesManager : MonoBehaviour
         if (objectiveCount >= Objectives.Count)
             return null;
         return Objectives[objectiveCount].ObjectiveObj;
+    }
+
+    public float GetTimeSinceLastObj()
+    {
+        return _sinceLastObj;
     }
 
 }

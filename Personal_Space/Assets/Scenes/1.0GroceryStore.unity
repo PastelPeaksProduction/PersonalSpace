@@ -4894,6 +4894,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a56c03d7c052d441f823068e209333ba, type: 3}
+--- !u!1 &1448921679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1064525273135058684, guid: 3e9644ab2ef534746bc63920f1ff7044,
+    type: 3}
+  m_PrefabInstance: {fileID: 1873673600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1449114650 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3315159196601842196, guid: 6ccdd07029cc92043a760fe4b9947a4d,
@@ -5890,6 +5896,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5929577443809524605, guid: 3e9644ab2ef534746bc63920f1ff7044,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 219148297550897885, guid: 3e9644ab2ef534746bc63920f1ff7044,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8036480034223201990, guid: 3e9644ab2ef534746bc63920f1ff7044,
         type: 3}
       propertyPath: m_Name
@@ -6040,15 +6056,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2984268416004906284, guid: 3e9644ab2ef534746bc63920f1ff7044,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5987618481427449972, guid: 3e9644ab2ef534746bc63920f1ff7044,
         type: 3}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7589662921130929763, guid: 3e9644ab2ef534746bc63920f1ff7044,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758119623249728204, guid: 3e9644ab2ef534746bc63920f1ff7044,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e9644ab2ef534746bc63920f1ff7044, type: 3}
@@ -12480,6 +12501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed56437eb39667043927910375491594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeToReminder: 10
   nullValues: 0
   mainCamera: {fileID: 2600146801457433632}
   aerialCamera: {fileID: 890378353}
@@ -12494,6 +12516,7 @@ MonoBehaviour:
   Enemies: {fileID: 1427972202170116208}
   RestartBtn: {fileID: 1873673603}
   MenuBtn: {fileID: 1873673602}
+  WarningMsg: {fileID: 1448921679}
 --- !u!1 &9067900733405507135
 GameObject:
   m_ObjectHideFlags: 0

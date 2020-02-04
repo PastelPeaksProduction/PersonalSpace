@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     private PlayerController player;
-
+    public float TimeToReminder;
     public bool nullValues = false;
     public GameObject mainCamera;
     public GameObject aerialCamera;
@@ -24,8 +25,10 @@ public class GameController : MonoBehaviour
     public GameObject Enemies;
     public GameObject RestartBtn;
     public GameObject MenuBtn;
-
-
+    public GameObject WarningMsg;
+    private ObjectivesManager ObjMng;
+    private ArrowIndicator ArrInd;
+    private float LastHitObj;
     private bool isPaused;
 
 
@@ -37,17 +40,35 @@ public class GameController : MonoBehaviour
             player = GameObject.Find("Player").GetComponent<PlayerController>();
             aerialListener = aerialCamera.GetComponent<AudioListener>();
             mainListener = mainCamera.GetComponent<AudioListener>();
+            ObjMng = gameObject.GetComponent<ObjectivesManager>();
+            ArrInd = gameObject.GetComponent<ArrowIndicator>();
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-            CheckPause();
+        CheckHint();
+        CheckReminder();
+        CheckPause();
+        CheckGameStatus();
+    }
 
-            CheckGameStatus();
-        
+    private void CheckHint()
+    {
+        if(ObjMng.GetTimeSinceLastObj() < 1)
+        {
+            ArrInd.SetHideArrow();
+        }
+        if(Input.GetKeyDown("joystick button 1") || Input.GetKeyDown(KeyCode.B))
+        {
+            ArrInd.SetShowArrow();
+        }
+    }
+
+    private void CheckReminder()
+    {
+        WarningMsg.SetActive(ObjMng.GetTimeSinceLastObj() > TimeToReminder);
     }
 
     public void PauseGame()
@@ -161,7 +182,7 @@ public class GameController : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Alpha1))
         {
-            
+
             SceneManager.LoadScene("1.0GroceryStore");
 
         }

@@ -13,7 +13,7 @@ public class ArrowIndicator : MonoBehaviour
     private GameObject Player;
     public GameObject Objective;
     public ObjectivesManager obj_man;
-
+    private bool show_arrow;
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +29,23 @@ public class ArrowIndicator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Objective = obj_man.GetCurrentObjective();
-        ArrowTrans.position = gameObject.transform.position + new Vector3(0,-4.5f);
-        ArrowTrans.LookAt(Objective.transform);
-        ArrowTrans.Rotate(new Vector3(90, 0, 0));
+        if (show_arrow)
+        {
+            Objective = obj_man.GetCurrentObjective();
+            ArrowTrans.position = gameObject.transform.position + new Vector3(0, -4.5f);
+            ArrowTrans.LookAt(Objective.transform);
+            ArrowTrans.Rotate(new Vector3(90, 0, 0));
+        }
+    }
+
+    public void SetShowArrow()
+    {
+        show_arrow = true;
+        ArrowObj.SetActive(true);
+    }
+    public void SetHideArrow()
+    {
+        show_arrow = false;
+        ArrowObj.SetActive(false);
     }
 }
