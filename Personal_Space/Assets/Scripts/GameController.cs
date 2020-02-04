@@ -60,7 +60,7 @@ public class GameController : MonoBehaviour
         {
             ArrInd.SetHideArrow();
         }
-        if(Input.GetKeyDown("joystick button 1") || Input.GetKeyDown(KeyCode.B))
+        if(Input.GetKeyDown("joystick button 1") || Input.GetKeyDown(KeyCode.Return))
         {
             ArrInd.SetShowArrow();
         }
@@ -88,7 +88,7 @@ public class GameController : MonoBehaviour
         {
             if (!isPaused)
             {
-                if ((Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown("joystick button 1")))
+                if ((Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown("joystick button 3")))
                 {
                     Debug.Log("switch" + isPaused);
                     isPaused = true;
@@ -115,7 +115,7 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                if ((Input.GetKeyUp(KeyCode.Tab) || Input.GetKeyUp("joystick button 17") || Input.GetKeyUp("joystick button 1")))
+                if ((Input.GetKeyUp(KeyCode.Tab) || Input.GetKeyUp("joystick button 17") || Input.GetKeyUp("joystick button 3")))
                 {
                     Debug.Log("switch2" + isPaused);
 
@@ -174,22 +174,13 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene("3.0SchoolDance");
 
         }
-        if (Input.GetKeyUp(KeyCode.Alpha2))
-        {
-            SceneManager.LoadScene("2.0Playground");
-
-        }
+        
         if (Input.GetKeyUp(KeyCode.Alpha4))
         {
             SceneManager.LoadScene("4.0HouseParty");
 
         }
-        if (Input.GetKeyUp(KeyCode.Alpha1))
-        {
-
-            SceneManager.LoadScene("1.0GroceryStore");
-
-        }
+       
         if (Input.GetKeyUp(KeyCode.Alpha5))
         {
             SceneManager.LoadScene("5.0WorkParty");
@@ -204,15 +195,9 @@ public class GameController : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space) && nullValues)
         {
-            if (SceneManager.GetActiveScene().name == "0.5Cutscene")
-            {
-                SceneManager.LoadScene("1.0GroceryStore");
-            }
+           
 
-            if (SceneManager.GetActiveScene().name == "1.5Cutscene")
-            {
-                SceneManager.LoadScene("2.0Playground");
-            }
+            
 
             if (SceneManager.GetActiveScene().name == "2.5Cutscene")
             {
@@ -244,15 +229,7 @@ public class GameController : MonoBehaviour
     public void AdvanceLevel(object in_cookie, AkCallbackType in_type, object in_info)
     {
         // GetComponent<ObjectivesManager>().endLevel = false;
-        if (SceneManager.GetActiveScene().name == "1.0GroceryStore")
-        {
-            SceneManager.LoadScene("1.5Cutscene");
-        }
-
-        if (SceneManager.GetActiveScene().name == "2.0Playground")
-        {
-            SceneManager.LoadScene("2.5Cutscene");
-        }
+        
 
         if (SceneManager.GetActiveScene().name == "3.0SchoolDance")
         {

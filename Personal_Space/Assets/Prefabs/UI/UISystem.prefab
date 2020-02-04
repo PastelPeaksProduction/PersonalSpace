@@ -870,15 +870,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8036480034223201989}
     m_Modifications:
-    - target: {fileID: 8638265243452461132, guid: c236ea01235b42544af1278bcd9bb680,
+    - target: {fileID: 7692404364533699845, guid: c236ea01235b42544af1278bcd9bb680,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7008344408836000892, guid: c236ea01235b42544af1278bcd9bb680,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_Name
+      value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 7692404364533700089, guid: c236ea01235b42544af1278bcd9bb680,
         type: 3}
@@ -985,10 +980,40 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7692404364533699845, guid: c236ea01235b42544af1278bcd9bb680,
+    - target: {fileID: 8638265243452461132, guid: c236ea01235b42544af1278bcd9bb680,
         type: 3}
-      propertyPath: m_Name
-      value: Canvas
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638265243452461132, guid: c236ea01235b42544af1278bcd9bb680,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638265243452461132, guid: c236ea01235b42544af1278bcd9bb680,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638265243452461132, guid: c236ea01235b42544af1278bcd9bb680,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638265243452461132, guid: c236ea01235b42544af1278bcd9bb680,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638265243452461132, guid: c236ea01235b42544af1278bcd9bb680,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638265243452461132, guid: c236ea01235b42544af1278bcd9bb680,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 8219318386334163029, guid: c236ea01235b42544af1278bcd9bb680,
         type: 3}
@@ -1040,10 +1065,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6827664419340629746, guid: c236ea01235b42544af1278bcd9bb680,
+    - target: {fileID: 7008344408836000892, guid: c236ea01235b42544af1278bcd9bb680,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6056414254966060493, guid: c236ea01235b42544af1278bcd9bb680,
         type: 3}
@@ -1055,15 +1080,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 128029159410628665, guid: c236ea01235b42544af1278bcd9bb680,
+    - target: {fileID: 492218594366696675, guid: c236ea01235b42544af1278bcd9bb680,
         type: 3}
-      propertyPath: m_RaycastTarget
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1471446417413998618, guid: c236ea01235b42544af1278bcd9bb680,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827664419340629746, guid: c236ea01235b42544af1278bcd9bb680,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 128029159410628665, guid: c236ea01235b42544af1278bcd9bb680,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7692404363438119968, guid: c236ea01235b42544af1278bcd9bb680,
         type: 3}
@@ -1133,11 +1168,6 @@ PrefabInstance:
     - target: {fileID: 9184290345459177416, guid: c236ea01235b42544af1278bcd9bb680,
         type: 3}
       propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 492218594366696675, guid: c236ea01235b42544af1278bcd9bb680,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
