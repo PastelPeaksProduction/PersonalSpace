@@ -25,6 +25,7 @@ public class CameraBlur : MonoBehaviour
 	public static float ChangeRadius;
 	public static float ChangeFactor;
 	public static int ChangeFastFilter;
+	private bool pauseBlur;
 
 	#endregion
 
@@ -50,6 +51,7 @@ public class CameraBlur : MonoBehaviour
 		SCShader = Shader.Find("Shader/Blur");
 		Player = GameObject.Find("Player");
 		Health = Player.GetComponent<PlayerController>();
+		
 	}
 
 	void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
@@ -95,6 +97,7 @@ public class CameraBlur : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+
 		if (Health.health > 0)
 		{
 			Radius = (100 - Health.health) * blurFactor;

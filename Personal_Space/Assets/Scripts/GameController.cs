@@ -74,16 +74,16 @@ public class GameController : MonoBehaviour
                     PauseGame();
 
                     pauseDialog.SetActive(true);
-                    Stressbar.SetActive(true);
-                    PlayerAngle.SetActive(true);
-                    FOV.SetActive(true);
-                    TextBubbleCanvas.SetActive(false);
-                    mainCamera.SetActive(false);
-                    aerialCamera.SetActive(true);
-                    aerialListener.enabled = true;
-                    ObjMarker.SetActive(true);
-                    BottomHealthBar.SetActive(false);
-                    Enemies.SetActive(false);
+                    //Stressbar.SetActive(true);
+                    //PlayerAngle.SetActive(true);
+                    //FOV.SetActive(true);
+                    //TextBubbleCanvas.SetActive(false);
+                    //mainCamera.SetActive(false);
+                    //aerialCamera.SetActive(true);
+                    //aerialListener.enabled = true;
+                    //ObjMarker.SetActive(true);
+                    //BottomHealthBar.SetActive(false);
+                    //Enemies.SetActive(false);
                     RestartBtn.SetActive(true);
                     MenuBtn.SetActive(true);
 
@@ -95,17 +95,17 @@ public class GameController : MonoBehaviour
                 {
                     Debug.Log("switch2" + isPaused);
 
-                    //pauseDialog.SetActive(false);
-                    Stressbar.SetActive(false);
-                    PlayerAngle.SetActive(false);
-                    FOV.SetActive(false);
-                    TextBubbleCanvas.SetActive(true);
-                    mainCamera.SetActive(true);
-                    aerialCamera.SetActive(false);
-                    aerialListener.enabled = false;
-                    ObjMarker.SetActive(false);
-                    BottomHealthBar.SetActive(true);
-                    Enemies.SetActive(true);
+                    pauseDialog.SetActive(false);
+                    //Stressbar.SetActive(false);
+                    //PlayerAngle.SetActive(false);
+                    //FOV.SetActive(false);
+                    //TextBubbleCanvas.SetActive(true);
+                    //mainCamera.SetActive(true);
+                    //aerialCamera.SetActive(false);
+                    //aerialListener.enabled = false;
+                    //ObjMarker.SetActive(false);
+                    //BottomHealthBar.SetActive(true);
+                    //Enemies.SetActive(true);
                     RestartBtn.SetActive(false);
                     MenuBtn.SetActive(false);
                     ContinueGame();
