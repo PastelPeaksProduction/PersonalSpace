@@ -335,15 +335,15 @@ RectTransform:
   m_GameObject: {fileID: 7787831424104775822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5011, y: 1.5011, z: 1.5011}
   m_Children:
   - {fileID: 3124378530897562067}
   m_Father: {fileID: 380476104786696057}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -496, y: -420}
+  m_AnchoredPosition: {x: -395, y: -13}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5906478319773535165
@@ -492,15 +492,15 @@ RectTransform:
   m_GameObject: {fileID: 8264916700839718920}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4454, y: 1.4454, z: 1.4454}
   m_Children:
   - {fileID: 6497867050980044605}
   m_Father: {fileID: 380476104786696057}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 474, y: -420.00006}
+  m_AnchoredPosition: {x: 435, y: -3}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1861345090021887677
@@ -597,107 +597,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!1 &8694531680754822915
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3635944131132469874}
-  - component: {fileID: 7402286323439235730}
-  - component: {fileID: 3098521775896288403}
-  - component: {fileID: 4805610996378519579}
-  m_Layer: 5
-  m_Name: StressBarBottom
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &3635944131132469874
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8694531680754822915}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 380476104786696057}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 45.400146, y: 26.199951}
-  m_SizeDelta: {x: 150, y: 150}
-  m_Pivot: {x: 0.5, y: 1}
---- !u!222 &7402286323439235730
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8694531680754822915}
-  m_CullTransparentMesh: 0
---- !u!114 &3098521775896288403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8694531680754822915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &4805610996378519579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8694531680754822915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a2afd2cdd70edb4995e84022e2d3fb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isBottom: 1
-  twenty: {fileID: 21300000, guid: 69e0276e2bc57f74091a93405cf6ff27, type: 3}
-  fourty: {fileID: 21300000, guid: 98ce24638908a084992b0733fe845083, type: 3}
-  sixty: {fileID: 21300000, guid: 07e6d7faa1436d34993ece81af6355c4, type: 3}
-  eighty: {fileID: 21300000, guid: b247b57c61ba9d84698323da1317269f, type: 3}
-  hundred: {fileID: 21300000, guid: f516edcf4aa89ee42b1e875af0363ae3, type: 3}
-  twentySingle: {fileID: 21300000, guid: 88f409801819fdc43ab1f290dad214d6, type: 3}
-  fourtySingle: {fileID: 21300000, guid: 64b9c74d7d66f6742a43da43b9db9db9, type: 3}
-  sixtySingle: {fileID: 21300000, guid: 64b9c74d7d66f6742a43da43b9db9db9, type: 3}
-  eightySingle: {fileID: 21300000, guid: 4d2e93d1dd604d74ea7a78992724421e, type: 3}
-  hundredSingle: {fileID: 21300000, guid: 37511c68de87ca942b78490e8122f0cc, type: 3}
-  BreathReminder1: {fileID: 21300000, guid: d30429d1989aa9b4d8c12b89295d1d4e, type: 3}
-  BreathReminder2: {fileID: 21300000, guid: 809236e1dae0eb246a94fd1e015e98f3, type: 3}
 --- !u!1001 &1631647978088506816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -960,11 +859,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8036480034223201989}
     m_Modifications:
-    - target: {fileID: 7692404364533699845, guid: c236ea01235b42544af1278bcd9bb680,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 7692404364533700089, guid: c236ea01235b42544af1278bcd9bb680,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1069,6 +963,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7692404364533699845, guid: c236ea01235b42544af1278bcd9bb680,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 8219318386334163029, guid: c236ea01235b42544af1278bcd9bb680,
         type: 3}

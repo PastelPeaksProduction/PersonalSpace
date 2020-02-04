@@ -97,16 +97,21 @@ public class CameraBlur : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-
-		if (Health.health > 0)
+		if (pauseBlur)
 		{
-			Radius = (100 - Health.health) * blurFactor;
+			Radius = 800 * blurFactor;
 		}
 		else
 		{
-			Radius = 0;
+			if (Health.health > 0)
+			{
+				Radius = (100 - Health.health) * blurFactor;
+			}
+			else
+			{
+				Radius = 0;
+			}
 		}
-
 	}
 
 	void OnDisable()
@@ -116,6 +121,11 @@ public class CameraBlur : MonoBehaviour
 			DestroyImmediate(SCMaterial);
 		}
 
+	}
+
+	public void SetPause()
+	{
+		pauseBlur = !pauseBlur;
 	}
 
 }

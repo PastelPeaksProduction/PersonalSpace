@@ -74,6 +74,9 @@ public class GameController : MonoBehaviour
                     PauseGame();
 
                     pauseDialog.SetActive(true);
+                    mainCamera.GetComponent<CameraBlur>().SetPause();
+                    mainCamera.GetComponent<CameraScript>().SetPause();
+
                     //Stressbar.SetActive(true);
                     //PlayerAngle.SetActive(true);
                     //FOV.SetActive(true);
@@ -96,6 +99,8 @@ public class GameController : MonoBehaviour
                     Debug.Log("switch2" + isPaused);
 
                     pauseDialog.SetActive(false);
+                    mainCamera.GetComponent<CameraBlur>().SetPause();
+                    mainCamera.GetComponent<CameraScript>().SetPause();
                     //Stressbar.SetActive(false);
                     //PlayerAngle.SetActive(false);
                     //FOV.SetActive(false);

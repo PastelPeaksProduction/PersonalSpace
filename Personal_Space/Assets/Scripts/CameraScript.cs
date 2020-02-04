@@ -21,16 +21,17 @@ public class CameraScript : MonoBehaviour
     public float sensitivityFirstPerson = 3.0f;
     public float sensitivityThirdPerson = 0.15f;
     public float smoothing = 1.0f;
+    private bool isPaused;
 
     void Start()
     {
         Player = GameObject.Find("Player");
         perspective = false; // False is TPP, True is FPP
-        if(Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
+        if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
         {
             horizontalController = "Horizontal X Windows";
         }
-        else if(Application.platform == RuntimePlatform.OSXEditor || Application.platform == RuntimePlatform.OSXPlayer)
+        else if (Application.platform == RuntimePlatform.OSXEditor || Application.platform == RuntimePlatform.OSXPlayer)
         {
             horizontalController = "Horizontal X Mac";
         }
@@ -64,40 +65,43 @@ public class CameraScript : MonoBehaviour
 
     private void ThirdPersonPerspective()
     {
-        var md = new Vector2(0, 0);
-        if(Input.GetAxisRaw(horizontalController) > 0)
+        if (!isPaused)
         {
-            md = new Vector2(Input.GetAxisRaw(horizontalController), 0);
-            md *= 10;
-            Debug.Log("Controller Input :" + md);
-        }
-        else
-        {
-            if(!Input.GetAxisRaw("Mouse X").Equals(0))
-            {
-                md = new Vector2(Input.GetAxisRaw(horizontalController) + Input.GetAxisRaw("Mouse X"), 0);
-            }
-            else
+            var md = new Vector2(0, 0);
+            if (Input.GetAxisRaw(horizontalController) > 0)
             {
                 md = new Vector2(Input.GetAxisRaw(horizontalController), 0);
                 md *= 10;
+                Debug.Log("Controller Input :" + md);
             }
-            
-           // Debug.Log("Mouse Input :" + md);
-        }
-        md = Vector2.Scale(md, new Vector2(sensitivityThirdPerson * smoothing, sensitivityThirdPerson * smoothing));
-        sommthV.x = Mathf.Lerp(sommthV.x, md.x, 1f / smoothing);
-        mouseLook += sommthV;
+            else
+            {
+                if (!Input.GetAxisRaw("Mouse X").Equals(0))
+                {
+                    md = new Vector2(Input.GetAxisRaw(horizontalController) + Input.GetAxisRaw("Mouse X"), 0);
+                }
+                else
+                {
+                    md = new Vector2(Input.GetAxisRaw(horizontalController), 0);
+                    md *= 10;
+                }
 
-        Player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, Player.transform.up);
+                // Debug.Log("Mouse Input :" + md);
+            }
+            md = Vector2.Scale(md, new Vector2(sensitivityThirdPerson * smoothing, sensitivityThirdPerson * smoothing));
+            sommthV.x = Mathf.Lerp(sommthV.x, md.x, 1f / smoothing);
+            mouseLook += sommthV;
 
-        transform.position = Vector3.MoveTowards(transform.position, targetPositionTPP.transform.position, CameraSpeed * Time.deltaTime);
+            Player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, Player.transform.up);
 
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetPositionTPP.transform.rotation, RotationSpeed * Time.deltaTime);
-        
-        if ((Player != null) && (Vector3.Distance(transform.position, targetPositionTPP.transform.position) < 0.001f))
-        {      
-            Player.GetComponent<PlayerController>().canMove = true;
+            transform.position = Vector3.MoveTowards(transform.position, targetPositionTPP.transform.position, CameraSpeed * Time.deltaTime);
+
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetPositionTPP.transform.rotation, RotationSpeed * Time.deltaTime);
+
+            if ((Player != null) && (Vector3.Distance(transform.position, targetPositionTPP.transform.position) < 0.001f))
+            {
+                Player.GetComponent<PlayerController>().canMove = true;
+            }
         }
     }
 
@@ -111,5 +115,10 @@ public class CameraScript : MonoBehaviour
 
         transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
         Player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, Player.transform.up);
+    }
+
+    public void SetPause()
+    {
+        isPaused = !isPaused;
     }
 }
