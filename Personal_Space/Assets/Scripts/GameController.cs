@@ -142,10 +142,14 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void CheckContinue()
+    public void Menu()
     {
+        SceneManager.LoadScene("0.0StartMenu");
+    }
 
-
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     private void CheckGameStatus()
     {
