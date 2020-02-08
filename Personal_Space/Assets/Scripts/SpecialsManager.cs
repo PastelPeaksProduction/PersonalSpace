@@ -36,10 +36,16 @@ public class SpecialsManager : MonoBehaviour
             switch(specialIteration)
             {
                 case 0:
-                StartCoroutine(numShout());
+                if(sprintAvailable)
+                {
+                    StartCoroutine(numSprint());
+                }
                 break;
                 case 1:
-                StartCoroutine(numSprint());
+                if(shoutAvailable)
+                {
+                    StartCoroutine(numShout());
+                }
                 break;
             }
         }
