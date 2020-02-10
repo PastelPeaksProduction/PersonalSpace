@@ -991,6 +991,11 @@ PrefabInstance:
       propertyPath: neutralDamage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2600146800666572999, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 95976839973116789, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
       propertyPath: m_Enabled
@@ -1033,6 +1038,24 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1700120043, guid: 8765068a21a01534cac645e384d74a48, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1700120059, guid: 8765068a21a01534cac645e384d74a48, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6519597736140742968, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600146800702947631, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2600146800702947627, guid: 8765068a21a01534cac645e384d74a48, type: 3}
@@ -1977,6 +2000,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed56437eb39667043927910375491594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeToReminder: 0
+  nullValues: 0
   mainCamera: {fileID: 0}
   aerialCamera: {fileID: 0}
   pauseDialog: {fileID: 1325419669}
@@ -1990,6 +2015,7 @@ MonoBehaviour:
   Enemies: {fileID: 0}
   RestartBtn: {fileID: 0}
   MenuBtn: {fileID: 0}
+  WarningMsg: {fileID: 0}
 --- !u!114 &1377483081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2004,7 +2030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breathSound: {fileID: 699772753}
   BreathVolume: 1
---- !u!114 &1377483093
+--- !u!114 &1377483082
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2013,9 +2039,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1377483079}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2880c67f9bb1942ba4b7c05204f080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 30
+  canMove: 1
+  isMoving: 0
+  isBreathing: 0
+  health: 100
+  neutralDamage: 0
+  regenCooldown: 10
+  healthPackAmount: 10
+  camera: {fileID: 2123520078}
+--- !u!114 &1377483093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377483079}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d05958af40c4fbe4bab3cd757b6f3de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMenu: 0
 --- !u!114 &1377483102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2023,7 +2071,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377483079}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9972c54898b89744fa1169181de21bc9, type: 3}
   m_Name: 
