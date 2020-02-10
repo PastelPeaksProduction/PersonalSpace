@@ -28,7 +28,8 @@ public class CameraScript : MonoBehaviour
     void Start()
     {
         Player = GameObject.Find("Player");
-        offset = targetPositionTPP.transform.position;
+        offset = targetPositionTPP.transform.position-  Player.transform.position;
+        transform.rotation = targetPositionTPP.transform.rotation;
         perspective = false; // False is TPP, True is FPP
         if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
         {
@@ -109,7 +110,7 @@ public class CameraScript : MonoBehaviour
             sommthV.x = Mathf.Lerp(sommthV.x, md.x, 1f / smoothing);
             mouseLook += sommthV;
 
-            //Player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, Player.transform.up);
+            Player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, Player.transform.up);
 
             transform.position = Vector3.MoveTowards(transform.position, targetPositionTPP.transform.position, CameraSpeed * Time.deltaTime);
 
