@@ -13,7 +13,7 @@ public class TextBubbleSingle : MonoBehaviour
     private GameObject Canvas;
     private RectTransform CanvasTrans;
     private RectTransform TextBubbleTrans;
-    private Vector2 offset = new Vector2(80, 80);
+    private Vector2 offset = new Vector2(40, 40);
     private Vector2 flipoffset = new Vector2(-80, 80);
     private GameController Game;
     private GameObject Player;

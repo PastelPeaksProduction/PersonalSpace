@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UIUtil;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class ArrowIndicator : MonoBehaviour
     public GameObject Objective;
     public ObjectivesManager obj_man;
     private bool show_arrow;
+    private float count_down = 10f;
+    private bool count_down_bool = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,9 +35,13 @@ public class ArrowIndicator : MonoBehaviour
         if (show_arrow)
         {
             Objective = obj_man.GetCurrentObjective();
-            ArrowTrans.position = gameObject.transform.position + new Vector3(0, -4.5f);
+            ArrowTrans.position = gameObject.transform.position + new Vector3(0,-4.5f,0);
             ArrowTrans.LookAt(Objective.transform);
             ArrowTrans.Rotate(new Vector3(90, 0, 0));
+        }
+        if (count_down_bool)
+        {
+            StartCountDown();
         }
     }
 
@@ -42,7 +49,23 @@ public class ArrowIndicator : MonoBehaviour
     {
         show_arrow = true;
         ArrowObj.SetActive(true);
+        count_down_bool = true;
     }
+
+    private void StartCountDown()
+    {
+        if (count_down >= 0)
+        {
+            count_down -= Time.deltaTime;
+        }
+        else
+        {
+            SetHideArrow();
+            count_down = 10f;
+            count_down_bool = false;
+        }
+    }
+
     public void SetHideArrow()
     {
         show_arrow = false;
