@@ -6,16 +6,14 @@ public class SpecialsManager : MonoBehaviour
 {
     public float sprintTime = 3f;
     public float sprintSpeed = 40f;
-
-    public float cooldownTime = 5f;
+    public float cooldownTime = 0f;
+    public float cooldownTimeSprint = 5f;
+    public float cooldownTimeShout = 10f;
     private float normalSpeed;
     private int specialIteration = 0;
-    private bool shoutOn = false;
-    private bool sprintAvailable = true;
-    private bool shoutAvailable = true;
-    private bool sprintOn = false;
+    public bool sprintAvailable = true;
+    public bool shoutAvailable = true;
     private PlayerController playerCntrl;
-
     public float shoutForce = 10f;
     public float shoutRadius = 40f;
     public float shoutUpwardsForce = 10f;
@@ -67,9 +65,11 @@ public class SpecialsManager : MonoBehaviour
         playerCntrl.moveSpeed = sprintSpeed;
         yield return new WaitForSeconds(sprintTime);
         playerCntrl.moveSpeed = normalSpeed;
+        cooldownTime = cooldownTimeSprint;
         yield return new WaitForSeconds(cooldownTime);
         sprintAvailable = true;
         shoutAvailable = true;
+        cooldownTime = 0f;
     }
 
     private IEnumerator numShout()
@@ -96,9 +96,16 @@ public class SpecialsManager : MonoBehaviour
 
         }
         // do shout stuff here
+        cooldownTime = cooldownTimeShout;
         yield return new WaitForSeconds(cooldownTime);
+        cooldownTime = 0f;
         sprintAvailable = true;
         shoutAvailable = true;
+    }
+
+    public float GetCoolDown()
+    {
+        return cooldownTime;
     }
 }
 
