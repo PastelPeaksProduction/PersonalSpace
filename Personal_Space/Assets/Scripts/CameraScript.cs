@@ -80,7 +80,7 @@ public class CameraScript : MonoBehaviour
         {
             offset = Quaternion.AngleAxis(Input.GetAxisRaw("Mouse X") * speed, Vector3.up) * offset;
         }
-        transform.position = Player.transform.position + offset;
+        transform.position = Vector3.Lerp(transform.position, Player.transform.position + offset, 1);
         transform.LookAt(Player.transform.position);
         
     }
