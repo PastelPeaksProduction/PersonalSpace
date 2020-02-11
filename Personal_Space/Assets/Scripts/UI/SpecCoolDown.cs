@@ -10,6 +10,7 @@ public class SpecCoolDown : MonoBehaviour
     public bool isSprint;
     public bool isCalm;
     public bool isShout;
+    private bool calmUsed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,13 +35,22 @@ public class SpecCoolDown : MonoBehaviour
         }
         if (isCalm && (Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 18") || Input.GetKeyDown(KeyCode.X)))
         {
-            ReleaseSkill();
+            //ReleaseSkill();
+            calmUsed = true;
         }
         if (isShout && (Input.GetKeyDown("joystick button 1") || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown(KeyCode.B)))
         {
             ReleaseSkill();
         }
-        timer += Time.deltaTime;
-        image.fillAmount = (coolDownTime - timer) / coolDownTime;
+        if (!calmUsed)
+        {
+            timer += Time.deltaTime;
+            image.fillAmount = (coolDownTime - timer) / coolDownTime;
+        }
+        else
+        {
+            image.fillAmount = 1;
+        }
+        
     }
 }

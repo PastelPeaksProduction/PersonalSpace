@@ -144,25 +144,25 @@ public class PlayerController1 : MonoBehaviour
     private void checkBreath()
     {
         bool twoButton = false;
-        if ((Input.GetKey("joystick button 14") && Input.GetKey("joystick button 13")) || (Input.GetKey("joystick button 4") && Input.GetKey("joystick button 5")))
+        if ((Input.GetKey("joystick button 14") || Input.GetKey("joystick button 13")) || (Input.GetKey("joystick button 4") || Input.GetKey("joystick button 5")))
         {
             twoButton = true; 
         }
         float left = Input.GetAxis("Breathe Left");
         float right = Input.GetAxis("Breathe Right");
-        if(left >0 && right>0)
+        if(left >0 || right>0)
         {
             twoButton = true; 
         }
-        if (Input.GetKey(KeyCode.B) || twoButton)
+        if (Input.GetKey(KeyCode.Space) || twoButton)
         {
             isBreathing = true;
         }
-        else if (!Input.GetKey(KeyCode.B) || !twoButton)
+        else if (!Input.GetKey(KeyCode.Space) || !twoButton)
         {
             isBreathing = false; 
         }
-        if (Input.GetKey(KeyCode.H) && canRegen)
+        if ((Input.GetKeyDown("joystick button 18")|| Input.GetKeyDown("joystick button 2") || Input.GetKey(KeyCode.H)) && canRegen)
         {
             useHealthPack();
         }

@@ -15,7 +15,7 @@ public class SpecialsManager : MonoBehaviour
     public bool shoutAvailable = true;
     private bool startingSprintAvailable = true;
     private bool startingShoutAvailable = true;
-    private PlayerController playerCntrl;
+    private PlayerController1 playerCntrl;
     public float shoutForce = 10f;
     public float shoutRadius = 40f;
     public float shoutUpwardsForce = 10f;
@@ -23,7 +23,7 @@ public class SpecialsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerCntrl = this.gameObject.GetComponent<PlayerController>();
+        playerCntrl = this.gameObject.GetComponent<PlayerController1>();
         normalSpeed = playerCntrl.moveSpeed;
         startingSprintAvailable = sprintAvailable;
         startingShoutAvailable = shoutAvailable; 
@@ -63,6 +63,7 @@ public class SpecialsManager : MonoBehaviour
 
         if(Input.GetKeyDown("joystick button 0") || Input.GetKeyDown("joystick button 16") || Input.GetKeyDown(KeyCode.A))
         {
+            Debug.Log("SPRINT ACTIVE");
             if(sprintAvailable)
             {
                 StartCoroutine(numSprint());
@@ -79,15 +80,15 @@ public class SpecialsManager : MonoBehaviour
 
     private IEnumerator numSprint()
     {
-        shoutAvailable = false;
+        //shoutAvailable = false;
         sprintAvailable = false;
         playerCntrl.moveSpeed = sprintSpeed;
         yield return new WaitForSeconds(sprintTime);
         playerCntrl.moveSpeed = normalSpeed;
+        //shoutAvailable = startingShoutAvailable;
         cooldownTime = cooldownTimeSprint;
         yield return new WaitForSeconds(cooldownTime);
         sprintAvailable = startingSprintAvailable;
-        shoutAvailable = startingShoutAvailable;
         cooldownTime = 0f;
     }
 
@@ -95,7 +96,7 @@ public class SpecialsManager : MonoBehaviour
     {
         //Debug.Log("Shout Initiated");
         shoutAvailable = false;
-        sprintAvailable = false;
+        //sprintAvailable = false;
         Vector3 playerPosition = this.gameObject.transform.position;
         //Debug.Log(playerPosition);
         Collider[] colliders = Physics.OverlapSphere(playerPosition, shoutRadius);
@@ -116,9 +117,9 @@ public class SpecialsManager : MonoBehaviour
         }
         // do shout stuff here
         cooldownTime = cooldownTimeShout;
+        //sprintAvailable = startingSprintAvailable;
         yield return new WaitForSeconds(cooldownTime);
         cooldownTime = 0f;
-        sprintAvailable = startingSprintAvailable;
         shoutAvailable = startingShoutAvailable;
     }
 
