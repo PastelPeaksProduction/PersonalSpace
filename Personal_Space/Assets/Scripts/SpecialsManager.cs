@@ -61,7 +61,7 @@ public class SpecialsManager : MonoBehaviour
             }
         } */
 
-        if(Input.GetKeyDown("joystick button 0") || Input.GetKeyDown("joystick button 16") || Input.GetKeyDown(KeyCode.A))
+        if(Input.GetKeyDown("joystick button 0") || Input.GetKeyDown("joystick button 16") || Input.GetKeyDown(KeyCode.X))
         {
             Debug.Log("SPRINT ACTIVE");
             if(sprintAvailable)
@@ -69,7 +69,7 @@ public class SpecialsManager : MonoBehaviour
                 StartCoroutine(numSprint());
             }
         }
-        if (Input.GetKeyDown("joystick button 1") || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown("joystick button 1") || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown(KeyCode.C))
         {
             if(shoutAvailable)
             {

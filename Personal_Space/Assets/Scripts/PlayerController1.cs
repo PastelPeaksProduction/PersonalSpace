@@ -162,7 +162,7 @@ public class PlayerController1 : MonoBehaviour
         {
             isBreathing = false; 
         }
-        if ((Input.GetKeyDown("joystick button 18")|| Input.GetKeyDown("joystick button 2") || Input.GetKey(KeyCode.H)) && canRegen)
+        if ((Input.GetKeyDown("joystick button 18")|| Input.GetKeyDown("joystick button 2") || Input.GetKey(KeyCode.Z)) && canRegen)
         {
             useHealthPack();
         }

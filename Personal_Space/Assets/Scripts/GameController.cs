@@ -234,22 +234,22 @@ public class GameController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "3.0SchoolDance")
         {
-            SceneManager.LoadScene("3.5Cutscene");
+            SceneManager.LoadScene("4.0HouseParty");
         }
 
         if (SceneManager.GetActiveScene().name == "4.0HouseParty")
         {
-            SceneManager.LoadScene("4.5Cutscene");
+            SceneManager.LoadScene("5.0WorkParty");
         }
 
         if (SceneManager.GetActiveScene().name == "5.0WorkParty")
         {
-            SceneManager.LoadScene("5.5Cutscene");
+            SceneManager.LoadScene("6.0Convention");
         }
 
         if (SceneManager.GetActiveScene().name == "6.0Convention")
         {
-            SceneManager.LoadScene("6.5Cutscene");
+            SceneManager.LoadScene("0.0StartMenu");
         }
     }
 
