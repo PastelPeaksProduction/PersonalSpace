@@ -6,16 +6,16 @@ public class SpecialsManager : MonoBehaviour
 {
     public float sprintTime = 3f;
     public float sprintSpeed = 40f;
-
-    public float cooldownTime = 5f;
+    public float cooldownTime = 0f;
+    public float cooldownTimeSprint = 5f;
+    public float cooldownTimeShout = 10f;
     private float normalSpeed;
     private int specialIteration = 0;
-    private bool shoutOn = false;
-    private bool sprintAvailable = true;
-    private bool shoutAvailable = true;
-    private bool sprintOn = false;
+    public bool sprintAvailable = true;
+    public bool shoutAvailable = true;
+    private bool startingSprintAvailable = true;
+    private bool startingShoutAvailable = true;
     private PlayerController playerCntrl;
-
     public float shoutForce = 10f;
     public float shoutRadius = 40f;
     public float shoutUpwardsForce = 10f;
@@ -25,21 +25,29 @@ public class SpecialsManager : MonoBehaviour
     {
         playerCntrl = this.gameObject.GetComponent<PlayerController>();
         normalSpeed = playerCntrl.moveSpeed;
+        startingSprintAvailable = sprintAvailable;
+        startingShoutAvailable = shoutAvailable; 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("space"))
+       /* if(Input.GetKeyDown("space"))
         {
             // use currently assigned special
             switch(specialIteration)
             {
                 case 0:
-                StartCoroutine(numShout());
+                if(sprintAvailable)
+                {
+                    StartCoroutine(numSprint());
+                }
                 break;
                 case 1:
-                StartCoroutine(numSprint());
+                if(shoutAvailable)
+                {
+                    StartCoroutine(numShout());
+                }
                 break;
             }
         }
@@ -51,6 +59,21 @@ public class SpecialsManager : MonoBehaviour
             {
                 specialIteration = 0;
             }
+        } */
+
+        if(Input.GetKeyDown("joystick button 0") || Input.GetKeyDown("joystick button 16") || Input.GetKeyDown(KeyCode.A))
+        {
+            if(sprintAvailable)
+            {
+                StartCoroutine(numSprint());
+            }
+        }
+        if (Input.GetKeyDown("joystick button 1") || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown(KeyCode.B))
+        {
+            if(shoutAvailable)
+            {
+                StartCoroutine(numShout());
+            }
         }
     }
 
@@ -61,9 +84,11 @@ public class SpecialsManager : MonoBehaviour
         playerCntrl.moveSpeed = sprintSpeed;
         yield return new WaitForSeconds(sprintTime);
         playerCntrl.moveSpeed = normalSpeed;
+        cooldownTime = cooldownTimeSprint;
         yield return new WaitForSeconds(cooldownTime);
-        sprintAvailable = true;
-        shoutAvailable = true;
+        sprintAvailable = startingSprintAvailable;
+        shoutAvailable = startingShoutAvailable;
+        cooldownTime = 0f;
     }
 
     private IEnumerator numShout()
@@ -90,9 +115,16 @@ public class SpecialsManager : MonoBehaviour
 
         }
         // do shout stuff here
+        cooldownTime = cooldownTimeShout;
         yield return new WaitForSeconds(cooldownTime);
-        sprintAvailable = true;
-        shoutAvailable = true;
+        cooldownTime = 0f;
+        sprintAvailable = startingSprintAvailable;
+        shoutAvailable = startingShoutAvailable;
+    }
+
+    public float GetCoolDown()
+    {
+        return cooldownTime;
     }
 }
 
