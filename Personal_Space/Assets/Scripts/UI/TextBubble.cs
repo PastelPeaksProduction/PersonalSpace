@@ -9,8 +9,8 @@ public class TextBubble : MonoBehaviour
    
     public GameObject TextBubblePrefab;
     public GameObject TextBubbleFlipPrefab;
-    public Vector2 offset = new Vector2(85, 200);
-    public Vector2 flipoffset = new Vector2(85, 200);
+    public Vector2 offset = new Vector2(25, 200);
+    public Vector2 flipoffset = new Vector2(25, 200);
     public float ExistingTime = 30;
 
     private Animation Ani;
@@ -40,7 +40,7 @@ public class TextBubble : MonoBehaviour
 
         Ani = TextBubbleObj.GetComponent<Animation>();
 
-        Ani.Play("ThoughtBubbleSpawn");
+        Ani.Play("TextBubble");
     }
 
     public void SpawnFlipBubble(Sprite objectiveEmoji, Sprite objectiveEmoji2)
@@ -56,6 +56,6 @@ public class TextBubble : MonoBehaviour
         TextBubbleObj.GetComponent<TextBubbleSingle>().breath2 = objectiveEmoji2;
         Ani = TextBubbleObj.GetComponent<Animation>();
         
-        Ani.Play("ThoughtBubbleSpawn");
+        Ani.Play("TextBubble");
     }
 }
