@@ -8,11 +8,14 @@ public class EnemyController : MonoBehaviour
     public float followSpeed;
     public float moveBackSpeed;
     public bool movingZone;
-    public float stoppingDistance = 15; 
+    public float stoppingDistance = 15;
+    public bool isMoving = false;
 
     private Vector3 startingPosition;
     private Transform playerPosition;
     private NavMeshAgent agent;
+   
+
 
     void Start()
     {
@@ -20,12 +23,11 @@ public class EnemyController : MonoBehaviour
         playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         startingPosition = transform.position;
         agent = GetComponent<NavMeshAgent>();
+        
+
     }
 
-    void Update()
-    {
-        
-    }
+   
 
 
     //--------------------HELPER METHODS--------------------//
@@ -60,6 +62,7 @@ public class EnemyController : MonoBehaviour
                     agent.velocity = new Vector3((agent.desiredVelocity.x) * followSpeed / calcSpeed, 0, (agent.desiredVelocity.z) * followSpeed / calcSpeed);
                 }
                 agent.SetDestination(playerPosition.position);
+                isMoving = true;
             }
             else
             {
@@ -67,6 +70,7 @@ public class EnemyController : MonoBehaviour
                 agent.isStopped = true;
                 agent.velocity = Vector3.zero;
                 transform.position = this.transform.position;
+                isMoving = false;
             }
         }
     }
@@ -77,7 +81,8 @@ public class EnemyController : MonoBehaviour
         agent.isStopped = true;
         //Stopps glide to stop after player ovement stops
         Vector3 thisPos = this.transform.position;
-        this.transform.position = thisPos; 
+        this.transform.position = thisPos;
+        isMoving = false;
 
     }
 
@@ -89,11 +94,20 @@ public class EnemyController : MonoBehaviour
 
         if (!movingZone)
         {
-            
+
             //transform.position = Vector3.MoveTowards(transform.position, startingPosition, moveBackSpeed * Time.deltaTime);
-            agent.isStopped = false; 
-            agent.destination = startingPosition;
+            if (this.transform.position != startingPosition)
+            {
+                agent.isStopped = false;
+                agent.destination = startingPosition;
+                isMoving = true;
+            }
+            else
+            {
+                stopMovement();
+            }
         }
+
     }
     
 }
