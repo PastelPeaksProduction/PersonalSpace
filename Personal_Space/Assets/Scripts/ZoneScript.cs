@@ -148,8 +148,8 @@ public class ZoneScript : MonoBehaviour
      **/
     private void updatePlayerMove()
     {
-        playerMoving = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().isMoving;
-        playerBreathing = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().isBreathing;
+        playerMoving = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController1>().isMoving;
+        playerBreathing = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController1>().isBreathing;
     }
 
     /**

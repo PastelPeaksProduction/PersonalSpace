@@ -13,7 +13,7 @@ public class TextBubbleSingle : MonoBehaviour
     private GameObject Canvas;
     private RectTransform CanvasTrans;
     private RectTransform TextBubbleTrans;
-    private Vector2 offset = new Vector2(80, 80);
+    private Vector2 offset = new Vector2(40, 40);
     private Vector2 flipoffset = new Vector2(-80, 80);
     private GameController Game;
     private GameObject Player;
@@ -64,7 +64,8 @@ public class TextBubbleSingle : MonoBehaviour
     public void DieBubble()
     {
         GetComponent<Animation>().Play("ThoughtBubbleDestroy");
-        Destroy(gameObject, 0.5f);
+        //Destroy(gameObject, 0.5f);
+        gameObject.SetActive(false);
     }
 
     private void UpdatePos()

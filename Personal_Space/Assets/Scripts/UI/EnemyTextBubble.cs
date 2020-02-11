@@ -64,13 +64,21 @@ public class EnemyTextBubble : MonoBehaviour
     {
         // Initialize bubble
         //Debug.Log("spwan enemy");
-        TextBubbleObj = Instantiate(TextBubblePrefab);
-        TextBubbleObj.transform.SetParent(Canvas.transform);
-        TextBubbleTrans = TextBubbleObj.GetComponent<RectTransform>();
-        TextBubbleObj.transform.GetChild(0).GetComponent<Image>().sprite = Emoji;
-        TextBubbleObj.GetComponent<TextBubbleSingle>().aliveTime = ExistTime;
-        TextBubbleObj.GetComponent<TextBubbleSingle>().isEnemyBubble = true;
-       Ani = TextBubbleObj.GetComponent<Animation>();
+        if(TextBubbleObj == null)
+        {
+            TextBubbleObj = Instantiate(TextBubblePrefab);
+            TextBubbleObj.transform.SetParent(Canvas.transform);
+            TextBubbleTrans = TextBubbleObj.GetComponent<RectTransform>();
+            TextBubbleObj.transform.GetChild(0).GetComponent<Image>().sprite = Emoji;
+            TextBubbleObj.GetComponent<TextBubbleSingle>().aliveTime = ExistTime;
+            TextBubbleObj.GetComponent<TextBubbleSingle>().isEnemyBubble = true;
+            Ani = TextBubbleObj.GetComponent<Animation>();
+        }
+        else
+        {
+            TextBubbleObj.SetActive(true);
+        }
+        
 
         Ani.Play("ThoughtBubbleSpawn");
     }

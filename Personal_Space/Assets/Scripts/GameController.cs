@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    private PlayerController player;
+    private PlayerController1 player;
     public float TimeToReminder;
     public bool nullValues = false;
     public GameObject mainCamera;
@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
     {
         if (!nullValues)
         {
-            player = GameObject.Find("Player").GetComponent<PlayerController>();
+            player = GameObject.Find("Player").GetComponent<PlayerController1>();
             aerialListener = aerialCamera.GetComponent<AudioListener>();
             mainListener = mainCamera.GetComponent<AudioListener>();
             ObjMng = gameObject.GetComponent<ObjectivesManager>();
@@ -88,6 +88,7 @@ public class GameController : MonoBehaviour
         {
             if (!isPaused)
             {
+
                 if ((Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown("joystick button 3")))
                 {
                     Debug.Log("switch" + isPaused);
@@ -115,7 +116,7 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                if ((Input.GetKeyUp(KeyCode.Tab) || Input.GetKeyUp("joystick button 17") || Input.GetKeyUp("joystick button 3")))
+                if ((Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown("joystick button 3")))
                 {
                     Debug.Log("switch2" + isPaused);
 

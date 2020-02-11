@@ -23,9 +23,15 @@ public class CameraScript : MonoBehaviour
     public float smoothing = 1.0f;
     private bool isPaused;
 
+    private Vector3 offset;
+
     void Start()
     {
         Player = GameObject.Find("Player");
+        offset = targetPositionTPP.transform.position - Player.transform.position;
+        transform.rotation = targetPositionTPP.transform.rotation;
+        transform.position = Player.transform.position + offset;
+        
         perspective = false; // False is TPP, True is FPP
         if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
         {
@@ -57,12 +63,27 @@ public class CameraScript : MonoBehaviour
         }
         else
         {
-            ThirdPersonPerspective();
+            //ThirdPersonPerspective();
+            NewThirdPersonPerspective();
         }
 
 
     }
 
+    private void NewThirdPersonPerspective()
+    {
+       if (Input.GetAxisRaw(horizontalController) != 0)
+        {
+            offset = Quaternion.AngleAxis(Input.GetAxisRaw(horizontalController) * speed, Vector3.up) * offset;
+        }
+        else
+        {
+            offset = Quaternion.AngleAxis(Input.GetAxisRaw("Mouse X") * speed, Vector3.up) * offset;
+        }
+        transform.position = Player.transform.position + offset;
+        transform.LookAt(Player.transform.position);
+        
+    }
     private void ThirdPersonPerspective()
     {
         if (!isPaused)
