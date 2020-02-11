@@ -88,6 +88,7 @@ public class GameController : MonoBehaviour
         {
             if (!isPaused)
             {
+
                 if ((Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown("joystick button 3")))
                 {
                     Debug.Log("switch" + isPaused);
@@ -115,7 +116,7 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                if ((Input.GetKeyUp(KeyCode.Tab) || Input.GetKeyUp("joystick button 17") || Input.GetKeyUp("joystick button 3")))
+                if ((Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown("joystick button 3")))
                 {
                     Debug.Log("switch2" + isPaused);
 
