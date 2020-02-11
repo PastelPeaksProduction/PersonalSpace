@@ -64,7 +64,8 @@ public class TextBubbleSingle : MonoBehaviour
     public void DieBubble()
     {
         GetComponent<Animation>().Play("ThoughtBubbleDestroy");
-        Destroy(gameObject, 0.5f);
+        //Destroy(gameObject, 0.5f);
+        gameObject.SetActive(false);
     }
 
     private void UpdatePos()
