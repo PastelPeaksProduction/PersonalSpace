@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 6909727860991347763}
   - component: {fileID: 3393758569889659031}
   - component: {fileID: 990944558944223218}
+  - component: {fileID: 4096462347157533245}
   m_Layer: 0
   m_Name: pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &30592415582535061
 Transform:
@@ -92,6 +93,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.071656, y: 6.0219083, z: 8.071656}
   m_Center: {x: 0, y: -2.505286, z: 0}
+--- !u!208 &4096462347157533245
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3802556703893819343}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4.0360003, y: 3.0110002, z: 4.0360003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: -2.505, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &6330526144834872405
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7026127946131854918}
   m_Layer: 0
-  m_Name: nightstand (1)
+  m_Name: nightstand (1) 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
