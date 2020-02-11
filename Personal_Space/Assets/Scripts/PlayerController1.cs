@@ -75,7 +75,11 @@ public class PlayerController1 : MonoBehaviour
             }
             if (moveInput != Vector3.zero)
             {
-                transform.localRotation = Quaternion.LookRotation(moveInput * 1f * Time.deltaTime);
+                Quaternion temp = Quaternion.LookRotation(moveInput * 1f * Time.deltaTime);
+                Vector3 temp_euler = temp.eulerAngles;
+                temp_euler.x = 0;
+                temp_euler.z = 0;
+                transform.localRotation= Quaternion.Euler(temp_euler);
             }
             //transform.Translate(moveInput * moveSpeed * Time.deltaTime, Space.World);
             moveVelocity = moveInput * moveSpeed;
