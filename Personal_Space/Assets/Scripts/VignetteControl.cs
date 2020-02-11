@@ -23,7 +23,7 @@ public class VignetteControl : MonoBehaviour
     void Update()
     {
         vignette.enabled.value = true;
-        float healthFraction = player.GetComponent<PlayerController>().health / 100;
+        float healthFraction = player.GetComponent<PlayerController1>().health / 100;
         vignette.intensity.value = 1 - healthFraction;
     }
 }

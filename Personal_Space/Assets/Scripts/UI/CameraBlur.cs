@@ -20,7 +20,7 @@ public class CameraBlur : MonoBehaviour
 	public int blurFactor = 5;
 
 	private GameObject Player;
-	private PlayerController Health;
+	private PlayerController1 Health;
 
 	public static float ChangeRadius;
 	public static float ChangeFactor;
@@ -50,7 +50,7 @@ public class CameraBlur : MonoBehaviour
 		ChangeFastFilter = FastFilter;
 		SCShader = Shader.Find("Shader/Blur");
 		Player = GameObject.Find("Player");
-		Health = Player.GetComponent<PlayerController>();
+		Health = Player.GetComponent<PlayerController1>();
 		
 	}
 
