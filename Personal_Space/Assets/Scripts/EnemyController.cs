@@ -14,7 +14,8 @@ public class EnemyController : MonoBehaviour
     private Vector3 startingPosition;
     private Transform playerPosition;
     private NavMeshAgent agent;
-   
+    private Color randColor;
+
 
 
     void Start()
@@ -23,11 +24,17 @@ public class EnemyController : MonoBehaviour
         playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         startingPosition = transform.position;
         agent = GetComponent<NavMeshAgent>();
-        
+
+        randColor = Color.black;
+        while (randColor.r + randColor.g + randColor.b < 1.0f)
+        {
+            randColor = new Color(Random.value, Random.value, Random.value);
+        }
+
+        Renderer rend = gameObject.GetComponent<Renderer>();
+        rend.material.color = randColor;
 
     }
-
-   
 
 
     //--------------------HELPER METHODS--------------------//
