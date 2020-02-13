@@ -102,7 +102,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2600146800666572996}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -198,6 +198,10 @@ MonoBehaviour:
   sprintTime: 3
   sprintSpeed: 40
   cooldownTime: 5
+  cooldownTimeSprint: 5
+  cooldownTimeShout: 10
+  sprintAvailable: 1
+  shoutAvailable: 1
   shoutForce: 100
   shoutRadius: 40
   shoutUpwardsForce: 0
@@ -1402,11 +1406,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: idle
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 85ebff2cb2b6f47c0a223ca7db62b784,
+    - target: {fileID: -927199367670048503, guid: 85ebff2cb2b6f47c0a223ca7db62b784,
         type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 69b22ce287cd645ebbe6c8600e3ded1d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 85ebff2cb2b6f47c0a223ca7db62b784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1477,6 +1481,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 85ebff2cb2b6f47c0a223ca7db62b784,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 69b22ce287cd645ebbe6c8600e3ded1d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85ebff2cb2b6f47c0a223ca7db62b784, type: 3}
 --- !u!4 &6462713469830726348 stripped
