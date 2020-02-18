@@ -60,7 +60,7 @@ public class GameController : MonoBehaviour
     private void CheckPhonePopUp()
     {
 
-        if(Input.GetKeyDown("joystick button 3") || Input.GetKeyDown("joystick button 19") || Input.GetKeyDown(KeyCode.Return))
+        if(Input.GetKeyDown(KeyCode.M))
         {
             if (!isPhoneShow)
             {
