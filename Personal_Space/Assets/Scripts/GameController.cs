@@ -28,9 +28,10 @@ public class GameController : MonoBehaviour
     public GameObject WarningMsg;
     private ObjectivesManager ObjMng;
     private ArrowIndicator ArrInd;
+    private PhoneUI PhoneUI;
     private float LastHitObj;
     private bool isPaused;
-
+    private bool isPhoneShow;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,7 @@ public class GameController : MonoBehaviour
             mainListener = mainCamera.GetComponent<AudioListener>();
             ObjMng = gameObject.GetComponent<ObjectivesManager>();
             ArrInd = gameObject.GetComponent<ArrowIndicator>();
+            PhoneUI = GameObject.Find("PopUpPhone").GetComponent<PhoneUI>();
         }
     }
 
@@ -52,6 +54,25 @@ public class GameController : MonoBehaviour
         CheckReminder();
         CheckPause();
         CheckGameStatus();
+        CheckPhonePopUp();
+    }
+
+    private void CheckPhonePopUp()
+    {
+
+        if(Input.GetKeyDown("joystick button 3") || Input.GetKeyDown("joystick button 19") || Input.GetKeyDown(KeyCode.Return))
+        {
+            if (!isPhoneShow)
+            {
+                PhoneUI.ShowMessage();
+                isPhoneShow = true;
+            }
+            else
+            {
+                PhoneUI.HideMessage();
+                isPhoneShow = false;
+            }
+        }
     }
 
     private void CheckHint()
