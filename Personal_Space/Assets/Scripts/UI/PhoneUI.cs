@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Auto Resize: Rect Transform height -> when text bar reaches 0
+/// Reply: "OK"? 
+/// Button link
+/// Amount of texts, constraints.
+/// Icon?
+/// </summary>
 public class PhoneUI : MonoBehaviour
 {
     private bool _showMessage;
