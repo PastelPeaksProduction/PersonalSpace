@@ -31,7 +31,7 @@ public class CameraScript : MonoBehaviour
         offset = targetPositionTPP.transform.position - Player.transform.position;
         transform.rotation = targetPositionTPP.transform.rotation;
         transform.position = Player.transform.position + offset;
-        
+
         perspective = false; // False is TPP, True is FPP
         if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
         {
@@ -44,35 +44,13 @@ public class CameraScript : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            perspective = !perspective;
-        }
-        if (perspective)
-        {
-            if (transform.localPosition == targetPositionFPP.transform.localPosition)
-            {
-                FirstPersonPerspective();
-            }
-            else
-            {
-                transform.position = Vector3.MoveTowards(transform.position, targetPositionFPP.transform.position, CameraSpeed * Time.deltaTime);
 
-            }
-
-        }
-        else
-        {
-            //ThirdPersonPerspective();
-            NewThirdPersonPerspective();
-        }
-
-
+        NewThirdPersonPerspective();
     }
 
     private void NewThirdPersonPerspective()
     {
-       if (Input.GetAxisRaw(horizontalController) != 0)
+        if (Input.GetAxisRaw(horizontalController) != 0)
         {
             offset = Quaternion.AngleAxis(Input.GetAxisRaw(horizontalController) * speed, Vector3.up) * offset;
         }
@@ -82,7 +60,7 @@ public class CameraScript : MonoBehaviour
         }
         transform.position = Vector3.Lerp(transform.position, Player.transform.position + offset, 1);
         transform.LookAt(Player.transform.position);
-        
+
     }
     private void ThirdPersonPerspective()
     {
