@@ -75,7 +75,7 @@ public class OneTimeDialogController : MonoBehaviour
             Objectives.Add(new ObjectiveTutorial(fifthObject_5, fifthDescription));
         }
         StartCoroutine(GameStartDelay(2));
-        pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
+        // pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
 
     }
     IEnumerator GameStartDelay(int sec)
