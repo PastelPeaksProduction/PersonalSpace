@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Auto Resize: Rect Transform height -> when text bar reaches 0
@@ -11,9 +14,20 @@ using UnityEngine;
 /// </summary>
 public class PhoneUI : MonoBehaviour
 {
+    public GameObject SmBar;
+    public GameObject MedBar;
+    public GameObject LgBar;
+    public GameObject ResBar;
+
+    private GameController GC;
     private bool _showMessage;
-    private bool _notifyMessage = true;
+    private bool _notifyMessage;
     private Animation _animation;
+
+    private void Awake()
+    {
+        GC = GameObject.Find("Player").GetComponent<GameController>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -46,9 +60,39 @@ public class PhoneUI : MonoBehaviour
         _animation.Play("Phone_New_Message");
     }
 
-    public void SetNotifyMessage()
+    public void SetNotifyMessage(string Msg)
     {
+        GC.isPhoneShow = false;
         _notifyMessage = !_notifyMessage;
+        ProccessMsg(Msg);
+    }
+
+    private void ProccessMsg(string msg)
+    {
+        Debug.Log(msg.Length);
+        InitMsgBars();
+        if (msg.Length < 29)
+        {
+            SmBar.SetActive(true);
+            SmBar.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = msg;
+        }
+        else if(msg.Length < 60)
+        {
+            MedBar.SetActive(true);
+            MedBar.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = msg;
+        }
+        else
+        {
+            LgBar.SetActive(true);
+            LgBar.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = msg;
+        }
+    }
+
+    private void InitMsgBars()
+    {
+        SmBar.SetActive(false);
+        MedBar.SetActive(false);
+        LgBar.SetActive(false);
     }
 
     public void SetShowMessage()

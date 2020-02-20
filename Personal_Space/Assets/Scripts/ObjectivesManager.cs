@@ -42,15 +42,17 @@ public class ObjectivesManager : MonoBehaviour
     private int objectiveCount = 0;
     private float _reminderTime;
     private float _sinceLastObj = 0;
-
+    private PhoneUI _phoneUI;
     public AK.Wwise.Event end_of_level_event;
     public bool endLevel = false;
+
     // Start is called before the first frame update
     void Start()
     {
         endLevel = false;
         ObjMarkerSingle = ObjMarker.GetComponent<ObjectiveMarker>();
         _reminderTime = reminderTime;
+        _phoneUI = GameObject.Find("PopUpPhone").GetComponent<PhoneUI>();
 
         Objectives = new List<Objective>();
         //  CHRIS CODE
@@ -87,6 +89,7 @@ public class ObjectivesManager : MonoBehaviour
         pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
         ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);
 
+        _phoneUI.SetNotifyMessage(gameStartObjectiveDescription.Substring(1, gameStartObjectiveDescription.Length-2));
     }
     IEnumerator GameStartDelay(int sec)
     {
@@ -129,7 +132,7 @@ public class ObjectivesManager : MonoBehaviour
             GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount].ObjectiveEmoji);
 
             pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[objectiveCount].ObjectiveDes;
-
+            _phoneUI.SetNotifyMessage(Objectives[objectiveCount].ObjectiveDes.Substring(1, Objectives[objectiveCount].ObjectiveDes.Length - 2));
             if (++objectiveCount < Objectives.Count)
             {
                 ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);

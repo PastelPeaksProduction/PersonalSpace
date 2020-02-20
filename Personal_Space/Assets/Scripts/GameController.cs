@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour
     private PhoneUI PhoneUI;
     private float LastHitObj;
     private bool isPaused;
-    private bool isPhoneShow;
+    public bool isPhoneShow;
 
     // Start is called before the first frame update
     void Start()
