@@ -36,10 +36,48 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{CB00CBC0-5CD9-4B8A-9AD7-2AEC08660E0A}" ShortID="920210704">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-15"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Calm" ID="{2F4E2B62-7362-40C9-8D23-9301C8076D5E}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A57F398D-1941-48D6-A5E7-83A0702FD446}" ShortID="485090447">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-15"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Stress" ID="{9B7E37E1-C645-470C-B7E6-5CB3B6907319}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{AE1A38D2-4CDD-452A-8D6B-908E35271F0A}" ShortID="194969595">
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="PS_MX_loop_main_110_bpm_v01" ID="{AC48AFE5-AB56-47A5-A76A-DCA466B4AA16}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D4095D32-5F5F-4DE6-BA04-111D03CE3ACE}" ShortID="1061642795">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_MX_loop_calm_110_bpm_v01" ID="{E83F0E69-18FE-455B-ACB6-6FA83A4C137E}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{B6A78775-11DD-4344-AEBF-F7ED05F59EAC}" ShortID="78861171">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_MX_loop_stress_layer_110_bpm_v01" ID="{42A75937-1FEB-4B55-9BAC-20FAECF7AB89}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -51,6 +89,13 @@
 					</PropertyList>
 					<ChildrenList>
 						<Action Name="" ID="{24AE3385-B627-4FAF-AB29-495C6AF203F3}" ShortID="1061743844">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="PS_MX_loop_calm_110_bpm_v01" ID="{E83F0E69-18FE-455B-ACB6-6FA83A4C137E}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
@@ -60,13 +105,25 @@
 						<Action Name="" ID="{A389CE60-F55B-4592-888B-5B10E1A6ADFA}" ShortID="235770398">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
-								<Property Name="FadeInCurve" Type="int16" Value="0"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-12"/>
+								<Property Name="Volume" Type="Real64" Value="-15"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{22CA76A7-43C4-4871-86B8-764F951F89E6}" ShortID="824042666">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Calm" ID="{2F4E2B62-7362-40C9-8D23-9301C8076D5E}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -75,6 +132,13 @@
 				<Event Name="fade_to_stress" ID="{8F7C58DB-B5C9-46B9-8327-4C322471DB23}">
 					<ChildrenList>
 						<Action Name="" ID="{35E1F66E-9CFC-4032-8A3D-48680A376576}" ShortID="878764313">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="PS_MX_loop_stress_layer_110_bpm_v01" ID="{42A75937-1FEB-4B55-9BAC-20FAECF7AB89}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
@@ -84,13 +148,25 @@
 						<Action Name="" ID="{8DB970A2-2982-42E2-AB41-A31C4E84059F}" ShortID="635388607">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
-								<Property Name="FadeInCurve" Type="int16" Value="0"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-12"/>
+								<Property Name="Volume" Type="Real64" Value="-15"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{5019D7B3-5EDC-47D5-9AFC-0F747FF79ADE}" ShortID="369327818">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Stress" ID="{9B7E37E1-C645-470C-B7E6-5CB3B6907319}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -101,12 +177,39 @@
 						<Action Name="" ID="{749670E8-2EA6-4D75-9A21-69239BE1075C}" ShortID="99974587">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 								<Property Name="Volume" Type="Real64" Value="-5"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{AD964EBF-C27E-438F-B586-169CD67AAD93}" ShortID="16007265">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-15"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Calm" ID="{2F4E2B62-7362-40C9-8D23-9301C8076D5E}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{3044456B-539C-4EA5-9DAA-251B83704458}" ShortID="207749827">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-15"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Stress" ID="{9B7E37E1-C645-470C-B7E6-5CB3B6907319}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -117,10 +220,29 @@
 						<Action Name="" ID="{FE5825C5-35E5-4118-8F11-17B11B43761A}" ShortID="262256276">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="PS_MX_loop_calm_110_bpm_v01" ID="{E83F0E69-18FE-455B-ACB6-6FA83A4C137E}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{E8CD02D0-0CB6-41D3-A9A6-411A0821B0A9}" ShortID="690169954">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-15"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Calm" ID="{2F4E2B62-7362-40C9-8D23-9301C8076D5E}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -131,10 +253,28 @@
 						<Action Name="" ID="{DA367FED-5E4B-4C14-B4F1-A76996089213}" ShortID="411842585">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="PS_MX_loop_stress_layer_110_bpm_v01" ID="{42A75937-1FEB-4B55-9BAC-20FAECF7AB89}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{638B0549-333A-41EB-A31F-B46AB9FF081F}" ShortID="695547050">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-15"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Stress" ID="{9B7E37E1-C645-470C-B7E6-5CB3B6907319}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -145,6 +285,11 @@
 						<Action Name="" ID="{434AFB57-686D-42BE-94B3-AF898EDA2B4C}" ShortID="166725929">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Scope" Type="int16" Value="1"/>
 								<Property Name="Volume" Type="Real64" Value="-5"/>
 							</PropertyList>
@@ -157,6 +302,11 @@
 						<Action Name="" ID="{8EE2D1CA-9C02-4DC8-A70E-791E59790ED8}" ShortID="457663150">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Scope" Type="int16" Value="1"/>
 								<Property Name="Volume" Type="Real64" Value="-5"/>
 							</PropertyList>
@@ -170,6 +320,11 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="13"/>
 								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
@@ -182,6 +337,11 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="13"/>
 								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
@@ -194,6 +354,11 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="13"/>
 								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
@@ -204,15 +369,15 @@
 						</Action>
 						<Action Name="" ID="{74C8C735-A41D-4EBB-ADC8-2E5FD1BEA170}" ShortID="416617524">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="28"/>
-								<Property Name="Inclusion" Type="bool">
-									<ValueList>
-										<Value>False</Value>
-									</ValueList>
-								</Property>
+								<Property Name="ActionType" Type="int16" Value="27"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.75"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
-							<ReferenceList/>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
@@ -221,6 +386,11 @@
 						<Action Name="" ID="{F196EA02-F74D-4DF5-A566-5D6FD0F36E56}" ShortID="878724954">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32" Value="-85"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
@@ -233,6 +403,11 @@
 						<Action Name="" ID="{0F0F287E-2621-42D1-BB4F-CFED13B8C518}" ShortID="464541482">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32" Value="-85"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
@@ -245,29 +420,17 @@
 						<Action Name="" ID="{DBC70A25-6848-4BF0-8816-0C84F8592E4D}" ShortID="621856586">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32" Value="-85"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="PS_MX_loop_calm_110_bpm_v01" ID="{E83F0E69-18FE-455B-ACB6-6FA83A4C137E}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{2C19A556-9432-4E58-90A5-12941DF8C677}" ShortID="854881089">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="26"/>
-								<Property Name="Inclusion" Type="bool">
-									<ValueList>
-										<Value>False</Value>
-									</ValueList>
-								</Property>
-								<Property Name="Lowpass" Type="int16" Value="60"/>
-								<Property Name="Scope" Type="int16" Value="1"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -291,6 +454,11 @@
 						<Action Name="" ID="{8EFAA4EE-C3DD-4566-AC3D-2A3D91506795}" ShortID="527450022">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Scope" Type="int16" Value="1"/>
 								<Property Name="Volume" Type="Real64" Value="-12"/>
 							</PropertyList>
@@ -300,15 +468,50 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{0F87A151-EA72-4012-A1BD-73258F99CCB1}" ShortID="234001830">
+						<Action Name="" ID="{2C19A556-9432-4E58-90A5-12941DF8C677}" ShortID="854881089">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.75"/>
+								<Property Name="Lowpass" Type="int16" Value="60"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-12"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{60216501-1527-4088-BAD1-80A666A8353F}" ShortID="512460264">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16" Value="60"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Calm" ID="{2F4E2B62-7362-40C9-8D23-9301C8076D5E}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{5D97A01B-F40A-4F25-BF24-D25D8B770992}" ShortID="709354472">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16" Value="60"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Stress" ID="{9B7E37E1-C645-470C-B7E6-5CB3B6907319}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -392,6 +595,11 @@
 						<Action Name="" ID="{DDBAF4D0-0151-4A47-B6E9-8682B7C4C01B}" ShortID="437122920">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Lowpass" Type="int16" Value="50"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
@@ -404,6 +612,11 @@
 						<Action Name="" ID="{EF7DDAA7-10B7-449B-9796-16843F3C0F43}" ShortID="67065671">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Lowpass" Type="int16" Value="50"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
@@ -479,6 +692,11 @@
 						<Action Name="" ID="{1C717DE7-AC3B-4814-8A6D-507CF2E7CFFA}" ShortID="193499549">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Lowpass" Type="int16" Value="70"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
@@ -491,6 +709,11 @@
 						<Action Name="" ID="{AD9A7174-E1A4-4B42-892E-65FADADD6976}" ShortID="452339319">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Lowpass" Type="int16" Value="70"/>
 							</PropertyList>
 							<ReferenceList>
@@ -565,6 +788,11 @@
 						<Action Name="" ID="{2FED90B5-5670-48A8-BD65-9A6366CD7AAC}" ShortID="983758416">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="28"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList/>
@@ -633,6 +861,11 @@
 						<Action Name="" ID="{9079CF63-37D1-4775-9DAA-ED88430D154D}" ShortID="651968205">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Lowpass" Type="int16" Value="37"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
@@ -645,6 +878,11 @@
 						<Action Name="" ID="{8D105DBD-2E2B-42F3-8366-D0DB0EE3FDA4}" ShortID="940206214">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Lowpass" Type="int16" Value="35"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
@@ -719,6 +957,11 @@
 						<Action Name="" ID="{3E4CADCA-7DC4-4C8E-AC7F-D25D7FEDB7EC}" ShortID="920837153">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Lowpass" Type="int16" Value="20"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
@@ -731,6 +974,11 @@
 						<Action Name="" ID="{27EF6739-CA3A-4D7A-8EF5-F8F3DB43AEB6}" ShortID="124081611">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Lowpass" Type="int16" Value="20"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>

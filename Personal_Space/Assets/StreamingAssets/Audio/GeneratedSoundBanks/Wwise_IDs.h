@@ -57,9 +57,11 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID BREATHING = 238653005U;
+        static const AkUniqueID CALM = 3753286132U;
         static const AkUniqueID HEARTBEAT = 2179486487U;
         static const AkUniqueID MAIN_LOOP = 3813340491U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID STRESS = 3840192365U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

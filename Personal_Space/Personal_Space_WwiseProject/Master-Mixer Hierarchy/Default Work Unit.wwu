@@ -31,6 +31,20 @@
 						</Reference>
 					</ReferenceList>
 				</Bus>
+				<Bus Name="Calm" ID="{2F4E2B62-7362-40C9-8D23-9301C8076D5E}">
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="System" ID="{E38B0199-414D-49DB-AD85-AA642D7B10B3}" WorkUnitID="{9DFA956D-248C-41D9-AB34-6E900ACFE86C}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
+				<Bus Name="Stress" ID="{9B7E37E1-C645-470C-B7E6-5CB3B6907319}">
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="System" ID="{E38B0199-414D-49DB-AD85-AA642D7B10B3}" WorkUnitID="{9DFA956D-248C-41D9-AB34-6E900ACFE86C}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
 			</ChildrenList>
 		</WorkUnit>
 	</Busses>
