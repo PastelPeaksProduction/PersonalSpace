@@ -75,7 +75,7 @@ public class PlayerController1 : MonoBehaviour
             }
             if (moveInput != Vector3.zero)
             {
-                Quaternion temp = Quaternion.LookRotation(moveInput * 1f * Time.deltaTime);
+                Quaternion temp = Quaternion.LookRotation(moveInput * 2f * Time.deltaTime);
                 Vector3 temp_euler = temp.eulerAngles;
                 temp_euler.x = 0;
                 temp_euler.z = 0;
