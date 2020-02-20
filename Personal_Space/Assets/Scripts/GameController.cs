@@ -29,7 +29,9 @@ public class GameController : MonoBehaviour
     private ObjectivesManager ObjMng;
     private ArrowIndicator ArrInd;
     private PhoneUI PhoneUI;
+    public PhonePauseUI PhonePauseUI;
     private float LastHitObj;
+
     private bool isPaused;
     public bool isPhoneShow;
 
@@ -114,9 +116,9 @@ public class GameController : MonoBehaviour
                 {
                     Debug.Log("switch" + isPaused);
                     isPaused = true;
-                    PauseGame();
+                    
 
-                    pauseDialog.SetActive(true);
+                   // pauseDialog.SetActive(true);
                     mainCamera.GetComponent<CameraBlur>().SetPause();
                     mainCamera.GetComponent<CameraScript>().SetPause();
 
@@ -130,9 +132,10 @@ public class GameController : MonoBehaviour
                     //ObjMarker.SetActive(true);
                     //BottomHealthBar.SetActive(false);
                     //Enemies.SetActive(false);
-                    RestartBtn.SetActive(true);
-                    MenuBtn.SetActive(true);
-
+                    //RestartBtn.SetActive(true);
+                    //MenuBtn.SetActive(true);
+                    PhonePauseUI.ShowMessage();
+                    PauseGame();
                 }
             }
             else
@@ -141,7 +144,7 @@ public class GameController : MonoBehaviour
                 {
                     Debug.Log("switch2" + isPaused);
 
-                    pauseDialog.SetActive(false);
+                    //pauseDialog.SetActive(false);
                     mainCamera.GetComponent<CameraBlur>().SetPause();
                     mainCamera.GetComponent<CameraScript>().SetPause();
                     //Stressbar.SetActive(false);
@@ -154,8 +157,9 @@ public class GameController : MonoBehaviour
                     //ObjMarker.SetActive(false);
                     //BottomHealthBar.SetActive(true);
                     //Enemies.SetActive(true);
-                    RestartBtn.SetActive(false);
-                    MenuBtn.SetActive(false);
+                    //RestartBtn.SetActive(false);
+                    //MenuBtn.SetActive(false);
+                    PhonePauseUI.HideMessage();
                     ContinueGame();
 
                     isPaused = false;
@@ -167,11 +171,13 @@ public class GameController : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene("0.0StartMenu");
+        ContinueGame();
     }
 
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        ContinueGame();
     }
     private void CheckGameStatus()
     {

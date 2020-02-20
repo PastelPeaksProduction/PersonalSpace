@@ -22,6 +22,7 @@ public class PhoneUI : MonoBehaviour
     private GameController GC;
     private bool _showMessage;
     private bool _notifyMessage;
+    private bool _pauseMenu;
     private Animation _animation;
 
     private void Awake()
@@ -37,11 +38,10 @@ public class PhoneUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_notifyMessage)
+        if (_notifyMessage && !_pauseMenu)
         {
             NotifyMessage();
         }
-
     }
 
     public void ShowMessage()
@@ -76,7 +76,7 @@ public class PhoneUI : MonoBehaviour
             SmBar.SetActive(true);
             SmBar.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = msg;
         }
-        else if(msg.Length < 60)
+        else if (msg.Length < 60)
         {
             MedBar.SetActive(true);
             MedBar.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = msg;
@@ -98,5 +98,10 @@ public class PhoneUI : MonoBehaviour
     public void SetShowMessage()
     {
         _showMessage = !_showMessage;
+    }
+    public void SetPauseMenu()
+    {
+        _pauseMenu = !_pauseMenu;
+        gameObject.SetActive(!_pauseMenu);
     }
 }
