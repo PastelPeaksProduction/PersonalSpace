@@ -52,7 +52,7 @@ public class ObjectivesManager : MonoBehaviour
         endLevel = false;
         ObjMarkerSingle = ObjMarker.GetComponent<ObjectiveMarker>();
         _reminderTime = reminderTime;
-        //_phoneUI = GameObject.Find("PopUpPhone").GetComponent<PhoneUI>();
+        _phoneUI = GameObject.Find("PopUpPhone").GetComponent<PhoneUI>();
 
         Objectives = new List<Objective>();
         //  CHRIS CODE
@@ -89,7 +89,7 @@ public class ObjectivesManager : MonoBehaviour
         pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
         ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);
 
-       // _phoneUI.SetNotifyMessage(gameStartObjectiveDescription.Substring(1, gameStartObjectiveDescription.Length-2));
+        _phoneUI.SetNotifyMessage(gameStartObjectiveDescription.Substring(1, gameStartObjectiveDescription.Length-2));
     }
     IEnumerator GameStartDelay(int sec)
     {
@@ -132,7 +132,7 @@ public class ObjectivesManager : MonoBehaviour
             GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount].ObjectiveEmoji);
 
             pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[objectiveCount].ObjectiveDes;
-           // _phoneUI.SetNotifyMessage(Objectives[objectiveCount].ObjectiveDes.Substring(1, Objectives[objectiveCount].ObjectiveDes.Length - 2));
+            _phoneUI.SetNotifyMessage(Objectives[objectiveCount].ObjectiveDes.Substring(1, Objectives[objectiveCount].ObjectiveDes.Length - 2));
             if (++objectiveCount < Objectives.Count)
             {
                 ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);

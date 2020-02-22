@@ -45,7 +45,7 @@ public class GameController : MonoBehaviour
             mainListener = mainCamera.GetComponent<AudioListener>();
             ObjMng = gameObject.GetComponent<ObjectivesManager>();
             ArrInd = gameObject.GetComponent<ArrowIndicator>();
-            //PhoneUI = GameObject.Find("PopUpPhone").GetComponent<PhoneUI>();
+            PhoneUI = GameObject.Find("PopUpPhone").GetComponent<PhoneUI>();
         }
     }
 
@@ -118,7 +118,7 @@ public class GameController : MonoBehaviour
                     isPaused = true;
                     
 
-                    pauseDialog.SetActive(true);
+                   // pauseDialog.SetActive(true);
                     mainCamera.GetComponent<CameraBlur>().SetPause();
                     mainCamera.GetComponent<CameraScript>().SetPause();
 
@@ -134,7 +134,7 @@ public class GameController : MonoBehaviour
                     //Enemies.SetActive(false);
                     //RestartBtn.SetActive(true);
                     //MenuBtn.SetActive(true);
-                    //PhonePauseUI.ShowMessage();
+                    PhonePauseUI.ShowMessage();
                     PauseGame();
                 }
             }
@@ -144,7 +144,7 @@ public class GameController : MonoBehaviour
                 {
                     Debug.Log("switch2" + isPaused);
 
-                    pauseDialog.SetActive(false);
+                    //pauseDialog.SetActive(false);
                     mainCamera.GetComponent<CameraBlur>().SetPause();
                     mainCamera.GetComponent<CameraScript>().SetPause();
                     //Stressbar.SetActive(false);
@@ -159,7 +159,7 @@ public class GameController : MonoBehaviour
                     //Enemies.SetActive(true);
                     //RestartBtn.SetActive(false);
                     //MenuBtn.SetActive(false);
-                    //PhonePauseUI.HideMessage();
+                    PhonePauseUI.HideMessage();
                     ContinueGame();
 
                     isPaused = false;
