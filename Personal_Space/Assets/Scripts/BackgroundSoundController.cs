@@ -16,7 +16,7 @@ public class BackgroundSoundController : MonoBehaviour
     void Start()
     {
         AkSoundEngine.PostEvent("main_loop", gameObject);
-        AkSoundEngine.PostEvent("Heartbeat_S", gameObject);
+        //AkSoundEngine.PostEvent("Heartbeat_S", gameObject);
         player = GameObject.FindGameObjectWithTag ( "Player" ).GetComponent<PlayerController1>();
     }
 
@@ -61,7 +61,7 @@ public class BackgroundSoundController : MonoBehaviour
             if (!heartbeat_slow)
             {
                 heartbeat_slow = true;
-                AkSoundEngine.PostEvent("Heartbeat_S", gameObject);
+                //AkSoundEngine.PostEvent("Heartbeat_S", gameObject);
             }
             if (stressLevel != 3)
             {
@@ -74,7 +74,7 @@ public class BackgroundSoundController : MonoBehaviour
             if (heartbeat_slow)
             {
                 heartbeat_slow = false;
-                AkSoundEngine.PostEvent("Heartbeat_F", gameObject);
+                //AkSoundEngine.PostEvent("Heartbeat_F", gameObject);
             }
             if (stressLevel != 2)
             {

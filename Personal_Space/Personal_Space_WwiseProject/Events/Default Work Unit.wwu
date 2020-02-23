@@ -89,9 +89,23 @@
 							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{75747BAA-0A4F-4F49-BC09-3315E33E236B}" ShortID="607819727">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="PS_MX_loop_stress_layer_110_bpm_v02" ID="{D1AA0AC4-336A-411F-9100-0C7CAA616C2A}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C5CE6452-952B-4EC6-A13A-E73A364586F6}" ShortID="723066507">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_MX_loop_stress_layer_w_Hbeat_SC_110_bpm_v02" ID="{D481FB23-7C79-460F-880A-F01B1F3943A9}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -691,7 +705,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="7"/>
+								<Property Name="Volume" Type="Real64" Value="3"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -783,11 +797,26 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{2593739E-61BE-4AFF-8108-8763C43F5758}" ShortID="1051419356">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Stress" ID="{9B7E37E1-C645-470C-B7E6-5CB3B6907319}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{76707FE2-DC51-4C5B-B78A-BF91CC14EC4B}" ShortID="85195920">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="10"/>
+								<Property Name="Volume" Type="Real64" Value="4"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -956,7 +985,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="4"/>
+								<Property Name="Volume" Type="Real64" Value="2"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
