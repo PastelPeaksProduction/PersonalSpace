@@ -43,6 +43,8 @@ public class OneTimeDialogController : MonoBehaviour
     private float _reminderTime;
     private GameController controller;
 
+    private int currentObjective = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -98,16 +100,21 @@ public class OneTimeDialogController : MonoBehaviour
             Debug.Log("Continue!");
             controller.ContinueGame();
             OnetimeDialog.SetActive(false);
+            currentObjective++; 
         }
     }
 
     private void Reminder()
     {
         _reminderTime -= Time.deltaTime;
-        if (_reminderTime < 0)
+        if (_reminderTime <= 0)
         {
             _reminderTime = reminderTime;
 
+            pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[currentObjective].ObjectiveDes;
+
+            controller.PauseGame();
+            OnetimeDialog.SetActive(true);
 
         }
     }

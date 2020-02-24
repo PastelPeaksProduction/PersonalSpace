@@ -132,17 +132,28 @@ public class ObjectivesManager : MonoBehaviour
             GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount].ObjectiveEmoji);
 
             pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[objectiveCount].ObjectiveDes;
-            _phoneUI.SetNotifyMessage(Objectives[objectiveCount].ObjectiveDes.Substring(1, Objectives[objectiveCount].ObjectiveDes.Length - 2));
+            //_phoneUI.SetNotifyMessage(Objectives[objectiveCount].ObjectiveDes.Substring(0, Objectives[objectiveCount].ObjectiveDes.Length - 2));
+            _phoneUI.SetNotifyMessage(Objectives[objectiveCount].ObjectiveDes);
             if (++objectiveCount < Objectives.Count)
             {
                 ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);
                 Objectives[objectiveCount].ObjectiveObj.SetActive(true);    //
+                Debug.Log("OBJECT NAME: " + obj.name);
+                if (obj.GetComponent<ObjectiveStateChange>())
+                {
+                    obj.GetComponent<ObjectiveStateChange>().FireEvent();
+                }
             }
             else
             {
                 endLevel = true;
                 end_of_level_event.Post(gameObject,(uint)AkCallbackType.AK_EndOfEvent,GetComponent<GameController>().AdvanceLevel);
                 //GetComponent<GameController>().AdvanceLevel();
+                Debug.Log("OBJECT NAME: " + obj.name);
+                if (obj.GetComponent<ObjectiveStateChange>())
+                {
+                    obj.GetComponent<ObjectiveStateChange>().FireEvent();
+                }
             }
            
         }
