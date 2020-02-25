@@ -6,6 +6,7 @@ public class TurnOffBubbles : MonoBehaviour
 {
     private GameObject[] dangerZones;
     private GameObject[] safeZones;
+    
     public bool turnOffBubbles = false;
     // Start is called before the first frame update
     void Start()
