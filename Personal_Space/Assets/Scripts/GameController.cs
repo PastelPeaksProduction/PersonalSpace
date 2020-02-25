@@ -199,7 +199,7 @@ public class GameController : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Alpha3))
         {
-            SceneManager.LoadScene("3.0SchoolDance");
+            SceneManager.LoadScene("Prom");
 
         }
         
@@ -229,7 +229,7 @@ public class GameController : MonoBehaviour
 
             if (SceneManager.GetActiveScene().name == "2.5Cutscene")
             {
-                SceneManager.LoadScene("3.0SchoolDance");
+                SceneManager.LoadScene("Prom");
             }
 
             if (SceneManager.GetActiveScene().name == "3.5Cutscene")
@@ -259,7 +259,7 @@ public class GameController : MonoBehaviour
         // GetComponent<ObjectivesManager>().endLevel = false;
         
 
-        if (SceneManager.GetActiveScene().name == "3.0SchoolDance")
+        if (SceneManager.GetActiveScene().name == "Prom")
         {
             SceneManager.LoadScene("4.0HouseParty");
         }

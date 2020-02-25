@@ -31,7 +31,7 @@ public class Menu : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene("3.0SchoolDance");
+        SceneManager.LoadScene("Prom");
     }
 
     public void QuitGame()
