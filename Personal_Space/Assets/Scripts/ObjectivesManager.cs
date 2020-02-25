@@ -45,6 +45,14 @@ public class ObjectivesManager : MonoBehaviour
     public string eightDescription;
     public Sprite eightEmoji;
 
+    public GameObject ninthObject_9;
+    public string ninthDescription;
+    public Sprite ninthEmoji;
+
+    public GameObject tenthObject_10;
+    public string tenthDescription;
+    public Sprite tenthEmoji;
+
     public GameObject pauseDialogText;
     public float reminderTime;
     public GameObject ObjMarker;
@@ -97,7 +105,7 @@ public class ObjectivesManager : MonoBehaviour
             fifthObject_5.SetActive(false); //
         }
 
-       /* if (sixthObject_6 != null)
+        if (sixthObject_6 != null)
         {
             Objectives.Add(new Objective(sixthObject_6, sixthDescription, sixthEmoji));
             sixthObject_6.SetActive(false); //
@@ -114,7 +122,19 @@ public class ObjectivesManager : MonoBehaviour
         {
             Objectives.Add(new Objective(eightObject_8, eightDescription, eightEmoji));
             eightObject_8.SetActive(false); //
-        }*/
+        }
+
+        if (ninthObject_9 != null)
+        {
+            Objectives.Add(new Objective(ninthObject_9, ninthDescription, ninthEmoji));
+            ninthObject_9.SetActive(false); //
+        }
+
+        if (tenthObject_10 != null)
+        {
+            Objectives.Add(new Objective(tenthObject_10, tenthDescription, tenthEmoji));
+            tenthObject_10.SetActive(false); //
+        }
 
         StartCoroutine(GameStartDelay(3));
         pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
