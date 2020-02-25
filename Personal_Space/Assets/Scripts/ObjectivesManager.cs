@@ -33,6 +33,18 @@ public class ObjectivesManager : MonoBehaviour
     public string fifthDescription;
     public Sprite fifthEmoji;
 
+    public GameObject sixthObject_6;
+    public string sixthDescription;
+    public Sprite sixthEmoji;
+
+    public GameObject seventhObject_7;
+    public string seventhDescription;
+    public Sprite seventhEmoji;
+
+    public GameObject eightObject_8;
+    public string eightDescription;
+    public Sprite eightEmoji;
+
     public GameObject pauseDialogText;
     public float reminderTime;
     public GameObject ObjMarker;
@@ -85,11 +97,30 @@ public class ObjectivesManager : MonoBehaviour
             fifthObject_5.SetActive(false); //
         }
 
+       /* if (sixthObject_6 != null)
+        {
+            Objectives.Add(new Objective(sixthObject_6, sixthDescription, sixthEmoji));
+            sixthObject_6.SetActive(false); //
+        }
+
+
+        if (seventhObject_7 != null)
+        {
+            Objectives.Add(new Objective(seventhObject_7, seventhDescription, seventhEmoji));
+            seventhObject_7.SetActive(false); //
+        }
+
+        if (eightObject_8 != null)
+        {
+            Objectives.Add(new Objective(eightObject_8, eightDescription, eightEmoji));
+            eightObject_8.SetActive(false); //
+        }*/
+
         StartCoroutine(GameStartDelay(3));
         pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
         ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);
 
-        _phoneUI.SetNotifyMessage(gameStartObjectiveDescription.Substring(1, gameStartObjectiveDescription.Length-2));
+        _phoneUI.SetNotifyMessage(gameStartObjectiveDescription);
     }
     IEnumerator GameStartDelay(int sec)
     {
