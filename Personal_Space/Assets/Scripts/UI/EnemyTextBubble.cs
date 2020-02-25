@@ -27,7 +27,15 @@ public class EnemyTextBubble : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if(Emoji == null)
+        {
+            GameObject chooser = GameObject.FindGameObjectWithTag("EmojiChooser");
+            if(chooser != null)
+            {
+                int rand = Random.Range(0, chooser.GetComponent<EmojiLoader>().emojis.Length);
+                Emoji = chooser.GetComponent<EmojiLoader>().emojis[rand];
+            }
+        }
         offset = new Vector3(-2, 3);
         _reminderTime = ReminderTime;
         Canvas = GameObject.Find("EnemyBubbleCanvas");
