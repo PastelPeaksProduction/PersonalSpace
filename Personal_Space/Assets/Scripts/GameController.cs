@@ -62,7 +62,7 @@ public class GameController : MonoBehaviour
     private void CheckPhonePopUp()
     {
         // TODO: Bind controller keys
-        if(Input.GetKeyDown(KeyCode.M))
+        if(Input.GetKeyDown(KeyCode.M) || Input.GetKeyDown("joystick button 19")|| Input.GetKeyDown("joystick button 3"))
         {
             if (!isPhoneShow)
             {

@@ -280,7 +280,7 @@ PrefabInstance:
     - target: {fileID: 6819861313162544488, guid: 6c89c8dc8a72bfa458c500f69930ed01,
         type: 3}
       propertyPath: gameStartObjectiveDescription
-      value: 
+      value: Press "Y" to see the current objective.
       objectReference: {fileID: 0}
     - target: {fileID: 6819861313162544488, guid: 6c89c8dc8a72bfa458c500f69930ed01,
         type: 3}
@@ -290,7 +290,7 @@ PrefabInstance:
     - target: {fileID: 6819861313162544488, guid: 6c89c8dc8a72bfa458c500f69930ed01,
         type: 3}
       propertyPath: firstDescription
-      value: Press "Y" to see the current objective.
+      value: Being close to enemies will cause your anxiety to RISE!
       objectReference: {fileID: 0}
     - target: {fileID: 6819861313162544488, guid: 6c89c8dc8a72bfa458c500f69930ed01,
         type: 3}
@@ -310,7 +310,7 @@ PrefabInstance:
     - target: {fileID: 6819861313162544488, guid: 6c89c8dc8a72bfa458c500f69930ed01,
         type: 3}
       propertyPath: secondDescription
-      value: Being close to enemies will cause your anxiety to RISE!
+      value: Being in areas without enemies will LOWER your anxiety.
       objectReference: {fileID: 0}
     - target: {fileID: 6819861313162544488, guid: 6c89c8dc8a72bfa458c500f69930ed01,
         type: 3}
@@ -320,7 +320,7 @@ PrefabInstance:
     - target: {fileID: 6819861313162544488, guid: 6c89c8dc8a72bfa458c500f69930ed01,
         type: 3}
       propertyPath: thirdDescription
-      value: Being in areas without enemies will LOWER your anxiety.
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6819861313162544488, guid: 6c89c8dc8a72bfa458c500f69930ed01,
         type: 3}
@@ -330,6 +330,11 @@ PrefabInstance:
     - target: {fileID: 6819861313162544488, guid: 6c89c8dc8a72bfa458c500f69930ed01,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819861313162544488, guid: 6c89c8dc8a72bfa458c500f69930ed01,
+        type: 3}
+      propertyPath: reminderTime
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6819861313162544489, guid: 6c89c8dc8a72bfa458c500f69930ed01,
@@ -6492,7 +6497,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press A to continue
+  m_text: Press Y to continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

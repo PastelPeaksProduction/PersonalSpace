@@ -84,6 +84,7 @@ public class OneTimeDialogController : MonoBehaviour
     {
         yield return new WaitForSeconds(sec);
         controller.PauseGame();
+        pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
         OnetimeDialog.SetActive(true);
     }
 
@@ -95,7 +96,7 @@ public class OneTimeDialogController : MonoBehaviour
 
     private void CheckContinue()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 16") || Input.GetKeyDown("joystick button 0")))
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 19") || Input.GetKeyDown("joystick button 3")))
         {
             Debug.Log("Continue!");
             controller.ContinueGame();
@@ -111,10 +112,10 @@ public class OneTimeDialogController : MonoBehaviour
         {
             _reminderTime = reminderTime;
 
-            pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[currentObjective].ObjectiveDes;
+           // pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[currentObjective].ObjectiveDes;
 
-            controller.PauseGame();
-            OnetimeDialog.SetActive(true);
+            //controller.PauseGame();
+            //OnetimeDialog.SetActive(true);
 
         }
     }
