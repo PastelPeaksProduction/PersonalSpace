@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using SiliconDroid;
 
 public class PlayerController1 : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class PlayerController1 : MonoBehaviour
         rigidBody = this.GetComponent<Rigidbody>();
         threatLevel = neutralDamage;
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        const float K_F_SIZE = 0.125f;
+       // SD_Joystick.fnc_Create_Start();
+        //SD_Joystick.fnc_Create_2DStick(SD_Joystick.ANCHOR.BOTTOM_LEFT, K_F_SIZE, K_F_SIZE, K_F_SIZE);
+        //SD_Joystick.fnc_Create_1DStick(SD_Joystick.ANCHOR.BOTTOM_RIGHT, K_F_SIZE, K_F_SIZE, 1.5f * K_F_SIZE, K_F_SIZE);
     }
 
     
