@@ -20,6 +20,7 @@ public class SpecialsManager : MonoBehaviour
     public float shoutRadius = 40f;
     public float shoutUpwardsForce = 10f;
 
+
     // Start is called before the first frame update
     void Start()
     {
