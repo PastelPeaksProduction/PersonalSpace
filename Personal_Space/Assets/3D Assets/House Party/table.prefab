@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 93843306430568199}
-  - component: {fileID: 4915627539328547870}
-  - component: {fileID: 4915627539328547841}
   m_Layer: 0
   m_Name: table
   m_TagString: Untagged
@@ -33,35 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -41.413002, z: 0}
---- !u!54 &4915627539328547870
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3969426253865379092}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &4915627539328547841
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3969426253865379092}
-  m_Material: {fileID: 13400000, guid: d8d534fc29e974c4ea147c61934d400a, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 18.159773, y: 3.2563324, z: 10.277747}
-  m_Center: {x: 0.46936893, y: 1.7822285, z: 0.07904243}
 --- !u!1 &4378381834169156024
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,6 +43,8 @@ GameObject:
   - component: {fileID: 789304188935522407}
   - component: {fileID: 6510224147313102593}
   - component: {fileID: 7502161069416380732}
+  - component: {fileID: 328325105767805911}
+  - component: {fileID: 6310090666169648034}
   m_Layer: 0
   m_Name: pSphere7
   m_TagString: Untagged
@@ -157,3 +128,32 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0.45000002, y: 1.7240001, z: 0}
   m_TimeToStationary: 0.5
+--- !u!65 &328325105767805911
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378381834169156024}
+  m_Material: {fileID: 13400000, guid: d8d534fc29e974c4ea147c61934d400a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 18.19143, y: 3.368144, z: 10.147296}
+  m_Center: {x: 0.4501953, y: 1.7241919, z: 0}
+--- !u!54 &6310090666169648034
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378381834169156024}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
