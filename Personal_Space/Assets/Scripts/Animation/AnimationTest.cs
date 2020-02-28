@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimationTest : MonoBehaviour
 {
     Animator anim;
-    public PlayerController1 controller;
+    public PlayerController controller;
     bool walking = false;
     // Start is called before the first frame update
     void Start()

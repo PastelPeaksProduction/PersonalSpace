@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+//using SiliconDroid;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,11 +24,17 @@ public class PlayerController : MonoBehaviour
     private float threatLevel;
     private bool canRegen = true;
 
+    private GameObject mainCamera;
     
     void Start()
     {
         rigidBody = this.GetComponent<Rigidbody>();
         threatLevel = neutralDamage;
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        //const float K_F_SIZE = 0.125f;
+        //SD_Joystick.fnc_Create_Start();
+        //SD_Joystick.fnc_Create_2DStick(SD_Joystick.ANCHOR.BOTTOM_LEFT, K_F_SIZE, K_F_SIZE, K_F_SIZE);
+        //SD_Joystick.fnc_Create_1DStick(SD_Joystick.ANCHOR.BOTTOM_RIGHT, K_F_SIZE, K_F_SIZE, 1.5f * K_F_SIZE, K_F_SIZE);
     }
 
     
@@ -43,10 +50,8 @@ public class PlayerController : MonoBehaviour
     {
         updateMovement();
         checkBreath();
-        if (isMoving || isBreathing)
-        {
-            updateHealth();
-        }
+        updateHealth();
+        
     }
 
     //--------------------HELPER METHODS--------------------//
@@ -60,7 +65,7 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove)
         {
-            currentRotation = transform.rotation;
+            currentRotation = mainCamera.transform.rotation;
             bool aswdUsed = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D);
             bool arrowsUsed = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow);
             if (aswdUsed || arrowsUsed)
@@ -71,6 +76,16 @@ public class PlayerController : MonoBehaviour
             {
                 moveInput = currentRotation * new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
             }
+            if (moveInput != Vector3.zero)
+            {
+                Quaternion temp = Quaternion.LookRotation(moveInput * 1f * Time.deltaTime);
+                Vector3 temp_euler = temp.eulerAngles;
+                temp_euler.x = 0;
+                temp_euler.z = 0;
+                transform.localRotation = Quaternion.Euler(temp_euler);
+
+            }
+            //transform.Translate(moveInput * moveSpeed * Time.deltaTime, Space.World);
             moveVelocity = moveInput * moveSpeed;
             if (moveVelocity == Vector3.zero)
             {
@@ -131,33 +146,12 @@ public class PlayerController : MonoBehaviour
      **/
     private void checkBreath()
     {
-        bool twoButton = false;
-        if ((Input.GetKey("joystick button 14") && Input.GetKey("joystick button 13")) || (Input.GetKey("joystick button 4") && Input.GetKey("joystick button 5")))
-        {
-            twoButton = true; 
-        }
-        float left = Input.GetAxis("Breathe Left");
-        float right = Input.GetAxis("Breathe Right");
-        if(left >0 && right>0)
-        {
-            twoButton = true; 
-        }
-        if (Input.GetKey(KeyCode.B) || twoButton)
-        {
-            isBreathing = true;
-        }
-        else if (!Input.GetKey(KeyCode.B) || !twoButton)
-        {
-            isBreathing = false; 
-        }
-        if (Input.GetKey(KeyCode.H) && canRegen)
+       
+        if ((Input.GetKeyDown("joystick button 18")|| Input.GetKeyDown("joystick button 2") || Input.GetKey(KeyCode.Z)) && canRegen)
         {
             useHealthPack();
         }
-        if (isMoving)
-        {
-            isBreathing = false;
-        }
+       
     }
 
     /**
@@ -165,14 +159,8 @@ public class PlayerController : MonoBehaviour
      **/
     private void updateHealth()
     {
-        if (isBreathing)
-        {
-            health += (threatLevel - neutralDamage);
-        }
-        else
-        {
-            health += threatLevel;
-        }
+        health += threatLevel;
+        
         
         if(health >= 100)
         {

@@ -10,20 +10,20 @@ public class BackgroundSoundController : MonoBehaviour
     private bool endLevel;
     public bool isMenu = false;
 
-    private PlayerController1 player;
+    private PlayerController player;
     private bool heartbeat_slow = true;
     private int stressLevel = 0;
     void Start()
     {
         AkSoundEngine.PostEvent("main_loop", gameObject);
         //AkSoundEngine.PostEvent("Heartbeat_S", gameObject);
-        player = GameObject.FindGameObjectWithTag ( "Player" ).GetComponent<PlayerController1>();
+        player = GameObject.FindGameObjectWithTag ( "Player" ).GetComponent<PlayerController>();
     }
 
     void Update()
     {
         endLevel = GetComponentInParent<ObjectivesManager>().endLevel;
-        isMoving = GetComponentInParent<PlayerController1>().isMoving;
+        isMoving = GetComponentInParent<PlayerController>().isMoving;
         HealthSound();
         if (!isMenu)
         {

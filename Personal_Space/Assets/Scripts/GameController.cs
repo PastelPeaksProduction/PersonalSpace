@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    private PlayerController1 player;
+    private PlayerController player;
     public float TimeToReminder;
     public bool nullValues = false;
     public GameObject mainCamera;
@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour
     {
         if (!nullValues)
         {
-            player = GameObject.Find("Player").GetComponent<PlayerController1>();
+            player = GameObject.Find("Player").GetComponent<PlayerController>();
             aerialListener = aerialCamera.GetComponent<AudioListener>();
             mainListener = mainCamera.GetComponent<AudioListener>();
             ObjMng = gameObject.GetComponent<ObjectivesManager>();

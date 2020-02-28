@@ -57,14 +57,10 @@
 
             if(!waiting)
             {
-                if(playerController.isMoving || playerController.isBreathing)
-                {
+                
                     agent.speed = agentSpeed;
-                }
-                else
-                {
-                    agent.speed = 0;
-                }
+                
+                
             }
         }
 

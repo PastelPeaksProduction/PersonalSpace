@@ -31,9 +31,7 @@ public class ZoneScript : MonoBehaviour
 
     void Update()
     {
-        updatePlayerMove();
-        if (playerMoving || playerBreathing)
-        {
+        
             if (playerInZone)
             {
                 moveChildrenToPlayer();
@@ -42,13 +40,8 @@ public class ZoneScript : MonoBehaviour
             {
                 moveChildrenToStart();
             }
-        }
-        else
-        {
-            
-                stopChildrenMovement();
-            
-        }
+        
+       
     }
 
     //--------------------HELPER METHODS--------------------//
@@ -148,8 +141,8 @@ public class ZoneScript : MonoBehaviour
      **/
     private void updatePlayerMove()
     {
-        playerMoving = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController1>().isMoving;
-        playerBreathing = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController1>().isBreathing;
+        playerMoving = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().isMoving;
+        playerBreathing = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().isBreathing;
     }
 
     /**

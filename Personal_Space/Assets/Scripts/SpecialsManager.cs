@@ -15,7 +15,7 @@ public class SpecialsManager : MonoBehaviour
     public bool shoutAvailable = true;
     private bool startingSprintAvailable = true;
     private bool startingShoutAvailable = true;
-    private PlayerController1 playerCntrl;
+    private PlayerController playerCntrl;
     public float shoutForce = 10f;
     public float shoutRadius = 40f;
     public float shoutUpwardsForce = 10f;
@@ -24,7 +24,7 @@ public class SpecialsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerCntrl = this.gameObject.GetComponent<PlayerController1>();
+        playerCntrl = this.gameObject.GetComponent<PlayerController>();
         normalSpeed = playerCntrl.moveSpeed;
         startingSprintAvailable = sprintAvailable;
         startingShoutAvailable = shoutAvailable; 
