@@ -17,6 +17,9 @@ public class ZoneScript : MonoBehaviour
     private List<Transform> childrenTransofrm = new List<Transform>();
     private bool playerMoving;
     private bool playerBreathing;
+    private Transform innerCircle = null;
+    private Vector3 innerCircleMax = new Vector3(0.5f, 0.5f, 0.5f);
+    private Vector3 innerCircleChangeRate = new Vector3(0.03f, 0.03f, 0.03f);
 
     public float scale = 1;
     private float dangerScale = 0.01f;
@@ -24,6 +27,7 @@ public class ZoneScript : MonoBehaviour
 
     void Start()
     {
+        innerCircle = gameObject.transform.Find("InnerCircle");
         getEnemiesinZone();
         resizeZone(scale);
         scaleZoneThreat();
@@ -34,10 +38,18 @@ public class ZoneScript : MonoBehaviour
         
             if (playerInZone)
             {
+                if (innerCircle)
+                {
+                    increaseInnerCircle();
+                }
                 moveChildrenToPlayer();
             }
             else
             {
+                if (innerCircle)
+                {
+                    decreaseInnerCircle();
+                }
                 moveChildrenToStart();
             }
         
@@ -103,6 +115,29 @@ public class ZoneScript : MonoBehaviour
         }
     }
 
+    private void increaseInnerCircle()
+    {
+        if (innerCircle.localScale.x < innerCircleMax.x)
+        {
+            innerCircle.localScale += innerCircleChangeRate;
+        }
+        else
+        {
+            innerCircle.localScale = innerCircleMax;
+        }
+    }
+
+    private void decreaseInnerCircle()
+    {
+        if (innerCircle.localScale.x > 0)
+        {
+            innerCircle.localScale -= innerCircleChangeRate;
+        }
+        else
+        {
+            innerCircle.localScale = Vector3.zero;
+        }
+    }
     private void stopChildrenMovement()
     {
       
