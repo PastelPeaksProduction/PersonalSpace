@@ -17,11 +17,13 @@ public class SpawnAccessory : MonoBehaviour
                 
                 int randomAccInd =  Random.Range(0,optionsLength);
                 //Debug.Log(""+randomAccInd);
-                Instantiate(options[randomAccInd], transform.position, transform.rotation);
+                var accessory = Instantiate(options[randomAccInd], transform.position, transform.rotation);
+                accessory.transform.parent = this.gameObject.transform;
             }
             else
             {
-                Instantiate(options[0], transform.position, transform.rotation);
+                var accessory = Instantiate(options[0], transform.position, transform.rotation);
+                accessory.transform.parent = this.gameObject.transform;
             } 
         }    
     }
