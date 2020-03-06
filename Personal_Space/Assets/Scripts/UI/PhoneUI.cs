@@ -18,12 +18,14 @@ public class PhoneUI : MonoBehaviour
     public GameObject MedBar;
     public GameObject LgBar;
     public GameObject ResBar;
+    public GameObject notificationImage;
 
     private GameController GC;
     private bool _showMessage;
     private bool _notifyMessage;
     private bool _pauseMenu;
     private Animation _animation;
+    private bool _phoneUp = false;
 
     private void Awake()
     {
@@ -43,16 +45,30 @@ public class PhoneUI : MonoBehaviour
             NotifyMessage();
         }
     }
+    public void TogglePhone()
+    {
+        if (_phoneUp)
+        {
+            HideMessage();
+        }
+        else
+        {
+            ShowMessage();
+        }
+        _phoneUp = !_phoneUp;
+    }
 
     public void ShowMessage()
     {
         _animation.Play("Phone_Show");
         _notifyMessage = false;
+        notificationImage.SetActive(false);
     }
 
     public void HideMessage()
     {
         _animation.Play("Phone_Hide");
+        
     }
 
     private void NotifyMessage()
@@ -65,6 +81,7 @@ public class PhoneUI : MonoBehaviour
         GC.isPhoneShow = false;
         _notifyMessage = !_notifyMessage;
         ProccessMsg(Msg);
+        notificationImage.SetActive(true);
     }
 
     private void ProccessMsg(string msg)

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//using SiliconDroid;
+using SiliconDroid;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,21 +23,20 @@ public class PlayerController : MonoBehaviour
     private Quaternion currentRotation;
     private float threatLevel;
     private bool canRegen = true;
+    private OnScreenJoystickController onScreen;
 
     private GameObject mainCamera;
-    
+
     void Start()
     {
         rigidBody = this.GetComponent<Rigidbody>();
         threatLevel = neutralDamage;
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-        //const float K_F_SIZE = 0.125f;
-        //SD_Joystick.fnc_Create_Start();
-        //SD_Joystick.fnc_Create_2DStick(SD_Joystick.ANCHOR.BOTTOM_LEFT, K_F_SIZE, K_F_SIZE, K_F_SIZE);
-        //SD_Joystick.fnc_Create_1DStick(SD_Joystick.ANCHOR.BOTTOM_RIGHT, K_F_SIZE, K_F_SIZE, 1.5f * K_F_SIZE, K_F_SIZE);
+        onScreen = this.GetComponent<OnScreenJoystickController>();
+        
     }
 
-    
+
     void Update()
     {
         calculateMovement();
@@ -49,9 +48,8 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         updateMovement();
-        checkBreath();
         updateHealth();
-        
+
     }
 
     //--------------------HELPER METHODS--------------------//
@@ -74,7 +72,17 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                moveInput = currentRotation * new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+                if (Application.platform == RuntimePlatform.Android || onScreen.testing)
+                {
+                    Vector3 input = onScreen.Movement();
+                    input *= 10f;
+                    moveInput = currentRotation * input;
+                }
+                else
+                {
+                    moveInput = currentRotation * new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+                }
+                
             }
             if (moveInput != Vector3.zero)
             {
@@ -102,7 +110,7 @@ public class PlayerController : MonoBehaviour
     /// Helper functions that restors percentage of previous health
     /// </summary>
     /// <param name="previousHealth"></param>
-    private void useHealthPack()
+    public void useHealthPack()
     {
         canRegen = false;
         health += healthPackAmount;
@@ -132,27 +140,15 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-            #else
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
                 Application.Quit();
-            #endif
+#endif
         }
     }
 
-    /**
-     *  Checks to see if the player is breathing.
-     *      -------May replace later with menus-------
-     **/
-    private void checkBreath()
-    {
-       
-        if ((Input.GetKeyDown("joystick button 18")|| Input.GetKeyDown("joystick button 2") || Input.GetKey(KeyCode.Z)) && canRegen)
-        {
-            useHealthPack();
-        }
-       
-    }
+    
 
     /**
      *  Checks the players threat level and updates health
@@ -160,9 +156,9 @@ public class PlayerController : MonoBehaviour
     private void updateHealth()
     {
         health += threatLevel;
-        
-        
-        if(health >= 100)
+
+
+        if (health >= 100)
         {
             health = 100;
         }
@@ -172,7 +168,7 @@ public class PlayerController : MonoBehaviour
     {
 
         // Sets the threat to the level in that zone
-        if(other.CompareTag("DangerZone") || other.CompareTag("SafeZone") )
+        if (other.CompareTag("DangerZone") || other.CompareTag("SafeZone"))
         {
             threatLevel += other.GetComponent<ZoneScript>().zoneThreat;
             other.GetComponent<ZoneScript>().playerInZone = true;
@@ -184,7 +180,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Enter Sight Cone");
         }
 
-        if(other.CompareTag("Collectible"))
+        if (other.CompareTag("Collectible"))
         {
             other.gameObject.SetActive(false);
             Debug.Log(other.name + " collected");
@@ -193,7 +189,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Objectives"))
         {
             Debug.Log(other.gameObject.name + " objective fired");
-            if(SceneManager.GetActiveScene().name == "01GroceryStore")
+            if (SceneManager.GetActiveScene().name == "01GroceryStore")
             {
                 GameObject.Find("OneTimeDialogController").GetComponent<OneTimeDialogController>().OnObjectiveTriggered(other.gameObject);
                 GetComponent<ObjectivesManager>().OnObjectiveTriggered(other.gameObject);
@@ -220,7 +216,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        
+
         if (!other.gameObject.CompareTag("Objectives"))
         {
             threatLevel -= other.GetComponent<ZoneScript>().zoneThreat;

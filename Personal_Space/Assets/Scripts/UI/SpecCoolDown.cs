@@ -4,17 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 public class SpecCoolDown : MonoBehaviour
 {
-    public float coolDownTime = 2;
+    private float coolDownTime = 0;
     float timer;
     public Image image;
     public bool isSprint;
     public bool isCalm;
     public bool isShout;
     private bool calmUsed = false;
+    public SpecialsManager manager;
     // Start is called before the first frame update
     void Start()
     {
-        timer = coolDownTime;
+        if (isShout)
+        {
+            coolDownTime = manager.cooldownTimeShout;
+        }
+        if (isSprint)
+        {
+            coolDownTime = manager.cooldownTimeSprint;
+        }
+        
+        timer = 0;
     }
 
     public void ReleaseSkill()
@@ -28,19 +38,17 @@ public class SpecCoolDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (isSprint && (Input.GetKeyDown("joystick button 0") || Input.GetKeyDown("joystick button 16") || Input.GetKeyDown(KeyCode.X)))
         {
-            ReleaseSkill();
+            Sprint();
         }
         if (isCalm && (Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 18") || Input.GetKeyDown(KeyCode.Z)))
         {
-            //ReleaseSkill();
-            calmUsed = true;
+            Calm();
         }
         if (isShout && (Input.GetKeyDown("joystick button 1") || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown(KeyCode.C)))
         {
-            ReleaseSkill();
+            Space();
         }
         if (!calmUsed)
         {
@@ -49,8 +57,24 @@ public class SpecCoolDown : MonoBehaviour
         }
         else
         {
-            image.fillAmount = 1;
+            image.fillAmount = 0.99f;
         }
         
+    }
+
+    public void Sprint()
+    {
+        ReleaseSkill();
+    }
+
+    public void Calm()
+    {
+        calmUsed = true;
+        image.fillAmount = 1;
+    }
+
+    public void Space()
+    {
+        ReleaseSkill();
     }
 }

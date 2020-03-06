@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -193,6 +193,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &4756428
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -362,6 +363,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &16141350
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -495,6 +497,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &28721544
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -628,6 +631,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &40495683
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -761,6 +765,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &43375175
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -870,6 +875,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &50002799
 SphereCollider:
@@ -1003,6 +1009,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &50185266
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1168,6 +1175,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &54445205
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1301,6 +1309,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &57281189
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1434,6 +1443,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &57640578
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1543,6 +1553,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &61421448
 SphereCollider:
@@ -1676,6 +1687,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &61851850
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1785,6 +1797,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &62981912
 SphereCollider:
@@ -1894,6 +1907,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &63280617
 SphereCollider:
@@ -2027,6 +2041,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &70585503
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2160,6 +2175,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &72808854
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2269,6 +2285,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &81738831
 SphereCollider:
@@ -2378,6 +2395,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &86455388
 SphereCollider:
@@ -2511,6 +2529,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &86573226
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2644,6 +2663,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &103834445
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2777,6 +2797,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &104584095
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2910,6 +2931,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &105015852
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3136,6 +3158,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &115409398
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3269,6 +3292,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &121432634
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3402,6 +3426,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &121867402
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3608,6 +3633,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &124077988
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3741,6 +3767,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &130755566
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3850,6 +3877,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &131264061
 SphereCollider:
@@ -3983,6 +4011,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &132987929
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4116,6 +4145,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &141067173
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4249,6 +4279,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &143486354
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4382,6 +4413,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &144491779
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4515,6 +4547,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &147132977
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4624,6 +4657,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &152717865
 SphereCollider:
@@ -4757,6 +4791,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &169849498
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4866,6 +4901,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &170269178
 SphereCollider:
@@ -4999,6 +5035,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &174689373
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5132,6 +5169,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &181833161
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5274,6 +5312,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &210152774
 SphereCollider:
@@ -5407,6 +5446,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &212173747
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5613,6 +5653,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &217825467
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5722,6 +5763,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &219252947
 SphereCollider:
@@ -5855,6 +5897,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &220270269
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5988,6 +6031,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &236950630
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6097,6 +6141,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &241680344
 SphereCollider:
@@ -6338,6 +6383,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &269864754
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6447,6 +6493,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &281267955
 SphereCollider:
@@ -6580,6 +6627,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &293014161
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6784,6 +6832,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &307612296
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6893,6 +6942,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &308928957
 SphereCollider:
@@ -7002,6 +7052,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &309507039
 SphereCollider:
@@ -7135,6 +7186,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &339998268
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7268,6 +7320,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &340469156
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7377,6 +7430,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &340864581
 SphereCollider:
@@ -7486,6 +7540,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &358384324
 SphereCollider:
@@ -7619,6 +7674,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &370746151
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7752,6 +7808,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &372094799
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7861,6 +7918,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &374743501
 SphereCollider:
@@ -7994,6 +8052,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &376507388
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8127,6 +8186,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &389990725
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8260,6 +8320,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &392228487
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8393,6 +8454,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &395814285
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8526,6 +8588,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &397008681
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8692,6 +8755,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &406310705
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8858,6 +8922,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &412068867
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8991,6 +9056,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &415335415
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9124,6 +9190,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &421192267
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9257,6 +9324,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &424376055
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9390,6 +9458,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &444559149
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9523,6 +9592,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &445934629
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9656,6 +9726,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &447150050
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9789,6 +9860,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &453120777
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9922,6 +9994,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &458979329
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10055,6 +10128,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &459993184
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10188,6 +10262,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &470818423
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10297,6 +10372,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &475797794
 SphereCollider:
@@ -10430,6 +10506,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &479881240
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10539,6 +10616,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &491051025
 SphereCollider:
@@ -10672,6 +10750,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &493776856
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10805,6 +10884,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &500159964
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10985,6 +11065,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &502611094
 SphereCollider:
@@ -11118,6 +11199,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &506345359
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11227,6 +11309,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &512602259
 SphereCollider:
@@ -11360,6 +11443,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &519257002
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11469,6 +11553,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &521511312
 SphereCollider:
@@ -11602,6 +11687,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &525144310
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11735,6 +11821,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &525948434
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11868,6 +11955,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &537459771
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12106,6 +12194,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &560630408
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12239,6 +12328,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &561830576
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12408,6 +12498,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &573914679
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12541,6 +12632,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &576031649
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12709,6 +12801,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &584964518
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12842,6 +12935,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &585693049
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12975,6 +13069,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &588250654
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13118,6 +13213,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &599353743
 SphereCollider:
@@ -13251,6 +13347,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &599799203
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13384,6 +13481,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &603133056
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13517,6 +13615,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &617861724
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13626,6 +13725,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &631426248
 SphereCollider:
@@ -13735,6 +13835,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &634237956
 SphereCollider:
@@ -13868,6 +13969,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &641526914
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14001,6 +14103,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &655113552
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14134,6 +14237,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &666241721
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14243,6 +14347,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &680428715
 SphereCollider:
@@ -14376,6 +14481,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &681388220
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14509,6 +14615,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &684530241
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14618,6 +14725,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &687156507
 SphereCollider:
@@ -14751,6 +14859,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &692497956
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14884,6 +14993,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &693995771
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14993,6 +15103,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &697734300
 SphereCollider:
@@ -15126,6 +15237,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &699401059
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15295,6 +15407,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &703487072
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15552,6 +15665,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &718301683
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15685,6 +15799,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &733651060
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15818,6 +15933,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &743601455
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15983,6 +16099,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &765251521
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16266,6 +16383,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &784305177
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16375,6 +16493,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &801999871
 SphereCollider:
@@ -16484,6 +16603,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &804481027
 SphereCollider:
@@ -16617,6 +16737,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &807824607
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16726,6 +16847,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &812862392
 SphereCollider:
@@ -16859,6 +16981,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &815833078
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16992,6 +17115,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &824690421
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17125,6 +17249,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &833929867
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17301,6 +17426,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &846985555
 SphereCollider:
@@ -17410,6 +17536,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &856055044
 SphereCollider:
@@ -17543,6 +17670,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &858947549
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17676,6 +17804,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &859789269
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17845,6 +17974,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &872442196
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18053,6 +18183,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &892747053
 SphereCollider:
@@ -18186,6 +18317,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &901664298
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18295,6 +18427,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &907209248
 SphereCollider:
@@ -18404,6 +18537,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &919551838
 SphereCollider:
@@ -18576,6 +18710,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &929907989
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18685,6 +18820,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &932033342
 SphereCollider:
@@ -18818,6 +18954,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &947407978
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18963,6 +19100,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &951627066
 SphereCollider:
@@ -19107,6 +19245,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &956533933
 SphereCollider:
@@ -19216,6 +19355,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &957493379
 SphereCollider:
@@ -19355,6 +19495,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &958880566
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19521,6 +19662,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &965987553
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19654,6 +19796,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &966712118
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19787,6 +19930,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &972170309
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19920,6 +20064,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &982649926
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20053,6 +20198,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &984952830
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20340,6 +20486,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1000604959
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20449,6 +20596,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1003255359
 SphereCollider:
@@ -20582,6 +20730,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1004123539
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20715,6 +20864,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1010174868
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20824,6 +20974,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1010284431
 SphereCollider:
@@ -20957,6 +21108,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1010544662
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21123,6 +21275,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1015633129
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21296,6 +21449,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1019463922
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21429,6 +21583,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1021603041
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21597,6 +21752,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1030081299
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21730,6 +21886,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1036874646
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21863,6 +22020,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1040516105
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21972,6 +22130,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1043343800
 SphereCollider:
@@ -22105,6 +22264,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1048910515
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -22214,6 +22374,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1053885182
 SphereCollider:
@@ -22347,6 +22508,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1053956733
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -22516,6 +22678,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1075969393
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -22649,6 +22812,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1076534006
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -22782,6 +22946,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1078729120
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -22915,6 +23080,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1081378402
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -23024,6 +23190,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1085467169
 SphereCollider:
@@ -23133,6 +23300,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1096231397
 SphereCollider:
@@ -23266,6 +23434,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1106963805
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -23399,6 +23568,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1119781334
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -23532,6 +23702,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1123875443
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -23641,6 +23812,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1139899900
 SphereCollider:
@@ -23750,6 +23922,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1140613314
 SphereCollider:
@@ -23859,6 +24032,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1145299112
 SphereCollider:
@@ -23992,6 +24166,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1150687885
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -24125,6 +24300,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1158012105
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -24258,6 +24434,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1167871982
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -24425,6 +24602,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1176485172
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -24558,6 +24736,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1179429990
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -24667,6 +24846,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1189866506
 SphereCollider:
@@ -24776,6 +24956,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1202226020
 SphereCollider:
@@ -24942,6 +25123,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1208230037
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -25075,6 +25257,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1208623916
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -25208,6 +25391,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1209440852
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -25341,6 +25525,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1210149933
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -25450,6 +25635,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1217179732
 SphereCollider:
@@ -25583,6 +25769,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1227955358
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -25828,6 +26015,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1270548159
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -25961,6 +26149,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1271201380
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26070,6 +26259,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1273855315
 SphereCollider:
@@ -26203,6 +26393,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1274994189
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26312,6 +26503,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1277658858
 SphereCollider:
@@ -26445,6 +26637,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1282127635
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26554,6 +26747,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1283180721
 SphereCollider:
@@ -26722,6 +26916,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1295835618
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26855,6 +27050,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1302712233
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26988,6 +27184,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1311778856
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -27121,6 +27318,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1326705107
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -27254,6 +27452,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1328438369
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -27387,6 +27586,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1329915149
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -27529,6 +27729,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1345903667
 SphereCollider:
@@ -27671,6 +27872,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1347120984
 SphereCollider:
@@ -27804,6 +28006,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1350899551
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -27913,6 +28116,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1353947712
 SphereCollider:
@@ -28046,6 +28250,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1358130168
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28179,6 +28384,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1359222683
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28288,6 +28494,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1373772621
 SphereCollider:
@@ -28421,6 +28628,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1376062239
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28562,6 +28770,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1386581932
 SphereCollider:
@@ -28695,6 +28904,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1399391552
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28804,6 +29014,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1402496647
 SphereCollider:
@@ -28913,6 +29124,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1405414105
 SphereCollider:
@@ -29046,6 +29258,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1406268905
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -29155,6 +29368,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1413479213
 SphereCollider:
@@ -29264,6 +29478,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1419484610
 SphereCollider:
@@ -29430,6 +29645,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1432098884
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -29578,6 +29794,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1439891368
 SphereCollider:
@@ -29711,6 +29928,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1457191408
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -29844,6 +30062,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1466039127
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -29977,6 +30196,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1470967904
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -30110,6 +30330,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1481842342
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -30243,6 +30464,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1483482682
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -30376,6 +30598,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1484921323
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -30485,6 +30708,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1485937477
 SphereCollider:
@@ -30652,6 +30876,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1487448395
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -30785,6 +31010,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1487522853
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -30918,6 +31144,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1490192858
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -31051,6 +31278,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1491595231
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -31216,6 +31444,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1506716919
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -31383,6 +31612,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1520634770
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -31492,6 +31722,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1521743830
 SphereCollider:
@@ -31707,6 +31938,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1550698140
 SphereCollider:
@@ -31932,6 +32164,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1556122828
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -32041,6 +32274,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1563920540
 SphereCollider:
@@ -32150,6 +32384,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1568635107
 SphereCollider:
@@ -32315,6 +32550,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1582183734
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -32424,6 +32660,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1589322582
 SphereCollider:
@@ -32589,6 +32826,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1596919411
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -32757,6 +32995,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1599000796
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -32930,6 +33169,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1616090848
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -33039,6 +33279,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1618496504
 SphereCollider:
@@ -33205,6 +33446,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1631294568
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -33314,6 +33556,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1637189587
 SphereCollider:
@@ -33447,6 +33690,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1639633716
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -33580,6 +33824,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1642700197
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -33689,6 +33934,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1648657269
 SphereCollider:
@@ -33822,6 +34068,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1663828080
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -33931,6 +34178,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1672120218
 SphereCollider:
@@ -34040,6 +34288,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1673023817
 SphereCollider:
@@ -34149,6 +34398,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1679656149
 SphereCollider:
@@ -34282,6 +34532,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1684320549
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -34415,6 +34666,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1691314277
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -34559,6 +34811,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1693276958
 SphereCollider:
@@ -34700,6 +34953,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1707376221
 SphereCollider:
@@ -34809,6 +35063,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1709948348
 SphereCollider:
@@ -34918,6 +35173,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1711085084
 SphereCollider:
@@ -35051,6 +35307,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1719816855
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -35184,6 +35441,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1732435358
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -35293,6 +35551,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1737604324
 SphereCollider:
@@ -35426,6 +35685,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1739547347
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -35535,6 +35795,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1742131356
 SphereCollider:
@@ -35668,6 +35929,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1750313119
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -35812,6 +36074,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1776021199
 SphereCollider:
@@ -35945,6 +36208,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1781652189
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -36078,6 +36342,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1790594665
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -36187,6 +36452,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1795191137
 SphereCollider:
@@ -36296,6 +36562,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1807009106
 SphereCollider:
@@ -36405,6 +36672,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1814283063
 SphereCollider:
@@ -36538,6 +36806,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1814285829
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -36671,6 +36940,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1821940327
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -36804,6 +37074,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1830773208
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -36937,6 +37208,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1854468953
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -37070,6 +37342,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1863052096
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -37179,6 +37452,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1869801880
 SphereCollider:
@@ -37312,6 +37586,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1872716599
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -37445,6 +37720,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1872831808
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -37611,6 +37887,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1886243913
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -37744,6 +38021,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1926138046
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -37892,6 +38170,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1934972651
 SphereCollider:
@@ -38025,6 +38304,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1935340287
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -38134,6 +38414,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1941226145
 SphereCollider:
@@ -38267,6 +38548,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1943794740
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -38376,6 +38658,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1960884250
 SphereCollider:
@@ -38485,6 +38768,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &1964998698
 SphereCollider:
@@ -38717,6 +39001,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1983040957
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -38885,6 +39170,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &1997511331
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -38994,6 +39280,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &2000248283
 SphereCollider:
@@ -39103,6 +39390,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &2000249000
 SphereCollider:
@@ -39236,6 +39524,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2004507384
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -39345,6 +39634,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &2008112336
 SphereCollider:
@@ -39478,6 +39768,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2016330606
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -39611,6 +39902,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2016347109
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -39744,6 +40036,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2017934611
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -39969,6 +40262,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2026075098
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -40102,6 +40396,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2029236485
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -40235,6 +40530,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2031199215
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -40344,6 +40640,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &2031225658
 SphereCollider:
@@ -40511,6 +40808,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2039923303
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -40724,6 +41022,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2044254931
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -40857,6 +41156,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2044419542
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -40990,6 +41290,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2046318638
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -41123,6 +41424,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2053208749
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -41256,6 +41558,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2055118175
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -41365,6 +41668,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &2056726095
 SphereCollider:
@@ -41498,6 +41802,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2070261683
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -41631,6 +41936,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2078911440
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -41764,6 +42070,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2079225346
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -41897,6 +42204,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2081294854
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -42109,6 +42417,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2087878549
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -42242,6 +42551,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2098914104
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -42375,6 +42685,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2099687282
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -42508,6 +42819,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2116813226
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -42617,6 +42929,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!135 &2124365893
 SphereCollider:
@@ -42750,6 +43063,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2131069608
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -42883,6 +43197,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2135694263
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -43016,6 +43331,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2140055538
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -43149,6 +43465,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2141894827
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -43227,6 +43544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed56437eb39667043927910375491594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeToReminder: 0
+  nullValues: 0
   mainCamera: {fileID: 0}
   aerialCamera: {fileID: 0}
   pauseDialog: {fileID: 990229872}
@@ -43236,6 +43555,13 @@ MonoBehaviour:
   FOV: {fileID: 0}
   TextBubbleCanvas: {fileID: 0}
   ObjMarker: {fileID: 0}
+  BottomHealthBar: {fileID: 0}
+  Enemies: {fileID: 0}
+  RestartBtn: {fileID: 0}
+  MenuBtn: {fileID: 0}
+  WarningMsg: {fileID: 0}
+  PhonePauseUI: {fileID: 0}
+  isPhoneShow: 0
 --- !u!1 &2146511546
 GameObject:
   m_ObjectHideFlags: 0
@@ -43309,6 +43635,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!136 &2146511550
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -43996,6 +44323,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 0
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!1001 &7692404363674295675
 PrefabInstance:
@@ -44142,6 +44470,7 @@ MonoBehaviour:
   moveBackSpeed: 4
   movingZone: 0
   stoppingDistance: 15
+  isMoving: 0
 --- !u!1 &9173592684537584314
 GameObject:
   m_ObjectHideFlags: 0

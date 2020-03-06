@@ -13,6 +13,7 @@ public class SpecialsManager : MonoBehaviour
     private int specialIteration = 0;
     public bool sprintAvailable = true;
     public bool shoutAvailable = true;
+    public bool calmAvailable = true;
     private bool startingSprintAvailable = true;
     private bool startingShoutAvailable = true;
     private PlayerController playerCntrl;
@@ -24,7 +25,8 @@ public class SpecialsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerCntrl = this.gameObject.GetComponent<PlayerController>();
+        
+        playerCntrl = this.GetComponent<PlayerController>();
         normalSpeed = playerCntrl.moveSpeed;
         startingSprintAvailable = sprintAvailable;
         startingShoutAvailable = shoutAvailable; 
@@ -64,18 +66,45 @@ public class SpecialsManager : MonoBehaviour
 
         if(Input.GetKeyDown("joystick button 0") || Input.GetKeyDown("joystick button 16") || Input.GetKeyDown(KeyCode.X))
         {
-            Debug.Log("SPRINT ACTIVE");
-            if(sprintAvailable)
-            {
-                StartCoroutine(numSprint());
-            }
+            Sprint();
         }
         if (Input.GetKeyDown("joystick button 1") || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown(KeyCode.C))
         {
-            if(shoutAvailable)
-            {
-                StartCoroutine(numShout());
-            }
+            Space();
+        }
+        if (Input.GetKeyDown("joystick button 18") || Input.GetKeyDown("joystick button 2") || Input.GetKey(KeyCode.Z))
+        {
+            Calm();
+        }
+    }
+
+    public void Space()
+    {
+        Debug.Log("SHOUT ACTIVE");
+        if (shoutAvailable)
+        {
+            StartCoroutine(numShout());
+        }
+    }
+
+    public void Sprint()
+    {
+        Debug.Log("SPRINT ACTIVE");
+        if (sprintAvailable)
+        {
+            StartCoroutine(numSprint());
+        }
+    }
+
+    public void Calm()
+    {
+        if (calmAvailable)
+        {
+            
+                playerCntrl.useHealthPack();
+                calmAvailable = false;
+            
+            
         }
     }
 

@@ -213,12 +213,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &248797746 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 280337311965943564, guid: ca3f1b42eb6df2b4f99f396e60238914,
-    type: 3}
-  m_PrefabInstance: {fileID: 7157812921656534123}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &341362322
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +426,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &708119890
 GameObject:
@@ -526,12 +520,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708119890}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!224 &1310562716 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1851776573326343956, guid: 8c2040b4a7b81444f960a8c025b880b2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1803172874}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1608593207
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,11 +593,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1978277417}
     m_Modifications:
-    - target: {fileID: 3665730145071567274, guid: 8c2040b4a7b81444f960a8c025b880b2,
-        type: 3}
-      propertyPath: m_Name
-      value: BackpackUI
-      objectReference: {fileID: 0}
     - target: {fileID: 1851776573326343956, guid: 8c2040b4a7b81444f960a8c025b880b2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -715,6 +698,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3665730145071567274, guid: 8c2040b4a7b81444f960a8c025b880b2,
+        type: 3}
+      propertyPath: m_Name
+      value: BackpackUI
+      objectReference: {fileID: 0}
     - target: {fileID: 1657510699465389861, guid: 8c2040b4a7b81444f960a8c025b880b2,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -732,6 +720,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c2040b4a7b81444f960a8c025b880b2, type: 3}
+--- !u!224 &1803172875 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7383390929455543451, guid: 8c2040b4a7b81444f960a8c025b880b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1803172874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1978277413
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,8 +816,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1310562716}
-  - {fileID: 248797746}
+  - {fileID: 1803172875}
+  - {fileID: 7157812921656534124}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -908,11 +902,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1978277417}
     m_Modifications:
-    - target: {fileID: 6812899558900379256, guid: ca3f1b42eb6df2b4f99f396e60238914,
-        type: 3}
-      propertyPath: m_Name
-      value: JacketUI
-      objectReference: {fileID: 0}
     - target: {fileID: 280337311965943564, guid: ca3f1b42eb6df2b4f99f396e60238914,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1018,6 +1007,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6812899558900379256, guid: ca3f1b42eb6df2b4f99f396e60238914,
+        type: 3}
+      propertyPath: m_Name
+      value: JacketUI
+      objectReference: {fileID: 0}
     - target: {fileID: 3892707895891166319, guid: ca3f1b42eb6df2b4f99f396e60238914,
         type: 3}
       propertyPath: m_Text
@@ -1025,3 +1019,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca3f1b42eb6df2b4f99f396e60238914, type: 3}
+--- !u!4 &7157812921656534124 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 7157812921656534123}
+  m_PrefabAsset: {fileID: 0}

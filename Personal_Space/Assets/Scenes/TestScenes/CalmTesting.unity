@@ -1208,12 +1208,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1645329934 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6827664419340629746, guid: c236ea01235b42544af1278bcd9bb680,
-    type: 3}
-  m_PrefabInstance: {fileID: 1942644701}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1790836847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1582,16 +1576,6 @@ PrefabInstance:
       propertyPath: isMoving
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2600146800702947628, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: numOfJackets
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2600146800702947628, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2090807824398782169, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
       propertyPath: backPack
@@ -1669,11 +1653,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: ee2e037d1ece0a64ea031ad88f5c7edf,
         type: 3}
-    - target: {fileID: 211878629865310591, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: objectiveDialog
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8721579726589613207, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
       propertyPath: pauseDialog
@@ -1688,7 +1667,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Stressbar
       value: 
-      objectReference: {fileID: 1645329934}
+      objectReference: {fileID: 0}
     - target: {fileID: 8721579726589613207, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
       propertyPath: PlayerAngle
@@ -1710,11 +1689,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2039604445}
     - target: {fileID: 8721579726589613207, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: aerialCamera
-      value: 
-      objectReference: {fileID: 944474059}
-    - target: {fileID: 5296566397839048204, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
       propertyPath: aerialCamera
       value: 
@@ -1759,6 +1733,26 @@ PrefabInstance:
       propertyPath: RotationSpeed
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 2600146800702947628, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: numOfJackets
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600146800702947628, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 211878629865310591, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: objectiveDialog
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296566397839048204, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: aerialCamera
+      value: 
+      objectReference: {fileID: 944474059}
     - target: {fileID: 870527781874745186, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
       propertyPath: pauseDialog
@@ -1783,6 +1777,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: gameStartObjectiveDescription
+      value: I should go dance with someone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: gameStartObjectiveDescription
+      value: I left my backpack in the classroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: firstObject_1
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: secondObject_2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: secondObject_2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
+        type: 3}
+      propertyPath: pauseDialogText
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9215103705445834842, guid: 8765068a21a01534cac645e384d74a48,
         type: 3}
@@ -1823,36 +1847,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: gameStartObjectiveDescription
-      value: I should go dance with someone
-      objectReference: {fileID: 0}
-    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: gameStartObjectiveDescription
-      value: I left my backpack in the classroom
-      objectReference: {fileID: 0}
-    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: firstObject_1
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: secondObject_2
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: secondObject_2
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5078414350070390807, guid: 8765068a21a01534cac645e384d74a48,
-        type: 3}
-      propertyPath: pauseDialogText
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8765068a21a01534cac645e384d74a48, type: 3}
@@ -1963,6 +1957,7 @@ MonoBehaviour:
   zoneScaling: 1
   zoneThreat: 1
   playerInZone: 0
+  basicEnemyType: 0
   scale: 1
 --- !u!4 &3298853303530284796
 Transform:

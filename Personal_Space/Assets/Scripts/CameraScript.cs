@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SiliconDroid;
 
 public class CameraScript : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class CameraScript : MonoBehaviour
     private Vector3 rot = new Vector3(0, 0, 0);
     private bool perspective;
     private string horizontalController;
+    private OnScreenJoystickController onScreen;
 
     /* FPP fields */
     Vector2 mouseLook;
@@ -41,6 +43,21 @@ public class CameraScript : MonoBehaviour
         {
             horizontalController = "Horizontal X Mac";
         }
+        else if (Application.platform == RuntimePlatform.Android)
+        {
+            horizontalController = "Horizontal Android";
+        }
+
+        onScreen = Player.GetComponent<OnScreenJoystickController>();
+
+       /*const float K_F_SIZE = 0.125f;
+        SD_Joystick.fnc_Create_Start();
+        SD_Joystick.fnc_SetColor(Color.magenta);
+        SD_Joystick.fnc_Create_1DStick(SD_Joystick.ANCHOR.TOP_RIGHT, K_F_SIZE, K_F_SIZE, 1.5f * K_F_SIZE, K_F_SIZE);
+        SD_Joystick.fnc_SetLastCreatedControlColor(Color.magenta);
+        SD_Joystick.fnc_Button_SetVisible(0, true);*/
+
+        //
     }
     private void Update()
     {
@@ -56,7 +73,16 @@ public class CameraScript : MonoBehaviour
         }
         else
         {
-            offset = Quaternion.AngleAxis(Input.GetAxisRaw("Mouse X") * speed, Vector3.up) * offset;
+            if (Application.platform == RuntimePlatform.Android || onScreen.testing)
+            {
+                float vJoy = onScreen.Rotation();
+                offset = Quaternion.AngleAxis(vJoy * speed, Vector3.up) * offset;
+            }
+            else
+            {
+                offset = Quaternion.AngleAxis(Input.GetAxisRaw("Mouse X") * speed, Vector3.up) * offset;
+            }
+            
         }
         transform.position = Vector3.Lerp(transform.position, Player.transform.position + offset, 1);
         transform.LookAt(Player.transform.position);
