@@ -18,6 +18,7 @@ public class PhoneUI : MonoBehaviour
     public GameObject MedBar;
     public GameObject LgBar;
     public GameObject ResBar;
+    public GameObject newMessage;
     public GameObject notificationImage;
 
     private GameController GC;
@@ -35,6 +36,7 @@ public class PhoneUI : MonoBehaviour
     void Start()
     {
         _animation = GetComponent<Animation>();
+        Debug.Log("Animation found");
     }
 
     // Update is called once per frame
@@ -87,7 +89,7 @@ public class PhoneUI : MonoBehaviour
     private void ProccessMsg(string msg)
     {
         Debug.Log(msg.Length);
-        InitMsgBars();
+        /*InitMsgBars();
         if (msg.Length < 29)
         {
             SmBar.SetActive(true);
@@ -102,7 +104,8 @@ public class PhoneUI : MonoBehaviour
         {
             LgBar.SetActive(true);
             LgBar.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = msg;
-        }
+        }*/
+        newMessage.GetComponent<PhoneMessages>().NewMessage(msg);
     }
 
     private void InitMsgBars()
