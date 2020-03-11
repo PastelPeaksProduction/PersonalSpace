@@ -50,14 +50,7 @@ public class CameraScript : MonoBehaviour
 
         onScreen = Player.GetComponent<OnScreenJoystickController>();
 
-       /*const float K_F_SIZE = 0.125f;
-        SD_Joystick.fnc_Create_Start();
-        SD_Joystick.fnc_SetColor(Color.magenta);
-        SD_Joystick.fnc_Create_1DStick(SD_Joystick.ANCHOR.TOP_RIGHT, K_F_SIZE, K_F_SIZE, 1.5f * K_F_SIZE, K_F_SIZE);
-        SD_Joystick.fnc_SetLastCreatedControlColor(Color.magenta);
-        SD_Joystick.fnc_Button_SetVisible(0, true);*/
-
-        //
+       
     }
     private void Update()
     {
@@ -73,7 +66,7 @@ public class CameraScript : MonoBehaviour
         }
         else
         {
-            if (Application.platform == RuntimePlatform.Android || onScreen.testing)
+            if (onScreen.androidTesting)
             {
                 float vJoy = onScreen.Rotation();
                 offset = Quaternion.AngleAxis(vJoy * speed, Vector3.up) * offset;

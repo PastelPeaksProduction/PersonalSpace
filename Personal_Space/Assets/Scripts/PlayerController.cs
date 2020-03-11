@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                if (Application.platform == RuntimePlatform.Android || onScreen.testing)
+                if (onScreen.androidTesting)
                 {
                     Vector3 input = onScreen.Movement();
                     input *= 10f;

@@ -5,12 +5,13 @@ using SiliconDroid;
 
 public class OnScreenJoystickController : MonoBehaviour
 {
-    public bool testing = false;
+    public bool androidTesting = false;
     // Start is called before the first frame update
     void Start()
     {
-        if (Application.platform == RuntimePlatform.Android || testing)
+        if (androidTesting)
         {
+            Debug.Log("TESTING ANDROID "+this.gameObject.name);
             const float K_F_SIZE = 0.125f;
             SD_Joystick.fnc_Create_Start();
             SD_Joystick.fnc_SetColor(Color.magenta);
@@ -20,12 +21,16 @@ public class OnScreenJoystickController : MonoBehaviour
             SD_Joystick.fnc_2DStick_SetVisible(0, true);
             SD_Joystick.fnc_1DStick_SetVisible(0, true);
         }
-        
+        else
+        {
+
+            Debug.Log("PLATFORM: " + Application.platform);
+        }
     }
 
     public Vector3 Movement()
     {
-        if (Application.platform == RuntimePlatform.Android || testing)
+        if (androidTesting)
         {
             Vector2 vJoy = SD_Joystick.fnc_2DStick_GetValue(0);
             Vector3 input = new Vector3(vJoy.x, 0f, vJoy.y);
@@ -40,7 +45,7 @@ public class OnScreenJoystickController : MonoBehaviour
 
     public float Rotation()
     {
-        if (Application.platform == RuntimePlatform.Android || testing)
+        if (androidTesting)
         {
             float vJoy = SD_Joystick.fnc_1DStick_GetValue(0);
             return vJoy;
