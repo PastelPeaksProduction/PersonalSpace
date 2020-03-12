@@ -22,11 +22,12 @@ public class BackgroundSoundController : MonoBehaviour
 
     void Update()
     {
-        endLevel = GetComponentInParent<ObjectivesManager>().endLevel;
-        isMoving = GetComponentInParent<PlayerController>().isMoving;
-        HealthSound();
+        
         if (!isMenu)
         {
+            endLevel = GetComponentInParent<ObjectivesManager>().endLevel;
+            isMoving = GetComponentInParent<PlayerController>().isMoving;
+            HealthSound();
             if (isMoving || endLevel )
             {
                 AkSoundEngine.PostEvent("is_moving", gameObject);
