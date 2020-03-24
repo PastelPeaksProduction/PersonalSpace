@@ -24,7 +24,7 @@
             //agent.autoBraking = false;
             zoneControl = zone.GetComponent<ZoneScript>();
             playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-            GotoNextPoint();
+            //GotoNextPoint();
         }
 
 
