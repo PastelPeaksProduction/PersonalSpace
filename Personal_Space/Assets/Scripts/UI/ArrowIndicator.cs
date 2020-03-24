@@ -13,19 +13,25 @@ public class ArrowIndicator : MonoBehaviour
     private GameObject Canvas;
     private GameObject Player;
     public GameObject Objective;
-    public ObjectivesManager obj_man;
+    private ObjectivesManager obj_man;
     private bool show_arrow;
     private float count_down = 10f;
     private bool count_down_bool = false;
 
+    public GameObject indicator;
+    public Transform target;
+    
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        Canvas = GameObject.Find("EnemyBubbleCanvas");
-        Player = GameObject.Find("Player");
-        ArrowObj = Instantiate(ArrowPrefab);
-        ArrowObj.transform.SetParent(Canvas.transform);
-        ArrowTrans = ArrowObj.GetComponent<RectTransform>();
+        //Canvas = GameObject.Find("EnemyBubbleCanvas");
+        //Player = GameObject.Find("Player");
+        //ArrowObj = Instantiate(ArrowPrefab);
+        //ArrowObj.transform.SetParent(Canvas.transform);
+        //ArrowTrans = ArrowObj.GetComponent<RectTransform>();
         obj_man = gameObject.transform.GetComponentInParent<ObjectivesManager>();
     }
 
@@ -34,10 +40,17 @@ public class ArrowIndicator : MonoBehaviour
     {
         if (show_arrow)
         {
-            Objective = obj_man.GetCurrentObjective();
-            ArrowTrans.position = gameObject.transform.position + new Vector3(0,-4.5f,0);
+            /*Objective = obj_man.GetCurrentObjective();
+            ArrowTrans.position = gameObject.transform.position + new Vector3(0,-4.f,0);
             ArrowTrans.LookAt(Objective.transform);
-            ArrowTrans.Rotate(new Vector3(90, 0, 0));
+            ArrowTrans.Rotate(new Vector3(90, 0, 0));*/
+            if (obj_man.GetCurrentObjective() == null)
+            {
+                return;
+            }
+            target = obj_man.GetCurrentObjective().transform;
+            indicator.transform.LookAt(target);
+            indicator.transform.position = obj_man.gameObject.transform.position + new Vector3(0, -4.5f, 0);
         }
         if (count_down_bool)
         {
@@ -48,7 +61,7 @@ public class ArrowIndicator : MonoBehaviour
     public void SetShowArrow()
     {
         show_arrow = true;
-        ArrowObj.SetActive(true);
+        indicator.SetActive(true);
         count_down_bool = true;
     }
 
@@ -69,6 +82,6 @@ public class ArrowIndicator : MonoBehaviour
     public void SetHideArrow()
     {
         show_arrow = false;
-        ArrowObj.SetActive(false);
+        indicator.SetActive(false);
     }
 }

@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class WayPoint : MonoBehaviour
 {
-    public Image indicator;
+    /*public Image indicator;
     public Transform target;
     public ObjectivesManager obj_man;
+    public float heightAdjust = 60f;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,9 +42,32 @@ public class WayPoint : MonoBehaviour
         }
 
         pos.x = Mathf.Clamp(pos.x, minX, maxX);
-        pos.y = Mathf.Clamp(pos.y + 60, minY, maxY);
+        pos.y = Mathf.Clamp(pos.y + heightAdjust, minY, maxY);
 
         indicator.transform.position = pos;
 
+    }*/
+
+    public GameObject indicator;
+    public Transform target;
+    public ObjectivesManager obj_man;
+    void Start()
+    {
+        obj_man = gameObject.transform.GetComponentInParent<ObjectivesManager>();
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (obj_man.GetCurrentObjective() == null)
+        {
+            return;
+        }
+        target = obj_man.GetCurrentObjective().transform;
+        indicator.transform.LookAt(target);
+        indicator.transform.position = obj_man.gameObject.transform.position + new Vector3(0, -4.5f, 0);
+    }
+
+
+
 }
