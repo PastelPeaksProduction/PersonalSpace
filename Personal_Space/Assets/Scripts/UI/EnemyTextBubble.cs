@@ -79,6 +79,7 @@ public class EnemyTextBubble : MonoBehaviour
             TextBubbleObj.transform.SetParent(Canvas.transform);
             TextBubbleTrans = TextBubbleObj.GetComponent<RectTransform>();
             TextBubbleObj.transform.GetChild(0).GetComponent<Image>().sprite = Emoji;
+            TextBubbleObj.transform.GetChild(1).GetComponent<Image>().sprite = Emoji;
             TextBubbleObj.GetComponent<TextBubbleSingle>().aliveTime = ExistTime;
             TextBubbleObj.GetComponent<TextBubbleSingle>().isEnemyBubble = true;
             Ani = TextBubbleObj.GetComponent<Animation>();
