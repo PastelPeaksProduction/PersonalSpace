@@ -98,13 +98,17 @@ public class OneTimeDialogController : MonoBehaviour
     {
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 19") || Input.GetKeyDown("joystick button 3")))
         {
-            Debug.Log("Continue!");
-            controller.ContinueGame();
-            OnetimeDialog.SetActive(false);
-            currentObjective++; 
+            Continue();
         }
     }
 
+    public void Continue()
+    {
+        Debug.Log("Continue!");
+        controller.ContinueGame();
+        OnetimeDialog.SetActive(false);
+        currentObjective++;
+    }
     private void Reminder()
     {
         _reminderTime -= Time.deltaTime;
