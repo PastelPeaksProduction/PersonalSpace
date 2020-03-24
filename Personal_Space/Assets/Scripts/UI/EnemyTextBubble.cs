@@ -12,7 +12,12 @@ public class EnemyTextBubble : MonoBehaviour
     public Sprite Emoji;
     public Vector3 offset;
     public int ExistTime;
+    public int MaxExistTime = 8;
     public float ReminderTime = 3;
+    public float MaxReminderTime = 15;
+
+    private int exist;
+    private int remind;
 
     private Animation Ani;
     private GameObject Canvas;
@@ -23,6 +28,8 @@ public class EnemyTextBubble : MonoBehaviour
     private RectTransform CanvasTrans;
     private GameController Game;
     private float _reminderTime;
+    private ZoneScript zone;
+    public bool activated; 
 
     // Start is called before the first frame update
     void Start()
@@ -41,16 +48,25 @@ public class EnemyTextBubble : MonoBehaviour
         _reminderTime = ReminderTime;
         Canvas = GameObject.Find("EnemyBubbleCanvas");
         Player = GameObject.Find("Player");
+        
+        zone = this.transform.parent.GetComponentInChildren<ZoneScript>();
         Game = Player.GetComponent<GameController>();
         CanvasTrans = Canvas.GetComponent<RectTransform>();
-        SpawnBubble();
+        //SpawnBubble();
+        exist = Random.Range(ExistTime, MaxExistTime);
+        remind = Random.Range((int)ReminderTime, (int)MaxReminderTime);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!Game.isGamePaused())
+        if (!Game.isGamePaused() && (zone.playerInZone || activated))
         {
+            if(!activated && zone.playerInZone)
+            {
+                activated = true;
+                SpawnBubble();
+            }
             Reminder();
             if (TextBubbleObj != null && !Game.isGamePaused())
             {
@@ -64,7 +80,7 @@ public class EnemyTextBubble : MonoBehaviour
         _reminderTime -= Time.deltaTime;
         if (_reminderTime < 0)
         {
-            _reminderTime = ReminderTime;
+            _reminderTime = remind;
             SpawnBubble();
         }
     }
@@ -80,7 +96,7 @@ public class EnemyTextBubble : MonoBehaviour
             TextBubbleTrans = TextBubbleObj.GetComponent<RectTransform>();
             TextBubbleObj.transform.GetChild(0).GetComponent<Image>().sprite = Emoji;
             TextBubbleObj.transform.GetChild(1).GetComponent<Image>().sprite = Emoji;
-            TextBubbleObj.GetComponent<TextBubbleSingle>().aliveTime = ExistTime;
+            TextBubbleObj.GetComponent<TextBubbleSingle>().aliveTime = exist;
             TextBubbleObj.GetComponent<TextBubbleSingle>().isEnemyBubble = true;
             Ani = TextBubbleObj.GetComponent<Animation>();
         }
