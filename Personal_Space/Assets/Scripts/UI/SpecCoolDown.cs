@@ -12,9 +12,11 @@ public class SpecCoolDown : MonoBehaviour
     public bool isShout;
     private bool calmUsed = false;
     public SpecialsManager manager;
+    private GameController gameController;
     // Start is called before the first frame update
     void Start()
     {
+        gameController = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<GameController>();
         if (isShout)
         {
             coolDownTime = manager.cooldownTimeShout;
@@ -38,28 +40,30 @@ public class SpecCoolDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isSprint && (Input.GetKeyDown("joystick button 0") || Input.GetKeyDown("joystick button 16") || Input.GetKeyDown(KeyCode.X)))
+        if (!gameController.isGamePaused() && manager.isEnabled)
         {
-            Sprint();
+            if (isSprint && (Input.GetKeyDown("joystick button 0") || Input.GetKeyDown("joystick button 16") || Input.GetKeyDown(KeyCode.X)))
+            {
+                Sprint();
+            }
+            if (isCalm && (Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 18") || Input.GetKeyDown(KeyCode.Z)))
+            {
+                Calm();
+            }
+            if (isShout && (Input.GetKeyDown("joystick button 1") || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown(KeyCode.C)))
+            {
+                Space();
+            }
+            if (!calmUsed)
+            {
+                timer += Time.deltaTime;
+                image.fillAmount = (coolDownTime - timer) / coolDownTime;
+            }
+            else
+            {
+                image.fillAmount = 0.99f;
+            }
         }
-        if (isCalm && (Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 18") || Input.GetKeyDown(KeyCode.Z)))
-        {
-            Calm();
-        }
-        if (isShout && (Input.GetKeyDown("joystick button 1") || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown(KeyCode.C)))
-        {
-            Space();
-        }
-        if (!calmUsed)
-        {
-            timer += Time.deltaTime;
-            image.fillAmount = (coolDownTime - timer) / coolDownTime;
-        }
-        else
-        {
-            image.fillAmount = 0.99f;
-        }
-        
     }
 
     public void Sprint()

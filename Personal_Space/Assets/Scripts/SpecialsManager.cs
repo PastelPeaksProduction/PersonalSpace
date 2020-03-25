@@ -17,64 +17,70 @@ public class SpecialsManager : MonoBehaviour
     private bool startingSprintAvailable = true;
     private bool startingShoutAvailable = true;
     private PlayerController playerCntrl;
+    private GameController gameController;
     public float shoutForce = 10f;
     public float shoutRadius = 40f;
     public float shoutUpwardsForce = 10f;
+    public bool isEnabled = true;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
         playerCntrl = this.GetComponent<PlayerController>();
+        gameController = this.GetComponent<GameController>();
         normalSpeed = playerCntrl.moveSpeed;
         startingSprintAvailable = sprintAvailable;
-        startingShoutAvailable = shoutAvailable; 
+        startingShoutAvailable = shoutAvailable;
     }
 
     // Update is called once per frame
     void Update()
     {
-       /* if(Input.GetKeyDown("space"))
-        {
-            // use currently assigned special
-            switch(specialIteration)
-            {
-                case 0:
-                if(sprintAvailable)
-                {
-                    StartCoroutine(numSprint());
-                }
-                break;
-                case 1:
-                if(shoutAvailable)
-                {
-                    StartCoroutine(numShout());
-                }
-                break;
-            }
-        }
-        // switch special
-        if(Input.GetKeyDown("l"))
-        {
-            specialIteration += 1;
-            if(specialIteration > 1)
-            {
-                specialIteration = 0;
-            }
-        } */
+        /* if(Input.GetKeyDown("space"))
+         {
+             // use currently assigned special
+             switch(specialIteration)
+             {
+                 case 0:
+                 if(sprintAvailable)
+                 {
+                     StartCoroutine(numSprint());
+                 }
+                 break;
+                 case 1:
+                 if(shoutAvailable)
+                 {
+                     StartCoroutine(numShout());
+                 }
+                 break;
+             }
+         }
+         // switch special
+         if(Input.GetKeyDown("l"))
+         {
+             specialIteration += 1;
+             if(specialIteration > 1)
+             {
+                 specialIteration = 0;
+             }
+         } */
 
-        if(Input.GetKeyDown("joystick button 0") || Input.GetKeyDown("joystick button 16") || Input.GetKeyDown(KeyCode.X))
+        if (!gameController.isGamePaused() && isEnabled)
         {
-            Sprint();
-        }
-        if (Input.GetKeyDown("joystick button 1") || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown(KeyCode.C))
-        {
-            Space();
-        }
-        if (Input.GetKeyDown("joystick button 18") || Input.GetKeyDown("joystick button 2") || Input.GetKey(KeyCode.Z))
-        {
-            Calm();
+            if (Input.GetKeyDown("joystick button 0") || Input.GetKeyDown("joystick button 16") || Input.GetKeyDown(KeyCode.X))
+            {
+                Sprint();
+            }
+            if (Input.GetKeyDown("joystick button 1") || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown(KeyCode.C))
+            {
+                Space();
+            }
+            if (Input.GetKeyDown("joystick button 18") || Input.GetKeyDown("joystick button 2") || Input.GetKey(KeyCode.Z))
+            {
+                Calm();
+            }
         }
     }
 
@@ -100,11 +106,8 @@ public class SpecialsManager : MonoBehaviour
     {
         if (calmAvailable)
         {
-            
-                playerCntrl.useHealthPack();
-                calmAvailable = false;
-            
-            
+            playerCntrl.useHealthPack();
+            calmAvailable = false;
         }
     }
 
@@ -132,18 +135,16 @@ public class SpecialsManager : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(playerPosition, shoutRadius);
         foreach (Collider hit in colliders)
         {
-            if(hit.gameObject.tag == "Enemy")
+            if (hit.gameObject.tag == "Enemy")
             {
                 Rigidbody rb = hit.GetComponent<Rigidbody>();
-                
+
                 if (rb != null)
                 {
                     rb.AddExplosionForce(shoutForce, playerPosition, shoutRadius, shoutUpwardsForce, ForceMode.Force);
                     //Debug.Log(rb.transform.position);
                 }
             }
-            
-
         }
         // do shout stuff here
         cooldownTime = cooldownTimeShout;

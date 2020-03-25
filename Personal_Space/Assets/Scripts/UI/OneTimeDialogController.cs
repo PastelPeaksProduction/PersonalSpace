@@ -4,17 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class OneTimeDialogController : MonoBehaviour
 {
     /* Object to trigger Objective */
-    [Header("Will show in 2secs after game starts")]
+    [Header("Will show in 1sec after game starts")]
     public string gameStartObjectiveDescription;
 
 
     public GameObject firstObject_1;
     public string firstDescription;
+    
 
 
     public GameObject secondObject_2;
@@ -42,6 +44,10 @@ public class OneTimeDialogController : MonoBehaviour
     private int objectiveCount = 0;
     private float _reminderTime;
     private GameController controller;
+    private SpecialsManager specialsManager;
+
+    public EventSystem system;
+    public GameObject button;
 
     private int currentObjective = 0;
 
@@ -50,7 +56,7 @@ public class OneTimeDialogController : MonoBehaviour
     void Start()
     {
         controller = GameObject.FindGameObjectWithTag("Player").GetComponent<GameController>();
-
+        specialsManager = GameObject.FindGameObjectWithTag("Player").GetComponent<SpecialsManager>();
         _reminderTime = reminderTime;
 
         Objectives = new List<ObjectiveTutorial>();
@@ -76,16 +82,18 @@ public class OneTimeDialogController : MonoBehaviour
         {
             Objectives.Add(new ObjectiveTutorial(fifthObject_5, fifthDescription));
         }
-        StartCoroutine(GameStartDelay(2));
+        StartCoroutine(GameStartDelay(0));
         // pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
 
     }
     IEnumerator GameStartDelay(int sec)
     {
         yield return new WaitForSeconds(sec);
+        specialsManager.isEnabled = false;
         controller.PauseGame();
         pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
         OnetimeDialog.SetActive(true);
+        system.SetSelectedGameObject(button.gameObject);
     }
 
     private void Update()
@@ -96,7 +104,7 @@ public class OneTimeDialogController : MonoBehaviour
 
     private void CheckContinue()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 19") || Input.GetKeyDown("joystick button 3")))
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyUp("joystick button 16") || Input.GetKeyUp("joystick button 0")))
         {
             Continue();
         }
@@ -107,6 +115,7 @@ public class OneTimeDialogController : MonoBehaviour
         Debug.Log("Continue!");
         controller.ContinueGame();
         OnetimeDialog.SetActive(false);
+        specialsManager.isEnabled = true;
         currentObjective++;
     }
     private void Reminder()
@@ -115,12 +124,9 @@ public class OneTimeDialogController : MonoBehaviour
         if (_reminderTime <= 0)
         {
             _reminderTime = reminderTime;
-
-           // pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[currentObjective].ObjectiveDes;
-
+            //pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[currentObjective].ObjectiveDes;
             //controller.PauseGame();
             //OnetimeDialog.SetActive(true);
-
         }
     }
     // public function when player triggers objective tag
