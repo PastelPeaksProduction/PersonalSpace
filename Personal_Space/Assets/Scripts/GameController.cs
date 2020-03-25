@@ -276,7 +276,7 @@ public class GameController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "6.0Convention")
         {
-            SceneManager.LoadScene("0.0StartMenu");
+            SceneManager.LoadScene("NewStartMenu");
         }
     }
 

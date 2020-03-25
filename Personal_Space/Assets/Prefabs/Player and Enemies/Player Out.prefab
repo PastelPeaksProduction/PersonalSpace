@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 2600146800666573048}
   - component: {fileID: 2600146800666573049}
   - component: {fileID: 2600146800666572998}
-  - component: {fileID: 2600146800666572999}
   - component: {fileID: 1734070810938802108}
   - component: {fileID: 95976839973116789}
   - component: {fileID: 2090807824398782169}
@@ -160,26 +159,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &2600146800666572999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2600146800666572996}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1c07e3a645c44a2bb2076dbe9b4662e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 20
-  canMove: 1
-  isMoving: 0
-  isBreathing: 0
-  health: 100
-  neutralDamage: 0
-  regenCooldown: 10
-  healthPackAmount: 10
 --- !u!114 &1734070810938802108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +182,7 @@ MonoBehaviour:
   shoutForce: 100
   shoutRadius: 40
   shoutUpwardsForce: 0
+  isEnabled: 1
 --- !u!114 &95976839973116789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,7 +425,8 @@ MonoBehaviour:
   ArrowPrefab: {fileID: 7394406848224439333, guid: 7b0e5dfc44b7f3e4a8e9c7acf5be90f5,
     type: 3}
   Objective: {fileID: 0}
-  obj_man: {fileID: 0}
+  indicator: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &6622109482064459804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,7 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 945efe05184724b818dd22e278cd78a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testing: 1
+  androidTesting: 0
 --- !u!1 &2600146800969921318
 GameObject:
   m_ObjectHideFlags: 0

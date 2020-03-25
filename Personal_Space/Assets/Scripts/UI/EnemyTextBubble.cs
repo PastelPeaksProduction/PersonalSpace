@@ -60,7 +60,8 @@ public class EnemyTextBubble : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Game.isGamePaused() && (zone.playerInZone || activated))
+        
+        if (!Game.isGamePaused() && ((zone!=null && zone.playerInZone) || activated))
         {
             if(!activated && zone.playerInZone)
             {
