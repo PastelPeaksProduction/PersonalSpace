@@ -12,8 +12,11 @@ public class SpecialsManager : MonoBehaviour
     private float normalSpeed;
     private int specialIteration = 0;
     public bool sprintAvailable = true;
+    public GameObject sprintUI;
     public bool shoutAvailable = true;
+    public GameObject shoutUI;
     public bool calmAvailable = true;
+    public GameObject calmUI;
     private bool startingSprintAvailable = true;
     private bool startingShoutAvailable = true;
     private PlayerController playerCntrl;
@@ -33,6 +36,19 @@ public class SpecialsManager : MonoBehaviour
         normalSpeed = playerCntrl.moveSpeed;
         startingSprintAvailable = sprintAvailable;
         startingShoutAvailable = shoutAvailable;
+
+        if (!shoutAvailable)
+        {
+            shoutUI.SetActive(false);
+        }
+        if (!sprintAvailable)
+        {
+            sprintUI.SetActive(false);
+        }
+        if (!calmAvailable)
+        {
+            calmUI.SetActive(false);
+        }
     }
 
     // Update is called once per frame
