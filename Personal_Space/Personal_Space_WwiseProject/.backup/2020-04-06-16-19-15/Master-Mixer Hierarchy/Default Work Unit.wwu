@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4556260A-4E3D-4184-9027-D0B7035907FC}" SchemaVersion="97">
+	<Busses>
+		<WorkUnit Name="Default Work Unit" ID="{4556260A-4E3D-4184-9027-D0B7035907FC}" PersistMode="Standalone">
+			<ChildrenList>
+				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="System" ID="{E38B0199-414D-49DB-AD85-AA642D7B10B3}" WorkUnitID="{9DFA956D-248C-41D9-AB34-6E900ACFE86C}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
+				<Bus Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}">
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="System" ID="{E38B0199-414D-49DB-AD85-AA642D7B10B3}" WorkUnitID="{9DFA956D-248C-41D9-AB34-6E900ACFE86C}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
+				<Bus Name="Heartbeat" ID="{1F337A54-4045-4E23-813E-45D0313870C9}">
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="System" ID="{E38B0199-414D-49DB-AD85-AA642D7B10B3}" WorkUnitID="{9DFA956D-248C-41D9-AB34-6E900ACFE86C}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
+				<Bus Name="Breathing" ID="{DCFCB619-3F02-42CC-8C60-2AC5A6A836C0}">
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="System" ID="{E38B0199-414D-49DB-AD85-AA642D7B10B3}" WorkUnitID="{9DFA956D-248C-41D9-AB34-6E900ACFE86C}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
+				<Bus Name="Calm" ID="{2F4E2B62-7362-40C9-8D23-9301C8076D5E}">
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="System" ID="{E38B0199-414D-49DB-AD85-AA642D7B10B3}" WorkUnitID="{9DFA956D-248C-41D9-AB34-6E900ACFE86C}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
+				<Bus Name="Stress" ID="{9B7E37E1-C645-470C-B7E6-5CB3B6907319}">
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="System" ID="{E38B0199-414D-49DB-AD85-AA642D7B10B3}" WorkUnitID="{9DFA956D-248C-41D9-AB34-6E900ACFE86C}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
+			</ChildrenList>
+		</WorkUnit>
+	</Busses>
+</WwiseDocument>

@@ -40,7 +40,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-15"/>
+								<Property Name="Volume" Type="Real64" Value="-50"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -52,7 +52,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-15"/>
+								<Property Name="Volume" Type="Real64" Value="-50"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -135,7 +135,7 @@
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-15"/>
+								<Property Name="Volume" Type="Real64" Value="-50"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -152,6 +152,18 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Calm" ID="{2F4E2B62-7362-40C9-8D23-9301C8076D5E}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{290DC360-7820-47D0-A52F-A7DFE12EDE6E}" ShortID="253557025">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-50"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Stress" ID="{9B7E37E1-C645-470C-B7E6-5CB3B6907319}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -176,9 +188,9 @@
 						<Action Name="" ID="{8DB970A2-2982-42E2-AB41-A31C4E84059F}" ShortID="635388607">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
-								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-15"/>
+								<Property Name="Volume" Type="Real64" Value="-10"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -189,7 +201,7 @@
 						<Action Name="" ID="{5019D7B3-5EDC-47D5-9AFC-0F747FF79ADE}" ShortID="369327818">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
-								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
@@ -220,7 +232,7 @@
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-15"/>
+								<Property Name="Volume" Type="Real64" Value="-50"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -233,7 +245,7 @@
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-15"/>
+								<Property Name="Volume" Type="Real64" Value="-50"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -266,7 +278,7 @@
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-15"/>
+								<Property Name="Volume" Type="Real64" Value="-50"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -298,7 +310,7 @@
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-15"/>
+								<Property Name="Volume" Type="Real64" Value="-50"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">

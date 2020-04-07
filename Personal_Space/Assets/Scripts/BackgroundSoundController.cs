@@ -22,7 +22,6 @@ public class BackgroundSoundController : MonoBehaviour
 
     void Update()
     {
-        
         if (!isMenu)
         {
             endLevel = GetComponentInParent<ObjectivesManager>().endLevel;
