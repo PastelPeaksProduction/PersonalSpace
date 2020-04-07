@@ -26,7 +26,6 @@ public class DrivePost : MonoBehaviour
     public DataPoint BugDescription;
 
     private GameObject Player;
-    public bool test;
 
     [SerializeField]
     public string BASE_URL_TRACKING;
