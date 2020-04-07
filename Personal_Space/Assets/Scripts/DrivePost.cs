@@ -147,8 +147,7 @@ public class DrivePost : MonoBehaviour
         form.AddField(TrackingPlayThrough.form_id, TrackingPlayThrough.data);
         form.AddField(TrackingEventType.form_id, TrackingEventType.data);
         
-        byte[] rawData = form.data;
-        Debug.Log(rawData.ToString());
+        
 
         using (UnityWebRequest www = UnityWebRequest.Post(BASE_URL_TRACKING + "/formResponse", form))
         {
@@ -181,9 +180,21 @@ public class DrivePost : MonoBehaviour
         form.AddField(BugLevel.form_id, BugLevel.data);
         form.AddField(BugDescription.form_id, BugDescription.data);
 
-        byte[] rawData = form.data;
-        WWW www = new WWW(BASE_URL_BUG + "/formResponse", rawData);
-        yield return www;
+        //https://docs.google.com/forms/d/e/1FAIpQLSfUctr4bl-9A_IGJZ-Mfgl5itf9BQ6Ff0RKVdScDNnfYBs_rg
+
+        using (UnityWebRequest www = UnityWebRequest.Post(BASE_URL_BUG + "/formResponse", form))
+        {
+            www.redirectLimit = 10;
+            yield return www.SendWebRequest(); ;
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                Debug.Log("Form upload complete!");
+            }
+        }
     }
 }
 
