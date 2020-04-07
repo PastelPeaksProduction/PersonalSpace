@@ -25,6 +25,8 @@ public class DrivePost : MonoBehaviour
     public DataPoint BugLevel;
     public DataPoint BugDescription;
 
+    public GameObject consentWindow;
+
     private GameObject Player;
 
     [SerializeField]
@@ -34,6 +36,11 @@ public class DrivePost : MonoBehaviour
     public string BASE_URL_BUG;
     private void Start()
     {
+        if(consentWindow != null)
+        {
+            consentWindow.SetActive(true);
+        }
+        
         Player = GameObject.FindGameObjectWithTag("Player");
 
         if (!PlayerPrefs.HasKey("PlayThrough"))
@@ -45,6 +52,10 @@ public class DrivePost : MonoBehaviour
         if (!PlayerPrefs.HasKey("PlayerID"))
         {
             PlayerPrefs.SetString("PlayerID", System.DateTime.Now.ToString()+" "+System.Environment.UserName.GetHashCode());
+            if (consentWindow != null)
+            {
+                consentWindow.SetActive(true);
+            }
         }
 
         if (SceneManager.GetActiveScene().name == "NewStartMenu")
@@ -86,22 +97,26 @@ public class DrivePost : MonoBehaviour
         SubmitTracking(objective);
     }
 
+    
+
     public void Consent(bool consent)
     {
         if (consent)
         {
             PlayerPrefs.SetString("Consent", "DoesConsent");
+            SubmitTracking("Consent");
         }
         else
         {
             PlayerPrefs.SetString("Consent", "DoesNotConsent");
+            SubmitTracking("DNC");
         }
     }
 
 
     private void SubmitTracking(string eventType)
     {
-       // if (PlayerPrefs.GetString("Consent") != "DoesNotConsent")
+       if (PlayerPrefs.GetString("Consent") != "DoesNotConsent")
         {
             TrackingEventType.data = eventType;
             if (Player != null)
