@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2511228688278361682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2511228688278361680}
+  - component: {fileID: 2511228688278361681}
+  m_Layer: 0
+  m_Name: DataTracking
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2511228688278361680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2511228688278361682}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -78.572845, y: 1.2358017, z: -12.775337}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2511228688278361681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2511228688278361682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d0f17519387924eb3ee47c7db44b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrackingPlayerID:
+    form_id: entry.226458221
+    data: 
+  TrackingLocation:
+    form_id: entry.590612941
+    data: 
+  TrackingLevel:
+    form_id: entry.668041769
+    data: 
+  TrackingLevelAttempt:
+    form_id: entry.66461240
+    data: 
+  TrackingPlayThrough:
+    form_id: entry.852969530
+    data: 
+  TrackingEventType:
+    form_id: entry.526350049
+    data: 
+  BugPlayerID:
+    form_id: entry.1330972246
+    data: 
+  BugLocation:
+    form_id: entry.1872553377
+    data: 
+  BugLevel:
+    form_id: entry.1876754535
+    data: 
+  BugDescription:
+    form_id: entry.1189517588
+    data: 
+  test: 0
+  BASE_URL_TRACKING: https://docs.google.com/forms/d/e/1FAIpQLSfeYA_QAA3Y6emteJLQnUBYJ-GTUz2k4QiWXPMduZCF0nTIqg
+  BASE_URL_BUG: https://forms.gle/ePdJaSBaZjhtEFAA8
