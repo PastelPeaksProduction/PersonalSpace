@@ -94,7 +94,7 @@ public class CameraScript : MonoBehaviour
             }
             else
             {
-                if (!Input.GetAxisRaw("Mouse X").Equals(0))
+                if (!Input.GetAxisRaw("Mouse X").Equals(0) )
                 {
                     md = new Vector2(Input.GetAxisRaw(horizontalController) + Input.GetAxisRaw("Mouse X"), 0);
                 }
