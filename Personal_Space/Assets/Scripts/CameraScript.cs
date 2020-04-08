@@ -23,13 +23,16 @@ public class CameraScript : MonoBehaviour
     public float sensitivityFirstPerson = 3.0f;
     public float sensitivityThirdPerson = 0.15f;
     public float smoothing = 1.0f;
-    private bool isPaused;
+    private GameController gameController;
+    private PlayerController playerController;
 
     private Vector3 offset;
 
     void Start()
     {
         Player = GameObject.Find("Player");
+        gameController = Player.GetComponent<GameController>();
+        playerController = Player.GetComponent<PlayerController>();
         offset = targetPositionTPP.transform.position - Player.transform.position;
         transform.rotation = targetPositionTPP.transform.rotation;
         transform.position = Player.transform.position + offset;
@@ -60,30 +63,33 @@ public class CameraScript : MonoBehaviour
 
     private void NewThirdPersonPerspective()
     {
-        if (Input.GetAxisRaw(horizontalController) != 0)
+        if (playerController.canMove)
         {
-            offset = Quaternion.AngleAxis(Input.GetAxisRaw(horizontalController) * speed, Vector3.up) * offset;
-        }
-        else
-        {
-            if (onScreen.androidTesting)
+            if (Input.GetAxisRaw(horizontalController) != 0)
             {
-                float vJoy = onScreen.Rotation();
-                offset = Quaternion.AngleAxis(vJoy * speed, Vector3.up) * offset;
+                offset = Quaternion.AngleAxis(Input.GetAxisRaw(horizontalController) * speed, Vector3.up) * offset;
             }
             else
             {
-                offset = Quaternion.AngleAxis(Input.GetAxisRaw("Mouse X") * speed, Vector3.up) * offset;
+                if (onScreen.androidTesting)
+                {
+                    float vJoy = onScreen.Rotation();
+                    offset = Quaternion.AngleAxis(vJoy * speed, Vector3.up) * offset;
+                }
+                else
+                {
+                    offset = Quaternion.AngleAxis(Input.GetAxisRaw("Mouse X") * speed, Vector3.up) * offset;
+                }
+
             }
-            
+            transform.position = Vector3.Lerp(transform.position, Player.transform.position + offset, 1);
+            transform.LookAt(Player.transform.position);
         }
-        transform.position = Vector3.Lerp(transform.position, Player.transform.position + offset, 1);
-        transform.LookAt(Player.transform.position);
 
     }
     private void ThirdPersonPerspective()
     {
-        if (!isPaused)
+        if (playerController.canMove)
         {
             var md = new Vector2(0, 0);
             if (Input.GetAxisRaw(horizontalController) > 0)
@@ -135,8 +141,5 @@ public class CameraScript : MonoBehaviour
         Player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, Player.transform.up);
     }
 
-    public void SetPause()
-    {
-        isPaused = !isPaused;
-    }
+    
 }

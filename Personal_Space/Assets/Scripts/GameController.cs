@@ -119,8 +119,6 @@ public class GameController : MonoBehaviour
                     
 
                    // pauseDialog.SetActive(true);
-                    mainCamera.GetComponent<CameraBlur>().SetPause();
-                    mainCamera.GetComponent<CameraScript>().SetPause();
 
                     //Stressbar.SetActive(true);
                     //PlayerAngle.SetActive(true);
@@ -145,8 +143,6 @@ public class GameController : MonoBehaviour
                     Debug.Log("switch2" + isPaused);
 
                     //pauseDialog.SetActive(false);
-                    mainCamera.GetComponent<CameraBlur>().SetPause();
-                    mainCamera.GetComponent<CameraScript>().SetPause();
                     //Stressbar.SetActive(false);
                     //PlayerAngle.SetActive(false);
                     //FOV.SetActive(false);
@@ -197,60 +193,22 @@ public class GameController : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyUp(KeyCode.Alpha3))
+        if (Input.GetKeyUp(KeyCode.Alpha1))
         {
             SceneManager.LoadScene("Prom");
 
         }
         
-        if (Input.GetKeyUp(KeyCode.Alpha4))
+        if (Input.GetKeyUp(KeyCode.Alpha2))
         {
             SceneManager.LoadScene("4.0HouseParty");
 
         }
-       
-        if (Input.GetKeyUp(KeyCode.Alpha5))
+
+        if (Input.GetKeyUp(KeyCode.Alpha3))
         {
             SceneManager.LoadScene("5.0WorkParty");
 
-        }
-
-        if (Input.GetKeyUp(KeyCode.Alpha6))
-        {
-            SceneManager.LoadScene("6.0Convention");
-
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space) && nullValues)
-        {
-           
-
-            
-
-            if (SceneManager.GetActiveScene().name == "2.5Cutscene")
-            {
-                SceneManager.LoadScene("Prom");
-            }
-
-            if (SceneManager.GetActiveScene().name == "3.5Cutscene")
-            {
-                SceneManager.LoadScene("4.0HouseParty");
-            }
-
-            if (SceneManager.GetActiveScene().name == "4.5Cutscene")
-            {
-                SceneManager.LoadScene("5.0WorkParty");
-            }
-
-            if (SceneManager.GetActiveScene().name == "5.5Cutscene")
-            {
-                SceneManager.LoadScene("6.0Convention");
-            }
-
-            if (SceneManager.GetActiveScene().name == "6.5Cutscene")
-            {
-                SceneManager.LoadScene("0.0StartMenu");
-            }
         }
     }
 
@@ -271,27 +229,12 @@ public class GameController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "5.0WorkParty")
         {
-            SceneManager.LoadScene("6.0Convention");
-        }
-
-        if (SceneManager.GetActiveScene().name == "6.0Convention")
-        {
             SceneManager.LoadScene("NewStartMenu");
         }
-    }
-
-    private void CameraSwitch(bool tab)
-    {
-        if (tab && !mainCamera.activeSelf)
-        {
-
-        }
-        else if (tab && mainCamera.activeSelf)
-        {
-
-        }
 
     }
+
+   
 
     public bool isGamePaused()
     {
