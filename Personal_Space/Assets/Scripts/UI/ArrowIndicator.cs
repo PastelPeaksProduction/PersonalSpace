@@ -84,4 +84,11 @@ public class ArrowIndicator : MonoBehaviour
         show_arrow = false;
         indicator.SetActive(false);
     }
+
+    public void ToggleArrow()
+    {
+        show_arrow = !show_arrow;
+        indicator.SetActive(show_arrow);
+    }
 }
+
