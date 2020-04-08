@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
 
 
 
-    void Start()
+    void Awake()
     {
         // Initialize variables
         playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
+using TMPro;
 
 [System.Serializable]
 public class DataPoint
@@ -13,6 +14,7 @@ public class DataPoint
 
 public class DrivePost : MonoBehaviour
 {
+    public bool Clear;
     public DataPoint TrackingPlayerID;
     public DataPoint TrackingLocation;
     public DataPoint TrackingLevel;
@@ -24,6 +26,7 @@ public class DrivePost : MonoBehaviour
     public DataPoint BugLocation;
     public DataPoint BugLevel;
     public DataPoint BugDescription;
+    public DataPoint BugEmail;
 
     public GameObject consentWindow;
 
@@ -36,22 +39,22 @@ public class DrivePost : MonoBehaviour
     public string BASE_URL_BUG;
     private void Start()
     {
-        if(consentWindow != null)
+        if (Clear)
         {
-            consentWindow.SetActive(true);
+            PlayerPrefs.DeleteAll();
+            Clear = false;
         }
-        
+
         Player = GameObject.FindGameObjectWithTag("Player");
 
         if (!PlayerPrefs.HasKey("PlayThrough"))
         {
             PlayerPrefs.SetInt("PlayThrough", 0);
         }
-        
-        
+
         if (!PlayerPrefs.HasKey("PlayerID"))
         {
-            PlayerPrefs.SetString("PlayerID", System.DateTime.Now.ToString()+" "+System.Environment.UserName.GetHashCode());
+            PlayerPrefs.SetString("PlayerID", System.DateTime.Now.ToString() + " " + System.Environment.UserName.GetHashCode());
             if (consentWindow != null)
             {
                 consentWindow.SetActive(true);
@@ -70,6 +73,7 @@ public class DrivePost : MonoBehaviour
             TrackingLevelAttempt.data = attempt.ToString();
             PlayerPrefs.SetInt("LevelAttempt", attempt);
         }
+
         TrackingPlayThrough.data = PlayerPrefs.GetInt("PlayThrough").ToString();
         TrackingPlayerID.data = PlayerPrefs.GetString("PlayerID");
         BugPlayerID.data = PlayerPrefs.GetString("PlayerID");
@@ -80,7 +84,7 @@ public class DrivePost : MonoBehaviour
         SubmitTracking("StartLevel");
     }
 
-    
+
     public void CompleteLevel()
     {
         SubmitTracking("CompleteLevel");
@@ -97,7 +101,7 @@ public class DrivePost : MonoBehaviour
         SubmitTracking(objective);
     }
 
-    
+
 
     public void Consent(bool consent)
     {
@@ -116,7 +120,7 @@ public class DrivePost : MonoBehaviour
 
     private void SubmitTracking(string eventType)
     {
-       if (PlayerPrefs.GetString("Consent") != "DoesNotConsent")
+        if (PlayerPrefs.GetString("Consent") != "DoesNotConsent")
         {
             TrackingEventType.data = eventType;
             if (Player != null)
@@ -131,10 +135,15 @@ public class DrivePost : MonoBehaviour
         }
     }
 
-    public void SubmitBugReport(string description)
+    public void SetEmail(TextMeshProUGUI email)
     {
-            
-            BugDescription.data = description;
+        BugEmail.data = email.text;
+    }
+    public void SubmitBugReport(TextMeshProUGUI description)
+    {
+        BugDescription.data = description.text;
+        if(BugDescription.data.Length > 1)
+        {
             if (Player != null)
             {
                 BugLocation.data = Player.transform.position.ToString();
@@ -144,7 +153,8 @@ public class DrivePost : MonoBehaviour
                 BugLocation.data = "None";
             }
             StartCoroutine(PostBugReport());
-        
+        }
+    
     }
 
 
@@ -152,7 +162,6 @@ public class DrivePost : MonoBehaviour
     IEnumerator PostTracking()
     {
         WWWForm form = new WWWForm();
-        
 
         form.AddField(TrackingPlayerID.form_id, TrackingPlayerID.data);
         form.AddField(TrackingLocation.form_id, TrackingLocation.data);
@@ -160,8 +169,6 @@ public class DrivePost : MonoBehaviour
         form.AddField(TrackingLevelAttempt.form_id, TrackingLevelAttempt.data);
         form.AddField(TrackingPlayThrough.form_id, TrackingPlayThrough.data);
         form.AddField(TrackingEventType.form_id, TrackingEventType.data);
-        
-        
 
         using (UnityWebRequest www = UnityWebRequest.Post(BASE_URL_TRACKING + "/formResponse", form))
         {
@@ -176,24 +183,17 @@ public class DrivePost : MonoBehaviour
                 Debug.Log("Form upload complete!");
             }
         }
-
-        //WWW www = new WWW(BASE_URL_TRACKING+"/formResponse", form);
-        
-        //yield return www;
-        //Debug.Log(www.error);
-       
     }
 
     IEnumerator PostBugReport()
     {
         WWWForm form = new WWWForm();
-        
 
         form.AddField(BugPlayerID.form_id, BugPlayerID.data);
         form.AddField(BugLocation.form_id, BugLocation.data);
         form.AddField(BugLevel.form_id, BugLevel.data);
         form.AddField(BugDescription.form_id, BugDescription.data);
-
+        form.AddField(BugEmail.form_id, BugEmail.data);
         //https://docs.google.com/forms/d/e/1FAIpQLSfUctr4bl-9A_IGJZ-Mfgl5itf9BQ6Ff0RKVdScDNnfYBs_rg
 
         using (UnityWebRequest www = UnityWebRequest.Post(BASE_URL_BUG + "/formResponse", form))
