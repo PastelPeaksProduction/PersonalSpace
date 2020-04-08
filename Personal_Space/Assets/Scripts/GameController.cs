@@ -185,7 +185,7 @@ public class GameController : MonoBehaviour
                 deadDialog.SetActive(true);
 
                 //X to Restart game
-                if (Input.GetKeyDown(KeyCode.X) || Input.GetKey("joystick button 18") || Input.GetKey("joystick button 2"))
+                if (Input.GetKeyDown(KeyCode.A) || Input.GetKey("joystick button 16") || Input.GetKey("joystick button 0"))
                 {
                     deadDialog.SetActive(false);
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
