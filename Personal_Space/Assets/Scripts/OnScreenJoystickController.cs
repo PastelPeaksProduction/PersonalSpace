@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SiliconDroid;
-
+using UnityEngine.UI;
 public class OnScreenJoystickController : MonoBehaviour
 {
     public bool androidTesting = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class OnScreenJoystickController : MonoBehaviour
             SD_Joystick.fnc_SetColor(Color.magenta);
             SD_Joystick.fnc_2DStick_SetVisible(0, true);
             SD_Joystick.fnc_1DStick_SetVisible(0, true);
+            
         }
        else
         {
