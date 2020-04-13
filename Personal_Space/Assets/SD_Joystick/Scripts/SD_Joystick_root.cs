@@ -24,7 +24,7 @@ namespace SiliconDroid
 
         //  SET
         public const float K_F_PUSHZ_FACTOR = 0.1f;
-        public const int K_I_MAX_TOUCH_POINTS = 8;
+        public const int K_I_MAX_TOUCH_POINTS = 4;
         public const string K_S_NAME_CONTROL = "CONTROL";
         public const string K_S_NAME_DECORATION = "DECOR";
 
@@ -73,8 +73,8 @@ namespace SiliconDroid
             Clock_Touch();
         }
 
-        
-        /*void OnGUI()
+        /*
+        void OnGUI()
         {
             Vector3 point = new Vector3();
             Camera cam = Camera.main;
@@ -93,7 +93,7 @@ namespace SiliconDroid
             GUILayout.Label("Mouse position: " + mousePos);
             GUILayout.Label("World position: " + point.ToString("F3"));
             GUILayout.EndArea();
-        }*/
+        }//*/
         
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //	 ____  _   _ ____  _     ___ ____ 
