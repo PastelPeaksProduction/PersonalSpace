@@ -2,18 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[System.Serializable]
+public class Accessory
+{
+    public GameObject obj;
+    public Vector3 offset;
+}
+
 public class AccessoryStore : MonoBehaviour
 {
+    
     
     public int hasAccessory;
     public int total;
 
-    public GameObject[] egg;
-    public GameObject[] coneUp;
-    public GameObject[] coneDown;
-    public GameObject[] mike;
-    public GameObject[] ike;
-    public GameObject[] hunk;
-    public GameObject[] rect;
-   
+    public Accessory[] egg;
+    public Accessory[] coneUpAcc;
+    public Accessory[] coneDownAcc;
+    public Accessory[] mikeAcc;
+    public Accessory[] ikeAcc;
+    public Accessory[] hunkAcc;
+    public Accessory[] rectAcc;
+
 }

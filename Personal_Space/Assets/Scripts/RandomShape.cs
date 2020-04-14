@@ -11,9 +11,10 @@ public class RandomShape : MonoBehaviour
         GameObject[] shapes = GameObject.FindGameObjectWithTag("ShapeLibrary").GetComponent<RandomShapesLibrary>().shapes;
         int random = Random.Range(0, shapes.Length);
         GameObject shape = shapes[random];
-        GameObject child = Instantiate(shape, this.transform.position, this.transform.localRotation, this.transform);
+        GameObject child = Instantiate(shape, this.transform.position, this.transform.rotation);
         shapeName = child.name;
-        child.transform.localScale = new Vector3(1, 1, 1)/ (this.transform.localScale.x);
+        child.transform.parent = this.transform;
+        //child.transform.localScale = new Vector3(1, 1, 1)/ (this.transform.localScale.x);
         
         child.GetComponent<MeshRenderer>().material = this.GetComponent<MeshRenderer>().material;
         this.GetComponent<MeshRenderer>().enabled = false;

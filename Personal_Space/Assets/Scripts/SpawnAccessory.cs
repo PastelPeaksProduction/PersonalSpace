@@ -24,12 +24,12 @@ public class SpawnAccessory : MonoBehaviour
         if (accStoreObj != null)
         {
             int eggLen = accStoreObj.GetComponent<AccessoryStore>().egg.Length;
-            int coneUpLen = accStoreObj.GetComponent<AccessoryStore>().coneUp.Length;
-            int coneDownLen = accStoreObj.GetComponent<AccessoryStore>().coneDown.Length;
-            int mikeLen = accStoreObj.GetComponent<AccessoryStore>().mike.Length;
-            int ikeLen = accStoreObj.GetComponent<AccessoryStore>().ike.Length;
-            int hunkLen = accStoreObj.GetComponent<AccessoryStore>().hunk.Length;
-            int rectLen = accStoreObj.GetComponent<AccessoryStore>().rect.Length;
+            int coneUpLen = accStoreObj.GetComponent<AccessoryStore>().coneUpAcc.Length;
+            int coneDownLen = accStoreObj.GetComponent<AccessoryStore>().coneDownAcc.Length;
+            int mikeLen = accStoreObj.GetComponent<AccessoryStore>().mikeAcc.Length;
+            int ikeLen = accStoreObj.GetComponent<AccessoryStore>().ikeAcc.Length;
+            int hunkLen = accStoreObj.GetComponent<AccessoryStore>().hunkAcc.Length;
+            int rectLen = accStoreObj.GetComponent<AccessoryStore>().rectAcc.Length;
 
 
 
@@ -44,10 +44,16 @@ public class SpawnAccessory : MonoBehaviour
                         if (assign < accStoreObj.GetComponent<AccessoryStore>().hasAccessory)
                         {
                             int index = Random.Range(0, coneDownLen);
-                            if (accStoreObj.GetComponent<AccessoryStore>().coneDown[index] != null)
+                            if (accStoreObj.GetComponent<AccessoryStore>().coneDownAcc[index] != null)
                             {
-                                var accessory = Instantiate(accStoreObj.GetComponent<AccessoryStore>().coneDown[index], transform.position, transform.rotation);
-                                accessory.transform.parent = this.transform; 
+                                Accessory access = accStoreObj.GetComponent<AccessoryStore>().coneDownAcc[index];
+                                Debug.Log("NAME: " + access.obj.name + " POS:" + transform.position + "OFF:" + access.offset + "SUM:" + (transform.position + access.offset));
+
+                                var accessory = Instantiate(access.obj, transform.position, transform.rotation);
+                                accessory.transform.parent = this.transform;
+                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
+                                Debug.Log("NAME: " + access.obj.name + " POS:" + accessory.transform.position);
+
                             }
                         }
                     }
@@ -60,10 +66,16 @@ public class SpawnAccessory : MonoBehaviour
                         if (assign < accStoreObj.GetComponent<AccessoryStore>().hasAccessory)
                         {
                             int index = Random.Range(0, coneUpLen);
-                            if (accStoreObj.GetComponent<AccessoryStore>().coneUp[index] != null)
+                            if (accStoreObj.GetComponent<AccessoryStore>().coneUpAcc[index] != null)
                             {
-                                var accessory = Instantiate(accStoreObj.GetComponent<AccessoryStore>().coneUp[index], transform.position, transform.rotation);
+                                Accessory access = accStoreObj.GetComponent<AccessoryStore>().coneUpAcc[index];
+                                Debug.Log("NAME: " + access.obj.name + " POS:" + transform.position + "OFF:" + access.offset + "SUM:" + (transform.position + access.offset));
+
+                                var accessory = Instantiate(access.obj, transform.position, transform.rotation);
                                 accessory.transform.parent = this.transform;
+                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
+                                Debug.Log("NAME: " + access.obj.name + " POS:" + accessory.transform.position);
+
                             }
                         }
                     }
@@ -78,8 +90,14 @@ public class SpawnAccessory : MonoBehaviour
                             int index = Random.Range(0, eggLen);
                             if (accStoreObj.GetComponent<AccessoryStore>().egg[index] != null)
                             {
-                                var accessory = Instantiate(accStoreObj.GetComponent<AccessoryStore>().egg[index], transform.position, transform.rotation);
+                                Accessory access = accStoreObj.GetComponent<AccessoryStore>().egg[index];
+                                Debug.Log("NAME: "+access.obj.name+" POS:" + transform.position + "OFF:" + access.offset + "SUM:" + (transform.position + access.offset));
+
+                                var accessory = Instantiate(access.obj, transform.position, transform.rotation);
                                 accessory.transform.parent = this.transform;
+                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
+                                Debug.Log("NAME: " + access.obj.name + " POS:" + accessory.transform.position);
+                                
                             }
                         }
                     }
@@ -91,11 +109,17 @@ public class SpawnAccessory : MonoBehaviour
                         int assign = Random.Range(0, accStoreObj.GetComponent<AccessoryStore>().total);
                         if (assign < accStoreObj.GetComponent<AccessoryStore>().hasAccessory)
                         {
-                            int index = Random.Range(0, mikeLen);
-                            if (accStoreObj.GetComponent<AccessoryStore>().mike[index] != null)
+                            int index = Random.Range(0, coneDownLen);
+                            if (accStoreObj.GetComponent<AccessoryStore>().mikeAcc[index] != null)
                             {
-                                var accessory = Instantiate(accStoreObj.GetComponent<AccessoryStore>().mike[index], transform.position, transform.rotation);
+                                Accessory access = accStoreObj.GetComponent<AccessoryStore>().mikeAcc[index];
+                                Debug.Log("NAME: " + access.obj.name + " POS:" + transform.position + "OFF:" + access.offset + "SUM:" + (transform.position + access.offset));
+
+                                var accessory = Instantiate(access.obj, transform.position, transform.rotation);
                                 accessory.transform.parent = this.transform;
+                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
+                                Debug.Log("NAME: " + access.obj.name + " POS:" + accessory.transform.position);
+
                             }
                         }
                     }
@@ -108,10 +132,16 @@ public class SpawnAccessory : MonoBehaviour
                         if (assign < accStoreObj.GetComponent<AccessoryStore>().hasAccessory)
                         {
                             int index = Random.Range(0, ikeLen);
-                            if (accStoreObj.GetComponent<AccessoryStore>().ike[index] != null)
+                            if (accStoreObj.GetComponent<AccessoryStore>().ikeAcc[index] != null)
                             {
-                                var accessory = Instantiate(accStoreObj.GetComponent<AccessoryStore>().ike[index], transform.position, transform.rotation);
+                                Accessory access = accStoreObj.GetComponent<AccessoryStore>().ikeAcc[index];
+                                Debug.Log("NAME: " + access.obj.name + " POS:" + transform.position + "OFF:" + access.offset + "SUM:" + (transform.position + access.offset));
+
+                                var accessory = Instantiate(access.obj, transform.position, transform.rotation);
                                 accessory.transform.parent = this.transform;
+                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
+                                Debug.Log("NAME: " + access.obj.name + " POS:" + accessory.transform.position);
+
                             }
                         }
                     }
@@ -124,10 +154,16 @@ public class SpawnAccessory : MonoBehaviour
                         if (assign < accStoreObj.GetComponent<AccessoryStore>().hasAccessory)
                         {
                             int index = Random.Range(0, hunkLen);
-                            if (accStoreObj.GetComponent<AccessoryStore>().ike[index] != null)
+                            if (accStoreObj.GetComponent<AccessoryStore>().hunkAcc[index] != null)
                             {
-                                var accessory = Instantiate(accStoreObj.GetComponent<AccessoryStore>().hunk[index], transform.position, transform.rotation);
+                                Accessory access = accStoreObj.GetComponent<AccessoryStore>().hunkAcc[index];
+                                Debug.Log("NAME: " + access.obj.name + " POS:" + transform.position + "OFF:" + access.offset + "SUM:" + (transform.position + access.offset));
+
+                                var accessory = Instantiate(access.obj, transform.position, transform.rotation);
                                 accessory.transform.parent = this.transform;
+                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
+                                Debug.Log("NAME: " + access.obj.name + " POS:" + accessory.transform.position);
+
                             }
                         }
                     }
@@ -140,10 +176,16 @@ public class SpawnAccessory : MonoBehaviour
                         if (assign < accStoreObj.GetComponent<AccessoryStore>().hasAccessory)
                         {
                             int index = Random.Range(0, rectLen);
-                            if (accStoreObj.GetComponent<AccessoryStore>().rect[index] != null)
+                            if (accStoreObj.GetComponent<AccessoryStore>().rectAcc[index] != null)
                             {
-                                var accessory = Instantiate(accStoreObj.GetComponent<AccessoryStore>().rect[index], transform.position, transform.rotation);
+                                Accessory access = accStoreObj.GetComponent<AccessoryStore>().rectAcc[index];
+                                Debug.Log("NAME: " + access.obj.name + " POS:" + transform.position + "OFF:" + access.offset + "SUM:" + (transform.position + access.offset));
+
+                                var accessory = Instantiate(access.obj, transform.position, transform.rotation);
                                 accessory.transform.parent = this.transform;
+                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
+                                Debug.Log("NAME: " + access.obj.name + " POS:" + accessory.transform.position);
+
                             }
                         }
                     }
