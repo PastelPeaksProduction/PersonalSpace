@@ -93,22 +93,23 @@ public class BackgroundSoundController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("SafeZone"))
+        if (other.gameObject.CompareTag("DangerZone"))
         {
-            if (inSafe <= 0)
-            {
-                AkSoundEngine.PostEvent("fade_to_calm", gameObject);
-            }
-            inSafe += 1;
-        }
-        else if(other.gameObject.CompareTag("DangerZone"))
-        {
-            if (inDanger <= 0)
+            if (inDanger >= 0)
             {
                 AkSoundEngine.PostEvent("fade_to_stress", gameObject);
             }
             inDanger += 1;
         }
+        else if (other.gameObject.CompareTag("SafeZone"))
+        {
+            if (inSafe >= 0)
+            {
+                AkSoundEngine.PostEvent("fade_to_calm", gameObject);
+            }
+            inSafe += 1;
+        }
+        
 
         if ((other.gameObject.CompareTag("Collectible") || other.gameObject.CompareTag("Objectives")) && !endLevel)
         {
