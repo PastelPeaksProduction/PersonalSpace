@@ -13,5 +13,7 @@ public class AccessoryStore : MonoBehaviour
     public GameObject[] coneDown;
     public GameObject[] mike;
     public GameObject[] ike;
+    public GameObject[] hunk;
+    public GameObject[] rect;
    
 }

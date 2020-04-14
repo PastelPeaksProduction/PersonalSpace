@@ -28,6 +28,8 @@ public class SpawnAccessory : MonoBehaviour
             int coneDownLen = accStoreObj.GetComponent<AccessoryStore>().coneDown.Length;
             int mikeLen = accStoreObj.GetComponent<AccessoryStore>().mike.Length;
             int ikeLen = accStoreObj.GetComponent<AccessoryStore>().ike.Length;
+            int hunkLen = accStoreObj.GetComponent<AccessoryStore>().hunk.Length;
+            int rectLen = accStoreObj.GetComponent<AccessoryStore>().rect.Length;
 
 
 
@@ -109,6 +111,38 @@ public class SpawnAccessory : MonoBehaviour
                             if (accStoreObj.GetComponent<AccessoryStore>().ike[index] != null)
                             {
                                 var accessory = Instantiate(accStoreObj.GetComponent<AccessoryStore>().ike[index], transform.position, transform.rotation);
+                                accessory.transform.parent = this.transform;
+                            }
+                        }
+                    }
+                }
+                if (shapeName.Contains("Hunk"))
+                {
+                    if (hunkLen != 0)
+                    {
+                        int assign = Random.Range(0, accStoreObj.GetComponent<AccessoryStore>().total);
+                        if (assign < accStoreObj.GetComponent<AccessoryStore>().hasAccessory)
+                        {
+                            int index = Random.Range(0, hunkLen);
+                            if (accStoreObj.GetComponent<AccessoryStore>().ike[index] != null)
+                            {
+                                var accessory = Instantiate(accStoreObj.GetComponent<AccessoryStore>().hunk[index], transform.position, transform.rotation);
+                                accessory.transform.parent = this.transform;
+                            }
+                        }
+                    }
+                }
+                if (shapeName.Contains("Rect"))
+                {
+                    if (rectLen != 0)
+                    {
+                        int assign = Random.Range(0, accStoreObj.GetComponent<AccessoryStore>().total);
+                        if (assign < accStoreObj.GetComponent<AccessoryStore>().hasAccessory)
+                        {
+                            int index = Random.Range(0, rectLen);
+                            if (accStoreObj.GetComponent<AccessoryStore>().rect[index] != null)
+                            {
+                                var accessory = Instantiate(accStoreObj.GetComponent<AccessoryStore>().rect[index], transform.position, transform.rotation);
                                 accessory.transform.parent = this.transform;
                             }
                         }
