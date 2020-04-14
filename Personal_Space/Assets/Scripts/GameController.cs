@@ -176,7 +176,7 @@ public class GameController : MonoBehaviour
 
     public void Menu()
     {
-        SceneManager.LoadScene("0.0StartMenu");
+        SceneManager.LoadScene("NewStartMenu");
         ContinueGame();
     }
 
