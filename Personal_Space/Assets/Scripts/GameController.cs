@@ -46,10 +46,15 @@ public class GameController : MonoBehaviour
             ObjMng = gameObject.GetComponent<ObjectivesManager>();
             ArrInd = gameObject.GetComponent<ArrowIndicator>();
             PhoneUI = GameObject.Find("PopUpPhone").GetComponent<PhoneUI>();
-#if UNITY_EDITOR
-            Debug.Log("In Editor");
+            int width = Screen.width;
+            int height = Screen.height;
+            float ratio = width / 1920;
+            width = (int) (width * ratio);
+            height = (int)(height * ratio);
+            #if UNITY_EDITOR
+                Debug.Log("In Editor");
             #else
-                Screen.SetResolution(1920,1080, true);
+                Screen.SetResolution(width,height, true);
             #endif
         }
     }
