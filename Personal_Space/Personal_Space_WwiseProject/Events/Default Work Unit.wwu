@@ -190,7 +190,7 @@
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="FadeTime" Type="Real64" Value="1"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-10"/>
+								<Property Name="Volume" Type="Real64" Value="-20"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -203,6 +203,7 @@
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="FadeTime" Type="Real64" Value="1"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="2"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -632,23 +633,6 @@
 				</Event>
 				<Event Name="health_2" ID="{44D1AEAF-8903-4086-A590-81C746E036CB}">
 					<ChildrenList>
-						<Action Name="" ID="{DDBAF4D0-0151-4A47-B6E9-8682B7C4C01B}" ShortID="437122920">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="26"/>
-								<Property Name="Inclusion" Type="bool">
-									<ValueList>
-										<Value>False</Value>
-									</ValueList>
-								</Property>
-								<Property Name="Lowpass" Type="int16" Value="50"/>
-								<Property Name="Scope" Type="int16" Value="1"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
 						<Action Name="" ID="{EF7DDAA7-10B7-449B-9796-16843F3C0F43}" ShortID="67065671">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
@@ -666,11 +650,27 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{DDBAF4D0-0151-4A47-B6E9-8682B7C4C01B}" ShortID="437122920">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16" Value="50"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{55A29591-887F-4183-B790-C45495DC6C26}" ShortID="189259955">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="5"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -717,7 +717,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="3"/>
+								<Property Name="Volume" Type="Real64" Value="-5"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -725,20 +725,10 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="health_1" ID="{C92570ED-9227-4BEA-BBEB-7AD93189C501}">
-					<ChildrenList>
-						<Action Name="" ID="{1C717DE7-AC3B-4814-8A6D-507CF2E7CFFA}" ShortID="193499549">
+						<Action Name="" ID="{5422348D-316F-4884-B795-2080BADE20C2}" ShortID="348997587">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="26"/>
-								<Property Name="Inclusion" Type="bool">
-									<ValueList>
-										<Value>False</Value>
-									</ValueList>
-								</Property>
-								<Property Name="Lowpass" Type="int16" Value="70"/>
-								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Volume" Type="Real64" Value="-20"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -746,6 +736,10 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="health_1" ID="{C92570ED-9227-4BEA-BBEB-7AD93189C501}">
+					<ChildrenList>
 						<Action Name="" ID="{AD9A7174-E1A4-4B42-892E-65FADADD6976}" ShortID="452339319">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
@@ -809,9 +803,9 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{2593739E-61BE-4AFF-8108-8763C43F5758}" ShortID="1051419356">
+						<Action Name="" ID="{514C98FB-2A46-4A52-90FA-7BE01B470E84}" ShortID="552734814">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="ActionType" Type="int16" Value="2"/>
 								<Property Name="Inclusion" Type="bool">
 									<ValueList>
 										<Value>False</Value>
@@ -824,15 +818,54 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{2593739E-61BE-4AFF-8108-8763C43F5758}" ShortID="1051419356">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Volume" Type="Real64" Value="-20"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Stress" ID="{9B7E37E1-C645-470C-B7E6-5CB3B6907319}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{76707FE2-DC51-4C5B-B78A-BF91CC14EC4B}" ShortID="85195920">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="4"/>
+								<Property Name="Volume" Type="Real64" Value="-10"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Breathing" ID="{DCFCB619-3F02-42CC-8C60-2AC5A6A836C0}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{1C717DE7-AC3B-4814-8A6D-507CF2E7CFFA}" ShortID="193499549">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16" Value="70"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8C18E2E2-59BB-4FA7-8337-4C4B0D29F41F}" ShortID="94923957">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Volume" Type="Real64" Value="-96"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -902,6 +935,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="2"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -915,7 +949,7 @@
 					<ChildrenList>
 						<Action Name="" ID="{9079CF63-37D1-4775-9DAA-ED88430D154D}" ShortID="651968205">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="ActionType" Type="int16" Value="2"/>
 								<Property Name="Inclusion" Type="bool">
 									<ValueList>
 										<Value>False</Value>
@@ -968,6 +1002,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-10"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -997,11 +1032,21 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="2"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Breathing" ID="{DCFCB619-3F02-42CC-8C60-2AC5A6A836C0}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{611E2410-50A2-4D1A-B1DB-FF08D56570DC}" ShortID="808972386">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Volume" Type="Real64" Value="-10"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_loop" ID="{0CD62666-FCE6-4CC9-9E80-60B00980AC86}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
