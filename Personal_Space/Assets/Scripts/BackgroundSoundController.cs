@@ -95,7 +95,7 @@ public class BackgroundSoundController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("SafeZone"))
         {
-            if (inSafe >= 0)
+            if (inSafe <= 0)
             {
                 AkSoundEngine.PostEvent("fade_to_calm", gameObject);
             }
@@ -103,7 +103,7 @@ public class BackgroundSoundController : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("DangerZone"))
         {
-            if (inDanger >= 0)
+            if (inDanger <= 0)
             {
                 AkSoundEngine.PostEvent("fade_to_stress", gameObject);
             }
