@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour
     public PhonePauseUI PhonePauseUI;
     private float LastHitObj;
 
+    private DrivePost dataPost;
     private bool isPaused;
     public bool isPhoneShow;
 
@@ -46,6 +47,7 @@ public class GameController : MonoBehaviour
             ObjMng = gameObject.GetComponent<ObjectivesManager>();
             ArrInd = gameObject.GetComponent<ArrowIndicator>();
             PhoneUI = GameObject.Find("PopUpPhone").GetComponent<PhoneUI>();
+            dataPost = GameObject.FindGameObjectWithTag("Data").GetComponent<DrivePost>();
             int width = Screen.width;
             int height = Screen.height;
             float ratio = width / 1920;
@@ -198,6 +200,7 @@ public class GameController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.A) || Input.GetKey("joystick button 16") || Input.GetKey("joystick button 0"))
                 {
                     deadDialog.SetActive(false);
+                    dataPost.FailLevel();
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                     ContinueGame();
                 }

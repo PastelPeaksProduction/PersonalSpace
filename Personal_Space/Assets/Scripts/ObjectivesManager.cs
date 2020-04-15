@@ -66,6 +66,7 @@ public class ObjectivesManager : MonoBehaviour
     public AK.Wwise.Event end_of_level_event;
     public bool endLevel = false;
 
+    private DrivePost dataPost;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +74,7 @@ public class ObjectivesManager : MonoBehaviour
         ObjMarkerSingle = ObjMarker.GetComponent<ObjectiveMarker>();
         _reminderTime = reminderTime;
         _phoneUI = GameObject.Find("PopUpPhone").GetComponent<PhoneUI>();
+        dataPost = GameObject.FindGameObjectWithTag("Data").GetComponent<DrivePost>();
 
         Objectives = new List<Objective>();
         //  CHRIS CODE
@@ -181,6 +183,7 @@ public class ObjectivesManager : MonoBehaviour
             _reminderTime = reminderTime;
             // Pass the corresponding description to dialogmng
             GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount].ObjectiveEmoji);
+            dataPost.ObjectiveCompleted("Objective: "+Objectives[objectiveCount].ObjectiveObj.name);
 
             pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[objectiveCount].ObjectiveDes;
             //_phoneUI.SetNotifyMessage(Objectives[objectiveCount].ObjectiveDes.Substring(0, Objectives[objectiveCount].ObjectiveDes.Length - 2));
