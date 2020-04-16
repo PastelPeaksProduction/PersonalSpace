@@ -6,7 +6,7 @@ public class RandomShape : MonoBehaviour
 {
     // Start is called before the first frame update
     public string shapeName;
-    void Awake()
+    void Start()
     {
         GameObject[] shapes = GameObject.FindGameObjectWithTag("ShapeLibrary").GetComponent<RandomShapesLibrary>().shapes;
         int random = Random.Range(0, shapes.Length);
