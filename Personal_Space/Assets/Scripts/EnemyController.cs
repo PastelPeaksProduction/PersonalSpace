@@ -25,14 +25,14 @@ public class EnemyController : MonoBehaviour
         startingPosition = transform.position;
         agent = GetComponent<NavMeshAgent>();
 
-        randColor = Color.black;
+        /*randColor = Color.black;
         while (randColor.r + randColor.g + randColor.b < 1.0f)
         {
             randColor = new Color(Random.value, Random.value, Random.value);
         }
 
         Renderer rend = gameObject.GetComponent<Renderer>();
-        rend.material.color = randColor;
+        rend.material.color = randColor;*/
 
     }
 
