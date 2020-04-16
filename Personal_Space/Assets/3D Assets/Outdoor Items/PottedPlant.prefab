@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8597694795745442150}
   - component: {fileID: 723429594722370384}
   - component: {fileID: 6428512475387625385}
+  - component: {fileID: 8993707157687878305}
   m_Layer: 0
   m_Name: PottedPlant
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4686694726709496693}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -178.67, y: 11.74, z: 7.55}
-  m_LocalScale: {x: 62.012848, y: 62.012848, z: 62.012848}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -57,8 +58,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6271573414225017425, guid: a7bbb8ca2d1ed0a4cba6da7ead50064b, type: 3}
-  - {fileID: 5561349426305759274, guid: a7bbb8ca2d1ed0a4cba6da7ead50064b, type: 3}
+  - {fileID: 2100000, guid: cb9096096cb3efc47aa2bec986caafcd, type: 2}
+  - {fileID: 2100000, guid: d9ad21853c9f44f499425e9eb084d754, type: 2}
   - {fileID: 8748892135801146194, guid: a7bbb8ca2d1ed0a4cba6da7ead50064b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -80,3 +81,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &8993707157687878305
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4686694726709496693}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.4908488
+  m_Height: 2.681849
+  m_Direction: 1
+  m_Center: {x: -0.03934747, y: -0.065041006, z: 0.065948725}
