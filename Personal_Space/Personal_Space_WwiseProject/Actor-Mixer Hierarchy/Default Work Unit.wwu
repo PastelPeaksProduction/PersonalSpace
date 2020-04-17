@@ -225,6 +225,34 @@
 				<Sound Name="PS_MX_loop_stress_layer_110_bpm_v01" ID="{42A75937-1FEB-4B55-9BAC-20FAECF7AB89}" ShortID="1045993621">
 					<PropertyList>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="OutputBusVolume" Type="Real64">
+							<RTPCList>
+								<RTPC Name="" ID="{59ACF48D-85D5-4156-94B1-7F035B2848A4}" ShortID="484244185">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="New Modulator Envelope" ID="{7F8BD4DC-54B9-4001-B1EC-2C5725DE6E07}" WorkUnitID="{DE5E8BF7-2379-4D2C-8DEE-401B8A6EB972}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{26EB64E6-4C80-44B7-A202-67AA11DAFE25}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-100</YPos>
+												<Flags>21</Flags>
+											</Point>
+											<Point>
+												<XPos>1</XPos>
+												<YPos>-0</YPos>
+												<Flags>53</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">

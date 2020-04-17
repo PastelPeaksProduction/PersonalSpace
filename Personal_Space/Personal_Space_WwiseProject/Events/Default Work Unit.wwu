@@ -118,11 +118,7 @@
 					<ChildrenList>
 						<Action Name="" ID="{24AE3385-B627-4FAF-AB29-495C6AF203F3}" ShortID="1061743844">
 							<PropertyList>
-								<Property Name="Inclusion" Type="bool">
-									<ValueList>
-										<Value>False</Value>
-									</ValueList>
-								</Property>
+								<Property Name="ActionType" Type="int16" Value="40"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -157,13 +153,13 @@
 						</Action>
 						<Action Name="" ID="{290DC360-7820-47D0-A52F-A7DFE12EDE6E}" ShortID="253557025">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="ActionType" Type="int16" Value="40"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 								<Property Name="Volume" Type="Real64" Value="-50"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Stress" ID="{9B7E37E1-C645-470C-B7E6-5CB3B6907319}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+									<ObjectRef Name="PS_MX_loop_stress_layer_110_bpm_v01" ID="{42A75937-1FEB-4B55-9BAC-20FAECF7AB89}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -172,13 +168,6 @@
 				<Event Name="fade_to_stress" ID="{8F7C58DB-B5C9-46B9-8327-4C322471DB23}">
 					<ChildrenList>
 						<Action Name="" ID="{35E1F66E-9CFC-4032-8A3D-48680A376576}" ShortID="878764313">
-							<PropertyList>
-								<Property Name="Inclusion" Type="bool">
-									<ValueList>
-										<Value>False</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="PS_MX_loop_stress_layer_110_bpm_v01" ID="{42A75937-1FEB-4B55-9BAC-20FAECF7AB89}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
@@ -190,7 +179,7 @@
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="FadeTime" Type="Real64" Value="1"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-20"/>
+								<Property Name="Volume" Type="Real64" Value="-10"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -202,8 +191,13 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="2"/>
+								<Property Name="Volume" Type="Real64" Value="-8"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -243,14 +237,14 @@
 						</Action>
 						<Action Name="" ID="{3044456B-539C-4EA5-9DAA-251B83704458}" ShortID="207749827">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="ActionType" Type="int16" Value="40"/>
 								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 								<Property Name="Volume" Type="Real64" Value="-50"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Stress" ID="{9B7E37E1-C645-470C-B7E6-5CB3B6907319}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+									<ObjectRef Name="PS_MX_loop_stress_layer_110_bpm_v01" ID="{42A75937-1FEB-4B55-9BAC-20FAECF7AB89}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -671,6 +665,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-5"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -717,7 +712,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-5"/>
+								<Property Name="Volume" Type="Real64" Value="-20"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -728,6 +723,11 @@
 						<Action Name="" ID="{5422348D-316F-4884-B795-2080BADE20C2}" ShortID="348997587">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64" Value="-20"/>
 							</PropertyList>
 							<ReferenceList>
@@ -777,7 +777,6 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="10"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -833,7 +832,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-10"/>
+								<Property Name="Volume" Type="Real64" Value="-15"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -861,6 +860,11 @@
 						<Action Name="" ID="{8C18E2E2-59BB-4FA7-8337-4C4B0D29F41F}" ShortID="94923957">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64" Value="-96"/>
 							</PropertyList>
 							<ReferenceList>
@@ -935,7 +939,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="2"/>
+								<Property Name="Volume" Type="Real64" Value="-5"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -1002,7 +1006,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-10"/>
+								<Property Name="Volume" Type="Real64" Value="-20"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -1032,6 +1036,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-25"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -1042,6 +1047,11 @@
 						<Action Name="" ID="{611E2410-50A2-4D1A-B1DB-FF08D56570DC}" ShortID="808972386">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64" Value="-10"/>
 							</PropertyList>
 							<ReferenceList>
@@ -1139,7 +1149,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="2"/>
+								<Property Name="Volume" Type="Real64" Value="-5"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">

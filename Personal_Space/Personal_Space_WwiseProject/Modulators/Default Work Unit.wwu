@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{DE5E8BF7-2379-4D2C-8DEE-401B8A6EB972}" SchemaVersion="97">
 	<Modulators>
-		<WorkUnit Name="Default Work Unit" ID="{DE5E8BF7-2379-4D2C-8DEE-401B8A6EB972}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{DE5E8BF7-2379-4D2C-8DEE-401B8A6EB972}" PersistMode="Standalone">
+			<ChildrenList>
+				<ModulatorEnvelope Name="New Modulator Envelope" ID="{7F8BD4DC-54B9-4001-B1EC-2C5725DE6E07}" ShortID="111647181">
+					<PropertyList>
+						<Property Name="EnvelopeAttackTime" Type="Real64" Value="0.5"/>
+					</PropertyList>
+				</ModulatorEnvelope>
+			</ChildrenList>
+		</WorkUnit>
 	</Modulators>
 </WwiseDocument>
