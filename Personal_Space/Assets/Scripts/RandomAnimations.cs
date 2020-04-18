@@ -32,10 +32,9 @@ public class RandomAnimations : MonoBehaviour
 
     private IEnumerator PickRandom()
     {
-        Debug.Log("Here");
+
         isAnimating = true;
         int random = Random.Range(0, 3);
-        Debug.Log(this.name + " " + random);
         if(random == 0)
         {
             

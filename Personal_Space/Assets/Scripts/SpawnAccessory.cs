@@ -19,17 +19,18 @@ public class SpawnAccessory : MonoBehaviour
         // facialhair = load random facialhair
         // badge = load random badge
         // tie = load random tie
-        GameObject accStoreObj = GameObject.Find("ShapeBased");
+        AccessoryStore accStore = GameObject.Find("ShapeBased").GetComponent<AccessoryStore>();
         //AccessoryStore accStore = (AccessoryStore) accStoreObj.GetComponent("AccessoryStore");
-        if (accStoreObj != null)
+        if (accStore != null)
         {
-            int eggLen = accStoreObj.GetComponent<AccessoryStore>().egg.Length;
-            int coneUpLen = accStoreObj.GetComponent<AccessoryStore>().coneUpAcc.Length;
-            int coneDownLen = accStoreObj.GetComponent<AccessoryStore>().coneDownAcc.Length;
-            int mikeLen = accStoreObj.GetComponent<AccessoryStore>().mikeAcc.Length;
-            int ikeLen = accStoreObj.GetComponent<AccessoryStore>().ikeAcc.Length;
-            int hunkLen = accStoreObj.GetComponent<AccessoryStore>().hunkAcc.Length;
-            int rectLen = accStoreObj.GetComponent<AccessoryStore>().rectAcc.Length;
+            int eggLen = accStore.egg.Length;
+            int coneUpLen = accStore.coneUpAcc.Length;
+            int coneDownLen = accStore.coneDownAcc.Length;
+            int mikeLen = accStore.mikeAcc.Length;
+            int ikeLen = accStore.ikeAcc.Length;
+            int hunkLen = accStore.hunkAcc.Length;
+            int rectLen = accStore.rectAcc.Length;
+            int tabLen = accStore.tabAcc.Length;
 
 
 
@@ -40,152 +41,283 @@ public class SpawnAccessory : MonoBehaviour
                 {
                     if (coneDownLen != 0)
                     {
-                        int assign = Random.Range(0, accStoreObj.GetComponent<AccessoryStore>().total);
-                        if (assign < accStoreObj.GetComponent<AccessoryStore>().hasAccessory)
+                        int assign = Random.Range(0, accStore.GetComponent<AccessoryStore>().total);
+                        if (assign < accStore.GetComponent<AccessoryStore>().hasAccessory)
                         {
                             int index = Random.Range(0, coneDownLen);
-                            if (accStoreObj.GetComponent<AccessoryStore>().coneDownAcc[index] != null)
+                            if (accStore.GetComponent<AccessoryStore>().coneDownAcc[index] != null)
                             {
-                                Accessory access = accStoreObj.GetComponent<AccessoryStore>().coneDownAcc[index];
-                                Debug.Log("NAME: " + access.obj.name + " POS:" + transform.position + "OFF:" + access.offset + "SUM:" + (transform.position + access.offset));
+                                Accessory access = accStore.GetComponent<AccessoryStore>().coneDownAcc[index];
+
 
                                 var accessory = Instantiate(access.obj, transform.position, transform.rotation);
-                                accessory.transform.parent = this.transform;
+                                Transform[] children = this.transform.parent.gameObject.GetComponentsInChildren<Transform>();
+                                Transform parent = this.transform;
+
+                                foreach (Transform c in children)
+                                {
+                                    if (access.isHat && c.gameObject.tag == "Head")
+                                    {
+                                        parent = c;
+                                        break;
+                                    }
+                                    else if (!access.isHat && c.gameObject.tag == "Waist")
+                                    {
+                                        parent = c;
+                                        break;
+                                    }
+                                }
+
+                                accessory.transform.parent = parent;
+
                                 accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
-                                Debug.Log("NAME: " + access.obj.name + " POS:" + accessory.transform.position);
-
-                            }
-                        }
-                    }
-                }
-                if (shapeName.Contains("ConeUp"))
-                {
-                    if (coneUpLen != 0)
-                    {
-                        int assign = Random.Range(0, accStoreObj.GetComponent<AccessoryStore>().total);
-                        if (assign < accStoreObj.GetComponent<AccessoryStore>().hasAccessory)
-                        {
-                            int index = Random.Range(0, coneUpLen);
-                            if (accStoreObj.GetComponent<AccessoryStore>().coneUpAcc[index] != null)
-                            {
-                                Accessory access = accStoreObj.GetComponent<AccessoryStore>().coneUpAcc[index];
-                                Debug.Log("NAME: " + access.obj.name + " POS:" + transform.position + "OFF:" + access.offset + "SUM:" + (transform.position + access.offset));
-
-                                var accessory = Instantiate(access.obj, transform.position, transform.rotation);
-                                accessory.transform.parent = this.transform;
-                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
-                                Debug.Log("NAME: " + access.obj.name + " POS:" + accessory.transform.position);
-
-                            }
-                        }
-                    }
-                }
-                if (shapeName.Contains("Egg"))
-                {
-                    if (eggLen != 0)
-                    {
-                        int assign = Random.Range(0, accStoreObj.GetComponent<AccessoryStore>().total);
-                        if (assign < accStoreObj.GetComponent<AccessoryStore>().hasAccessory)
-                        {
-                            int index = Random.Range(0, eggLen);
-                            if (accStoreObj.GetComponent<AccessoryStore>().egg[index] != null)
-                            {
-                                Accessory access = accStoreObj.GetComponent<AccessoryStore>().egg[index];
-                                Debug.Log("NAME: "+access.obj.name+" POS:" + transform.position + "OFF:" + access.offset + "SUM:" + (transform.position + access.offset));
-
-                                var accessory = Instantiate(access.obj, transform.position, transform.rotation);
-                                accessory.transform.parent = this.transform;
-                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
-                                Debug.Log("NAME: " + access.obj.name + " POS:" + accessory.transform.position);
                                 
                             }
                         }
                     }
                 }
-                if (shapeName.Contains("Mike"))
+                else if (shapeName.Contains("ConeUp"))
+                {
+                    if (coneUpLen != 0)
+                    {
+                        int assign = Random.Range(0, accStore.GetComponent<AccessoryStore>().total);
+                        if (assign < accStore.GetComponent<AccessoryStore>().hasAccessory)
+                        {
+                            int index = Random.Range(0, coneUpLen);
+                            if (accStore.GetComponent<AccessoryStore>().coneUpAcc[index] != null)
+                            {
+                                Accessory access = accStore.GetComponent<AccessoryStore>().coneUpAcc[index];
+                               
+                                var accessory = Instantiate(access.obj, transform.position, transform.rotation);
+                                Transform[] children = this.transform.parent.gameObject.GetComponentsInChildren<Transform>();
+                                Transform parent = this.transform;
+
+                                foreach (Transform c in children)
+                                {
+                                    if (access.isHat && c.gameObject.tag == "Head")
+                                    {
+                                        parent = c;
+                                    }
+                                    else if (!access.isHat && c.gameObject.tag == "Waist")
+                                    {
+                                        parent = c;
+                                    }
+                                }
+
+                                accessory.transform.parent = parent;
+                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
+                                
+                            }
+                        }
+                    }
+                }
+                else if (shapeName.Contains("Egg"))
+                {
+                    if (eggLen != 0)
+                    {
+                        int assign = Random.Range(0, accStore.GetComponent<AccessoryStore>().total);
+                        if (assign < accStore.GetComponent<AccessoryStore>().hasAccessory)
+                        {
+                            int index = Random.Range(0, eggLen);
+                            if (accStore.GetComponent<AccessoryStore>().egg[index] != null)
+                            {
+                                Accessory access = accStore.GetComponent<AccessoryStore>().egg[index];
+                                
+                                var accessory = Instantiate(access.obj, transform.position, transform.rotation);
+                                Transform[] children = this.transform.parent.gameObject.GetComponentsInChildren<Transform>();
+                                Transform parent = this.transform;
+
+                                foreach (Transform c in children)
+                                {
+                                    if (access.isHat && c.gameObject.tag == "Head")
+                                    {
+                                        parent = c;
+                                    }
+                                    else if (!access.isHat && c.gameObject.tag == "Waist")
+                                    {
+                                        parent = c;
+                                    }
+                                }
+
+                                accessory.transform.parent = parent;
+                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
+                                
+                            }
+                        }
+                    }
+                }
+                else if (shapeName.Contains("Mike"))
                 {
                     if (mikeLen != 0)
                     {
-                        int assign = Random.Range(0, accStoreObj.GetComponent<AccessoryStore>().total);
-                        if (assign < accStoreObj.GetComponent<AccessoryStore>().hasAccessory)
+                        int assign = Random.Range(0, accStore.GetComponent<AccessoryStore>().total);
+                        if (assign < accStore.GetComponent<AccessoryStore>().hasAccessory)
                         {
-                            int index = Random.Range(0, coneDownLen);
-                            if (accStoreObj.GetComponent<AccessoryStore>().mikeAcc[index] != null)
+                            int index = Random.Range(0, mikeLen);
+                            if (accStore.GetComponent<AccessoryStore>().mikeAcc[index] != null)
                             {
-                                Accessory access = accStoreObj.GetComponent<AccessoryStore>().mikeAcc[index];
-                                Debug.Log("NAME: " + access.obj.name + " POS:" + transform.position + "OFF:" + access.offset + "SUM:" + (transform.position + access.offset));
-
+                                Accessory access = accStore.GetComponent<AccessoryStore>().mikeAcc[index];
+                                
                                 var accessory = Instantiate(access.obj, transform.position, transform.rotation);
-                                accessory.transform.parent = this.transform;
-                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
-                                Debug.Log("NAME: " + access.obj.name + " POS:" + accessory.transform.position);
+                                Transform[] children = this.transform.parent.gameObject.GetComponentsInChildren<Transform>();
+                                Transform parent = this.transform;
 
+                                foreach (Transform c in children)
+                                {
+                                    if (access.isHat && c.gameObject.tag == "Head")
+                                    {
+                                        parent = c;
+                                    }
+                                    else if (!access.isHat && c.gameObject.tag == "Waist")
+                                    {
+                                        parent = c;
+                                    }
+                                }
+
+                                accessory.transform.parent = parent;
+                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
+                                
                             }
                         }
                     }
                 }
-                if (shapeName.Contains("Ike"))
+                else if (shapeName.Contains("Ike"))
                 {
                     if (ikeLen != 0)
                     {
-                        int assign = Random.Range(0, accStoreObj.GetComponent<AccessoryStore>().total);
-                        if (assign < accStoreObj.GetComponent<AccessoryStore>().hasAccessory)
+                        int assign = Random.Range(0, accStore.GetComponent<AccessoryStore>().total);
+                        if (assign < accStore.GetComponent<AccessoryStore>().hasAccessory)
                         {
                             int index = Random.Range(0, ikeLen);
-                            if (accStoreObj.GetComponent<AccessoryStore>().ikeAcc[index] != null)
+                            if (accStore.GetComponent<AccessoryStore>().ikeAcc[index] != null)
                             {
-                                Accessory access = accStoreObj.GetComponent<AccessoryStore>().ikeAcc[index];
-                                Debug.Log("NAME: " + access.obj.name + " POS:" + transform.position + "OFF:" + access.offset + "SUM:" + (transform.position + access.offset));
-
+                                Accessory access = accStore.GetComponent<AccessoryStore>().ikeAcc[index];
+                                
                                 var accessory = Instantiate(access.obj, transform.position, transform.rotation);
-                                accessory.transform.parent = this.transform;
-                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
-                                Debug.Log("NAME: " + access.obj.name + " POS:" + accessory.transform.position);
+                                Transform[] children = this.transform.parent.gameObject.GetComponentsInChildren<Transform>();
+                                Transform parent = this.transform;
 
+                                foreach (Transform c in children)
+                                {
+                                    if (access.isHat && c.gameObject.tag == "Head")
+                                    {
+                                        parent = c;
+                                    }
+                                    else if (!access.isHat && c.gameObject.tag == "Waist")
+                                    {
+                                        parent = c;
+                                    }
+                                }
+
+                                accessory.transform.parent = parent;
+                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
+                               
                             }
                         }
                     }
                 }
-                if (shapeName.Contains("Hunk"))
+                else if (shapeName.Contains("Hunk"))
                 {
                     if (hunkLen != 0)
                     {
-                        int assign = Random.Range(0, accStoreObj.GetComponent<AccessoryStore>().total);
-                        if (assign < accStoreObj.GetComponent<AccessoryStore>().hasAccessory)
+                        int assign = Random.Range(0, accStore.GetComponent<AccessoryStore>().total);
+                        if (assign < accStore.GetComponent<AccessoryStore>().hasAccessory)
                         {
                             int index = Random.Range(0, hunkLen);
-                            if (accStoreObj.GetComponent<AccessoryStore>().hunkAcc[index] != null)
+                            if (accStore.GetComponent<AccessoryStore>().hunkAcc[index] != null)
                             {
-                                Accessory access = accStoreObj.GetComponent<AccessoryStore>().hunkAcc[index];
-                                Debug.Log("NAME: " + access.obj.name + " POS:" + transform.position + "OFF:" + access.offset + "SUM:" + (transform.position + access.offset));
+                                Accessory access = accStore.GetComponent<AccessoryStore>().hunkAcc[index];
+
 
                                 var accessory = Instantiate(access.obj, transform.position, transform.rotation);
-                                accessory.transform.parent = this.transform;
-                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
-                                Debug.Log("NAME: " + access.obj.name + " POS:" + accessory.transform.position);
+                                Transform[] children = this.transform.parent.gameObject.GetComponentsInChildren<Transform>();
+                                Transform parent = this.transform;
 
+                                foreach (Transform c in children)
+                                {
+                                    if (access.isHat && c.gameObject.tag == "Head")
+                                    {
+                                        parent = c;
+                                    }
+                                    else if (!access.isHat && c.gameObject.tag == "Waist")
+                                    {
+                                        parent = c;
+                                    }
+                                }
+
+                                accessory.transform.parent = parent;
+                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
+                                
                             }
                         }
                     }
                 }
-                if (shapeName.Contains("Rect"))
+                else if (shapeName.Contains("Rect"))
                 {
                     if (rectLen != 0)
                     {
-                        int assign = Random.Range(0, accStoreObj.GetComponent<AccessoryStore>().total);
-                        if (assign < accStoreObj.GetComponent<AccessoryStore>().hasAccessory)
+                        int assign = Random.Range(0, accStore.GetComponent<AccessoryStore>().total);
+                        if (assign < accStore.GetComponent<AccessoryStore>().hasAccessory)
                         {
                             int index = Random.Range(0, rectLen);
-                            if (accStoreObj.GetComponent<AccessoryStore>().rectAcc[index] != null)
+                            if (accStore.GetComponent<AccessoryStore>().rectAcc[index] != null)
                             {
-                                Accessory access = accStoreObj.GetComponent<AccessoryStore>().rectAcc[index];
-                                Debug.Log("NAME: " + access.obj.name + " POS:" + transform.position + "OFF:" + access.offset + "SUM:" + (transform.position + access.offset));
-
+                                Accessory access = accStore.GetComponent<AccessoryStore>().rectAcc[index];
+                                
                                 var accessory = Instantiate(access.obj, transform.position, transform.rotation);
-                                accessory.transform.parent = this.transform;
-                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
-                                Debug.Log("NAME: " + access.obj.name + " POS:" + accessory.transform.position);
+                                Transform[] children = this.transform.parent.gameObject.GetComponentsInChildren<Transform>();
+                                Transform parent = this.transform;
 
+                                foreach (Transform c in children)
+                                {
+                                    if (access.isHat && c.gameObject.tag == "Head")
+                                    {
+                                        parent = c;
+                                    }
+                                    else if (!access.isHat && c.gameObject.tag == "Waist")
+                                    {
+                                        parent = c;
+                                    }
+                                }
+
+                                accessory.transform.parent = parent;
+                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
+                                
+                            }
+                        }
+                    }
+                }
+                else if (shapeName.Contains("Tab"))
+                {
+                    if (tabLen != 0)
+                    {
+                        int assign = Random.Range(0, accStore.GetComponent<AccessoryStore>().total);
+                        if (assign < accStore.GetComponent<AccessoryStore>().hasAccessory)
+                        {
+                            int index = Random.Range(0, tabLen);
+                            if (accStore.GetComponent<AccessoryStore>().tabAcc[index] != null)
+                            {
+                                Accessory access = accStore.GetComponent<AccessoryStore>().tabAcc[index];
+                                
+                                var accessory = Instantiate(access.obj, transform.position, transform.rotation);
+                                Transform[] children = this.transform.parent.gameObject.GetComponentsInChildren<Transform>();
+                                Transform parent = this.transform;
+
+                                foreach (Transform c in children)
+                                {
+                                    if (access.isHat && c.gameObject.tag == "Head")
+                                    {
+                                        parent = c;
+                                    }
+                                    else if (!access.isHat && c.gameObject.tag == "Waist")
+                                    {
+                                        parent = c;
+                                    }
+                                }
+
+                                accessory.transform.parent = parent;
+                                accessory.transform.localPosition = accessory.transform.localPosition + (access.offset);
+                                
                             }
                         }
                     }

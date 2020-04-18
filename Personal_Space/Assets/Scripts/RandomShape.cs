@@ -15,14 +15,21 @@ public class RandomShape : MonoBehaviour
         shapeName = child.name;
         child.transform.parent = this.transform;
         //child.transform.localScale = new Vector3(1, 1, 1)/ (this.transform.localScale.x);
+        SkinnedMeshRenderer[] grandchildren = child.gameObject.GetComponentsInChildren<SkinnedMeshRenderer>();
         
-        child.GetComponent<MeshRenderer>().material = this.GetComponent<MeshRenderer>().material;
+        foreach(SkinnedMeshRenderer m in grandchildren)
+        {
+            if(m.tag == "Shape")
+            {
+                Debug.Log("Here");
+                Material[] mats = m.materials;
+                m.material = this.GetComponent<MeshRenderer>().material;
+                break;
+            }
+        }
+        
         this.GetComponent<MeshRenderer>().enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
