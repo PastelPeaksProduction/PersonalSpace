@@ -33,9 +33,9 @@ public class SpawnAccessory : MonoBehaviour
 
 
 
-            if (this.transform.parent.GetComponent<RandomShape>())
+            //if (this.transform.parent.GetComponent<RandomShape>())
             {
-                shapeName = this.transform.parent.GetComponent<RandomShape>().shapeName;
+                //shapeName = this.transform.parent.GetComponent<RandomShape>().shapeName;
                 if (shapeName.Contains("ConeDown"))
                 {
                     if (coneDownLen != 0)
