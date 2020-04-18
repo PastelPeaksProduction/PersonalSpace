@@ -44,7 +44,7 @@ public class EnemyTextBubble : MonoBehaviour
                 Emoji = chooser.GetComponent<EmojiLoader>().emojis[rand];
             }
         }
-        offset = new Vector3(-2, 3);
+        offset = new Vector3(-3, 5);
         _reminderTime = ReminderTime;
         Canvas = GameObject.Find("EnemyBubbleCanvas");
         Player = GameObject.Find("Player");
