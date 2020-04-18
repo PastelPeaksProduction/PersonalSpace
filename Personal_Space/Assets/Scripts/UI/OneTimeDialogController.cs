@@ -46,8 +46,6 @@ public class OneTimeDialogController : MonoBehaviour
     private GameController controller;
     private SpecialsManager specialsManager;
 
-    public EventSystem system;
-    public GameObject button;
 
     private int currentObjective = 0;
 
@@ -93,7 +91,6 @@ public class OneTimeDialogController : MonoBehaviour
         controller.PauseGame();
         pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
         OnetimeDialog.SetActive(true);
-        system.SetSelectedGameObject(button.gameObject);
     }
 
     private void Update()

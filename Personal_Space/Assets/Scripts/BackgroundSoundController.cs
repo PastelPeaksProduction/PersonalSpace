@@ -13,11 +13,14 @@ public class BackgroundSoundController : MonoBehaviour
     private PlayerController player;
     private bool heartbeat_slow = true;
     private int stressLevel = 0;
+
+    private ParticleController particles;
     void Start()
     {
         AkSoundEngine.PostEvent("main_loop", gameObject);
         //AkSoundEngine.PostEvent("Heartbeat_S", gameObject);
         player = GameObject.FindGameObjectWithTag ( "Player" ).GetComponent<PlayerController>();
+        particles = GetComponentInChildren<ParticleController>();
     }
 
     void Update()
@@ -100,6 +103,11 @@ public class BackgroundSoundController : MonoBehaviour
                 AkSoundEngine.PostEvent("fade_to_stress", gameObject);
             }
             inDanger += 1;
+            
+            if (!particles.SpecialInEffect() && !particles.Damage.isPlaying)
+            {
+                particles.DamagePlay();
+            }
         }
         else if (other.gameObject.CompareTag("SafeZone"))
         {
@@ -108,6 +116,12 @@ public class BackgroundSoundController : MonoBehaviour
                 AkSoundEngine.PostEvent("fade_to_calm", gameObject);
             }
             inSafe += 1;
+            
+            if (!particles.SpecialInEffect() && !particles.Heal.isPlaying)
+            {
+                
+                particles.HealPlay();
+            }
         }
         
 
@@ -126,6 +140,7 @@ public class BackgroundSoundController : MonoBehaviour
             if (inSafe <= 0)
             {
                 AkSoundEngine.PostEvent("fade_out_calm", gameObject);
+                particles.HealStop();
             }
         }
         else if (other.gameObject.CompareTag("DangerZone"))
@@ -134,12 +149,14 @@ public class BackgroundSoundController : MonoBehaviour
             if (inDanger <= 0)
             {
                 AkSoundEngine.PostEvent("fade_out_stress", gameObject);
+                particles.DamageStop();
             }
         }
         
         if(inDanger <= 0 && inSafe <= 0)
         {
             AkSoundEngine.PostEvent("fade_to_main", gameObject);
+            
         }
     }
 

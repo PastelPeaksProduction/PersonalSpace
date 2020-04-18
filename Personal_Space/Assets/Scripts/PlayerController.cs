@@ -33,16 +33,13 @@ public class PlayerController : MonoBehaviour
         threatLevel = neutralDamage;
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
         onScreen = this.GetComponent<OnScreenJoystickController>();
-        
     }
 
 
     void Update()
     {
         calculateMovement();
-
         checkExit();
-
     }
 
     void FixedUpdate()
@@ -170,6 +167,7 @@ public class PlayerController : MonoBehaviour
         // Sets the threat to the level in that zone
         if (other.CompareTag("DangerZone") || other.CompareTag("SafeZone"))
         {
+            
             threatLevel += other.GetComponent<ZoneScript>().zoneThreat;
             other.GetComponent<ZoneScript>().playerInZone = true;
         }

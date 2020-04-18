@@ -26,11 +26,13 @@ public class SpecialsManager : MonoBehaviour
     public float shoutUpwardsForce = 10f;
     public bool isEnabled = true;
 
+    private ParticleController particles;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        particles = GetComponentInChildren<ParticleController>();
         playerCntrl = this.GetComponent<PlayerController>();
         gameController = this.GetComponent<GameController>();
         normalSpeed = playerCntrl.moveSpeed;
@@ -105,6 +107,8 @@ public class SpecialsManager : MonoBehaviour
         Debug.Log("SHOUT ACTIVE");
         if (shoutAvailable)
         {
+            particles.StopAll();
+            particles.SpacePlay();
             StartCoroutine(numShout());
         }
     }
@@ -114,6 +118,8 @@ public class SpecialsManager : MonoBehaviour
         Debug.Log("SPRINT ACTIVE");
         if (sprintAvailable)
         {
+            particles.StopAll();
+            particles.SprintPlay();
             StartCoroutine(numSprint());
         }
     }
@@ -122,6 +128,8 @@ public class SpecialsManager : MonoBehaviour
     {
         if (calmAvailable)
         {
+            particles.StopAll();
+            particles.CalmPlay();
             playerCntrl.useHealthPack();
             calmAvailable = false;
         }

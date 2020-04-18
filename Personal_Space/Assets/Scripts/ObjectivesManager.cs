@@ -66,10 +66,13 @@ public class ObjectivesManager : MonoBehaviour
     public AK.Wwise.Event end_of_level_event;
     public bool endLevel = false;
 
+    private ParticleController particles;
+
     private DrivePost dataPost;
     // Start is called before the first frame update
     void Start()
     {
+        particles = GameObject.FindGameObjectWithTag("ParticleController").GetComponent<ParticleController>();
         endLevel = false;
         ObjMarkerSingle = ObjMarker.GetComponent<ObjectiveMarker>();
         _reminderTime = reminderTime;
@@ -179,6 +182,7 @@ public class ObjectivesManager : MonoBehaviour
 
         if (objectiveCount < Objectives.Count &&  Objectives[objectiveCount].ObjectiveObj == obj)
         {
+            particles.ObjectivePlay();
             _sinceLastObj = 0;
             _reminderTime = reminderTime;
             // Pass the corresponding description to dialogmng
