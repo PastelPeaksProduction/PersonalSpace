@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using SiliconDroid;
+using XInputDotNetPure;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class PlayerController : MonoBehaviour
 
     private GameObject mainCamera;
 
+    private PlayerIndex playerIndex = 0;
+    GamePadState state;
+    GamePadState prevState;
+    public float vibrationIntensity = 1f;
+
     void Start()
     {
         rigidBody = this.GetComponent<Rigidbody>();
@@ -46,6 +52,7 @@ public class PlayerController : MonoBehaviour
     {
         updateMovement();
         updateHealth();
+        updateRumble();
 
     }
 
@@ -137,6 +144,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            GamePad.SetVibration(playerIndex, 0f, 0f);
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
 #else
@@ -158,6 +166,22 @@ public class PlayerController : MonoBehaviour
         if (health >= 100)
         {
             health = 100;
+        }
+    }
+
+    private void updateRumble()
+    {
+        if(threatLevel < 0)
+        {
+            // Turn on vibration
+            GamePad.SetVibration(playerIndex, vibrationIntensity, vibrationIntensity);
+            // Vibration for andriod but I don't have a way to test it
+            //Handheld.Vibrate();
+        }
+        else
+        {
+            // Turn off vibration
+            GamePad.SetVibration(playerIndex, 0f, 0f);
         }
     }
 
