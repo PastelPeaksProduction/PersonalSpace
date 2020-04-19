@@ -27,6 +27,7 @@ public class PhoneUI : MonoBehaviour
     private bool _pauseMenu;
     private Animation _animation;
     private bool _phoneUp = false;
+    
 
     private void Awake()
     {
@@ -44,8 +45,23 @@ public class PhoneUI : MonoBehaviour
     {
         if (_notifyMessage && !_pauseMenu)
         {
-            NotifyMessage();
+            if (!_phoneUp)
+            {
+                ShowAndNotify();
+            }
+            else
+            {
+                NotifyMessage();
+            }
+
+            
         }
+    }
+
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2);
+        
     }
     public void TogglePhone()
     {
@@ -59,23 +75,32 @@ public class PhoneUI : MonoBehaviour
         }
         _phoneUp = !_phoneUp;
     }
-
+    public void ShowAndNotify()
+    {
+        _animation.Play("Phone_New_Show");
+        _phoneUp = true;
+        _notifyMessage = false;
+    }
     public void ShowMessage()
     {
         _animation.Play("Phone_Show");
-        _notifyMessage = false;
-        notificationImage.SetActive(false);
+        //_notifyMessage = false;
+        //notificationImage.SetActive(false);
+        _phoneUp = true;
     }
 
     public void HideMessage()
     {
-        _animation.Play("Phone_Hide");
+       _animation.Play("Phone_Hide");
+        _phoneUp = false;
         
     }
 
     private void NotifyMessage()
     {
         _animation.Play("Phone_New_Message");
+        _notifyMessage = false;
+        Debug.Log("Vibration");
     }
 
     public void SetNotifyMessage(string Msg)

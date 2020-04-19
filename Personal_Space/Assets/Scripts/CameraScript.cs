@@ -76,7 +76,7 @@ public class CameraScript : MonoBehaviour
                     float vJoy = onScreen.Rotation();
                     offset = Quaternion.AngleAxis(vJoy * speed, Vector3.up) * offset;
                 }
-                else
+                else if(Input.GetMouseButton(0))
                 {
                     offset = Quaternion.AngleAxis(Input.GetAxisRaw("Mouse X") * speed, Vector3.up) * offset;
                 }
