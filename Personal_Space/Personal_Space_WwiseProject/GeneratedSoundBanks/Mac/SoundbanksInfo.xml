@@ -165,14 +165,7 @@
 			<ShortName>fade_to_stress</ShortName>
 			<Path>fade_to_stress.bnk</Path>
 			<IncludedEvents>
-				<Event Id="2453086244" Name="fade_to_stress" ObjectPath="\Events\Default Work Unit\fade_to_stress" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="957214565" Language="SFX">
-							<ShortName>PS_MX_loop_stress_layer_110_bpm_v01.wav</ShortName>
-							<Path>SFX\PS_MX_loop_stress_layer_110_bpm_v01_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
+				<Event Id="2453086244" Name="fade_to_stress" ObjectPath="\Events\Default Work Unit\fade_to_stress" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 		</SoundBank>
 		<SoundBank Id="2695808710" Language="SFX">
@@ -188,7 +181,14 @@
 			<ShortName>not_moving</ShortName>
 			<Path>not_moving.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3053284133" Name="not_moving" ObjectPath="\Events\Default Work Unit\not_moving" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3053284133" Name="not_moving" ObjectPath="\Events\Default Work Unit\not_moving" DurationType="OneShot" DurationMin="4.909104" DurationMax="4.909104">
+					<IncludedMemoryFiles>
+						<File Id="871301909" Language="SFX">
+							<ShortName>PS_MX_stinger_collectible_110_bpm_v01.wav</ShortName>
+							<Path>SFX\PS_MX_stinger_collectible_110_bpm_v01_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 			</IncludedEvents>
 		</SoundBank>
 		<SoundBank Id="3251299009" Language="SFX">

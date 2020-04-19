@@ -18,8 +18,7 @@ public class PhoneUI : MonoBehaviour
     public GameObject MedBar;
     public GameObject LgBar;
     public GameObject ResBar;
-    public GameObject newMessage;
-    public GameObject notificationImage;
+    public GameObject contents;
 
     private GameController GC;
     private bool _showMessage;
@@ -27,11 +26,15 @@ public class PhoneUI : MonoBehaviour
     private bool _pauseMenu;
     private Animation _animation;
     private bool _phoneUp = false;
+
+    private BackgroundSoundController sound;
     
 
     private void Awake()
     {
+
         GC = GameObject.Find("Player").GetComponent<GameController>();
+        sound = GC.gameObject.GetComponent<BackgroundSoundController>();
     }
     // Start is called before the first frame update
     void Start()
@@ -108,7 +111,6 @@ public class PhoneUI : MonoBehaviour
         GC.isPhoneShow = false;
         _notifyMessage = !_notifyMessage;
         ProccessMsg(Msg);
-        notificationImage.SetActive(true);
     }
 
     private void ProccessMsg(string msg)
@@ -130,7 +132,7 @@ public class PhoneUI : MonoBehaviour
             LgBar.SetActive(true);
             LgBar.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = msg;
         }*/
-        newMessage.GetComponent<PhoneMessages>().NewMessage(msg);
+        contents.GetComponent<PhoneMessages>().NewMessage(msg);
     }
 
     private void InitMsgBars()

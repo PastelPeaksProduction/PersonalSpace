@@ -30,14 +30,14 @@ public class BackgroundSoundController : MonoBehaviour
             endLevel = GetComponentInParent<ObjectivesManager>().endLevel;
             isMoving = GetComponentInParent<PlayerController>().isMoving;
             HealthSound();
-            if (isMoving || endLevel )
+            /*if (isMoving || endLevel )
             {
                 AkSoundEngine.PostEvent("is_moving", gameObject);
             }
             else
             {
                 AkSoundEngine.PostEvent("not_moving", gameObject);
-            }
+            }*/
         }
     }
     private void HealthSound()
@@ -159,5 +159,7 @@ public class BackgroundSoundController : MonoBehaviour
             
         }
     }
+
+   
 
 }
