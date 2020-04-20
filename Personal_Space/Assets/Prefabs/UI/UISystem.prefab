@@ -3009,7 +3009,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -180.60205, y: -70.121956, z: -200.26486, w: 7.044337}
+  m_margin: {x: 10.892566, y: -70.121956, z: 11.246974, w: 7.044337}
   m_textInfo:
     textComponent: {fileID: 7144512216525998074}
     characterCount: 13
@@ -6230,6 +6230,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 380476104786696057}
     m_Modifications:
+    - target: {fileID: 946525553088341357, guid: 7b48407f65da54b4f9b2b7682be08e7d,
+        type: 3}
+      propertyPath: m_Name
+      value: MovementJoystick
+      objectReference: {fileID: 0}
     - target: {fileID: 946525553088341356, guid: 7b48407f65da54b4f9b2b7682be08e7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6334,11 +6339,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 946525553088341357, guid: 7b48407f65da54b4f9b2b7682be08e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: MovementJoystick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b48407f65da54b4f9b2b7682be08e7d, type: 3}
@@ -6484,8 +6484,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2100330948, guid: bbbde18c07260574a9f92c5f0f0509be, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -134.89598
+      value: -134.89609
       objectReference: {fileID: 0}
+    - target: {fileID: 5400474766787593256, guid: bbbde18c07260574a9f92c5f0f0509be,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c63a7d711ba2a41459240afdc225d0dd,
+        type: 2}
+    - target: {fileID: 5400474766787593256, guid: bbbde18c07260574a9f92c5f0f0509be,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5906924883130230731, guid: c63a7d711ba2a41459240afdc225d0dd,
+        type: 2}
     - target: {fileID: 1891235742, guid: bbbde18c07260574a9f92c5f0f0509be, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6500,24 +6512,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2063921952, guid: bbbde18c07260574a9f92c5f0f0509be, type: 3}
       propertyPath: m_Value
-      value: 0.9999999
+      value: 1.0000004
       objectReference: {fileID: 0}
     - target: {fileID: 2063921952, guid: bbbde18c07260574a9f92c5f0f0509be, type: 3}
       propertyPath: m_Size
-      value: 0.24423778
+      value: 0.24420363
       objectReference: {fileID: 0}
-    - target: {fileID: 5400474766787593256, guid: bbbde18c07260574a9f92c5f0f0509be,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: c63a7d711ba2a41459240afdc225d0dd,
-        type: 2}
-    - target: {fileID: 5400474766787593256, guid: bbbde18c07260574a9f92c5f0f0509be,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 5906924883130230731, guid: c63a7d711ba2a41459240afdc225d0dd,
-        type: 2}
     - target: {fileID: 6232210087928432219, guid: bbbde18c07260574a9f92c5f0f0509be,
         type: 3}
       propertyPath: m_fontAsset
@@ -6833,6 +6833,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 380476104786696057}
     m_Modifications:
+    - target: {fileID: 1189487719788330500, guid: 025fd93de1e48004dacab739e6746771,
+        type: 3}
+      propertyPath: m_Name
+      value: Indicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1189487719788330500, guid: 025fd93de1e48004dacab739e6746771,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6885406002941075535, guid: 025fd93de1e48004dacab739e6746771,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6937,16 +6947,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1189487719788330500, guid: 025fd93de1e48004dacab739e6746771,
-        type: 3}
-      propertyPath: m_Name
-      value: Indicator
-      objectReference: {fileID: 0}
-    - target: {fileID: 1189487719788330500, guid: 025fd93de1e48004dacab739e6746771,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 025fd93de1e48004dacab739e6746771, type: 3}

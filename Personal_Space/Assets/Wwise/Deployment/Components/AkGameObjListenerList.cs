@@ -44,7 +44,8 @@ public class AkGameObjListenerList : AkAudioListener.BaseListenerList
 			AkSoundEngine.SetListeners(akGameObj.gameObject, null, 0);
 
 		for (var ii = 0; ii < initialListenerList.Count; ++ii)
-			initialListenerList[ii].StartListeningToEmitter(akGameObj);
+			if(initialListenerList[ii] != null) //Added by TB 4-20-2020
+				initialListenerList[ii].StartListeningToEmitter(akGameObj);
 	}
 
 	public override bool Add(AkAudioListener listener)

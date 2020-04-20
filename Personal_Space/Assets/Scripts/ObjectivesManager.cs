@@ -261,10 +261,10 @@ public class ObjectivesManager : MonoBehaviour
                 {
                     obj.GetComponent<ObjectiveStateChange>().FireEvent();
                 }
-                //end_of_level_event.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, GetComponent<GameController>().AdvanceLevel);
+                end_of_level_event.Post(gameObject, (uint)(AkCallbackType.AK_EndOfEvent), GetComponent<GameController>().AdvanceLevel);
                 //GetComponent<GameController>().AdvanceLevel();
                 GameObject.FindGameObjectWithTag("Player").GetComponent<BackgroundSoundController>().EndOfLevel();
-                GameObject.FindGameObjectWithTag("Player").GetComponent<GameController>().AdvanceLevel();
+                //GameObject.FindGameObjectWithTag("Player").GetComponent<GameController>().AdvanceLevel();
                 
 
             }
