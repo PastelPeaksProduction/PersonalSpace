@@ -29,8 +29,8 @@ public class PlayerController : MonoBehaviour
     private GameObject mainCamera;
 
     private PlayerIndex playerIndex = 0;
-    GamePadState state;
-    GamePadState prevState;
+    //GamePadState state;
+    //GamePadState prevState;
     public float vibrationIntensity = 1f;
 
     void Start()
