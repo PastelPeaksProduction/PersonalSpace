@@ -6,4 +6,5 @@ public class NewMessage : MonoBehaviour
 {
     public TextMeshProUGUI messageText;
     public RectTransform messageBox;
+    public TextMeshProUGUI messageName;
 }

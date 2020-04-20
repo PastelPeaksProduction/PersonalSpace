@@ -489,12 +489,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 20
-    m_Right: 20
+    m_Left: -5
+    m_Right: 0
     m_Top: 5
-    m_Bottom: 10
+    m_Bottom: 5
   m_ChildAlignment: 7
-  m_Spacing: 5
+  m_Spacing: -2
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -529,7 +529,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newMessagePrefab: {fileID: 265648970797395643, guid: c6bccaeb8e089b74cb121e71b7a4c800,
     type: 3}
-  responsePrefab: {fileID: 265648970797395643, guid: e1091635ff6bd21468d9c63f1bfa2204,
+  responsePrefab: {fileID: 265648970797395643, guid: 2ca03a87f910ff04682f1132e52858b1,
+    type: 3}
+  emojiMessagePrefab: {fileID: 7282915923848768226, guid: e339fb17da78bd846a690aa542516336,
     type: 3}
   contents: {fileID: 2100330947}
   spacer: {fileID: 5374901408024368444, guid: ef158cae00db01f48b267a745aaeea9e, type: 3}
@@ -1379,7 +1381,6 @@ MonoBehaviour:
   LgBar: {fileID: 7143737159723419098}
   ResBar: {fileID: 8642215187065801164}
   contents: {fileID: 2100330947}
-  notificationImage: {fileID: 0}
 --- !u!111 &8642215187325718571
 Animation:
   m_ObjectHideFlags: 0
@@ -1969,6 +1970,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8642215188272187279}
     m_Modifications:
+    - target: {fileID: 1572668270312530854, guid: f5d91c5a42aae834a9fafe5f77291bb6,
+        type: 3}
+      propertyPath: m_Name
+      value: TalkBar_Sm
+      objectReference: {fileID: 0}
     - target: {fileID: 1572668270312530855, guid: f5d91c5a42aae834a9fafe5f77291bb6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2073,11 +2079,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1572668270312530854, guid: f5d91c5a42aae834a9fafe5f77291bb6,
-        type: 3}
-      propertyPath: m_Name
-      value: TalkBar_Sm
       objectReference: {fileID: 0}
     - target: {fileID: 1572668271377162696, guid: f5d91c5a42aae834a9fafe5f77291bb6,
         type: 3}

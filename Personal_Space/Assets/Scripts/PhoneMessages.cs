@@ -8,36 +8,48 @@ public class PhoneMessages : MonoBehaviour
 {
     public GameObject newMessagePrefab;
     public GameObject responsePrefab;
+    public GameObject emojiMessagePrefab;
     public GameObject contents;
     public GameObject spacer;
+
     
 
     private void Start()
     {
-        
+        contents.GetComponent<RectTransform>().position = new Vector3(contents.GetComponent<RectTransform>().position.x, 0, 0);
     }
 
-    public void NewMessage(string message)
+    public void EmojiMessage(Sprite emoji)
+    {
+        //GameObject newMessage = Instantiate(emojiMessagePrefab, contents.transform);
+        //newMessage.GetComponent<EmojiMessage>().emoji.sprite = emoji;
+    }
+    public void NewMessage(Message message)
     {
         GameObject newMessage;
-        /*if (isReposnse)
+        if (message.isResponse)
         {
-            newMessage = Instantiate(responsePrefab);
+            newMessage = Instantiate(responsePrefab, contents.transform);
         }
         else
         {
-            newMessage = Instantiate(newMessagePrefab);
-        }*/
+            newMessage = Instantiate(newMessagePrefab, contents.transform);
+        }
 
-        newMessage = Instantiate(responsePrefab);
+        //newMessage = Instantiate(responsePrefab);
 
+        //GameObject spacerObj = Instantiate(spacer, contents.transform);
+        //spacerObj.GetComponent<RectTransform>().sizeDelta = new Vector2(80, 10);
+        //spacerObj.transform.localScale = new Vector3(1, 1, 1);
 
         RectTransform messageBox = newMessage.GetComponent<NewMessage>().messageBox;
         TextMeshProUGUI messageText = newMessage.GetComponent<NewMessage>().messageText;
+        TextMeshProUGUI messageName = newMessage.GetComponent<NewMessage>().messageName;
+        messageName.text = message.Name;
 
-        if(message.Length > 35)
+        if (message.messageText.Length > 35)
         {
-            List<string> lines = ComposeMessage(message);
+            List<string> lines = ComposeMessage(message.messageText);
             string composedMessage = "";
             foreach (string line in lines)
             {
@@ -45,7 +57,8 @@ public class PhoneMessages : MonoBehaviour
             }
 
             messageText.text = composedMessage;
-            messageBox.sizeDelta = new Vector2(2000, lines.Count * 200 + 200);
+            messageBox.sizeDelta = new Vector2(1650, lines.Count * 200 + 25);
+            newMessage.GetComponent<RectTransform>().sizeDelta = new Vector2(75, 20 + (lines.Count * 200 - 100) / 100);
 
             //Vector3 scale = messageBox.localScale;
 
@@ -61,7 +74,7 @@ public class PhoneMessages : MonoBehaviour
         else
         {
             //resize box horizontal size
-            messageText.text = message;
+            messageText.text = message.messageText;
             /* Vector3 scale = messageBox.localScale;
              scale.x = 0.03f + 0.001f * message.Length;
              messageBox.localScale = scale;
@@ -70,14 +83,13 @@ public class PhoneMessages : MonoBehaviour
              textScale.x = 3 / ((scale.x / 0.0414f) - 0.3f) ;
              messageText.GetComponent<RectTransform>().localScale = textScale;
              */
-            messageBox.sizeDelta = new Vector2(55*message.Length+100, 300);
+            int calc = Mathf.Min(1650, 60 * message.messageText.Length +100);
+            messageBox.sizeDelta = new Vector2(calc,250);
         }
-        newMessage.transform.parent = contents.transform;
-        newMessage.transform.localScale = new Vector3(1, 1, 1);
+        //newMessage.transform.parent = contents.transform;
+        //newMessage.transform.localScale = new Vector3(1, 1, 1);
 
-        GameObject spacerObj = Instantiate(spacer, contents.transform);
-        spacerObj.GetComponent<RectTransform>().sizeDelta = new Vector2(80, 10);
-        spacerObj.transform.localScale = new Vector3(1, 1, 1);
+       
         
         
 

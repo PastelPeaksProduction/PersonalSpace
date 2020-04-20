@@ -168,6 +168,13 @@
 				<Event Name="fade_to_stress" ID="{8F7C58DB-B5C9-46B9-8327-4C322471DB23}">
 					<ChildrenList>
 						<Action Name="" ID="{35E1F66E-9CFC-4032-8A3D-48680A376576}" ShortID="878764313">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="PS_MX_loop_stress_layer_110_bpm_v01" ID="{42A75937-1FEB-4B55-9BAC-20FAECF7AB89}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
@@ -190,14 +197,10 @@
 						<Action Name="" ID="{5019D7B3-5EDC-47D5-9AFC-0F747FF79ADE}" ShortID="369327818">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
-								<Property Name="FadeTime" Type="Real64" Value="1"/>
-								<Property Name="Inclusion" Type="bool">
-									<ValueList>
-										<Value>False</Value>
-									</ValueList>
-								</Property>
+								<Property Name="FadeInCurve" Type="int16" Value="6"/>
+								<Property Name="FadeTime" Type="Real64" Value="4"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-8"/>
+								<Property Name="Volume" Type="Real64" Value="3"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -552,6 +555,13 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Stress" ID="{9B7E37E1-C645-470C-B7E6-5CB3B6907319}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A57F3CEB-F54B-4BF7-9D33-6D3F57743812}" ShortID="197029680">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_MX_stinger_collectible_110_bpm_v01" ID="{B5A37C27-7812-445A-9A06-6A5A6F0515C6}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -1159,6 +1169,17 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Breathing" ID="{DCFCB619-3F02-42CC-8C60-2AC5A6A836C0}" WorkUnitID="{4556260A-4E3D-4184-9027-D0B7035907FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="new_message" ID="{73E08C40-76BF-4535-911C-301AD5BD1208}">
+					<ChildrenList>
+						<Action Name="" ID="{9DBD2B4D-6345-4DB8-9820-7B88157F8C83}" ShortID="306416472">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PS_MX_stinger_collectible_110_bpm_v01" ID="{B5A37C27-7812-445A-9A06-6A5A6F0515C6}" WorkUnitID="{0CB64137-43E9-47DF-A458-761846A3B038}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

@@ -40,7 +40,6 @@ public class PhoneUI : MonoBehaviour
     void Start()
     {
         _animation = GetComponent<Animation>();
-        Debug.Log("Animation found");
     }
 
     // Update is called once per frame
@@ -106,11 +105,17 @@ public class PhoneUI : MonoBehaviour
         Debug.Log("Vibration");
     }
 
-    public void SetNotifyMessage(string Msg)
+    public void SetNotifyMessage(Message message)
     {
         GC.isPhoneShow = false;
         _notifyMessage = !_notifyMessage;
-        ProccessMsg(Msg);
+        //ProccessMsg(Msg);
+        contents.GetComponent<PhoneMessages>().NewMessage(message);
+    }
+
+    public void SendEmojiMessage(Sprite emoji)
+    {
+        contents.GetComponent<PhoneMessages>().EmojiMessage(emoji);
     }
 
     private void ProccessMsg(string msg)
@@ -132,7 +137,7 @@ public class PhoneUI : MonoBehaviour
             LgBar.SetActive(true);
             LgBar.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = msg;
         }*/
-        contents.GetComponent<PhoneMessages>().NewMessage(msg);
+        //contents.GetComponent<PhoneMessages>().NewMessage(msg);
     }
 
     private void InitMsgBars()

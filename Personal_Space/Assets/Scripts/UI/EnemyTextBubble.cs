@@ -39,7 +39,7 @@ public class EnemyTextBubble : MonoBehaviour
             GameObject chooser = GameObject.FindGameObjectWithTag("EmojiChooser");
             if(chooser != null)
             {
-                Debug.Log("FOUND CHOOSER");
+
                 int rand = Random.Range(0, chooser.GetComponent<EmojiLoader>().emojis.Length);
                 Emoji = chooser.GetComponent<EmojiLoader>().emojis[rand];
             }

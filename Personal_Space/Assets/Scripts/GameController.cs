@@ -78,12 +78,12 @@ public class GameController : MonoBehaviour
         {
             if (!isPhoneShow)
             {
-                PhoneUI.ShowMessage();
+                //PhoneUI.ShowMessage();
                 isPhoneShow = true;
             }
             else
             {
-                PhoneUI.HideMessage();
+                //PhoneUI.HideMessage();
                 isPhoneShow = false;
             }
         }
@@ -225,7 +225,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void AdvanceLevel(object in_cookie, AkCallbackType in_type, object in_info)
+    public void AdvanceLevel()
     {
         // GetComponent<ObjectivesManager>().endLevel = false;
         

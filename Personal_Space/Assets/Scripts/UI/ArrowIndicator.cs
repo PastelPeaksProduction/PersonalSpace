@@ -52,20 +52,20 @@ public class ArrowIndicator : MonoBehaviour
             indicator.transform.LookAt(target);
             indicator.transform.position = obj_man.gameObject.transform.position + new Vector3(0, -4.5f, 0);
         }
-        if (count_down_bool)
-        {
-            StartCountDown();
-        }
+        //if (count_down_bool)
+        //{
+            //StartCountDown();
+        //}
     }
 
     public void SetShowArrow()
     {
         show_arrow = true;
         indicator.SetActive(true);
-        count_down_bool = true;
+        //count_down_bool = true;
     }
 
-    private void StartCountDown()
+    /*private void StartCountDown()
     {
         if (count_down >= 0)
         {
@@ -77,7 +77,7 @@ public class ArrowIndicator : MonoBehaviour
             count_down = 10f;
             count_down_bool = false;
         }
-    }
+    }*/
 
     public void SetHideArrow()
     {

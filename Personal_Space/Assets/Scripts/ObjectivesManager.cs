@@ -6,8 +6,29 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
+[System.Serializable]
+public class Message
+{
+    public string Name;
+    public string messageText;
+    public bool isResponse;
+}
+
+[System.Serializable]
+public class NewObjective
+{
+    public GameObject objectiveObject;
+    public Sprite emoji;
+    public Message[] messages;
+}
+
+
 public class ObjectivesManager : MonoBehaviour
 {
+
+    public NewObjective[] Objectives;
 
     /* Object to trigger Objective */
     public string gameStartObjectiveDescription;
@@ -57,8 +78,8 @@ public class ObjectivesManager : MonoBehaviour
     public float reminderTime;
     public GameObject ObjMarker;
 
-    private ObjectiveMarker ObjMarkerSingle;
-    private List<Objective> Objectives;
+    //private ObjectiveMarker ObjMarkerSingle;
+    //private List<Objective> Objectives;
     private int objectiveCount = 0;
     private float _reminderTime;
     private float _sinceLastObj = 0;
@@ -74,12 +95,20 @@ public class ObjectivesManager : MonoBehaviour
     {
         particles = GameObject.FindGameObjectWithTag("ParticleController").GetComponent<ParticleController>();
         endLevel = false;
-        ObjMarkerSingle = ObjMarker.GetComponent<ObjectiveMarker>();
+        //ObjMarkerSingle = ObjMarker.GetComponent<ObjectiveMarker>();
         _reminderTime = reminderTime;
         _phoneUI = GameObject.Find("PopUpPhone").GetComponent<PhoneUI>();
         dataPost = GameObject.FindGameObjectWithTag("Data").GetComponent<DrivePost>();
 
-        Objectives = new List<Objective>();
+        for (int i = 1; i < Objectives.Length; i++)
+        {
+            if (Objectives[i].objectiveObject != null)
+            {
+                Objectives[i].objectiveObject.SetActive(false);
+            }
+        }
+
+        /*Objectives = new List<Objective>();
         //  CHRIS CODE
         //  Set each objective as false when game initializes, and set each active as the previous one is triggered
         //  Added to intantiating of each objective as well as one line down in TRIGGERED
@@ -139,13 +168,17 @@ public class ObjectivesManager : MonoBehaviour
         {
             Objectives.Add(new Objective(tenthObject_10, tenthDescription, tenthEmoji));
             tenthObject_10.SetActive(false); //
-        }
+        }*/
 
         StartCoroutine(GameStartDelay(3));
-        pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
-        ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);
-
-        _phoneUI.SetNotifyMessage(gameStartObjectiveDescription);
+        //pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
+        //ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);
+        _phoneUI.SendEmojiMessage(Objectives[0].emoji);
+        foreach (Message m in Objectives[0].messages)
+        {
+            _phoneUI.SetNotifyMessage(m);
+        }
+        objectiveCount++;
     }
     IEnumerator GameStartDelay(int sec)
     {
@@ -161,16 +194,16 @@ public class ObjectivesManager : MonoBehaviour
     private void Reminder()
     {
         _reminderTime -= Time.deltaTime;
-        if(_reminderTime < 0)
+        if (_reminderTime < 0)
         {
             _reminderTime = reminderTime;
-            if(objectiveCount == 0)
+            if (objectiveCount == 0)
             {
                 GetComponent<TextBubble>().SpawnBubble(gameStartEmoji);
             }
             else
             {
-                GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount - 1].ObjectiveEmoji);               
+                GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount - 1].emoji);
             }
 
         }
@@ -178,44 +211,68 @@ public class ObjectivesManager : MonoBehaviour
     // public function when player triggers objective tag
     public void OnObjectiveTriggered(GameObject obj)
     {
-        Debug.Log("OBJ TRIGGERED");
+        Debug.Log("OBJ TRIGGERED: "+objectiveCount+" LEN: "+Objectives.Length);
 
-        if (objectiveCount < Objectives.Count &&  Objectives[objectiveCount].ObjectiveObj == obj)
+        if (objectiveCount <= Objectives.Length  && Objectives[objectiveCount - 1].objectiveObject == obj)
         {
             particles.ObjectivePlay();
             _sinceLastObj = 0;
             _reminderTime = reminderTime;
             // Pass the corresponding description to dialogmng
-            GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount].ObjectiveEmoji);
-            dataPost.ObjectiveCompleted("Objective: "+Objectives[objectiveCount].ObjectiveObj.name);
+            
+            dataPost.ObjectiveCompleted("Objective: " + Objectives[objectiveCount-1].objectiveObject.name);
 
-            pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[objectiveCount].ObjectiveDes;
-            //_phoneUI.SetNotifyMessage(Objectives[objectiveCount].ObjectiveDes.Substring(0, Objectives[objectiveCount].ObjectiveDes.Length - 2));
-            _phoneUI.SetNotifyMessage(Objectives[objectiveCount].ObjectiveDes);
-            if (++objectiveCount < Objectives.Count)
+            
+            //_phoneUI.SetNotifyMessage(Objectives[objectiveCount].ObjectiveDes);
+            if (objectiveCount < Objectives.Length)
             {
-                ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);
-                Objectives[objectiveCount].ObjectiveObj.SetActive(true);    //
+                GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount].emoji);
+                _phoneUI.SendEmojiMessage(Objectives[objectiveCount].emoji);
+                //pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[objectiveCount-1].messages[0].messageText;
+                //_phoneUI.SetNotifyMessage(Objectives[objectiveCount].ObjectiveDes.Substring(0, Objectives[objectiveCount].ObjectiveDes.Length - 2));
+                foreach (Message m in Objectives[objectiveCount].messages)
+                {
+                    _phoneUI.SetNotifyMessage(m);
+                }
+                //ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);
+                if (Objectives[objectiveCount].objectiveObject != null)
+                {
+                    Objectives[objectiveCount].objectiveObject.SetActive(true);
+                }
+                
+                //Objectives[objectiveCount-1].objectiveObject.SetActive(false);
+                //
                 Debug.Log("OBJECT NAME: " + obj.name);
                 if (obj.GetComponent<ObjectiveStateChange>())
                 {
                     obj.GetComponent<ObjectiveStateChange>().FireEvent();
                 }
+                objectiveCount++;
+
             }
-            else
+            else if(objectiveCount == Objectives.Length)
             {
                 endLevel = true;
-                end_of_level_event.Post(gameObject,(uint)AkCallbackType.AK_EndOfEvent,GetComponent<GameController>().AdvanceLevel);
-                //GetComponent<GameController>().AdvanceLevel();
+                Debug.Log("Ending Level");
                 Debug.Log("OBJECT NAME: " + obj.name);
+                
+                //Objectives[objectiveCount - 1].objectiveObject.SetActive(false);
                 if (obj.GetComponent<ObjectiveStateChange>())
                 {
                     obj.GetComponent<ObjectiveStateChange>().FireEvent();
                 }
+                //end_of_level_event.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, GetComponent<GameController>().AdvanceLevel);
+                //GetComponent<GameController>().AdvanceLevel();
+                GameObject.FindGameObjectWithTag("Player").GetComponent<BackgroundSoundController>().EndOfLevel();
+                GameObject.FindGameObjectWithTag("Player").GetComponent<GameController>().AdvanceLevel();
+                
+
             }
-           
+
+            Debug.Log("OTHER: " + obj.name);
+
         }
-        
+
     }
 
     private class Objective
@@ -233,9 +290,9 @@ public class ObjectivesManager : MonoBehaviour
 
     public GameObject GetCurrentObjective()
     {
-        if (objectiveCount >= Objectives.Count)
+        if (objectiveCount >= Objectives.Length)
             return null;
-        return Objectives[objectiveCount].ObjectiveObj;
+        return Objectives[objectiveCount-1].objectiveObject;
     }
 
     public float GetTimeSinceLastObj()

@@ -21,7 +21,7 @@ public class RandomShape : MonoBehaviour
         {
             if(m.tag == "Shape")
             {
-                Debug.Log("Here");
+
                 Material[] mats = m.materials;
                 m.material = this.GetComponent<MeshRenderer>().material;
                 break;

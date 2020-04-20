@@ -41,7 +41,7 @@ public class RamdomMove : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision detected! "+other.name);
+
         collision = true;
         float force = 50;
         Vector3 direction = transform.position - other.transform.position;

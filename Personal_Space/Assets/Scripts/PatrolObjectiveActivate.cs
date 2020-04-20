@@ -55,7 +55,7 @@ public class PatrolObjectiveActivate : MonoBehaviour
 
         if (zoneControl.getPlayerInZone() && !waiting)
         {
-            Debug.Log("HERE");
+
             Debug.Log("Player is in Zone");
             waiting = true;
             StartCoroutine(Loiter());

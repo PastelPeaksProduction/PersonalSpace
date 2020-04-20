@@ -109,7 +109,7 @@ public class OneTimeDialogController : MonoBehaviour
 
     public void Continue()
     {
-        Debug.Log("Continue!");
+
         controller.ContinueGame();
         OnetimeDialog.SetActive(false);
         specialsManager.isEnabled = true;

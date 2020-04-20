@@ -180,7 +180,7 @@ public class DrivePost : MonoBehaviour
             }
             else
             {
-                Debug.Log("Form upload complete!");
+
             }
         }
     }

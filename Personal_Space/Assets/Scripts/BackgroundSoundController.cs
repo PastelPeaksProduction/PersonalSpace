@@ -160,6 +160,9 @@ public class BackgroundSoundController : MonoBehaviour
         }
     }
 
-   
+   public void EndOfLevel()
+    {
+        AkSoundEngine.PostEvent("end_of_level", gameObject);
+    }
 
 }
