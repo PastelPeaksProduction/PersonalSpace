@@ -55,9 +55,9 @@ public class GameController : MonoBehaviour
             height = (int)(height * ratio);
             #if UNITY_EDITOR
                 Debug.Log("In Editor");
-            #else
+#else
                 Screen.SetResolution(width,height, true);
-            #endif
+#endif
         }
     }
 
