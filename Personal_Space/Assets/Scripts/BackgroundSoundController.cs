@@ -15,21 +15,33 @@ public class BackgroundSoundController : MonoBehaviour
     private int stressLevel = 0;
 
     private ParticleController particles;
-    void Start()
+    
+    void Awake()
     {
+        //StartMainLoop();
+        
         AkSoundEngine.PostEvent("main_loop", gameObject);
-        //AkSoundEngine.PostEvent("Heartbeat_S", gameObject);
-        player = GameObject.FindGameObjectWithTag ( "Player" ).GetComponent<PlayerController>();
-        particles = GetComponentInChildren<ParticleController>();
+        if (GetComponent<PlayerController>())
+        {
+            player = GetComponent<PlayerController>();
+            particles = GetComponentInChildren<ParticleController>();
+        }
+        
+        
     }
 
     void Update()
     {
         if (!isMenu)
         {
-            endLevel = GetComponentInParent<ObjectivesManager>().endLevel;
-            isMoving = GetComponentInParent<PlayerController>().isMoving;
-            HealthSound();
+            if(GetComponent<ObjectivesManager>() && GetComponent <PlayerController>())
+            {
+                endLevel = GetComponentInParent<ObjectivesManager>().endLevel;
+                isMoving = GetComponentInParent<PlayerController>().isMoving;
+                HealthSound();
+            }
+
+            
             /*if (isMoving || endLevel )
             {
                 AkSoundEngine.PostEvent("is_moving", gameObject);
@@ -127,7 +139,8 @@ public class BackgroundSoundController : MonoBehaviour
 
         if ((other.gameObject.CompareTag("Collectible") || other.gameObject.CompareTag("Objectives")) && !endLevel)
         {
-            AkSoundEngine.PostEvent("objective_event", gameObject);
+            //AkSoundEngine.PostEvent("objective_event", gameObject);
+            Objective();
         }
     }
 
@@ -165,4 +178,25 @@ public class BackgroundSoundController : MonoBehaviour
         AkSoundEngine.PostEvent("end_of_level", gameObject);
     }
 
+    public void Objective()
+    {
+        AkSoundEngine.PostEvent("objective_event", gameObject);
+    }
+
+    public void NewMessage()
+    {
+        AkSoundEngine.PostEvent("not_moving", gameObject);
+    }
+
+    public void StartMainLoop()
+    {
+        //AkSoundEngine.StopAll(gameObject);
+        AkSoundEngine.PostEvent("main_loop", gameObject);
+    }
+
+    public void Silence()
+    {
+        AkSoundEngine.StopAll(gameObject);
+        
+    }
 }

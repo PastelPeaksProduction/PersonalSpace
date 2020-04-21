@@ -173,7 +173,7 @@ public class ObjectivesManager : MonoBehaviour
         StartCoroutine(GameStartDelay(3));
         //pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
         //ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);
-        _phoneUI.SendEmojiMessage(Objectives[0].emoji);
+        //_phoneUI.SendEmojiMessage(Objectives[0].emoji);
         foreach (Message m in Objectives[0].messages)
         {
             _phoneUI.SetNotifyMessage(m);
@@ -227,7 +227,7 @@ public class ObjectivesManager : MonoBehaviour
             if (objectiveCount < Objectives.Length)
             {
                 GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount].emoji);
-                _phoneUI.SendEmojiMessage(Objectives[objectiveCount].emoji);
+                //_phoneUI.SendEmojiMessage(Objectives[objectiveCount].emoji);
                 //pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[objectiveCount-1].messages[0].messageText;
                 //_phoneUI.SetNotifyMessage(Objectives[objectiveCount].ObjectiveDes.Substring(0, Objectives[objectiveCount].ObjectiveDes.Length - 2));
                 foreach (Message m in Objectives[objectiveCount].messages)

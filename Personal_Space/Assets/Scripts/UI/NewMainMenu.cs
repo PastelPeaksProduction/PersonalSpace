@@ -21,7 +21,8 @@ public class NewMainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Prom");
+        SceneManager.LoadScene("PromCutScene");
+
     }
 
     public void QuitGame()

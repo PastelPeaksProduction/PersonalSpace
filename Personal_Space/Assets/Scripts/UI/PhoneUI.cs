@@ -56,15 +56,10 @@ public class PhoneUI : MonoBehaviour
                 NotifyMessage();
             }
 
-            
         }
     }
 
-    private IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(2);
-        
-    }
+    
     public void TogglePhone()
     {
         if (_phoneUp)
@@ -113,10 +108,7 @@ public class PhoneUI : MonoBehaviour
         contents.GetComponent<PhoneMessages>().NewMessage(message);
     }
 
-    public void SendEmojiMessage(Sprite emoji)
-    {
-        contents.GetComponent<PhoneMessages>().EmojiMessage(emoji);
-    }
+    
 
     private void ProccessMsg(string msg)
     {

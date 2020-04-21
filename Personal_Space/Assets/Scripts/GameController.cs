@@ -129,21 +129,6 @@ public class GameController : MonoBehaviour
                     Debug.Log("switch" + isPaused);
                     isPaused = true;
                     
-
-                   // pauseDialog.SetActive(true);
-
-                    //Stressbar.SetActive(true);
-                    //PlayerAngle.SetActive(true);
-                    //FOV.SetActive(true);
-                    //TextBubbleCanvas.SetActive(false);
-                    //mainCamera.SetActive(false);
-                    //aerialCamera.SetActive(true);
-                    //aerialListener.enabled = true;
-                    //ObjMarker.SetActive(true);
-                    //BottomHealthBar.SetActive(false);
-                    //Enemies.SetActive(false);
-                    //RestartBtn.SetActive(true);
-                    //MenuBtn.SetActive(true);
                     PhonePauseUI.ShowMessage();
                     PauseGame();
                 }
@@ -154,19 +139,7 @@ public class GameController : MonoBehaviour
                 {
                     Debug.Log("switch2" + isPaused);
 
-                    //pauseDialog.SetActive(false);
-                    //Stressbar.SetActive(false);
-                    //PlayerAngle.SetActive(false);
-                    //FOV.SetActive(false);
-                    //TextBubbleCanvas.SetActive(true);
-                    //mainCamera.SetActive(true);
-                    //aerialCamera.SetActive(false);
-                    //aerialListener.enabled = false;
-                    //ObjMarker.SetActive(false);
-                    //BottomHealthBar.SetActive(true);
-                    //Enemies.SetActive(true);
-                    //RestartBtn.SetActive(false);
-                    //MenuBtn.SetActive(false);
+                    
                     PhonePauseUI.HideMessage();
                     ContinueGame();
 
@@ -232,12 +205,12 @@ public class GameController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Prom")
         {
-            SceneManager.LoadScene("4.0HouseParty");
+            SceneManager.LoadScene("HousePartyCutScene");
         }
 
         if (SceneManager.GetActiveScene().name == "4.0HouseParty")
         {
-            SceneManager.LoadScene("5.0WorkParty");
+            SceneManager.LoadScene("WorkPartyCutScene");
         }
 
         if (SceneManager.GetActiveScene().name == "5.0WorkParty")
