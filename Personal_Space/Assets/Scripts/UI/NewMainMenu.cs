@@ -50,4 +50,19 @@ public class NewMainMenu : MonoBehaviour
     {
         system.SetSelectedGameObject(LevelsButton.gameObject);
     }
+
+    public void Prom()
+    {
+        SceneManager.LoadScene("PromCutScene");
+    }
+
+    public void HouseParty()
+    {
+        SceneManager.LoadScene("HousePartyCutScene");
+    }
+
+    public void WorkParty()
+    {
+        SceneManager.LoadScene("WorkPartyCutScene");
+    }
 }
