@@ -47,6 +47,11 @@ public class PatrolObjectiveActivate : MonoBehaviour
             // cycling to the start if necessary.
             destPoint = destPoint + 1;
         }
+        else
+        {
+            agent.transform.position = new Vector3(points[points.Length - 1].position.x, agent.transform.position.y, points[points.Length - 1].position.z);
+            //agent.GetComponent<Rigidbody>().constraints &= ~RigidbodyConstraints.FreezePositionZ | ~RigidbodyConstraints.FreezePositionX ;
+        }
         
         
     }
@@ -68,6 +73,7 @@ public class PatrolObjectiveActivate : MonoBehaviour
 
         if (agent.remainingDistance < 5f && waiting)
         {
+            //agent.transform.position = new Vector3(points[destPoint].position.x, agent.transform.position.y, points[destPoint].position.z);
             GotoNextPoint();
         }
     }
