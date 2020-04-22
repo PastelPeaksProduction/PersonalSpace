@@ -93,7 +93,7 @@ public class GameController : MonoBehaviour
     {
         if(ObjMng.GetTimeSinceLastObj() < 1)
         {
-            ArrInd.SetHideArrow();
+            //ArrInd.SetHideArrow();
         }
         if(Input.GetKeyDown("joystick button 3") || Input.GetKeyDown("joystick button 19") || Input.GetKeyDown(KeyCode.Return))
         {

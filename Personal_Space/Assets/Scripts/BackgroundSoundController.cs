@@ -16,7 +16,7 @@ public class BackgroundSoundController : MonoBehaviour
 
     private ParticleController particles;
     
-    void Awake()
+    void Start()
     {
         //StartMainLoop();
         
