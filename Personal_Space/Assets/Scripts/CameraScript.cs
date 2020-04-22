@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using SiliconDroid;
 
 public class CameraScript : MonoBehaviour
 {

@@ -210,7 +210,7 @@ public class GameController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "4.0HouseParty")
         {
-            SceneManager.LoadScene("WorkPartyCutScene");
+            SceneManager.LoadScene("NewStartMenu");
         }
 
         if (SceneManager.GetActiveScene().name == "5.0WorkParty")

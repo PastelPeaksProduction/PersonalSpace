@@ -81,7 +81,6 @@ public class ObjectivesManager : MonoBehaviour
     //private ObjectiveMarker ObjMarkerSingle;
     //private List<Objective> Objectives;
     private int objectiveCount = 0;
-    private float _reminderTime;
     private float _sinceLastObj = 0;
     private PhoneUI _phoneUI;
     public AK.Wwise.Event end_of_level_event;
@@ -96,7 +95,7 @@ public class ObjectivesManager : MonoBehaviour
         particles = GameObject.FindGameObjectWithTag("ParticleController").GetComponent<ParticleController>();
         endLevel = false;
         //ObjMarkerSingle = ObjMarker.GetComponent<ObjectiveMarker>();
-        _reminderTime = reminderTime;
+       
         _phoneUI = GameObject.Find("PopUpPhone").GetComponent<PhoneUI>();
         dataPost = GameObject.FindGameObjectWithTag("Data").GetComponent<DrivePost>();
 
@@ -183,31 +182,15 @@ public class ObjectivesManager : MonoBehaviour
     IEnumerator GameStartDelay(int sec)
     {
         yield return new WaitForSeconds(sec);
-        GetComponent<TextBubble>().SpawnBubble(gameStartEmoji);
+        //GetComponent<TextBubble>().SpawnBubble(gameStartEmoji);
     }
 
     private void Update()
     {
         _sinceLastObj += Time.deltaTime;
-        Reminder();
+        
     }
-    private void Reminder()
-    {
-        _reminderTime -= Time.deltaTime;
-        if (_reminderTime < 0)
-        {
-            _reminderTime = reminderTime;
-            if (objectiveCount == 0)
-            {
-                GetComponent<TextBubble>().SpawnBubble(gameStartEmoji);
-            }
-            else
-            {
-                GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount - 1].emoji);
-            }
-
-        }
-    }
+   
     // public function when player triggers objective tag
     public void OnObjectiveTriggered(GameObject obj)
     {
@@ -217,7 +200,6 @@ public class ObjectivesManager : MonoBehaviour
         {
             particles.ObjectivePlay();
             _sinceLastObj = 0;
-            _reminderTime = reminderTime;
             // Pass the corresponding description to dialogmng
 
             dataPost.ObjectiveCompleted("Objective: " + Objectives[objectiveCount - 1].objectiveObject.name);
@@ -226,7 +208,7 @@ public class ObjectivesManager : MonoBehaviour
             //_phoneUI.SetNotifyMessage(Objectives[objectiveCount].ObjectiveDes);
             if (objectiveCount < Objectives.Length)
             {
-                GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount].emoji);
+                //GetComponent<TextBubble>().SpawnBubble(Objectives[objectiveCount].emoji);
                 //_phoneUI.SendEmojiMessage(Objectives[objectiveCount].emoji);
                 //pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[objectiveCount-1].messages[0].messageText;
                 //_phoneUI.SetNotifyMessage(Objectives[objectiveCount].ObjectiveDes.Substring(0, Objectives[objectiveCount].ObjectiveDes.Length - 2));
@@ -261,11 +243,10 @@ public class ObjectivesManager : MonoBehaviour
                 {
                     obj.GetComponent<ObjectiveStateChange>().FireEvent();
                 }
-                end_of_level_event.Post(gameObject, (uint)(AkCallbackType.AK_EndOfEvent), GetComponent<GameController>().AdvanceLevel);
                 //GetComponent<GameController>().AdvanceLevel();
                 GameObject.FindGameObjectWithTag("Player").GetComponent<BackgroundSoundController>().EndOfLevel();
                 //GameObject.FindGameObjectWithTag("Player").GetComponent<GameController>().AdvanceLevel();
-
+                StartCoroutine(WaitForEnd());
 
             }
 
@@ -290,7 +271,7 @@ public class ObjectivesManager : MonoBehaviour
 
     public GameObject GetCurrentObjective()
     {
-        if (objectiveCount >= Objectives.Length)
+        if (objectiveCount > Objectives.Length)
             return null;
         return Objectives[objectiveCount - 1].objectiveObject;
     }
@@ -298,6 +279,13 @@ public class ObjectivesManager : MonoBehaviour
     public float GetTimeSinceLastObj()
     {
         return _sinceLastObj;
+    }
+
+    private IEnumerator WaitForEnd()
+    {
+        yield return new WaitForSeconds(4);
+        end_of_level_event.Post(gameObject, (uint)(AkCallbackType.AK_EndOfEvent), GetComponent<GameController>().AdvanceLevel);
+
     }
 
 }

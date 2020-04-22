@@ -23,7 +23,7 @@ public class QuoteContoller : MonoBehaviour
         {
 
             int rand = Random.Range(0, quotes.Length);
-            quote.text = quotes[0];
+            quote.text = quotes[rand];
             sound.Silence();
             color = quote.color;
 
