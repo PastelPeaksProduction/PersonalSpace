@@ -51,10 +51,10 @@ public class GameController : MonoBehaviour
             int width = Screen.width;
             int height = Screen.height;
             float ratio = width / 1920;
-            width = (int) (width * ratio);
+            width = (int)(width * ratio);
             height = (int)(height * ratio);
-            #if UNITY_EDITOR
-                Debug.Log("In Editor");
+#if UNITY_EDITOR
+            Debug.Log("In Editor");
 #else
                 Screen.SetResolution(width,height, true);
 #endif
@@ -74,7 +74,7 @@ public class GameController : MonoBehaviour
     private void CheckPhonePopUp()
     {
         // TODO: Bind controller keys
-        if(Input.GetKeyDown(KeyCode.M) || Input.GetKeyDown("joystick button 19")|| Input.GetKeyDown("joystick button 3"))
+        if (Input.GetKeyDown(KeyCode.M) || Input.GetKeyDown("joystick button 19") || Input.GetKeyDown("joystick button 3"))
         {
             if (!isPhoneShow)
             {
@@ -91,11 +91,11 @@ public class GameController : MonoBehaviour
 
     private void CheckHint()
     {
-        if(ObjMng.GetTimeSinceLastObj() < 1)
+        if (ObjMng.GetTimeSinceLastObj() < 1)
         {
             ArrInd.SetHideArrow();
         }
-        if(Input.GetKeyDown("joystick button 3") || Input.GetKeyDown("joystick button 19") || Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown("joystick button 3") || Input.GetKeyDown("joystick button 19") || Input.GetKeyDown(KeyCode.Return))
         {
             ArrInd.SetShowArrow();
         }
@@ -128,7 +128,7 @@ public class GameController : MonoBehaviour
                 {
                     Debug.Log("switch" + isPaused);
                     isPaused = true;
-                    
+
                     PhonePauseUI.ShowMessage();
                     PauseGame();
                 }
@@ -139,7 +139,7 @@ public class GameController : MonoBehaviour
                 {
                     Debug.Log("switch2" + isPaused);
 
-                    
+
                     PhonePauseUI.HideMessage();
                     ContinueGame();
 
@@ -184,7 +184,7 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene("Prom");
 
         }
-        
+
         if (Input.GetKeyUp(KeyCode.Alpha2))
         {
             SceneManager.LoadScene("4.0HouseParty");
@@ -201,7 +201,7 @@ public class GameController : MonoBehaviour
     public void AdvanceLevel(object in_cookie, AkCallbackType in_type, object in_info)
     {
         // GetComponent<ObjectivesManager>().endLevel = false;
-        
+
 
         if (SceneManager.GetActiveScene().name == "Prom")
         {
@@ -220,7 +220,7 @@ public class GameController : MonoBehaviour
 
     }
 
-   
+
 
     public bool isGamePaused()
     {

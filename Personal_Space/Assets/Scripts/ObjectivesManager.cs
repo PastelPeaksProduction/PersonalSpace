@@ -211,18 +211,18 @@ public class ObjectivesManager : MonoBehaviour
     // public function when player triggers objective tag
     public void OnObjectiveTriggered(GameObject obj)
     {
-        Debug.Log("OBJ TRIGGERED: "+objectiveCount+" LEN: "+Objectives.Length);
+        Debug.Log("OBJ TRIGGERED: " + objectiveCount + " LEN: " + Objectives.Length);
 
-        if (objectiveCount <= Objectives.Length  && Objectives[objectiveCount - 1].objectiveObject == obj)
+        if (objectiveCount <= Objectives.Length && Objectives[objectiveCount - 1].objectiveObject == obj)
         {
             particles.ObjectivePlay();
             _sinceLastObj = 0;
             _reminderTime = reminderTime;
             // Pass the corresponding description to dialogmng
-            
-            dataPost.ObjectiveCompleted("Objective: " + Objectives[objectiveCount-1].objectiveObject.name);
 
-            
+            dataPost.ObjectiveCompleted("Objective: " + Objectives[objectiveCount - 1].objectiveObject.name);
+
+
             //_phoneUI.SetNotifyMessage(Objectives[objectiveCount].ObjectiveDes);
             if (objectiveCount < Objectives.Length)
             {
@@ -239,7 +239,7 @@ public class ObjectivesManager : MonoBehaviour
                 {
                     Objectives[objectiveCount].objectiveObject.SetActive(true);
                 }
-                
+
                 //Objectives[objectiveCount-1].objectiveObject.SetActive(false);
                 //
                 Debug.Log("OBJECT NAME: " + obj.name);
@@ -250,12 +250,12 @@ public class ObjectivesManager : MonoBehaviour
                 objectiveCount++;
 
             }
-            else if(objectiveCount == Objectives.Length)
+            else if (objectiveCount == Objectives.Length)
             {
                 endLevel = true;
                 Debug.Log("Ending Level");
                 Debug.Log("OBJECT NAME: " + obj.name);
-                
+
                 //Objectives[objectiveCount - 1].objectiveObject.SetActive(false);
                 if (obj.GetComponent<ObjectiveStateChange>())
                 {
@@ -265,7 +265,7 @@ public class ObjectivesManager : MonoBehaviour
                 //GetComponent<GameController>().AdvanceLevel();
                 GameObject.FindGameObjectWithTag("Player").GetComponent<BackgroundSoundController>().EndOfLevel();
                 //GameObject.FindGameObjectWithTag("Player").GetComponent<GameController>().AdvanceLevel();
-                
+
 
             }
 
@@ -292,7 +292,7 @@ public class ObjectivesManager : MonoBehaviour
     {
         if (objectiveCount >= Objectives.Length)
             return null;
-        return Objectives[objectiveCount-1].objectiveObject;
+        return Objectives[objectiveCount - 1].objectiveObject;
     }
 
     public float GetTimeSinceLastObj()
