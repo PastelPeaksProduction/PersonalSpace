@@ -47,9 +47,11 @@ public class PhoneUI : MonoBehaviour
     {
         if (_notifyMessage && !_pauseMenu)
         {
+            Debug.Log("In update");
             if (!_phoneUp)
             {
                 ShowAndNotify();
+
             }
             else
             {
@@ -77,6 +79,7 @@ public class PhoneUI : MonoBehaviour
         _animation.Play("Phone_New_Show");
         _phoneUp = true;
         _notifyMessage = false;
+        Debug.Log("Played Animation");
     }
     public void ShowMessage()
     {
@@ -103,7 +106,7 @@ public class PhoneUI : MonoBehaviour
     public void SetNotifyMessage(Message message)
     {
         GC.isPhoneShow = false;
-        _notifyMessage = !_notifyMessage;
+        _notifyMessage = true;
         //ProccessMsg(Msg);
         contents.GetComponent<PhoneMessages>().NewMessage(message);
     }
