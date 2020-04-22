@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
                 if (onScreen.androidTesting)
                 {
                     Vector3 input = onScreen.Movement();
-                    input *= 40f;
+                    input *= 10f;
                     moveInput = currentRotation * input;
                 }
                 else
