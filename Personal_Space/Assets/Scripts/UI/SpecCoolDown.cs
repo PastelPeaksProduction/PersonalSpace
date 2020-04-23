@@ -11,6 +11,7 @@ public class SpecCoolDown : MonoBehaviour
     public bool isCalm;
     public bool isShout;
     private bool calmUsed = false;
+    private bool cooling = false;
     public SpecialsManager manager;
     private GameController gameController;
     // Start is called before the first frame update
@@ -19,22 +20,21 @@ public class SpecCoolDown : MonoBehaviour
         gameController = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<GameController>();
         if (isShout)
         {
-            coolDownTime = manager.cooldownTimeShout;
+            coolDownTime = manager.cooldownTimeShout + 5;
         }
         if (isSprint)
         {
-            coolDownTime = manager.cooldownTimeSprint;
+            coolDownTime = manager.cooldownTimeSprint + 5;
         }
         
-        timer = 0;
+        timer = coolDownTime;
+        image.fillAmount = 0f;
     }
 
     public void ReleaseSkill()
     {
-        if(timer > coolDownTime)
-        {
-            timer = 0;
-        }
+        cooling = true;
+        timer = 0;
     }
 
     // Update is called once per frame
@@ -42,27 +42,36 @@ public class SpecCoolDown : MonoBehaviour
     {
         if (!gameController.isGamePaused() && manager.isEnabled)
         {
-            if (isSprint && (Input.GetKeyDown("joystick button 0") || Input.GetKeyDown("joystick button 16") || Input.GetKeyDown(KeyCode.X)))
+            if (manager.sprintAvailable && isSprint && (Input.GetKeyDown("joystick button 0") || Input.GetKeyDown("joystick button 16") || Input.GetKeyDown(KeyCode.X)))
             {
                 Sprint();
+                timer = 0;
             }
             if (isCalm && (Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 18") || Input.GetKeyDown(KeyCode.Z)))
             {
                 Calm();
+                timer = 0;
             }
-            if (isShout && (Input.GetKeyDown("joystick button 1") || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown(KeyCode.C)))
+            if (manager.shoutAvailable && isShout && (Input.GetKeyDown("joystick button 1") || Input.GetKeyDown("joystick button 17") || Input.GetKeyDown(KeyCode.C)))
             {
                 Space();
+                timer = 0;
             }
-            if (!calmUsed)
+            if (!calmUsed && cooling)
             {
                 timer += Time.deltaTime;
                 image.fillAmount = (coolDownTime - timer) / coolDownTime;
+                if (timer > coolDownTime)
+                {
+                    timer = 0;
+                    cooling = false;
+                }
             }
-            else
+            else if(calmUsed)
             {
                 image.fillAmount = 0.99f;
             }
+
         }
     }
 
