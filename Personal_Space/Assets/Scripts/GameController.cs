@@ -53,6 +53,7 @@ public class GameController : MonoBehaviour
             float ratio = width / 1920;
             width = (int)(width * ratio);
             height = (int)(height * ratio);
+            ArrInd.SetHideArrow();
 #if UNITY_EDITOR
             Debug.Log("In Editor");
 #else
@@ -91,13 +92,13 @@ public class GameController : MonoBehaviour
 
     private void CheckHint()
     {
-        if (ObjMng.GetTimeSinceLastObj() < 1)
-        {
-            ArrInd.SetHideArrow();
-        }
+       // if (ObjMng.GetTimeSinceLastObj() < 1)
+       // {
+            //ArrInd.SetHideArrow();
+       // }
         if (Input.GetKeyDown("joystick button 3") || Input.GetKeyDown("joystick button 19") || Input.GetKeyDown(KeyCode.Return))
         {
-            ArrInd.SetShowArrow();
+            ArrInd.ToggleArrow();
         }
     }
 

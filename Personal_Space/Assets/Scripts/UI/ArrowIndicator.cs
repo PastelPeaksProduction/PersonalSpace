@@ -38,7 +38,7 @@ public class ArrowIndicator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (show_arrow)
+        //if (show_arrow)
         {
             /*Objective = obj_man.GetCurrentObjective();
             ArrowTrans.position = gameObject.transform.position + new Vector3(0,-4.f,0);
