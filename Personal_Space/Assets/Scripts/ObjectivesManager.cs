@@ -175,7 +175,7 @@ public class ObjectivesManager : MonoBehaviour
 
     private IEnumerator WaitForEnd()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
         end_of_level_event.Post(gameObject, (uint)(AkCallbackType.AK_EndOfEvent), GetComponent<GameController>().AdvanceLevel);
     }
 
