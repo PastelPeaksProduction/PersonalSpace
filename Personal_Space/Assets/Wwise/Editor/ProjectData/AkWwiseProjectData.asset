@@ -13,25 +13,79 @@ MonoBehaviour:
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
-  - PhysicalPath: Virtual Acoustics/Default Work Unit.wwu
-    ParentPath: 
-    guid: 00000000000000000000000000000000
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    ParentPath: Default Work Unit
+    guid: 5002c35f5a59694da0196c684ef19e2c
     GuidInternal: 
-    m_lastTime: -8586181695864775808
+    m_lastTime: -8586177167596613467
     List: []
   AuxBusWwu:
-  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
-    ParentPath: 
-    guid: 00000000000000000000000000000000
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPath: Default Work Unit
+    guid: 0a2656453d4e84419027d0b7035907fc
     GuidInternal: 
-    m_lastTime: -8586181695864775808
-    List: []
+    m_lastTime: -8586144562859920871
+    List:
+    - name: Breathing
+      guid: 19b6fcdc023fcc428c602ac5a6a836c0
+      id: 238653005
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Breathing
+        ObjectType: 2
+      Path: Default Work Unit\Breathing
+    - name: Calm
+      guid: 622b4e2f6273c9408d239301c8076d5e
+      id: 3753286132
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Calm
+        ObjectType: 2
+      Path: Default Work Unit\Calm
+    - name: Heartbeat
+      guid: 547a331f4540234e813e45d0313870c9
+      id: 2179486487
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Heartbeat
+        ObjectType: 2
+      Path: Default Work Unit\Heartbeat
+    - name: main_loop
+      guid: 6626d60ce6fcc94c9e8060b00980ac86
+      id: 3813340491
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: main_loop
+        ObjectType: 2
+      Path: Default Work Unit\main_loop
+    - name: Master Audio Bus
+      guid: d8a41415a61d2a41a17e75ca0c2149f3
+      id: 3803692087
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus
+    - name: Stress
+      guid: e1377e9b45c60c47b7e65cb3b6907319
+      id: 3840192365
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stress
+        ObjectType: 2
+      Path: Default Work Unit\Stress
   BankWwu:
-  - PhysicalPath: SoundBanks/Default Work Unit.wwu
-    ParentPath: 
-    guid: 00000000000000000000000000000000
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPath: Default Work Unit
+    guid: 74407dd5568cb749a7815cf164f44d03
     GuidInternal: 
-    m_lastTime: -8586181695864775808
+    m_lastTime: -8586177167597352633
     List:
     - name: end_of_level
       guid: f65f672dd45cf04398696bfc6c9f458d
@@ -41,7 +95,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: end_of_level
         ObjectType: 7
-      Path: Default Work Unit/end_of_level
+      Path: Default Work Unit\end_of_level
     - name: fade_out_calm
       guid: fa4f283ce16b2e49a40a48a0eb80616e
       id: 640433408
@@ -50,7 +104,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: fade_out_calm
         ObjectType: 7
-      Path: Default Work Unit/fade_out_calm
+      Path: Default Work Unit\fade_out_calm
     - name: fade_out_stress
       guid: c7f16f86b3b8624cb35582fd4cc51da1
       id: 459790121
@@ -59,7 +113,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: fade_out_stress
         ObjectType: 7
-      Path: Default Work Unit/fade_out_stress
+      Path: Default Work Unit\fade_out_stress
     - name: fade_to_calm
       guid: fe078ec84906dd408b541225e2232661
       id: 3251299009
@@ -68,7 +122,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: fade_to_calm
         ObjectType: 7
-      Path: Default Work Unit/fade_to_calm
+      Path: Default Work Unit\fade_to_calm
     - name: fade_to_main
       guid: 6419a87e0785bd41b4c0d552cf9ee41a
       id: 84592575
@@ -77,7 +131,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: fade_to_main
         ObjectType: 7
-      Path: Default Work Unit/fade_to_main
+      Path: Default Work Unit\fade_to_main
     - name: fade_to_stress
       guid: ee45079c0b3fe84e9a5b092f76edfc5b
       id: 2453086244
@@ -86,7 +140,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: fade_to_stress
         ObjectType: 7
-      Path: Default Work Unit/fade_to_stress
+      Path: Default Work Unit\fade_to_stress
     - name: health_1
       guid: 6651030a6ee0fc4197443390256800a6
       id: 2160357507
@@ -95,7 +149,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: health_1
         ObjectType: 7
-      Path: Default Work Unit/health_1
+      Path: Default Work Unit\health_1
     - name: health_2
       guid: d2b209abbfcc1742a40444c1668b85de
       id: 2160357504
@@ -104,7 +158,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: health_2
         ObjectType: 7
-      Path: Default Work Unit/health_2
+      Path: Default Work Unit\health_2
     - name: health_3
       guid: f879d821d9475f4db07f5acbb63d5e38
       id: 2160357505
@@ -113,7 +167,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: health_3
         ObjectType: 7
-      Path: Default Work Unit/health_3
+      Path: Default Work Unit\health_3
     - name: health_4
       guid: 58713ba058051c4fab5dff2d96bf2749
       id: 2160357510
@@ -122,7 +176,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: health_4
         ObjectType: 7
-      Path: Default Work Unit/health_4
+      Path: Default Work Unit\health_4
     - name: health_5
       guid: ae55d2f650676441977e0333abe480f8
       id: 2160357511
@@ -131,7 +185,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: health_5
         ObjectType: 7
-      Path: Default Work Unit/health_5
+      Path: Default Work Unit\health_5
     - name: Heartbeat_F
       guid: 93bb1b262b1d0e40a0ce173eddf65eb1
       id: 1158766008
@@ -140,7 +194,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Heartbeat_F
         ObjectType: 7
-      Path: Default Work Unit/Heartbeat_F
+      Path: Default Work Unit\Heartbeat_F
     - name: Hearthbeat_S
       guid: e5e6145e75b1764d90ee3532504d8750
       id: 3832398287
@@ -149,7 +203,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Hearthbeat_S
         ObjectType: 7
-      Path: Default Work Unit/Hearthbeat_S
+      Path: Default Work Unit\Hearthbeat_S
     - name: is_moving
       guid: 449863291c25ca4f829f6710bf3fe2cd
       id: 2695808710
@@ -158,7 +212,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: is_moving
         ObjectType: 7
-      Path: Default Work Unit/is_moving
+      Path: Default Work Unit\is_moving
     - name: main_loop
       guid: 184763bdb6b8154497e8ca1df75b7938
       id: 3813340491
@@ -167,7 +221,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: main_loop
         ObjectType: 7
-      Path: Default Work Unit/main_loop
+      Path: Default Work Unit\main_loop
     - name: not_moving
       guid: 8fe53416bdcc454485473ce777d9000d
       id: 3053284133
@@ -176,7 +230,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: not_moving
         ObjectType: 7
-      Path: Default Work Unit/not_moving
+      Path: Default Work Unit\not_moving
     - name: objective_event
       guid: 4c99dfa0a07f7d419fd9a8dbec1ba232
       id: 2252392879
@@ -185,13 +239,13 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: objective_event
         ObjectType: 7
-      Path: Default Work Unit/objective_event
+      Path: Default Work Unit\objective_event
   EventWwu:
-  - PhysicalPath: Events/Default Work Unit.wwu
-    ParentPath: 
-    guid: 00000000000000000000000000000000
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPath: Default Work Unit
+    guid: e0501f2b533ddc4888de1d4d0ce19c45
     GuidInternal: 
-    m_lastTime: -8586181695884775808
+    m_lastTime: -8586142702481049479
     List:
     - name: end_of_level
       guid: 35d880cb83ebee4b87a0899bcd3761d7
@@ -201,10 +255,10 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: end_of_level
         ObjectType: 3
-      Path: Default Work Unit/end_of_level
+      Path: Default Work Unit\end_of_level
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 7.636375
+      minDuration: 7.636375
     - name: fade_out_calm
       guid: 5b08624fefa53f4691a9096268d74538
       id: 640433408
@@ -213,10 +267,10 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: fade_out_calm
         ObjectType: 3
-      Path: Default Work Unit/fade_out_calm
+      Path: Default Work Unit\fade_out_calm
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: fade_out_stress
       guid: cf3f9a6c410636429bd85d0d6f358b05
       id: 459790121
@@ -225,10 +279,10 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: fade_out_stress
         ObjectType: 3
-      Path: Default Work Unit/fade_out_stress
+      Path: Default Work Unit\fade_out_stress
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: fade_to_calm
       guid: fd274889f3efc74684bc9ce6cf23a87d
       id: 3251299009
@@ -237,10 +291,10 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: fade_to_calm
         ObjectType: 3
-      Path: Default Work Unit/fade_to_calm
+      Path: Default Work Unit\fade_to_calm
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: fade_to_main
       guid: d7f404aa0239ff409fc0694eb91e1d05
       id: 84592575
@@ -249,10 +303,10 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: fade_to_main
         ObjectType: 3
-      Path: Default Work Unit/fade_to_main
+      Path: Default Work Unit\fade_to_main
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: fade_to_stress
       guid: db587c8fc9b5b94683274c322471db23
       id: 2453086244
@@ -261,10 +315,10 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: fade_to_stress
         ObjectType: 3
-      Path: Default Work Unit/fade_to_stress
+      Path: Default Work Unit\fade_to_stress
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: health_1
       guid: ed7025c92792ea4bbbeb7ad93189c501
       id: 2160357507
@@ -273,7 +327,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: health_1
         ObjectType: 3
-      Path: Default Work Unit/health_1
+      Path: Default Work Unit\health_1
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -285,7 +339,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: health_2
         ObjectType: 3
-      Path: Default Work Unit/health_2
+      Path: Default Work Unit\health_2
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -297,7 +351,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: health_3
         ObjectType: 3
-      Path: Default Work Unit/health_3
+      Path: Default Work Unit\health_3
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -309,7 +363,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: health_4
         ObjectType: 3
-      Path: Default Work Unit/health_4
+      Path: Default Work Unit\health_4
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -321,7 +375,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: health_5
         ObjectType: 3
-      Path: Default Work Unit/health_5
+      Path: Default Work Unit\health_5
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -333,7 +387,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Heartbeat_F
         ObjectType: 3
-      Path: Default Work Unit/Heartbeat_F
+      Path: Default Work Unit\Heartbeat_F
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -345,7 +399,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Heartbeat_S
         ObjectType: 3
-      Path: Default Work Unit/Heartbeat_S
+      Path: Default Work Unit\Heartbeat_S
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -357,10 +411,10 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: is_moving
         ObjectType: 3
-      Path: Default Work Unit/is_moving
+      Path: Default Work Unit\is_moving
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: main_loop
       guid: ea41e4b5cb363e478a498b3e66302942
       id: 3813340491
@@ -369,7 +423,19 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: main_loop
         ObjectType: 3
-      Path: Default Work Unit/main_loop
+      Path: Default Work Unit\main_loop
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: new_message
+      guid: 408ce073bf763545911c301ad5bd1208
+      id: 3678708461
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: new_message
+        ObjectType: 3
+      Path: Default Work Unit\new_message
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -381,10 +447,10 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: not_moving
         ObjectType: 3
-      Path: Default Work Unit/not_moving
+      Path: Default Work Unit\not_moving
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 4.909104
+      minDuration: 4.909104
     - name: objective_event
       guid: 54ace82798e25d409773dfc0b71bea2b
       id: 2252392879
@@ -393,38 +459,41 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: objective_event
         ObjectType: 3
-      Path: Default Work Unit/objective_event
+      Path: Default Work Unit\objective_event
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 5.454563
+      minDuration: 5.454563
   RtpcWwu:
-  - PhysicalPath: Game Parameters/Default Work Unit.wwu
-    ParentPath: 
-    guid: 00000000000000000000000000000000
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPath: Default Work Unit
+    guid: a70b4f0c3311c243af35ca3e4c03f0b1
     GuidInternal: 
-    m_lastTime: -8586181695884775808
+    m_lastTime: -8586177167630355317
     List: []
   StateWwu:
-  - PhysicalPath: States/Default Work Unit.wwu
-    ParentPath: 
-    guid: 00000000000000000000000000000000
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPath: Default Work Unit
+    guid: defa85066c8aa6499c4abac9e41f2a4f
     GuidInternal: 
-    m_lastTime: -8586181695864775808
+    m_lastTime: -8586177167597322717
     List: []
   SwitchWwu:
-  - PhysicalPath: Switches/Default Work Unit.wwu
-    ParentPath: 
-    guid: 00000000000000000000000000000000
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPath: Default Work Unit
+    guid: 93e7effd84b7ee4795fda2558baaa45b
     GuidInternal: 
-    m_lastTime: -8586181695864775808
+    m_lastTime: -8586177167597272553
     List: []
   TriggerWwu:
-  - PhysicalPath: Triggers/Default Work Unit.wwu
-    ParentPath: 
-    guid: 00000000000000000000000000000000
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPath: Default Work Unit
+    guid: 291d3639f201384d956a3725e6b5510e
     GuidInternal: 
-    m_lastTime: -8586181695864775808
+    m_lastTime: -8586177167596752784
     List: []
-  ExpandedItems: []
+  ExpandedItems:
+  - /Personal_Space_WwiseProject
+  - /Personal_Space_WwiseProject/Events
+  - /Personal_Space_WwiseProject/SoundBanks
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

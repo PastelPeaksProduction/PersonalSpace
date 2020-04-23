@@ -19,8 +19,8 @@ public class BackgroundSoundController : MonoBehaviour
     void Awake()
     {
         //StartMainLoop();
-        
-        AkSoundEngine.PostEvent("main_loop", gameObject);
+
+        AkSoundEngine.PostEvent(AkSoundEngine.GetIDFromString("main_loop"), gameObject);
         if (GetComponent<PlayerController>())
         {
             player = GetComponent<PlayerController>();
