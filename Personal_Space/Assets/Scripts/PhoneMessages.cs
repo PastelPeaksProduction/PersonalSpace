@@ -36,7 +36,7 @@ public class PhoneMessages : MonoBehaviour
         TextMeshProUGUI messageName = newMessage.GetComponent<NewMessage>().messageName;
         messageName.text = message.Name;
 
-        if (message.messageText.Length > 35)
+        if (message.messageText.Length > 32)
         {
             List<string> lines = ComposeMessage(message.messageText);
             string composedMessage = "";
@@ -65,7 +65,7 @@ public class PhoneMessages : MonoBehaviour
         string currentLine = "";
         foreach(string word in words)
         {
-            if(currentLine.Length+word.Length+1 <= 35)
+            if(currentLine.Length+word.Length+1 <= 32)
             {
                 currentLine = currentLine + " " + word;
             }

@@ -223,7 +223,7 @@ public class PlayerController : MonoBehaviour
             }
             // CHRIS CODE
             // Turn off the objective after the player hits it
-            other.gameObject.SetActive(false);
+            //other.gameObject.SetActive(false);
         }
     }
 

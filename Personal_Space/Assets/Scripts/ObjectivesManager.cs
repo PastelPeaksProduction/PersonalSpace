@@ -109,24 +109,27 @@ public class ObjectivesManager : MonoBehaviour
                     _phoneUI.SetNotifyMessage(m);
                 }
                 //ObjMarkerSingle.PlayAtObjective(Objectives[objectiveCount].ObjectiveObj);
+                Objectives[objectiveCount - 1].objectiveObject.SetActive(false);
                 if (Objectives[objectiveCount].objectiveObject != null)
                 {
                     Objectives[objectiveCount].objectiveObject.SetActive(true);
                 }
 
-                //Objectives[objectiveCount-1].objectiveObject.SetActive(false);
+                //
                 //
                 Debug.Log("OBJECT NAME: " + obj.name);
-                if (obj.GetComponent<ObjectiveStateChange>())
+                if (Objectives[objectiveCount - 1].objectiveObject.GetComponent<ObjectiveStateChange>())
                 {
-                    obj.GetComponent<ObjectiveStateChange>().FireEvent();
+                    Debug.Log("FIRED STATE CHANGE");
+                    Objectives[objectiveCount - 1].objectiveObject.GetComponent<ObjectiveStateChange>().OnTriggered.Invoke();
                 }
                 objectiveCount++;
 
             }
             else if (objectiveCount == Objectives.Length)
             {
-                endLevel = true;
+                //endLevel = true;
+                Objectives[objectiveCount - 1].objectiveObject.SetActive(false);
                 Debug.Log("Ending Level");
                 Debug.Log("OBJECT NAME: " + obj.name);
 
@@ -136,8 +139,8 @@ public class ObjectivesManager : MonoBehaviour
                     obj.GetComponent<ObjectiveStateChange>().FireEvent();
                 }
                 //GetComponent<GameController>().AdvanceLevel();
-                GameObject.FindGameObjectWithTag("Player").GetComponent<BackgroundSoundController>().EndOfLevel();
-                //GameObject.FindGameObjectWithTag("Player").GetComponent<GameController>().AdvanceLevel();
+               // this.GetComponent<BackgroundSoundController>().EndOfLevel();
+                GetComponent<ArrowIndicator>().SetHideArrow();
                 StartCoroutine(WaitForEnd());
 
             }
@@ -175,7 +178,12 @@ public class ObjectivesManager : MonoBehaviour
 
     private IEnumerator WaitForEnd()
     {
-        yield return new WaitForSeconds(3);
+        
+            yield return new WaitForSeconds(4);
+            //this.GetComponent<BackgroundSoundController>().Silence();
+            //yield return new WaitForSeconds(2);
+        
+            
         end_of_level_event.Post(gameObject, (uint)(AkCallbackType.AK_EndOfEvent), GetComponent<GameController>().AdvanceLevel);
     }
 

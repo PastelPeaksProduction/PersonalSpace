@@ -8,6 +8,7 @@ public class ObjectiveStateChange : MonoBehaviour
     
     public void FireEvent()
     {
+        Debug.Log("Invoked");
         OnTriggered.Invoke();
     }
 }

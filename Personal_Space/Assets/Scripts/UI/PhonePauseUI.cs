@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PhonePauseUI : MonoBehaviour
 {
     public PhoneUI PhoneUI;
     private Animation _animation;
+    public Button selected;
+    public EventSystem system;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +26,7 @@ public class PhonePauseUI : MonoBehaviour
     {
         gameObject.SetActive(true);
         PhoneUI.SetPauseMenu();
+        system.SetSelectedGameObject(selected.gameObject);
        // _animation = GetComponent<Animation>();
       //  _animation.Play("Phone_Pause_Menu"); 
     }
