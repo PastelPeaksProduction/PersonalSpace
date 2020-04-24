@@ -17,6 +17,7 @@
         private bool waiting = false;
         private bool waitingForKid = false;
         private PlayerController playerController;
+    private GameController gameController;
         void Start () 
         {
             agent = GetComponent<NavMeshAgent>();
@@ -24,7 +25,8 @@
             //agent.autoBraking = false;
             zoneControl = zone.GetComponent<ZoneScript>();
             playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-            //GotoNextPoint();
+        //GotoNextPoint();
+        gameController = playerController.gameObject.GetComponent<GameController>();
         }
 
 
@@ -45,9 +47,14 @@
 
         void Update () 
         {
-            // Choose the next destination point when the agent gets
-            // close to the current one.
-            if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        // Choose the next destination point when the agent gets
+        // close to the current one.
+        if (gameController.isGamePaused())
+        {
+            agent.speed = 0;
+            return;
+        }
+        if (!agent.pathPending && agent.remainingDistance < 0.5f)
             {
                 if(!waiting)
                 {

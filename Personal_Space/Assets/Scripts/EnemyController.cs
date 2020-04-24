@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     private Transform playerPosition;
     private NavMeshAgent agent;
     private Color randColor;
+    private GameController gameController;
 
 
 
@@ -22,6 +23,7 @@ public class EnemyController : MonoBehaviour
     {
         // Initialize variables
         playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        gameController = playerPosition.gameObject.GetComponent<GameController>();
         startingPosition = transform.position;
         agent = GetComponent<NavMeshAgent>();
 
@@ -53,7 +55,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            if(distance > stoppingDistance)
+            if(distance > stoppingDistance && !gameController.isGamePaused())
             {
                 //Debug.Log(distance);
                 //transform.position = Vector3.MoveTowards(transform.position, playerPosition.position, followSpeed * Time.deltaTime);
