@@ -47,7 +47,7 @@ public class PhoneMessages : MonoBehaviour
 
             messageText.text = composedMessage;
             messageBox.sizeDelta = new Vector2(1650, lines.Count * 200 + 25);
-            newMessage.GetComponent<RectTransform>().sizeDelta = new Vector2(75, 12 +(lines.Count-1)*8);
+            newMessage.GetComponent<RectTransform>().sizeDelta = new Vector2(75, 12+(lines.Count-1)*6);
         }
         else
         {
