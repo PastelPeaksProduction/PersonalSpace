@@ -10,6 +10,7 @@ public class PhonePauseUI : MonoBehaviour
     private Animation _animation;
     public Button selected;
     public EventSystem system;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,13 @@ public class PhonePauseUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetJoystickNames().Length > 0)
+        {
+            if(Input.GetMouseButton(0) || Input.GetMouseButton(1) || Input.GetMouseButton(2))
+            {
+                system.SetSelectedGameObject(selected.gameObject);
+            }
+        }
     }
 
     public void ShowMessage()

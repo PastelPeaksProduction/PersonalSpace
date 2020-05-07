@@ -35,12 +35,26 @@ public class GameController : MonoBehaviour
     private DrivePost dataPost;
     private bool isPaused;
     public bool isPhoneShow;
+    public bool hasFocus;
+    public bool changeFocus;
+    public bool controllerPresent = false;
 
     // Start is called before the first frame update
     void Start()
     {
         if (!nullValues)
         {
+            string[] names = Input.GetJoystickNames();
+            foreach (string name in names)
+            {
+                if (name != "")
+                {
+                    controllerPresent = true;
+                    Cursor.visible = false;
+                }
+            }
+
+
             player = GameObject.Find("Player").GetComponent<PlayerController>();
             aerialListener = aerialCamera.GetComponent<AudioListener>();
             mainListener = mainCamera.GetComponent<AudioListener>();
@@ -70,6 +84,63 @@ public class GameController : MonoBehaviour
         CheckPause();
         CheckGameStatus();
         CheckPhonePopUp();
+
+
+
+
+        if (changeFocus)
+        {
+            if (!hasFocus)
+            {
+                PhonePauseUI.ShowMessage();
+                PauseGame();
+            }
+            else
+            {
+                PhonePauseUI.HideMessage();
+                ContinueGame();
+            }
+            changeFocus = false;
+        }
+
+
+        bool temp = false;
+        string[] names = Input.GetJoystickNames();
+        foreach (string name in names)
+        {
+            if (name != "")
+            {
+                temp = true;
+            }
+        }
+        if (!temp)
+        {
+            if (controllerPresent)
+            {
+                Cursor.visible = true;
+                controllerPresent = false;
+                PhonePauseUI.ShowMessage();
+                PauseGame();
+            }
+        }
+        else
+        {
+            if (!controllerPresent)
+            {
+                Cursor.visible = false;
+                controllerPresent = true;
+                PhonePauseUI.ShowMessage();
+                PauseGame();
+            }
+        }
+
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+        changeFocus = true;
+        hasFocus = focus;
+
     }
 
     private void CheckPhonePopUp()
@@ -92,10 +163,10 @@ public class GameController : MonoBehaviour
 
     private void CheckHint()
     {
-       // if (ObjMng.GetTimeSinceLastObj() < 1)
-       // {
-            //ArrInd.SetHideArrow();
-       // }
+        // if (ObjMng.GetTimeSinceLastObj() < 1)
+        // {
+        //ArrInd.SetHideArrow();
+        // }
         if (Input.GetKeyDown("joystick button 3") || Input.GetKeyDown("joystick button 19") || Input.GetKeyDown(KeyCode.Return))
         {
             ArrInd.ToggleArrow();
