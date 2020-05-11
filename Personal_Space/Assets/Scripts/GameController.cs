@@ -36,8 +36,9 @@ public class GameController : MonoBehaviour
     private bool isPaused;
     public bool isPhoneShow;
     public bool hasFocus;
-    public bool changeFocus;
+    public bool changeFocus = false;
     public bool controllerPresent = false;
+    public SpecialsManager specials;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +57,7 @@ public class GameController : MonoBehaviour
 
 
             player = GameObject.Find("Player").GetComponent<PlayerController>();
+            specials = player.gameObject.GetComponent<SpecialsManager>();
             aerialListener = aerialCamera.GetComponent<AudioListener>();
             mainListener = mainCamera.GetComponent<AudioListener>();
             ObjMng = gameObject.GetComponent<ObjectivesManager>();
@@ -77,7 +79,7 @@ public class GameController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         CheckHint();
         CheckReminder();
@@ -97,8 +99,8 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                PhonePauseUI.HideMessage();
-                ContinueGame();
+                //PhonePauseUI.HideMessage();
+               // ContinueGame();
             }
             changeFocus = false;
         }
@@ -182,12 +184,16 @@ public class GameController : MonoBehaviour
     {
         Time.timeScale = 0;
         player.canMove = false;
+        isPaused = true;
+        //specials.isEnabled = false;
     }
 
     public void ContinueGame()
     {
         Time.timeScale = 1;
         player.canMove = true;
+        isPaused = false;
+        //specials.isEnabled = true;
     }
     private void CheckPause()
     {
