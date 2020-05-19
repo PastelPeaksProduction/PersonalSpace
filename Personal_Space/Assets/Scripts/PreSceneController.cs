@@ -77,7 +77,7 @@ public class PreSceneController : MonoBehaviour
                 }
                 else if (!_animation.IsPlaying("Cut_Phone_Hide") && setHide)
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    NextScene();
                 }
 
             }
@@ -86,6 +86,10 @@ public class PreSceneController : MonoBehaviour
         }
     }
 
+    public void NextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
 
     
