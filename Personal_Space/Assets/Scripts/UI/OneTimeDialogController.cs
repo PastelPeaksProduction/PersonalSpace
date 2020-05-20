@@ -13,95 +13,80 @@ public class OneTimeDialogController : MonoBehaviour
     [Header("Will show in 1sec after game starts")]
     public string gameStartObjectiveDescription;
 
-
-    public GameObject firstObject_1;
-    public string firstDescription;
+    public string android;
+    public string controller;
+    public string keyboard;
     
 
 
-    public GameObject secondObject_2;
-    public string secondDescription;
-
-
-    public GameObject thirdObject_3;
-    public string thirdDescription;
-
-
-    public GameObject fourthObject_4;
-    public string fourthDescription;
-
-
-    public GameObject fifthObject_5;
-    public string fifthDescription;
-
+   
     public GameObject OnetimeDialog;
     public GameObject pauseDialogText;
     public float reminderTime;
     public GameObject ObjMarker;
 
-    private ObjectiveMarker ObjMarkerSingle;
-    private List<ObjectiveTutorial> Objectives;
-    private int objectiveCount = 0;
-    private float _reminderTime;
-    private GameController controller;
+
+    private GameController gameController;
     private SpecialsManager specialsManager;
 
 
-    private int currentObjective = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        controller = GameObject.FindGameObjectWithTag("Player").GetComponent<GameController>();
+        gameController = GameObject.FindGameObjectWithTag("Player").GetComponent<GameController>();
         specialsManager = GameObject.FindGameObjectWithTag("Player").GetComponent<SpecialsManager>();
-        _reminderTime = reminderTime;
 
-        Objectives = new List<ObjectiveTutorial>();
 
-        if (firstObject_1 != null)
-        {
-            Objectives.Add(new ObjectiveTutorial(firstObject_1, firstDescription));
-
-        }
-        if (secondObject_2 != null)
-        {
-            Objectives.Add(new ObjectiveTutorial(secondObject_2, secondDescription));
-        }
-        if (thirdObject_3 != null)
-        {
-            Objectives.Add(new ObjectiveTutorial(thirdObject_3, thirdDescription));
-        }
-        if (fourthObject_4 != null)
-        {
-            Objectives.Add(new ObjectiveTutorial(fourthObject_4, fourthDescription));
-        }
-        if (fifthObject_5 != null)
-        {
-            Objectives.Add(new ObjectiveTutorial(fifthObject_5, fifthDescription));
-        }
+        
+       
         StartCoroutine(GameStartDelay(0));
         // pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
 
     }
     IEnumerator GameStartDelay(int sec)
     {
+        Debug.Log("Started");
         yield return new WaitForSeconds(sec);
         specialsManager.isEnabled = false;
-        controller.PauseGame();
-        pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
+        gameController.PauseGame();
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<OnScreenJoystickController>().androidTesting)
+        {
+            pauseDialogText.GetComponent<TextMeshProUGUI>().text = android;
+        }
+        else
+        {
+            bool controllerPresent = false;
+            string[] names = Input.GetJoystickNames();
+            foreach (string name in names)
+            {
+                if (name != "")
+                {
+                    controllerPresent = true;
+                }
+            }
+            if (controllerPresent)
+            {
+                pauseDialogText.GetComponent<TextMeshProUGUI>().text = controller;
+            }
+            else
+            {
+                pauseDialogText.GetComponent<TextMeshProUGUI>().text = keyboard;
+            }
+        }
+        //pauseDialogText.GetComponent<TextMeshProUGUI>().text = gameStartObjectiveDescription;
         OnetimeDialog.SetActive(true);
     }
 
     private void Update()
     {
-        Reminder();
         CheckContinue();
     }
 
     private void CheckContinue()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyUp("joystick button 16") || Input.GetKeyUp("joystick button 0")))
+        if (Input.GetKeyUp("joystick button 16") || Input.GetKeyUp("joystick button 0"))
         {
             Continue();
         }
@@ -110,47 +95,18 @@ public class OneTimeDialogController : MonoBehaviour
     public void Continue()
     {
 
-        controller.ContinueGame();
+        gameController.ContinueGame();
         OnetimeDialog.SetActive(false);
         specialsManager.isEnabled = true;
-        currentObjective++;
     }
-    private void Reminder()
-    {
-        _reminderTime -= Time.deltaTime;
-        if (_reminderTime <= 0)
-        {
-            _reminderTime = reminderTime;
-            //pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives[currentObjective].ObjectiveDes;
-            //controller.PauseGame();
-            //OnetimeDialog.SetActive(true);
-        }
-    }
+   
     // public function when player triggers objective tag
     public void OnObjectiveTriggered(GameObject obj)
     {
 
-        if (Objectives.Where(o => o.ObjectiveObj == obj).Any())
-        {
-            _reminderTime = reminderTime;
-
-            pauseDialogText.GetComponent<TextMeshProUGUI>().text = Objectives.Where(o => o.ObjectiveObj == obj).FirstOrDefault().ObjectiveDes;
-
-            controller.PauseGame();
-            OnetimeDialog.SetActive(true);
-
-        }
+        
 
     }
 
-    private class ObjectiveTutorial
-    {
-        public GameObject ObjectiveObj { get; set; }
-        public string ObjectiveDes { get; set; }
-        public ObjectiveTutorial(GameObject objectiveObj, string objectiveDes)
-        {
-            ObjectiveObj = objectiveObj;
-            ObjectiveDes = objectiveDes;
-        }
-    }
+    
 }

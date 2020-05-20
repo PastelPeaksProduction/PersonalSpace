@@ -13,7 +13,7 @@ public class PhonePauseUI : MonoBehaviour
     public SpecialsManager specials;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _animation = GetComponent<Animation>();
         specials = GameObject.FindGameObjectWithTag("Player").GetComponent<SpecialsManager>();
